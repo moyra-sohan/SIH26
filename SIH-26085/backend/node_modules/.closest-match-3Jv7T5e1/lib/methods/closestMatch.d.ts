@@ -1,0 +1,1 @@
+export declare const closestMatch: (target: string, array: string[], showOccurrences?: boolean) => string | string[] | null;

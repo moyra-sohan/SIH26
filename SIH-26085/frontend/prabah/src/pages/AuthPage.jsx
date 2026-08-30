@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { CloudRain, User, Mail, Lock, Eye, EyeOff, Activity, BrainCircuit, Bell } from 'lucide-react';
+import { CloudRain, User, Mail, Lock, Eye, EyeOff, Activity, BrainCircuit, Bell, AlertCircle, CheckCircle, Loader2 } from 'lucide-react';
 import '../styles/auth.css';
 
 function AuthPage() {
@@ -12,6 +12,9 @@ function AuthPage() {
     email: '',
     password: '',
   });
+  const [errorMsg, setErrorMsg] = useState('');
+  const [successMsg, setSuccessMsg] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const features = [
     {
@@ -45,29 +48,95 @@ function AuthPage() {
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+    if (errorMsg) setErrorMsg('');
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setErrorMsg('');
+    setSuccessMsg('');
 
-    // Prepare JSON data to send to backend
-    const payload = {
-      action: activeTab === 'signin' ? 'login' : 'register',
-      username: formData.username,
-      email: formData.email,
-      password: formData.password,
-      timestamp: new Date().toISOString(),
-    };
+    const isSignIn = activeTab === 'signin';
 
-    // Log the JSON data (would be sent to backend via fetch/axios)
-    console.log('Sending to backend:', JSON.stringify(payload, null, 2));
+    if (isSignIn) {
+      const identifier = formData.email.trim();
+      if (!identifier) {
+        setErrorMsg('Please enter your email or username');
+        return;
+      }
+      if (!formData.password) {
+        setErrorMsg('Please enter your password');
+        return;
+      }
+    } else {
+      if (!formData.username.trim() || formData.username.trim().length < 3) {
+        setErrorMsg('Username must be at least 3 characters');
+        return;
+      }
+      if (!formData.email.trim()) {
+        setErrorMsg('Please enter a valid email address');
+        return;
+      }
+      if (formData.password.length < 6) {
+        setErrorMsg('Password must be at least 6 characters');
+        return;
+      }
+    }
 
-    // Mock authentication — navigate to dashboard
-    navigate('/dashboard');
+    setLoading(true);
+
+    try {
+      const endpoint = isSignIn ? '/api/auth/login' : '/api/auth/register';
+      const payload = isSignIn
+        ? {
+            email: formData.email.trim(),
+            username: formData.email.trim(),
+            password: formData.password,
+          }
+        : {
+            username: formData.username.trim(),
+            email: formData.email.trim(),
+            password: formData.password,
+          };
+
+      const response = await fetch(`http://localhost:5000${endpoint}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok || !data.success) {
+        throw new Error(data.message || 'Authentication failed. Please check your credentials.');
+      }
+
+      // Store JWT token and user info
+      if (data.token) {
+        localStorage.setItem('auth_token', data.token);
+      }
+      if (data.user) {
+        localStorage.setItem('auth_user', JSON.stringify(data.user));
+      }
+
+      setSuccessMsg(isSignIn ? 'Login successful! Redirecting...' : 'Account created successfully! Redirecting...');
+
+      setTimeout(() => {
+        navigate('/dashboard');
+      }, 700);
+    } catch (err) {
+      setErrorMsg(err.message || 'Unable to connect to the authentication service.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleTabSwitch = (tab) => {
     setActiveTab(tab);
+    setErrorMsg('');
+    setSuccessMsg('');
     setFormData({ username: '', email: '', password: '' });
   };
 
@@ -171,34 +240,52 @@ function AuthPage() {
 
         {/* Form */}
         <form className="auth-form" onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label htmlFor="username">User Name</label>
-            <div className="input-wrapper">
-              <User size={18} className="input-icon" />
-              <input
-                type="text"
-                id="username"
-                name="username"
-                placeholder="Enter your user name"
-                value={formData.username}
-                onChange={handleInputChange}
-                autoComplete="username"
-              />
+          {errorMsg && (
+            <div className="auth-alert auth-alert-error" role="alert">
+              <AlertCircle size={16} />
+              <span>{errorMsg}</span>
             </div>
-          </div>
+          )}
+
+          {successMsg && (
+            <div className="auth-alert auth-alert-success" role="status">
+              <CheckCircle size={16} />
+              <span>{successMsg}</span>
+            </div>
+          )}
+
+          {activeTab === 'signup' && (
+            <div className="form-group">
+              <label htmlFor="username">User Name</label>
+              <div className="input-wrapper">
+                <User size={18} className="input-icon" />
+                <input
+                  type="text"
+                  id="username"
+                  name="username"
+                  placeholder="Enter your user name"
+                  value={formData.username}
+                  onChange={handleInputChange}
+                  autoComplete="username"
+                  required
+                />
+              </div>
+            </div>
+          )}
 
           <div className="form-group">
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email">{activeTab === 'signin' ? 'Email or Username' : 'Email'}</label>
             <div className="input-wrapper">
               <Mail size={18} className="input-icon" />
               <input
-                type="email"
+                type={activeTab === 'signin' ? 'text' : 'email'}
                 id="email"
                 name="email"
-                placeholder="Enter your email"
+                placeholder={activeTab === 'signin' ? 'Enter your email or username' : 'Enter your email'}
                 value={formData.email}
                 onChange={handleInputChange}
-                autoComplete="email"
+                autoComplete={activeTab === 'signin' ? 'username' : 'email'}
+                required
               />
             </div>
           </div>
@@ -215,6 +302,7 @@ function AuthPage() {
                 value={formData.password}
                 onChange={handleInputChange}
                 autoComplete={activeTab === 'signin' ? 'current-password' : 'new-password'}
+                required
               />
               <button
                 type="button"
@@ -236,8 +324,20 @@ function AuthPage() {
             </div>
           )}
 
-          <button type="submit" className="auth-submit-btn" id="auth-submit-btn">
-            {activeTab === 'signin' ? 'Sign In' : 'Sign Up'}
+          <button
+            type="submit"
+            className="auth-submit-btn"
+            id="auth-submit-btn"
+            disabled={loading}
+          >
+            {loading ? (
+              <span style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', justifyContent: 'center' }}>
+                <Loader2 size={18} className="spin" style={{ animation: 'spin 1s linear infinite' }} />
+                {activeTab === 'signin' ? 'Signing In...' : 'Creating Account...'}
+              </span>
+            ) : (
+              activeTab === 'signin' ? 'Sign In' : 'Sign Up'
+            )}
           </button>
 
           <div className="auth-divider">

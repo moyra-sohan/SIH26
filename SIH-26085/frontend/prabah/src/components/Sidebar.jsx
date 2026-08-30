@@ -16,11 +16,8 @@ function Sidebar({ isOpen, onClose }) {
   };
 
   const handleLogout = () => {
-    const payload = {
-      action: 'logout',
-      timestamp: new Date().toISOString(),
-    };
-    console.log('Sending to backend:', JSON.stringify(payload, null, 2));
+    localStorage.removeItem('auth_token');
+    localStorage.removeItem('auth_user');
     navigate('/');
   };
 

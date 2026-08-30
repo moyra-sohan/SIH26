@@ -1,0 +1,1 @@
+export declare const distance: (a: string, b: string) => number;
