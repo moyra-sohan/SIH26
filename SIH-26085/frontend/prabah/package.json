@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@rolldown/binding-win32-x64-msvc": "^1.2.6",
     "lucide-react": "^1.35.0",
     "maplibre-gl": "^6.6.0",
     "nodemon": "^3.1.14",
