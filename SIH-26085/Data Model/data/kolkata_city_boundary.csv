@@ -1,0 +1,217 @@
+Ward_ID,Ward_Name,Zone,Administrative_Body,Boundary_Type,Within_KMC_Limits,Latitude,Longitude,Distance_from_City_Center_km,Approx_Ward_Area_Sqkm,Approx_Boundary_Perimeter_km,Month,Season,Estimated_Waterlogged_Area_Percent,Boundary_Status
+1,Behala,South West,KMC,KMC Ward,Yes,22.4989,88.3145,8.72,6.5,8.9,2025-09,Monsoon (retreating),9.1,Partial Waterlogging
+1,Behala,South West,KMC,KMC Ward,Yes,22.4989,88.3145,8.72,6.5,8.9,2025-10,Post-Monsoon,0,Normal
+1,Behala,South West,KMC,KMC Ward,Yes,22.4989,88.3145,8.72,6.5,8.9,2025-11,Post-Monsoon,0,Normal
+1,Behala,South West,KMC,KMC Ward,Yes,22.4989,88.3145,8.72,6.5,8.9,2025-12,Winter,0,Normal
+1,Behala,South West,KMC,KMC Ward,Yes,22.4989,88.3145,8.72,6.5,8.9,2026-01,Winter,0,Normal
+1,Behala,South West,KMC,KMC Ward,Yes,22.4989,88.3145,8.72,6.5,8.9,2026-02,Winter,0,Normal
+1,Behala,South West,KMC,KMC Ward,Yes,22.4989,88.3145,8.72,6.5,8.9,2026-03,Pre-Monsoon,0,Normal
+1,Behala,South West,KMC,KMC Ward,Yes,22.4989,88.3145,8.72,6.5,8.9,2026-04,Pre-Monsoon,0,Normal
+1,Behala,South West,KMC,KMC Ward,Yes,22.4989,88.3145,8.72,6.5,8.9,2026-05,Pre-Monsoon,0,Normal
+1,Behala,South West,KMC,KMC Ward,Yes,22.4989,88.3145,8.72,6.5,8.9,2026-06,Monsoon,9.1,Partial Waterlogging
+1,Behala,South West,KMC,KMC Ward,Yes,22.4989,88.3145,8.72,6.5,8.9,2026-07,Monsoon,12.6,Significant Waterlogging
+1,Behala,South West,KMC,KMC Ward,Yes,22.4989,88.3145,8.72,6.5,8.9,2026-08,Monsoon,12.6,Significant Waterlogging
+2,Tollygunge,South,KMC,KMC Ward,Yes,22.5039,88.3423,7.37,5,7.8,2025-09,Monsoon (retreating),5,Partial Waterlogging
+2,Tollygunge,South,KMC,KMC Ward,Yes,22.5039,88.3423,7.37,5,7.8,2025-10,Post-Monsoon,0,Normal
+2,Tollygunge,South,KMC,KMC Ward,Yes,22.5039,88.3423,7.37,5,7.8,2025-11,Post-Monsoon,0,Normal
+2,Tollygunge,South,KMC,KMC Ward,Yes,22.5039,88.3423,7.37,5,7.8,2025-12,Winter,0,Normal
+2,Tollygunge,South,KMC,KMC Ward,Yes,22.5039,88.3423,7.37,5,7.8,2026-01,Winter,0,Normal
+2,Tollygunge,South,KMC,KMC Ward,Yes,22.5039,88.3423,7.37,5,7.8,2026-02,Winter,0,Normal
+2,Tollygunge,South,KMC,KMC Ward,Yes,22.5039,88.3423,7.37,5,7.8,2026-03,Pre-Monsoon,0,Normal
+2,Tollygunge,South,KMC,KMC Ward,Yes,22.5039,88.3423,7.37,5,7.8,2026-04,Pre-Monsoon,0,Normal
+2,Tollygunge,South,KMC,KMC Ward,Yes,22.5039,88.3423,7.37,5,7.8,2026-05,Pre-Monsoon,0,Normal
+2,Tollygunge,South,KMC,KMC Ward,Yes,22.5039,88.3423,7.37,5,7.8,2026-06,Monsoon,5,Partial Waterlogging
+2,Tollygunge,South,KMC,KMC Ward,Yes,22.5039,88.3423,7.37,5,7.8,2026-07,Monsoon,5,Partial Waterlogging
+2,Tollygunge,South,KMC,KMC Ward,Yes,22.5039,88.3423,7.37,5,7.8,2026-08,Monsoon,8.5,Partial Waterlogging
+3,Jadavpur,South,KMC,KMC Ward,Yes,22.4994,88.3714,8.09,5.5,8.2,2025-09,Monsoon (retreating),5,Partial Waterlogging
+3,Jadavpur,South,KMC,KMC Ward,Yes,22.4994,88.3714,8.09,5.5,8.2,2025-10,Post-Monsoon,0,Normal
+3,Jadavpur,South,KMC,KMC Ward,Yes,22.4994,88.3714,8.09,5.5,8.2,2025-11,Post-Monsoon,0,Normal
+3,Jadavpur,South,KMC,KMC Ward,Yes,22.4994,88.3714,8.09,5.5,8.2,2025-12,Winter,0,Normal
+3,Jadavpur,South,KMC,KMC Ward,Yes,22.4994,88.3714,8.09,5.5,8.2,2026-01,Winter,0,Normal
+3,Jadavpur,South,KMC,KMC Ward,Yes,22.4994,88.3714,8.09,5.5,8.2,2026-02,Winter,0,Normal
+3,Jadavpur,South,KMC,KMC Ward,Yes,22.4994,88.3714,8.09,5.5,8.2,2026-03,Pre-Monsoon,0,Normal
+3,Jadavpur,South,KMC,KMC Ward,Yes,22.4994,88.3714,8.09,5.5,8.2,2026-04,Pre-Monsoon,0,Normal
+3,Jadavpur,South,KMC,KMC Ward,Yes,22.4994,88.3714,8.09,5.5,8.2,2026-05,Pre-Monsoon,0,Normal
+3,Jadavpur,South,KMC,KMC Ward,Yes,22.4994,88.3714,8.09,5.5,8.2,2026-06,Monsoon,5,Partial Waterlogging
+3,Jadavpur,South,KMC,KMC Ward,Yes,22.4994,88.3714,8.09,5.5,8.2,2026-07,Monsoon,5,Partial Waterlogging
+3,Jadavpur,South,KMC,KMC Ward,Yes,22.4994,88.3714,8.09,5.5,8.2,2026-08,Monsoon,8.5,Partial Waterlogging
+4,Kasba,South East,KMC,KMC Ward,Yes,22.517,88.3833,6.73,6,8.6,2025-09,Monsoon (retreating),9.4,Partial Waterlogging
+4,Kasba,South East,KMC,KMC Ward,Yes,22.517,88.3833,6.73,6,8.6,2025-10,Post-Monsoon,0,Normal
+4,Kasba,South East,KMC,KMC Ward,Yes,22.517,88.3833,6.73,6,8.6,2025-11,Post-Monsoon,0,Normal
+4,Kasba,South East,KMC,KMC Ward,Yes,22.517,88.3833,6.73,6,8.6,2025-12,Winter,0,Normal
+4,Kasba,South East,KMC,KMC Ward,Yes,22.517,88.3833,6.73,6,8.6,2026-01,Winter,0,Normal
+4,Kasba,South East,KMC,KMC Ward,Yes,22.517,88.3833,6.73,6,8.6,2026-02,Winter,9.4,Partial Waterlogging
+4,Kasba,South East,KMC,KMC Ward,Yes,22.517,88.3833,6.73,6,8.6,2026-03,Pre-Monsoon,0,Normal
+4,Kasba,South East,KMC,KMC Ward,Yes,22.517,88.3833,6.73,6,8.6,2026-04,Pre-Monsoon,0,Normal
+4,Kasba,South East,KMC,KMC Ward,Yes,22.517,88.3833,6.73,6,8.6,2026-05,Pre-Monsoon,0,Normal
+4,Kasba,South East,KMC,KMC Ward,Yes,22.517,88.3833,6.73,6,8.6,2026-06,Monsoon,12.9,Significant Waterlogging
+4,Kasba,South East,KMC,KMC Ward,Yes,22.517,88.3833,6.73,6,8.6,2026-07,Monsoon,16.4,Significant Waterlogging
+4,Kasba,South East,KMC,KMC Ward,Yes,22.517,88.3833,6.73,6,8.6,2026-08,Monsoon,16.4,Significant Waterlogging
+5,Topsia,East,KMC,KMC Ward,Yes,22.539,88.39,5.26,4.5,7.4,2025-09,Monsoon (retreating),9.4,Partial Waterlogging
+5,Topsia,East,KMC,KMC Ward,Yes,22.539,88.39,5.26,4.5,7.4,2025-10,Post-Monsoon,0,Normal
+5,Topsia,East,KMC,KMC Ward,Yes,22.539,88.39,5.26,4.5,7.4,2025-11,Post-Monsoon,0,Normal
+5,Topsia,East,KMC,KMC Ward,Yes,22.539,88.39,5.26,4.5,7.4,2025-12,Winter,0,Normal
+5,Topsia,East,KMC,KMC Ward,Yes,22.539,88.39,5.26,4.5,7.4,2026-01,Winter,0,Normal
+5,Topsia,East,KMC,KMC Ward,Yes,22.539,88.39,5.26,4.5,7.4,2026-02,Winter,0,Normal
+5,Topsia,East,KMC,KMC Ward,Yes,22.539,88.39,5.26,4.5,7.4,2026-03,Pre-Monsoon,0,Normal
+5,Topsia,East,KMC,KMC Ward,Yes,22.539,88.39,5.26,4.5,7.4,2026-04,Pre-Monsoon,0,Normal
+5,Topsia,East,KMC,KMC Ward,Yes,22.539,88.39,5.26,4.5,7.4,2026-05,Pre-Monsoon,5.9,Partial Waterlogging
+5,Topsia,East,KMC,KMC Ward,Yes,22.539,88.39,5.26,4.5,7.4,2026-06,Monsoon,9.4,Partial Waterlogging
+5,Topsia,East,KMC,KMC Ward,Yes,22.539,88.39,5.26,4.5,7.4,2026-07,Monsoon,16.4,Significant Waterlogging
+5,Topsia,East,KMC,KMC Ward,Yes,22.539,88.39,5.26,4.5,7.4,2026-08,Monsoon,16.4,Significant Waterlogging
+6,Beliaghata,East,KMC,KMC Ward,Yes,22.558,88.395,4.7,4,7,2025-09,Monsoon (retreating),9.1,Partial Waterlogging
+6,Beliaghata,East,KMC,KMC Ward,Yes,22.558,88.395,4.7,4,7,2025-10,Post-Monsoon,0,Normal
+6,Beliaghata,East,KMC,KMC Ward,Yes,22.558,88.395,4.7,4,7,2025-11,Post-Monsoon,5.6,Partial Waterlogging
+6,Beliaghata,East,KMC,KMC Ward,Yes,22.558,88.395,4.7,4,7,2025-12,Winter,0,Normal
+6,Beliaghata,East,KMC,KMC Ward,Yes,22.558,88.395,4.7,4,7,2026-01,Winter,0,Normal
+6,Beliaghata,East,KMC,KMC Ward,Yes,22.558,88.395,4.7,4,7,2026-02,Winter,0,Normal
+6,Beliaghata,East,KMC,KMC Ward,Yes,22.558,88.395,4.7,4,7,2026-03,Pre-Monsoon,0,Normal
+6,Beliaghata,East,KMC,KMC Ward,Yes,22.558,88.395,4.7,4,7,2026-04,Pre-Monsoon,0,Normal
+6,Beliaghata,East,KMC,KMC Ward,Yes,22.558,88.395,4.7,4,7,2026-05,Pre-Monsoon,0,Normal
+6,Beliaghata,East,KMC,KMC Ward,Yes,22.558,88.395,4.7,4,7,2026-06,Monsoon,9.1,Partial Waterlogging
+6,Beliaghata,East,KMC,KMC Ward,Yes,22.558,88.395,4.7,4,7,2026-07,Monsoon,12.6,Significant Waterlogging
+6,Beliaghata,East,KMC,KMC Ward,Yes,22.558,88.395,4.7,4,7,2026-08,Monsoon,9.1,Partial Waterlogging
+7,Park Circus,Central,KMC,KMC Ward,Yes,22.547,88.369,3.13,2.5,5.5,2025-09,Monsoon (retreating),8.8,Partial Waterlogging
+7,Park Circus,Central,KMC,KMC Ward,Yes,22.547,88.369,3.13,2.5,5.5,2025-10,Post-Monsoon,0,Normal
+7,Park Circus,Central,KMC,KMC Ward,Yes,22.547,88.369,3.13,2.5,5.5,2025-11,Post-Monsoon,5.3,Partial Waterlogging
+7,Park Circus,Central,KMC,KMC Ward,Yes,22.547,88.369,3.13,2.5,5.5,2025-12,Winter,0,Normal
+7,Park Circus,Central,KMC,KMC Ward,Yes,22.547,88.369,3.13,2.5,5.5,2026-01,Winter,0,Normal
+7,Park Circus,Central,KMC,KMC Ward,Yes,22.547,88.369,3.13,2.5,5.5,2026-02,Winter,0,Normal
+7,Park Circus,Central,KMC,KMC Ward,Yes,22.547,88.369,3.13,2.5,5.5,2026-03,Pre-Monsoon,0,Normal
+7,Park Circus,Central,KMC,KMC Ward,Yes,22.547,88.369,3.13,2.5,5.5,2026-04,Pre-Monsoon,0,Normal
+7,Park Circus,Central,KMC,KMC Ward,Yes,22.547,88.369,3.13,2.5,5.5,2026-05,Pre-Monsoon,0,Normal
+7,Park Circus,Central,KMC,KMC Ward,Yes,22.547,88.369,3.13,2.5,5.5,2026-06,Monsoon,8.8,Partial Waterlogging
+7,Park Circus,Central,KMC,KMC Ward,Yes,22.547,88.369,3.13,2.5,5.5,2026-07,Monsoon,8.8,Partial Waterlogging
+7,Park Circus,Central,KMC,KMC Ward,Yes,22.547,88.369,3.13,2.5,5.5,2026-08,Monsoon,8.8,Partial Waterlogging
+8,BBD Bagh (Esplanade),Central,KMC,KMC Ward,Yes,22.5697,88.351,0,2,4.9,2025-09,Monsoon (retreating),8.8,Partial Waterlogging
+8,BBD Bagh (Esplanade),Central,KMC,KMC Ward,Yes,22.5697,88.351,0,2,4.9,2025-10,Post-Monsoon,0,Normal
+8,BBD Bagh (Esplanade),Central,KMC,KMC Ward,Yes,22.5697,88.351,0,2,4.9,2025-11,Post-Monsoon,5.3,Partial Waterlogging
+8,BBD Bagh (Esplanade),Central,KMC,KMC Ward,Yes,22.5697,88.351,0,2,4.9,2025-12,Winter,0,Normal
+8,BBD Bagh (Esplanade),Central,KMC,KMC Ward,Yes,22.5697,88.351,0,2,4.9,2026-01,Winter,0,Normal
+8,BBD Bagh (Esplanade),Central,KMC,KMC Ward,Yes,22.5697,88.351,0,2,4.9,2026-02,Winter,0,Normal
+8,BBD Bagh (Esplanade),Central,KMC,KMC Ward,Yes,22.5697,88.351,0,2,4.9,2026-03,Pre-Monsoon,0,Normal
+8,BBD Bagh (Esplanade),Central,KMC,KMC Ward,Yes,22.5697,88.351,0,2,4.9,2026-04,Pre-Monsoon,0,Normal
+8,BBD Bagh (Esplanade),Central,KMC,KMC Ward,Yes,22.5697,88.351,0,2,4.9,2026-05,Pre-Monsoon,0,Normal
+8,BBD Bagh (Esplanade),Central,KMC,KMC Ward,Yes,22.5697,88.351,0,2,4.9,2026-06,Monsoon,5.3,Partial Waterlogging
+8,BBD Bagh (Esplanade),Central,KMC,KMC Ward,Yes,22.5697,88.351,0,2,4.9,2026-07,Monsoon,12.3,Significant Waterlogging
+8,BBD Bagh (Esplanade),Central,KMC,KMC Ward,Yes,22.5697,88.351,0,2,4.9,2026-08,Monsoon,8.8,Partial Waterlogging
+9,Tallah,North,KMC,KMC Ward,Yes,22.61,88.375,5.11,3.5,6.5,2025-09,Monsoon (retreating),5.6,Partial Waterlogging
+9,Tallah,North,KMC,KMC Ward,Yes,22.61,88.375,5.11,3.5,6.5,2025-10,Post-Monsoon,0,Normal
+9,Tallah,North,KMC,KMC Ward,Yes,22.61,88.375,5.11,3.5,6.5,2025-11,Post-Monsoon,5.6,Partial Waterlogging
+9,Tallah,North,KMC,KMC Ward,Yes,22.61,88.375,5.11,3.5,6.5,2025-12,Winter,0,Normal
+9,Tallah,North,KMC,KMC Ward,Yes,22.61,88.375,5.11,3.5,6.5,2026-01,Winter,0,Normal
+9,Tallah,North,KMC,KMC Ward,Yes,22.61,88.375,5.11,3.5,6.5,2026-02,Winter,0,Normal
+9,Tallah,North,KMC,KMC Ward,Yes,22.61,88.375,5.11,3.5,6.5,2026-03,Pre-Monsoon,0,Normal
+9,Tallah,North,KMC,KMC Ward,Yes,22.61,88.375,5.11,3.5,6.5,2026-04,Pre-Monsoon,0,Normal
+9,Tallah,North,KMC,KMC Ward,Yes,22.61,88.375,5.11,3.5,6.5,2026-05,Pre-Monsoon,0,Normal
+9,Tallah,North,KMC,KMC Ward,Yes,22.61,88.375,5.11,3.5,6.5,2026-06,Monsoon,5.6,Partial Waterlogging
+9,Tallah,North,KMC,KMC Ward,Yes,22.61,88.375,5.11,3.5,6.5,2026-07,Monsoon,9.1,Partial Waterlogging
+9,Tallah,North,KMC,KMC Ward,Yes,22.61,88.375,5.11,3.5,6.5,2026-08,Monsoon,9.1,Partial Waterlogging
+10,Shyambazar,North,KMC,KMC Ward,Yes,22.5975,88.3717,3.75,3,6.1,2025-09,Monsoon (retreating),0,Normal
+10,Shyambazar,North,KMC,KMC Ward,Yes,22.5975,88.3717,3.75,3,6.1,2025-10,Post-Monsoon,0,Normal
+10,Shyambazar,North,KMC,KMC Ward,Yes,22.5975,88.3717,3.75,3,6.1,2025-11,Post-Monsoon,0,Normal
+10,Shyambazar,North,KMC,KMC Ward,Yes,22.5975,88.3717,3.75,3,6.1,2025-12,Winter,0,Normal
+10,Shyambazar,North,KMC,KMC Ward,Yes,22.5975,88.3717,3.75,3,6.1,2026-01,Winter,0,Normal
+10,Shyambazar,North,KMC,KMC Ward,Yes,22.5975,88.3717,3.75,3,6.1,2026-02,Winter,0,Normal
+10,Shyambazar,North,KMC,KMC Ward,Yes,22.5975,88.3717,3.75,3,6.1,2026-03,Pre-Monsoon,0,Normal
+10,Shyambazar,North,KMC,KMC Ward,Yes,22.5975,88.3717,3.75,3,6.1,2026-04,Pre-Monsoon,0,Normal
+10,Shyambazar,North,KMC,KMC Ward,Yes,22.5975,88.3717,3.75,3,6.1,2026-05,Pre-Monsoon,0,Normal
+10,Shyambazar,North,KMC,KMC Ward,Yes,22.5975,88.3717,3.75,3,6.1,2026-06,Monsoon,5.3,Partial Waterlogging
+10,Shyambazar,North,KMC,KMC Ward,Yes,22.5975,88.3717,3.75,3,6.1,2026-07,Monsoon,8.8,Partial Waterlogging
+10,Shyambazar,North,KMC,KMC Ward,Yes,22.5975,88.3717,3.75,3,6.1,2026-08,Monsoon,5.3,Partial Waterlogging
+11,Dum Dum,North,KMC,KMC Ward,Yes,22.642,88.4197,10.69,8,9.9,2025-09,Monsoon (retreating),5,Partial Waterlogging
+11,Dum Dum,North,KMC,KMC Ward,Yes,22.642,88.4197,10.69,8,9.9,2025-10,Post-Monsoon,5,Partial Waterlogging
+11,Dum Dum,North,KMC,KMC Ward,Yes,22.642,88.4197,10.69,8,9.9,2025-11,Post-Monsoon,5,Partial Waterlogging
+11,Dum Dum,North,KMC,KMC Ward,Yes,22.642,88.4197,10.69,8,9.9,2025-12,Winter,0,Normal
+11,Dum Dum,North,KMC,KMC Ward,Yes,22.642,88.4197,10.69,8,9.9,2026-01,Winter,5,Partial Waterlogging
+11,Dum Dum,North,KMC,KMC Ward,Yes,22.642,88.4197,10.69,8,9.9,2026-02,Winter,0,Normal
+11,Dum Dum,North,KMC,KMC Ward,Yes,22.642,88.4197,10.69,8,9.9,2026-03,Pre-Monsoon,0,Normal
+11,Dum Dum,North,KMC,KMC Ward,Yes,22.642,88.4197,10.69,8,9.9,2026-04,Pre-Monsoon,0,Normal
+11,Dum Dum,North,KMC,KMC Ward,Yes,22.642,88.4197,10.69,8,9.9,2026-05,Pre-Monsoon,0,Normal
+11,Dum Dum,North,KMC,KMC Ward,Yes,22.642,88.4197,10.69,8,9.9,2026-06,Monsoon,5,Partial Waterlogging
+11,Dum Dum,North,KMC,KMC Ward,Yes,22.642,88.4197,10.69,8,9.9,2026-07,Monsoon,8.5,Partial Waterlogging
+11,Dum Dum,North,KMC,KMC Ward,Yes,22.642,88.4197,10.69,8,9.9,2026-08,Monsoon,5,Partial Waterlogging
+12,Salt Lake (Sector V),East,Bidhannagar Municipal Corporation,Bidhannagar Municipal Corporation Ward,No,22.585,88.42,7.29,15,13.6,2025-09,Monsoon (retreating),0,Normal
+12,Salt Lake (Sector V),East,Bidhannagar Municipal Corporation,Bidhannagar Municipal Corporation Ward,No,22.585,88.42,7.29,15,13.6,2025-10,Post-Monsoon,0,Normal
+12,Salt Lake (Sector V),East,Bidhannagar Municipal Corporation,Bidhannagar Municipal Corporation Ward,No,22.585,88.42,7.29,15,13.6,2025-11,Post-Monsoon,0,Normal
+12,Salt Lake (Sector V),East,Bidhannagar Municipal Corporation,Bidhannagar Municipal Corporation Ward,No,22.585,88.42,7.29,15,13.6,2025-12,Winter,4.4,Partial Waterlogging
+12,Salt Lake (Sector V),East,Bidhannagar Municipal Corporation,Bidhannagar Municipal Corporation Ward,No,22.585,88.42,7.29,15,13.6,2026-01,Winter,0,Normal
+12,Salt Lake (Sector V),East,Bidhannagar Municipal Corporation,Bidhannagar Municipal Corporation Ward,No,22.585,88.42,7.29,15,13.6,2026-02,Winter,0,Normal
+12,Salt Lake (Sector V),East,Bidhannagar Municipal Corporation,Bidhannagar Municipal Corporation Ward,No,22.585,88.42,7.29,15,13.6,2026-03,Pre-Monsoon,0,Normal
+12,Salt Lake (Sector V),East,Bidhannagar Municipal Corporation,Bidhannagar Municipal Corporation Ward,No,22.585,88.42,7.29,15,13.6,2026-04,Pre-Monsoon,0,Normal
+12,Salt Lake (Sector V),East,Bidhannagar Municipal Corporation,Bidhannagar Municipal Corporation Ward,No,22.585,88.42,7.29,15,13.6,2026-05,Pre-Monsoon,0,Normal
+12,Salt Lake (Sector V),East,Bidhannagar Municipal Corporation,Bidhannagar Municipal Corporation Ward,No,22.585,88.42,7.29,15,13.6,2026-06,Monsoon,4.4,Partial Waterlogging
+12,Salt Lake (Sector V),East,Bidhannagar Municipal Corporation,Bidhannagar Municipal Corporation Ward,No,22.585,88.42,7.29,15,13.6,2026-07,Monsoon,4.4,Partial Waterlogging
+12,Salt Lake (Sector V),East,Bidhannagar Municipal Corporation,Bidhannagar Municipal Corporation Ward,No,22.585,88.42,7.29,15,13.6,2026-08,Monsoon,4.4,Partial Waterlogging
+13,Rajarhat New Town,East,New Town Kolkata Development Authority (NKDA),NKDA Planning Area,No,22.62,88.47,13.44,20,15.7,2025-09,Monsoon (retreating),4.7,Partial Waterlogging
+13,Rajarhat New Town,East,New Town Kolkata Development Authority (NKDA),NKDA Planning Area,No,22.62,88.47,13.44,20,15.7,2025-10,Post-Monsoon,0,Normal
+13,Rajarhat New Town,East,New Town Kolkata Development Authority (NKDA),NKDA Planning Area,No,22.62,88.47,13.44,20,15.7,2025-11,Post-Monsoon,0,Normal
+13,Rajarhat New Town,East,New Town Kolkata Development Authority (NKDA),NKDA Planning Area,No,22.62,88.47,13.44,20,15.7,2025-12,Winter,0,Normal
+13,Rajarhat New Town,East,New Town Kolkata Development Authority (NKDA),NKDA Planning Area,No,22.62,88.47,13.44,20,15.7,2026-01,Winter,0,Normal
+13,Rajarhat New Town,East,New Town Kolkata Development Authority (NKDA),NKDA Planning Area,No,22.62,88.47,13.44,20,15.7,2026-02,Winter,0,Normal
+13,Rajarhat New Town,East,New Town Kolkata Development Authority (NKDA),NKDA Planning Area,No,22.62,88.47,13.44,20,15.7,2026-03,Pre-Monsoon,0,Normal
+13,Rajarhat New Town,East,New Town Kolkata Development Authority (NKDA),NKDA Planning Area,No,22.62,88.47,13.44,20,15.7,2026-04,Pre-Monsoon,0,Normal
+13,Rajarhat New Town,East,New Town Kolkata Development Authority (NKDA),NKDA Planning Area,No,22.62,88.47,13.44,20,15.7,2026-05,Pre-Monsoon,0,Normal
+13,Rajarhat New Town,East,New Town Kolkata Development Authority (NKDA),NKDA Planning Area,No,22.62,88.47,13.44,20,15.7,2026-06,Monsoon,4.7,Partial Waterlogging
+13,Rajarhat New Town,East,New Town Kolkata Development Authority (NKDA),NKDA Planning Area,No,22.62,88.47,13.44,20,15.7,2026-07,Monsoon,4.7,Partial Waterlogging
+13,Rajarhat New Town,East,New Town Kolkata Development Authority (NKDA),NKDA Planning Area,No,22.62,88.47,13.44,20,15.7,2026-08,Monsoon,4.7,Partial Waterlogging
+14,Garden Reach,South West,KMC,KMC Ward,Yes,22.533,88.307,6.09,7,9.3,2025-09,Monsoon (retreating),12.9,Significant Waterlogging
+14,Garden Reach,South West,KMC,KMC Ward,Yes,22.533,88.307,6.09,7,9.3,2025-10,Post-Monsoon,0,Normal
+14,Garden Reach,South West,KMC,KMC Ward,Yes,22.533,88.307,6.09,7,9.3,2025-11,Post-Monsoon,0,Normal
+14,Garden Reach,South West,KMC,KMC Ward,Yes,22.533,88.307,6.09,7,9.3,2025-12,Winter,0,Normal
+14,Garden Reach,South West,KMC,KMC Ward,Yes,22.533,88.307,6.09,7,9.3,2026-01,Winter,0,Normal
+14,Garden Reach,South West,KMC,KMC Ward,Yes,22.533,88.307,6.09,7,9.3,2026-02,Winter,0,Normal
+14,Garden Reach,South West,KMC,KMC Ward,Yes,22.533,88.307,6.09,7,9.3,2026-03,Pre-Monsoon,0,Normal
+14,Garden Reach,South West,KMC,KMC Ward,Yes,22.533,88.307,6.09,7,9.3,2026-04,Pre-Monsoon,0,Normal
+14,Garden Reach,South West,KMC,KMC Ward,Yes,22.533,88.307,6.09,7,9.3,2026-05,Pre-Monsoon,0,Normal
+14,Garden Reach,South West,KMC,KMC Ward,Yes,22.533,88.307,6.09,7,9.3,2026-06,Monsoon,16.4,Significant Waterlogging
+14,Garden Reach,South West,KMC,KMC Ward,Yes,22.533,88.307,6.09,7,9.3,2026-07,Monsoon,12.9,Significant Waterlogging
+14,Garden Reach,South West,KMC,KMC Ward,Yes,22.533,88.307,6.09,7,9.3,2026-08,Monsoon,16.4,Significant Waterlogging
+15,Alipore,South,KMC,KMC Ward,Yes,22.535,88.33,4.42,8.5,10.2,2025-09,Monsoon (retreating),4.7,Partial Waterlogging
+15,Alipore,South,KMC,KMC Ward,Yes,22.535,88.33,4.42,8.5,10.2,2025-10,Post-Monsoon,0,Normal
+15,Alipore,South,KMC,KMC Ward,Yes,22.535,88.33,4.42,8.5,10.2,2025-11,Post-Monsoon,4.7,Partial Waterlogging
+15,Alipore,South,KMC,KMC Ward,Yes,22.535,88.33,4.42,8.5,10.2,2025-12,Winter,0,Normal
+15,Alipore,South,KMC,KMC Ward,Yes,22.535,88.33,4.42,8.5,10.2,2026-01,Winter,0,Normal
+15,Alipore,South,KMC,KMC Ward,Yes,22.535,88.33,4.42,8.5,10.2,2026-02,Winter,4.7,Partial Waterlogging
+15,Alipore,South,KMC,KMC Ward,Yes,22.535,88.33,4.42,8.5,10.2,2026-03,Pre-Monsoon,0,Normal
+15,Alipore,South,KMC,KMC Ward,Yes,22.535,88.33,4.42,8.5,10.2,2026-04,Pre-Monsoon,0,Normal
+15,Alipore,South,KMC,KMC Ward,Yes,22.535,88.33,4.42,8.5,10.2,2026-05,Pre-Monsoon,0,Normal
+15,Alipore,South,KMC,KMC Ward,Yes,22.535,88.33,4.42,8.5,10.2,2026-06,Monsoon,4.7,Partial Waterlogging
+15,Alipore,South,KMC,KMC Ward,Yes,22.535,88.33,4.42,8.5,10.2,2026-07,Monsoon,4.7,Partial Waterlogging
+15,Alipore,South,KMC,KMC Ward,Yes,22.535,88.33,4.42,8.5,10.2,2026-08,Monsoon,0,Normal
+16,Ballygunge,South Central,KMC,KMC Ward,Yes,22.528,88.366,4.89,4.5,7.4,2025-09,Monsoon (retreating),4.7,Partial Waterlogging
+16,Ballygunge,South Central,KMC,KMC Ward,Yes,22.528,88.366,4.89,4.5,7.4,2025-10,Post-Monsoon,4.7,Partial Waterlogging
+16,Ballygunge,South Central,KMC,KMC Ward,Yes,22.528,88.366,4.89,4.5,7.4,2025-11,Post-Monsoon,0,Normal
+16,Ballygunge,South Central,KMC,KMC Ward,Yes,22.528,88.366,4.89,4.5,7.4,2025-12,Winter,0,Normal
+16,Ballygunge,South Central,KMC,KMC Ward,Yes,22.528,88.366,4.89,4.5,7.4,2026-01,Winter,0,Normal
+16,Ballygunge,South Central,KMC,KMC Ward,Yes,22.528,88.366,4.89,4.5,7.4,2026-02,Winter,0,Normal
+16,Ballygunge,South Central,KMC,KMC Ward,Yes,22.528,88.366,4.89,4.5,7.4,2026-03,Pre-Monsoon,0,Normal
+16,Ballygunge,South Central,KMC,KMC Ward,Yes,22.528,88.366,4.89,4.5,7.4,2026-04,Pre-Monsoon,0,Normal
+16,Ballygunge,South Central,KMC,KMC Ward,Yes,22.528,88.366,4.89,4.5,7.4,2026-05,Pre-Monsoon,4.7,Partial Waterlogging
+16,Ballygunge,South Central,KMC,KMC Ward,Yes,22.528,88.366,4.89,4.5,7.4,2026-06,Monsoon,4.7,Partial Waterlogging
+16,Ballygunge,South Central,KMC,KMC Ward,Yes,22.528,88.366,4.89,4.5,7.4,2026-07,Monsoon,4.7,Partial Waterlogging
+16,Ballygunge,South Central,KMC,KMC Ward,Yes,22.528,88.366,4.89,4.5,7.4,2026-08,Monsoon,4.7,Partial Waterlogging
+17,Maniktala,North Central,KMC,KMC Ward,Yes,22.585,88.38,3.43,3,6.1,2025-09,Monsoon (retreating),5.3,Partial Waterlogging
+17,Maniktala,North Central,KMC,KMC Ward,Yes,22.585,88.38,3.43,3,6.1,2025-10,Post-Monsoon,0,Normal
+17,Maniktala,North Central,KMC,KMC Ward,Yes,22.585,88.38,3.43,3,6.1,2025-11,Post-Monsoon,0,Normal
+17,Maniktala,North Central,KMC,KMC Ward,Yes,22.585,88.38,3.43,3,6.1,2025-12,Winter,0,Normal
+17,Maniktala,North Central,KMC,KMC Ward,Yes,22.585,88.38,3.43,3,6.1,2026-01,Winter,0,Normal
+17,Maniktala,North Central,KMC,KMC Ward,Yes,22.585,88.38,3.43,3,6.1,2026-02,Winter,0,Normal
+17,Maniktala,North Central,KMC,KMC Ward,Yes,22.585,88.38,3.43,3,6.1,2026-03,Pre-Monsoon,0,Normal
+17,Maniktala,North Central,KMC,KMC Ward,Yes,22.585,88.38,3.43,3,6.1,2026-04,Pre-Monsoon,0,Normal
+17,Maniktala,North Central,KMC,KMC Ward,Yes,22.585,88.38,3.43,3,6.1,2026-05,Pre-Monsoon,0,Normal
+17,Maniktala,North Central,KMC,KMC Ward,Yes,22.585,88.38,3.43,3,6.1,2026-06,Monsoon,5.3,Partial Waterlogging
+17,Maniktala,North Central,KMC,KMC Ward,Yes,22.585,88.38,3.43,3,6.1,2026-07,Monsoon,12.3,Significant Waterlogging
+17,Maniktala,North Central,KMC,KMC Ward,Yes,22.585,88.38,3.43,3,6.1,2026-08,Monsoon,8.8,Partial Waterlogging
+18,Entally,Central East,KMC,KMC Ward,Yes,22.562,88.37,2.13,2.5,5.5,2025-09,Monsoon (retreating),9.1,Partial Waterlogging
+18,Entally,Central East,KMC,KMC Ward,Yes,22.562,88.37,2.13,2.5,5.5,2025-10,Post-Monsoon,0,Normal
+18,Entally,Central East,KMC,KMC Ward,Yes,22.562,88.37,2.13,2.5,5.5,2025-11,Post-Monsoon,0,Normal
+18,Entally,Central East,KMC,KMC Ward,Yes,22.562,88.37,2.13,2.5,5.5,2025-12,Winter,0,Normal
+18,Entally,Central East,KMC,KMC Ward,Yes,22.562,88.37,2.13,2.5,5.5,2026-01,Winter,0,Normal
+18,Entally,Central East,KMC,KMC Ward,Yes,22.562,88.37,2.13,2.5,5.5,2026-02,Winter,5.6,Partial Waterlogging
+18,Entally,Central East,KMC,KMC Ward,Yes,22.562,88.37,2.13,2.5,5.5,2026-03,Pre-Monsoon,0,Normal
+18,Entally,Central East,KMC,KMC Ward,Yes,22.562,88.37,2.13,2.5,5.5,2026-04,Pre-Monsoon,0,Normal
+18,Entally,Central East,KMC,KMC Ward,Yes,22.562,88.37,2.13,2.5,5.5,2026-05,Pre-Monsoon,0,Normal
+18,Entally,Central East,KMC,KMC Ward,Yes,22.562,88.37,2.13,2.5,5.5,2026-06,Monsoon,9.1,Partial Waterlogging
+18,Entally,Central East,KMC,KMC Ward,Yes,22.562,88.37,2.13,2.5,5.5,2026-07,Monsoon,12.6,Significant Waterlogging
+18,Entally,Central East,KMC,KMC Ward,Yes,22.562,88.37,2.13,2.5,5.5,2026-08,Monsoon,12.6,Significant Waterlogging

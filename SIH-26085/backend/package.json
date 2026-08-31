@@ -1,0 +1,37 @@
+{
+  "name": "sih-backend",
+  "version": "1.0.0",
+  "description": "Urban Flood Nowcasting System - Authentication & Backend API",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js",
+    "prisma:generate": "prisma generate",
+    "prisma:push": "prisma db push",
+    "prisma:studio": "prisma studio"
+  },
+  "keywords": [
+    "fastify",
+    "prisma",
+    "neon",
+    "authentication"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fastify/cookie": "^11.1.2",
+    "@fastify/cors": "^11.3.0",
+    "@fastify/jwt": "^10.2.2",
+    "@fastify/session": "^11.1.2",
+    "bcryptjs": "^3.0.3",
+    "dotenv": "^17.4.2",
+    "fastify": "^5.12.1"
+  },
+  "devDependencies": {
+    "@prisma/client": "^6.4.1",
+    "nodemon": "^3.1.9",
+    "pino-pretty": "^13.1.3",
+    "prisma": "^6.4.1"
+  }
+}

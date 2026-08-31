@@ -1,0 +1,217 @@
+Ward_ID,Ward_Name,Zone,Administrative_Body,Latitude,Longitude,Landscape_Type,Water_Body_Proximity,Month,Season,Avg_Humidity_Percent,Citywide_Normal_Humidity_Percent,Deviation_from_Normal_Percent,Humidity_Category,Avg_Temperature_C_Reference,Heat_Index_C
+1,Behala,South West,KMC,22.4989,88.3145,Low-lying residential,Yes (Hooghly-adjacent),2025-09,Monsoon (retreating),86,83,3.7,Very High,29.4,37.4
+1,Behala,South West,KMC,22.4989,88.3145,Low-lying residential,Yes (Hooghly-adjacent),2025-10,Post-Monsoon,75.1,76,-1.2,High,27.5,30.2
+1,Behala,South West,KMC,22.4989,88.3145,Low-lying residential,Yes (Hooghly-adjacent),2025-11,Post-Monsoon,61.2,65,-5.9,Moderate,23.1,23.1
+1,Behala,South West,KMC,22.4989,88.3145,Low-lying residential,Yes (Hooghly-adjacent),2025-12,Winter,56.2,58,-3.1,Moderate,19.2,18.6
+1,Behala,South West,KMC,22.4989,88.3145,Low-lying residential,Yes (Hooghly-adjacent),2026-01,Winter,55.2,58,-4.9,Moderate,20,19.5
+1,Behala,South West,KMC,22.4989,88.3145,Low-lying residential,Yes (Hooghly-adjacent),2026-02,Winter,55.8,57,-2.1,Moderate,23.2,23.1
+1,Behala,South West,KMC,22.4989,88.3145,Low-lying residential,Yes (Hooghly-adjacent),2026-03,Pre-Monsoon,55.9,58,-3.6,Moderate,27,27.8
+1,Behala,South West,KMC,22.4989,88.3145,Low-lying residential,Yes (Hooghly-adjacent),2026-04,Pre-Monsoon,62.3,65,-4.1,Moderate,28.8,31.1
+1,Behala,South West,KMC,22.4989,88.3145,Low-lying residential,Yes (Hooghly-adjacent),2026-05,Pre-Monsoon,69.4,70,-0.9,High,29.9,34.7
+1,Behala,South West,KMC,22.4989,88.3145,Low-lying residential,Yes (Hooghly-adjacent),2026-06,Monsoon,79.7,79,0.9,High,30.6,39.6
+1,Behala,South West,KMC,22.4989,88.3145,Low-lying residential,Yes (Hooghly-adjacent),2026-07,Monsoon,85.2,84,1.5,Very High,28.6,34.7
+1,Behala,South West,KMC,22.4989,88.3145,Low-lying residential,Yes (Hooghly-adjacent),2026-08,Monsoon,85.7,85,0.8,Very High,28.8,35.4
+2,Tollygunge,South,KMC,22.5039,88.3423,Urban residential,No,2025-09,Monsoon (retreating),80.6,83,-2.9,Very High,28.3,33.1
+2,Tollygunge,South,KMC,22.5039,88.3423,Urban residential,No,2025-10,Post-Monsoon,76.7,76,1,High,27.6,30.7
+2,Tollygunge,South,KMC,22.5039,88.3423,Urban residential,No,2025-11,Post-Monsoon,68.1,65,4.8,High,23,23.1
+2,Tollygunge,South,KMC,22.5039,88.3423,Urban residential,No,2025-12,Winter,58.2,58,0.3,Moderate,18.8,18.3
+2,Tollygunge,South,KMC,22.5039,88.3423,Urban residential,No,2026-01,Winter,57,58,-1.8,Moderate,20.9,20.5
+2,Tollygunge,South,KMC,22.5039,88.3423,Urban residential,No,2026-02,Winter,55.9,57,-1.9,Moderate,23.2,23
+2,Tollygunge,South,KMC,22.5039,88.3423,Urban residential,No,2026-03,Pre-Monsoon,57.3,58,-1.1,Moderate,26.6,26.8
+2,Tollygunge,South,KMC,22.5039,88.3423,Urban residential,No,2026-04,Pre-Monsoon,65,65,0,High,30.2,34.2
+2,Tollygunge,South,KMC,22.5039,88.3423,Urban residential,No,2026-05,Pre-Monsoon,68.4,70,-2.3,High,29.8,34.2
+2,Tollygunge,South,KMC,22.5039,88.3423,Urban residential,No,2026-06,Monsoon,79.5,79,0.7,High,30.1,37.8
+2,Tollygunge,South,KMC,22.5039,88.3423,Urban residential,No,2026-07,Monsoon,88.9,84,5.9,Very High,29,36.9
+2,Tollygunge,South,KMC,22.5039,88.3423,Urban residential,No,2026-08,Monsoon,87.3,85,2.7,Very High,28.3,34.2
+3,Jadavpur,South,KMC,22.4994,88.3714,Urban/institutional,No,2025-09,Monsoon (retreating),80.2,83,-3.4,Very High,29.8,37.2
+3,Jadavpur,South,KMC,22.4994,88.3714,Urban/institutional,No,2025-10,Post-Monsoon,76.2,76,0.3,High,26.7,27.4
+3,Jadavpur,South,KMC,22.4994,88.3714,Urban/institutional,No,2025-11,Post-Monsoon,65.9,65,1.5,High,22.4,22.4
+3,Jadavpur,South,KMC,22.4994,88.3714,Urban/institutional,No,2025-12,Winter,59.6,58,2.8,Moderate,18.8,18.3
+3,Jadavpur,South,KMC,22.4994,88.3714,Urban/institutional,No,2026-01,Winter,58.4,58,0.6,Moderate,19,18.5
+3,Jadavpur,South,KMC,22.4994,88.3714,Urban/institutional,No,2026-02,Winter,58,57,1.8,Moderate,22.2,22
+3,Jadavpur,South,KMC,22.4994,88.3714,Urban/institutional,No,2026-03,Pre-Monsoon,58.5,58,0.8,Moderate,26.6,26.8
+3,Jadavpur,South,KMC,22.4994,88.3714,Urban/institutional,No,2026-04,Pre-Monsoon,62.6,65,-3.7,Moderate,30.3,34
+3,Jadavpur,South,KMC,22.4994,88.3714,Urban/institutional,No,2026-05,Pre-Monsoon,68.4,70,-2.3,High,30.7,36.3
+3,Jadavpur,South,KMC,22.4994,88.3714,Urban/institutional,No,2026-06,Monsoon,78.5,79,-0.6,High,31.1,40.8
+3,Jadavpur,South,KMC,22.4994,88.3714,Urban/institutional,No,2026-07,Monsoon,84.7,84,0.8,Very High,29,35.7
+3,Jadavpur,South,KMC,22.4994,88.3714,Urban/institutional,No,2026-08,Monsoon,84.5,85,-0.6,Very High,29.9,38.5
+4,Kasba,South East,KMC,22.517,88.3833,"Low-lying, wetland-adjacent",Yes (East Kolkata Wetlands),2025-09,Monsoon (retreating),84,83,1.2,Very High,28.4,33.7
+4,Kasba,South East,KMC,22.517,88.3833,"Low-lying, wetland-adjacent",Yes (East Kolkata Wetlands),2025-10,Post-Monsoon,74.3,76,-2.2,High,27,29.1
+4,Kasba,South East,KMC,22.517,88.3833,"Low-lying, wetland-adjacent",Yes (East Kolkata Wetlands),2025-11,Post-Monsoon,62.5,65,-3.8,Moderate,23.1,23.1
+4,Kasba,South East,KMC,22.517,88.3833,"Low-lying, wetland-adjacent",Yes (East Kolkata Wetlands),2025-12,Winter,58.1,58,0.2,Moderate,19.1,18.6
+4,Kasba,South East,KMC,22.517,88.3833,"Low-lying, wetland-adjacent",Yes (East Kolkata Wetlands),2026-01,Winter,60.1,58,3.6,Moderate,20.6,20.3
+4,Kasba,South East,KMC,22.517,88.3833,"Low-lying, wetland-adjacent",Yes (East Kolkata Wetlands),2026-02,Winter,58,57,1.8,Moderate,23.3,23.2
+4,Kasba,South East,KMC,22.517,88.3833,"Low-lying, wetland-adjacent",Yes (East Kolkata Wetlands),2026-03,Pre-Monsoon,59.3,58,2.2,Moderate,27.6,28.8
+4,Kasba,South East,KMC,22.517,88.3833,"Low-lying, wetland-adjacent",Yes (East Kolkata Wetlands),2026-04,Pre-Monsoon,64,65,-1.5,Moderate,29.9,33.4
+4,Kasba,South East,KMC,22.517,88.3833,"Low-lying, wetland-adjacent",Yes (East Kolkata Wetlands),2026-05,Pre-Monsoon,66.8,70,-4.6,High,30.4,35.2
+4,Kasba,South East,KMC,22.517,88.3833,"Low-lying, wetland-adjacent",Yes (East Kolkata Wetlands),2026-06,Monsoon,77.6,79,-1.8,High,29.4,35.2
+4,Kasba,South East,KMC,22.517,88.3833,"Low-lying, wetland-adjacent",Yes (East Kolkata Wetlands),2026-07,Monsoon,82.7,84,-1.6,Very High,29,35.4
+4,Kasba,South East,KMC,22.517,88.3833,"Low-lying, wetland-adjacent",Yes (East Kolkata Wetlands),2026-08,Monsoon,83.7,85,-1.6,Very High,29.1,35.9
+5,Topsia,East,KMC,22.539,88.39,"Low-lying, wetland-adjacent",Yes (East Kolkata Wetlands),2025-09,Monsoon (retreating),84.7,83,2.1,Very High,29.3,36.8
+5,Topsia,East,KMC,22.539,88.39,"Low-lying, wetland-adjacent",Yes (East Kolkata Wetlands),2025-10,Post-Monsoon,79.5,76,4.6,High,26.6,27.4
+5,Topsia,East,KMC,22.539,88.39,"Low-lying, wetland-adjacent",Yes (East Kolkata Wetlands),2025-11,Post-Monsoon,67.1,65,3.2,High,24.3,24.5
+5,Topsia,East,KMC,22.539,88.39,"Low-lying, wetland-adjacent",Yes (East Kolkata Wetlands),2025-12,Winter,58.9,58,1.5,Moderate,18.6,18
+5,Topsia,East,KMC,22.539,88.39,"Low-lying, wetland-adjacent",Yes (East Kolkata Wetlands),2026-01,Winter,56,58,-3.5,Moderate,18.1,17.4
+5,Topsia,East,KMC,22.539,88.39,"Low-lying, wetland-adjacent",Yes (East Kolkata Wetlands),2026-02,Winter,56.1,57,-1.5,Moderate,22.1,21.9
+5,Topsia,East,KMC,22.539,88.39,"Low-lying, wetland-adjacent",Yes (East Kolkata Wetlands),2026-03,Pre-Monsoon,58,58,0,Moderate,27.7,28.8
+5,Topsia,East,KMC,22.539,88.39,"Low-lying, wetland-adjacent",Yes (East Kolkata Wetlands),2026-04,Pre-Monsoon,65.1,65,0.2,High,29.6,33.1
+5,Topsia,East,KMC,22.539,88.39,"Low-lying, wetland-adjacent",Yes (East Kolkata Wetlands),2026-05,Pre-Monsoon,67.5,70,-3.5,High,31,36.7
+5,Topsia,East,KMC,22.539,88.39,"Low-lying, wetland-adjacent",Yes (East Kolkata Wetlands),2026-06,Monsoon,79.6,79,0.7,High,30.4,38.6
+5,Topsia,East,KMC,22.539,88.39,"Low-lying, wetland-adjacent",Yes (East Kolkata Wetlands),2026-07,Monsoon,85.7,84,2,Very High,28.6,34.9
+5,Topsia,East,KMC,22.539,88.39,"Low-lying, wetland-adjacent",Yes (East Kolkata Wetlands),2026-08,Monsoon,86.6,85,1.9,Very High,29.2,36.9
+6,Beliaghata,East,KMC,22.558,88.395,"Low-lying, canal-side",Yes (canal),2025-09,Monsoon (retreating),84.2,83,1.5,Very High,29.4,37.1
+6,Beliaghata,East,KMC,22.558,88.395,"Low-lying, canal-side",Yes (canal),2025-10,Post-Monsoon,77.1,76,1.4,High,26.6,27.4
+6,Beliaghata,East,KMC,22.558,88.395,"Low-lying, canal-side",Yes (canal),2025-11,Post-Monsoon,66.6,65,2.5,High,23.5,23.6
+6,Beliaghata,East,KMC,22.558,88.395,"Low-lying, canal-side",Yes (canal),2025-12,Winter,58.6,58,1.1,Moderate,18.8,18.3
+6,Beliaghata,East,KMC,22.558,88.395,"Low-lying, canal-side",Yes (canal),2026-01,Winter,62.2,58,7.2,Moderate,19.5,19.1
+6,Beliaghata,East,KMC,22.558,88.395,"Low-lying, canal-side",Yes (canal),2026-02,Winter,58.2,57,2.2,Moderate,23.5,23.4
+6,Beliaghata,East,KMC,22.558,88.395,"Low-lying, canal-side",Yes (canal),2026-03,Pre-Monsoon,56.6,58,-2.3,Moderate,27,27.9
+6,Beliaghata,East,KMC,22.558,88.395,"Low-lying, canal-side",Yes (canal),2026-04,Pre-Monsoon,65.8,65,1.3,High,29.8,33.6
+6,Beliaghata,East,KMC,22.558,88.395,"Low-lying, canal-side",Yes (canal),2026-05,Pre-Monsoon,69,70,-1.4,High,30.1,35.1
+6,Beliaghata,East,KMC,22.558,88.395,"Low-lying, canal-side",Yes (canal),2026-06,Monsoon,77.6,79,-1.8,High,29.2,34.6
+6,Beliaghata,East,KMC,22.558,88.395,"Low-lying, canal-side",Yes (canal),2026-07,Monsoon,83.7,84,-0.4,Very High,29.5,37.2
+6,Beliaghata,East,KMC,22.558,88.395,"Low-lying, canal-side",Yes (canal),2026-08,Monsoon,85.6,85,0.8,Very High,28.8,35.5
+7,Park Circus,Central,KMC,22.547,88.369,Dense urban,No,2025-09,Monsoon (retreating),83.8,83,1,Very High,28.9,35.4
+7,Park Circus,Central,KMC,22.547,88.369,Dense urban,No,2025-10,Post-Monsoon,76.2,76,0.3,High,27,29.4
+7,Park Circus,Central,KMC,22.547,88.369,Dense urban,No,2025-11,Post-Monsoon,66.9,65,3,High,23.9,24.1
+7,Park Circus,Central,KMC,22.547,88.369,Dense urban,No,2025-12,Winter,62.4,58,7.6,Moderate,19.1,18.7
+7,Park Circus,Central,KMC,22.547,88.369,Dense urban,No,2026-01,Winter,56.9,58,-1.8,Moderate,18.7,18.1
+7,Park Circus,Central,KMC,22.547,88.369,Dense urban,No,2026-02,Winter,58.9,57,3.3,Moderate,24.1,24.1
+7,Park Circus,Central,KMC,22.547,88.369,Dense urban,No,2026-03,Pre-Monsoon,61.7,58,6.3,Moderate,26.2,26.5
+7,Park Circus,Central,KMC,22.547,88.369,Dense urban,No,2026-04,Pre-Monsoon,64.8,65,-0.4,Moderate,30.8,35.7
+7,Park Circus,Central,KMC,22.547,88.369,Dense urban,No,2026-05,Pre-Monsoon,70.1,70,0.1,High,30,35.1
+7,Park Circus,Central,KMC,22.547,88.369,Dense urban,No,2026-06,Monsoon,79.2,79,0.3,High,29.9,37.2
+7,Park Circus,Central,KMC,22.547,88.369,Dense urban,No,2026-07,Monsoon,86.6,84,3,Very High,28.1,33.4
+7,Park Circus,Central,KMC,22.547,88.369,Dense urban,No,2026-08,Monsoon,87.4,85,2.8,Very High,29.1,36.7
+8,BBD Bagh (Esplanade),Central,KMC,22.5697,88.351,Historic urban core,Yes (Hooghly-adjacent),2025-09,Monsoon (retreating),84.9,83,2.3,Very High,28.9,35.4
+8,BBD Bagh (Esplanade),Central,KMC,22.5697,88.351,Historic urban core,Yes (Hooghly-adjacent),2025-10,Post-Monsoon,78.1,76,2.8,High,27.4,30.5
+8,BBD Bagh (Esplanade),Central,KMC,22.5697,88.351,Historic urban core,Yes (Hooghly-adjacent),2025-11,Post-Monsoon,66.4,65,2.2,High,22.8,22.9
+8,BBD Bagh (Esplanade),Central,KMC,22.5697,88.351,Historic urban core,Yes (Hooghly-adjacent),2025-12,Winter,54.6,58,-5.9,Moderate,18.2,17.5
+8,BBD Bagh (Esplanade),Central,KMC,22.5697,88.351,Historic urban core,Yes (Hooghly-adjacent),2026-01,Winter,57.8,58,-0.3,Moderate,18.8,18.2
+8,BBD Bagh (Esplanade),Central,KMC,22.5697,88.351,Historic urban core,Yes (Hooghly-adjacent),2026-02,Winter,56,57,-1.8,Moderate,22.4,22.2
+8,BBD Bagh (Esplanade),Central,KMC,22.5697,88.351,Historic urban core,Yes (Hooghly-adjacent),2026-03,Pre-Monsoon,59,58,1.7,Moderate,26.4,26.6
+8,BBD Bagh (Esplanade),Central,KMC,22.5697,88.351,Historic urban core,Yes (Hooghly-adjacent),2026-04,Pre-Monsoon,63.9,65,-1.7,Moderate,29.4,32.4
+8,BBD Bagh (Esplanade),Central,KMC,22.5697,88.351,Historic urban core,Yes (Hooghly-adjacent),2026-05,Pre-Monsoon,70.4,70,0.6,High,29.6,34.1
+8,BBD Bagh (Esplanade),Central,KMC,22.5697,88.351,Historic urban core,Yes (Hooghly-adjacent),2026-06,Monsoon,77.9,79,-1.3,High,30.5,38.5
+8,BBD Bagh (Esplanade),Central,KMC,22.5697,88.351,Historic urban core,Yes (Hooghly-adjacent),2026-07,Monsoon,86.7,84,3.3,Very High,28.1,33.5
+8,BBD Bagh (Esplanade),Central,KMC,22.5697,88.351,Historic urban core,Yes (Hooghly-adjacent),2026-08,Monsoon,91.2,85,7.2,Very High,29.2,38
+9,Tallah,North,KMC,22.61,88.375,"Riverside, low-lying",Yes (Hooghly-adjacent),2025-09,Monsoon (retreating),83.4,83,0.5,Very High,28,32.7
+9,Tallah,North,KMC,22.61,88.375,"Riverside, low-lying",Yes (Hooghly-adjacent),2025-10,Post-Monsoon,79.4,76,4.4,High,26.4,27.1
+9,Tallah,North,KMC,22.61,88.375,"Riverside, low-lying",Yes (Hooghly-adjacent),2025-11,Post-Monsoon,63.3,65,-2.7,Moderate,23,23.1
+9,Tallah,North,KMC,22.61,88.375,"Riverside, low-lying",Yes (Hooghly-adjacent),2025-12,Winter,56.2,58,-3,Moderate,18.9,18.3
+9,Tallah,North,KMC,22.61,88.375,"Riverside, low-lying",Yes (Hooghly-adjacent),2026-01,Winter,59.1,58,1.9,Moderate,19.2,18.7
+9,Tallah,North,KMC,22.61,88.375,"Riverside, low-lying",Yes (Hooghly-adjacent),2026-02,Winter,57.1,57,0.2,Moderate,22.5,22.3
+9,Tallah,North,KMC,22.61,88.375,"Riverside, low-lying",Yes (Hooghly-adjacent),2026-03,Pre-Monsoon,56.2,58,-3.1,Moderate,26.9,27.7
+9,Tallah,North,KMC,22.61,88.375,"Riverside, low-lying",Yes (Hooghly-adjacent),2026-04,Pre-Monsoon,65.2,65,0.3,High,29.4,32.7
+9,Tallah,North,KMC,22.61,88.375,"Riverside, low-lying",Yes (Hooghly-adjacent),2026-05,Pre-Monsoon,71.1,70,1.6,High,29.6,34.3
+9,Tallah,North,KMC,22.61,88.375,"Riverside, low-lying",Yes (Hooghly-adjacent),2026-06,Monsoon,79.5,79,0.7,High,30,37.6
+9,Tallah,North,KMC,22.61,88.375,"Riverside, low-lying",Yes (Hooghly-adjacent),2026-07,Monsoon,81.6,84,-2.9,Very High,29,35
+9,Tallah,North,KMC,22.61,88.375,"Riverside, low-lying",Yes (Hooghly-adjacent),2026-08,Monsoon,87,85,2.4,Very High,28.8,35.6
+10,Shyambazar,North,KMC,22.5975,88.3717,Dense urban,No,2025-09,Monsoon (retreating),85.9,83,3.5,Very High,29.3,37.1
+10,Shyambazar,North,KMC,22.5975,88.3717,Dense urban,No,2025-10,Post-Monsoon,76.7,76,1,High,26.9,29.2
+10,Shyambazar,North,KMC,22.5975,88.3717,Dense urban,No,2025-11,Post-Monsoon,65.5,65,0.8,High,23.7,23.8
+10,Shyambazar,North,KMC,22.5975,88.3717,Dense urban,No,2025-12,Winter,58.8,58,1.4,Moderate,18.7,18.2
+10,Shyambazar,North,KMC,22.5975,88.3717,Dense urban,No,2026-01,Winter,57.3,58,-1.1,Moderate,20.5,20.1
+10,Shyambazar,North,KMC,22.5975,88.3717,Dense urban,No,2026-02,Winter,53.3,57,-6.6,Moderate,22.4,22.1
+10,Shyambazar,North,KMC,22.5975,88.3717,Dense urban,No,2026-03,Pre-Monsoon,57.6,58,-0.8,Moderate,27.2,28.1
+10,Shyambazar,North,KMC,22.5975,88.3717,Dense urban,No,2026-04,Pre-Monsoon,62,65,-4.5,Moderate,30.5,34.2
+10,Shyambazar,North,KMC,22.5975,88.3717,Dense urban,No,2026-05,Pre-Monsoon,74.5,70,6.5,High,30.4,37.2
+10,Shyambazar,North,KMC,22.5975,88.3717,Dense urban,No,2026-06,Monsoon,80.7,79,2.1,Very High,29.5,36.3
+10,Shyambazar,North,KMC,22.5975,88.3717,Dense urban,No,2026-07,Monsoon,84.7,84,0.8,Very High,29.3,36.7
+10,Shyambazar,North,KMC,22.5975,88.3717,Dense urban,No,2026-08,Monsoon,84.1,85,-1,Very High,28.4,33.9
+11,Dum Dum,North,KMC,22.642,88.4197,"Suburban, airport-adjacent",No,2025-09,Monsoon (retreating),85.7,83,3.3,Very High,29.5,37.7
+11,Dum Dum,North,KMC,22.642,88.4197,"Suburban, airport-adjacent",No,2025-10,Post-Monsoon,72.4,76,-4.7,High,26.3,26.8
+11,Dum Dum,North,KMC,22.642,88.4197,"Suburban, airport-adjacent",No,2025-11,Post-Monsoon,62.7,65,-3.5,Moderate,23.2,23.2
+11,Dum Dum,North,KMC,22.642,88.4197,"Suburban, airport-adjacent",No,2025-12,Winter,59,58,1.7,Moderate,19.4,19
+11,Dum Dum,North,KMC,22.642,88.4197,"Suburban, airport-adjacent",No,2026-01,Winter,60.7,58,4.6,Moderate,21.1,20.9
+11,Dum Dum,North,KMC,22.642,88.4197,"Suburban, airport-adjacent",No,2026-02,Winter,57.1,57,0.2,Moderate,22.9,22.8
+11,Dum Dum,North,KMC,22.642,88.4197,"Suburban, airport-adjacent",No,2026-03,Pre-Monsoon,57.1,58,-1.5,Moderate,26.9,27.8
+11,Dum Dum,North,KMC,22.642,88.4197,"Suburban, airport-adjacent",No,2026-04,Pre-Monsoon,62.4,65,-4,Moderate,30,33.4
+11,Dum Dum,North,KMC,22.642,88.4197,"Suburban, airport-adjacent",No,2026-05,Pre-Monsoon,67,70,-4.3,High,29.8,34
+11,Dum Dum,North,KMC,22.642,88.4197,"Suburban, airport-adjacent",No,2026-06,Monsoon,78.5,79,-0.6,High,30,37.2
+11,Dum Dum,North,KMC,22.642,88.4197,"Suburban, airport-adjacent",No,2026-07,Monsoon,81.8,84,-2.6,Very High,28.8,34.7
+11,Dum Dum,North,KMC,22.642,88.4197,"Suburban, airport-adjacent",No,2026-08,Monsoon,85.4,85,0.5,Very High,29,35.9
+12,Salt Lake (Sector V),East,Bidhannagar Municipal Corporation,22.585,88.42,Planned township,No,2025-09,Monsoon (retreating),81.9,83,-1.3,Very High,29,35.1
+12,Salt Lake (Sector V),East,Bidhannagar Municipal Corporation,22.585,88.42,Planned township,No,2025-10,Post-Monsoon,70.7,76,-7,High,27.9,30.6
+12,Salt Lake (Sector V),East,Bidhannagar Municipal Corporation,22.585,88.42,Planned township,No,2025-11,Post-Monsoon,64.3,65,-1.1,Moderate,22.8,22.8
+12,Salt Lake (Sector V),East,Bidhannagar Municipal Corporation,22.585,88.42,Planned township,No,2025-12,Winter,59.9,58,3.2,Moderate,20.1,19.7
+12,Salt Lake (Sector V),East,Bidhannagar Municipal Corporation,22.585,88.42,Planned township,No,2026-01,Winter,59,58,1.7,Moderate,19.7,19.2
+12,Salt Lake (Sector V),East,Bidhannagar Municipal Corporation,22.585,88.42,Planned township,No,2026-02,Winter,58.4,57,2.5,Moderate,22.8,22.6
+12,Salt Lake (Sector V),East,Bidhannagar Municipal Corporation,22.585,88.42,Planned township,No,2026-03,Pre-Monsoon,59.2,58,2.1,Moderate,26.4,26.6
+12,Salt Lake (Sector V),East,Bidhannagar Municipal Corporation,22.585,88.42,Planned township,No,2026-04,Pre-Monsoon,66.8,65,2.8,High,29.2,32.7
+12,Salt Lake (Sector V),East,Bidhannagar Municipal Corporation,22.585,88.42,Planned township,No,2026-05,Pre-Monsoon,67.2,70,-4,High,29.6,33.4
+12,Salt Lake (Sector V),East,Bidhannagar Municipal Corporation,22.585,88.42,Planned township,No,2026-06,Monsoon,74.8,79,-5.3,High,31.1,39.3
+12,Salt Lake (Sector V),East,Bidhannagar Municipal Corporation,22.585,88.42,Planned township,No,2026-07,Monsoon,84.8,84,1,Very High,28.7,34.8
+12,Salt Lake (Sector V),East,Bidhannagar Municipal Corporation,22.585,88.42,Planned township,No,2026-08,Monsoon,84.3,85,-0.9,Very High,29.1,36
+13,Rajarhat New Town,East,New Town Kolkata Development Authority (NKDA),22.62,88.47,"Newly developed, reclaimed wetland",Yes (reclaimed wetland),2025-09,Monsoon (retreating),84.5,83,1.8,Very High,28.2,33.4
+13,Rajarhat New Town,East,New Town Kolkata Development Authority (NKDA),22.62,88.47,"Newly developed, reclaimed wetland",Yes (reclaimed wetland),2025-10,Post-Monsoon,74.9,76,-1.4,High,27.2,29.7
+13,Rajarhat New Town,East,New Town Kolkata Development Authority (NKDA),22.62,88.47,"Newly developed, reclaimed wetland",Yes (reclaimed wetland),2025-11,Post-Monsoon,61.6,65,-5.2,Moderate,23.2,23.2
+13,Rajarhat New Town,East,New Town Kolkata Development Authority (NKDA),22.62,88.47,"Newly developed, reclaimed wetland",Yes (reclaimed wetland),2025-12,Winter,61.3,58,5.7,Moderate,19.6,19.2
+13,Rajarhat New Town,East,New Town Kolkata Development Authority (NKDA),22.62,88.47,"Newly developed, reclaimed wetland",Yes (reclaimed wetland),2026-01,Winter,58.1,58,0.1,Moderate,19.6,19.2
+13,Rajarhat New Town,East,New Town Kolkata Development Authority (NKDA),22.62,88.47,"Newly developed, reclaimed wetland",Yes (reclaimed wetland),2026-02,Winter,55.8,57,-2.1,Moderate,22.5,22.3
+13,Rajarhat New Town,East,New Town Kolkata Development Authority (NKDA),22.62,88.47,"Newly developed, reclaimed wetland",Yes (reclaimed wetland),2026-03,Pre-Monsoon,60.1,58,3.6,Moderate,26.4,26.7
+13,Rajarhat New Town,East,New Town Kolkata Development Authority (NKDA),22.62,88.47,"Newly developed, reclaimed wetland",Yes (reclaimed wetland),2026-04,Pre-Monsoon,63.3,65,-2.6,Moderate,30.1,33.7
+13,Rajarhat New Town,East,New Town Kolkata Development Authority (NKDA),22.62,88.47,"Newly developed, reclaimed wetland",Yes (reclaimed wetland),2026-05,Pre-Monsoon,69.8,70,-0.3,High,31.5,39
+13,Rajarhat New Town,East,New Town Kolkata Development Authority (NKDA),22.62,88.47,"Newly developed, reclaimed wetland",Yes (reclaimed wetland),2026-06,Monsoon,77.7,79,-1.6,High,31.1,40.3
+13,Rajarhat New Town,East,New Town Kolkata Development Authority (NKDA),22.62,88.47,"Newly developed, reclaimed wetland",Yes (reclaimed wetland),2026-07,Monsoon,85.9,84,2.3,Very High,29.4,37.3
+13,Rajarhat New Town,East,New Town Kolkata Development Authority (NKDA),22.62,88.47,"Newly developed, reclaimed wetland",Yes (reclaimed wetland),2026-08,Monsoon,84.9,85,-0.2,Very High,28.9,35.4
+14,Garden Reach,South West,KMC,22.533,88.307,"Riverside, industrial",Yes (Hooghly-adjacent),2025-09,Monsoon (retreating),84.2,83,1.5,Very High,29.2,36.4
+14,Garden Reach,South West,KMC,22.533,88.307,"Riverside, industrial",Yes (Hooghly-adjacent),2025-10,Post-Monsoon,75.9,76,-0.2,High,27.3,29.9
+14,Garden Reach,South West,KMC,22.533,88.307,"Riverside, industrial",Yes (Hooghly-adjacent),2025-11,Post-Monsoon,62.4,65,-3.9,Moderate,23.2,23.2
+14,Garden Reach,South West,KMC,22.533,88.307,"Riverside, industrial",Yes (Hooghly-adjacent),2025-12,Winter,58.1,58,0.1,Moderate,19.4,18.9
+14,Garden Reach,South West,KMC,22.533,88.307,"Riverside, industrial",Yes (Hooghly-adjacent),2026-01,Winter,57.1,58,-1.6,Moderate,20.1,19.6
+14,Garden Reach,South West,KMC,22.533,88.307,"Riverside, industrial",Yes (Hooghly-adjacent),2026-02,Winter,59.5,57,4.4,Moderate,22.7,22.6
+14,Garden Reach,South West,KMC,22.533,88.307,"Riverside, industrial",Yes (Hooghly-adjacent),2026-03,Pre-Monsoon,58.4,58,0.7,Moderate,27.9,29.1
+14,Garden Reach,South West,KMC,22.533,88.307,"Riverside, industrial",Yes (Hooghly-adjacent),2026-04,Pre-Monsoon,65.2,65,0.3,High,30.5,35.1
+14,Garden Reach,South West,KMC,22.533,88.307,"Riverside, industrial",Yes (Hooghly-adjacent),2026-05,Pre-Monsoon,69.3,70,-1,High,31.4,38.4
+14,Garden Reach,South West,KMC,22.533,88.307,"Riverside, industrial",Yes (Hooghly-adjacent),2026-06,Monsoon,78.2,79,-1.1,High,29.7,36.2
+14,Garden Reach,South West,KMC,22.533,88.307,"Riverside, industrial",Yes (Hooghly-adjacent),2026-07,Monsoon,82.5,84,-1.8,Very High,28.4,33.6
+14,Garden Reach,South West,KMC,22.533,88.307,"Riverside, industrial",Yes (Hooghly-adjacent),2026-08,Monsoon,87,85,2.3,Very High,28.4,34.4
+15,Alipore,South,KMC,22.535,88.33,"Green/institutional, elevated",No,2025-09,Monsoon (retreating),83.8,83,0.9,Very High,28.3,33.6
+15,Alipore,South,KMC,22.535,88.33,"Green/institutional, elevated",No,2025-10,Post-Monsoon,74.7,76,-1.7,High,28.5,32.4
+15,Alipore,South,KMC,22.535,88.33,"Green/institutional, elevated",No,2025-11,Post-Monsoon,67.4,65,3.7,High,22.6,22.7
+15,Alipore,South,KMC,22.535,88.33,"Green/institutional, elevated",No,2025-12,Winter,56.9,58,-1.9,Moderate,19.3,18.8
+15,Alipore,South,KMC,22.535,88.33,"Green/institutional, elevated",No,2026-01,Winter,61.6,58,6.2,Moderate,20.9,20.7
+15,Alipore,South,KMC,22.535,88.33,"Green/institutional, elevated",No,2026-02,Winter,58.3,57,2.3,Moderate,23.2,23.1
+15,Alipore,South,KMC,22.535,88.33,"Green/institutional, elevated",No,2026-03,Pre-Monsoon,56.5,58,-2.5,Moderate,26.2,26.3
+15,Alipore,South,KMC,22.535,88.33,"Green/institutional, elevated",No,2026-04,Pre-Monsoon,65,65,-0.1,Moderate,30.1,34.2
+15,Alipore,South,KMC,22.535,88.33,"Green/institutional, elevated",No,2026-05,Pre-Monsoon,72.1,70,3,High,29.7,34.8
+15,Alipore,South,KMC,22.535,88.33,"Green/institutional, elevated",No,2026-06,Monsoon,80.2,79,1.5,Very High,29.8,37.1
+15,Alipore,South,KMC,22.535,88.33,"Green/institutional, elevated",No,2026-07,Monsoon,86.3,84,2.8,Very High,29.6,38.3
+15,Alipore,South,KMC,22.535,88.33,"Green/institutional, elevated",No,2026-08,Monsoon,87.4,85,2.8,Very High,29.1,36.7
+16,Ballygunge,South Central,KMC,22.528,88.366,Affluent residential,No,2025-09,Monsoon (retreating),85.6,83,3.1,Very High,29,36.1
+16,Ballygunge,South Central,KMC,22.528,88.366,Affluent residential,No,2025-10,Post-Monsoon,77.3,76,1.7,High,27.4,30.4
+16,Ballygunge,South Central,KMC,22.528,88.366,Affluent residential,No,2025-11,Post-Monsoon,68.2,65,4.9,High,23.1,23.3
+16,Ballygunge,South Central,KMC,22.528,88.366,Affluent residential,No,2025-12,Winter,57.1,58,-1.5,Moderate,19.1,18.6
+16,Ballygunge,South Central,KMC,22.528,88.366,Affluent residential,No,2026-01,Winter,56.6,58,-2.4,Moderate,20.1,19.6
+16,Ballygunge,South Central,KMC,22.528,88.366,Affluent residential,No,2026-02,Winter,60.1,57,5.5,Moderate,23.2,23.2
+16,Ballygunge,South Central,KMC,22.528,88.366,Affluent residential,No,2026-03,Pre-Monsoon,53.6,58,-7.6,Moderate,26.1,26.2
+16,Ballygunge,South Central,KMC,22.528,88.366,Affluent residential,No,2026-04,Pre-Monsoon,65.5,65,0.8,High,30.4,34.9
+16,Ballygunge,South Central,KMC,22.528,88.366,Affluent residential,No,2026-05,Pre-Monsoon,69.8,70,-0.3,High,30.4,36
+16,Ballygunge,South Central,KMC,22.528,88.366,Affluent residential,No,2026-06,Monsoon,78.9,79,-0.1,High,29.6,36.1
+16,Ballygunge,South Central,KMC,22.528,88.366,Affluent residential,No,2026-07,Monsoon,86.9,84,3.4,Very High,28.2,34
+16,Ballygunge,South Central,KMC,22.528,88.366,Affluent residential,No,2026-08,Monsoon,86.1,85,1.3,Very High,29.3,37
+17,Maniktala,North Central,KMC,22.585,88.38,Dense residential,No,2025-09,Monsoon (retreating),84.4,83,1.7,Very High,29.1,36.1
+17,Maniktala,North Central,KMC,22.585,88.38,Dense residential,No,2025-10,Post-Monsoon,75.9,76,-0.1,High,28.1,31.7
+17,Maniktala,North Central,KMC,22.585,88.38,Dense residential,No,2025-11,Post-Monsoon,63.7,65,-2,Moderate,23.5,23.6
+17,Maniktala,North Central,KMC,22.585,88.38,Dense residential,No,2025-12,Winter,54.8,58,-5.5,Moderate,17.5,16.8
+17,Maniktala,North Central,KMC,22.585,88.38,Dense residential,No,2026-01,Winter,57.9,58,-0.2,Moderate,19.4,18.9
+17,Maniktala,North Central,KMC,22.585,88.38,Dense residential,No,2026-02,Winter,56.6,57,-0.8,Moderate,23.5,23.4
+17,Maniktala,North Central,KMC,22.585,88.38,Dense residential,No,2026-03,Pre-Monsoon,56.6,58,-2.4,Moderate,26.9,27.7
+17,Maniktala,North Central,KMC,22.585,88.38,Dense residential,No,2026-04,Pre-Monsoon,63.9,65,-1.8,Moderate,30.4,34.5
+17,Maniktala,North Central,KMC,22.585,88.38,Dense residential,No,2026-05,Pre-Monsoon,68.7,70,-1.8,High,30,34.8
+17,Maniktala,North Central,KMC,22.585,88.38,Dense residential,No,2026-06,Monsoon,81.1,79,2.7,Very High,30.4,39.2
+17,Maniktala,North Central,KMC,22.585,88.38,Dense residential,No,2026-07,Monsoon,82.6,84,-1.6,Very High,30.2,39.2
+17,Maniktala,North Central,KMC,22.585,88.38,Dense residential,No,2026-08,Monsoon,84.4,85,-0.8,Very High,28.7,34.8
+18,Entally,Central East,KMC,22.562,88.37,Dense low-lying residential,No,2025-09,Monsoon (retreating),87.3,83,5.2,Very High,29,36.4
+18,Entally,Central East,KMC,22.562,88.37,Dense low-lying residential,No,2025-10,Post-Monsoon,77.2,76,1.6,High,27.1,29.6
+18,Entally,Central East,KMC,22.562,88.37,Dense low-lying residential,No,2025-11,Post-Monsoon,66.3,65,2,High,23.2,23.4
+18,Entally,Central East,KMC,22.562,88.37,Dense low-lying residential,No,2025-12,Winter,58.4,58,0.8,Moderate,18.1,17.5
+18,Entally,Central East,KMC,22.562,88.37,Dense low-lying residential,No,2026-01,Winter,57.9,58,-0.1,Moderate,20.6,20.3
+18,Entally,Central East,KMC,22.562,88.37,Dense low-lying residential,No,2026-02,Winter,60,57,5.2,Moderate,22.1,21.9
+18,Entally,Central East,KMC,22.562,88.37,Dense low-lying residential,No,2026-03,Pre-Monsoon,58.5,58,0.9,Moderate,27.3,28.3
+18,Entally,Central East,KMC,22.562,88.37,Dense low-lying residential,No,2026-04,Pre-Monsoon,66.1,65,1.7,High,30.7,35.7
+18,Entally,Central East,KMC,22.562,88.37,Dense low-lying residential,No,2026-05,Pre-Monsoon,66.5,70,-5,High,30.7,35.8
+18,Entally,Central East,KMC,22.562,88.37,Dense low-lying residential,No,2026-06,Monsoon,78.1,79,-1.2,High,30.7,39.2
+18,Entally,Central East,KMC,22.562,88.37,Dense low-lying residential,No,2026-07,Monsoon,81.4,84,-3.1,Very High,29,35.2
+18,Entally,Central East,KMC,22.562,88.37,Dense low-lying residential,No,2026-08,Monsoon,88,85,3.5,Very High,28.7,35.7

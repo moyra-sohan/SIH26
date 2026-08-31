@@ -1,0 +1,217 @@
+Ward_ID,Ward_Name,Zone,Administrative_Body,Latitude,Longitude,Road_Density_Index_1to10,Approx_Road_Network_Length_km,Drainage_Index_1to10,Drainage_System_Type,Storm_Drain_Coverage_Percent,Month,Season,Drain_Load_Utilization_Percent,Silt_Accumulation_Level,Reported_Road_Waterlogging_Incidents
+1,Behala,South West,KMC,22.4989,88.3145,6,71.5,4,"Colonial-era combined sewer/stormwater, pump-assisted",42,2025-09,Monsoon (retreating),84.8,Moderate,2
+1,Behala,South West,KMC,22.4989,88.3145,6,71.5,4,"Colonial-era combined sewer/stormwater, pump-assisted",42,2025-10,Post-Monsoon,56.1,Moderate,0
+1,Behala,South West,KMC,22.4989,88.3145,6,71.5,4,"Colonial-era combined sewer/stormwater, pump-assisted",42,2025-11,Post-Monsoon,38.3,High,0
+1,Behala,South West,KMC,22.4989,88.3145,6,71.5,4,"Colonial-era combined sewer/stormwater, pump-assisted",42,2025-12,Winter,34.9,High,0
+1,Behala,South West,KMC,22.4989,88.3145,6,71.5,4,"Colonial-era combined sewer/stormwater, pump-assisted",42,2026-01,Winter,36.6,High,0
+1,Behala,South West,KMC,22.4989,88.3145,6,71.5,4,"Colonial-era combined sewer/stormwater, pump-assisted",42,2026-02,Winter,38.4,Very High,0
+1,Behala,South West,KMC,22.4989,88.3145,6,71.5,4,"Colonial-era combined sewer/stormwater, pump-assisted",42,2026-03,Pre-Monsoon,40,Very High,0
+1,Behala,South West,KMC,22.4989,88.3145,6,71.5,4,"Colonial-era combined sewer/stormwater, pump-assisted",42,2026-04,Pre-Monsoon,41.8,Very High,0
+1,Behala,South West,KMC,22.4989,88.3145,6,71.5,4,"Colonial-era combined sewer/stormwater, pump-assisted",42,2026-05,Pre-Monsoon,57.2,High,0
+1,Behala,South West,KMC,22.4989,88.3145,6,71.5,4,"Colonial-era combined sewer/stormwater, pump-assisted",42,2026-06,Monsoon,86.1,Low,2
+1,Behala,South West,KMC,22.4989,88.3145,6,71.5,4,"Colonial-era combined sewer/stormwater, pump-assisted",42,2026-07,Monsoon,97,Moderate,3
+1,Behala,South West,KMC,22.4989,88.3145,6,71.5,4,"Colonial-era combined sewer/stormwater, pump-assisted",42,2026-08,Monsoon,97.3,Moderate,3
+2,Tollygunge,South,KMC,22.5039,88.3423,7,60,6,"Colonial-era combined sewer/stormwater, pump-assisted",55,2025-09,Monsoon (retreating),76.5,Moderate,1
+2,Tollygunge,South,KMC,22.5039,88.3423,7,60,6,"Colonial-era combined sewer/stormwater, pump-assisted",55,2025-10,Post-Monsoon,53.5,Moderate,0
+2,Tollygunge,South,KMC,22.5039,88.3423,7,60,6,"Colonial-era combined sewer/stormwater, pump-assisted",55,2025-11,Post-Monsoon,34.4,High,0
+2,Tollygunge,South,KMC,22.5039,88.3423,7,60,6,"Colonial-era combined sewer/stormwater, pump-assisted",55,2025-12,Winter,30.9,High,0
+2,Tollygunge,South,KMC,22.5039,88.3423,7,60,6,"Colonial-era combined sewer/stormwater, pump-assisted",55,2026-01,Winter,32.3,High,0
+2,Tollygunge,South,KMC,22.5039,88.3423,7,60,6,"Colonial-era combined sewer/stormwater, pump-assisted",55,2026-02,Winter,34.1,Very High,0
+2,Tollygunge,South,KMC,22.5039,88.3423,7,60,6,"Colonial-era combined sewer/stormwater, pump-assisted",55,2026-03,Pre-Monsoon,36.1,Very High,0
+2,Tollygunge,South,KMC,22.5039,88.3423,7,60,6,"Colonial-era combined sewer/stormwater, pump-assisted",55,2026-04,Pre-Monsoon,37.5,Very High,0
+2,Tollygunge,South,KMC,22.5039,88.3423,7,60,6,"Colonial-era combined sewer/stormwater, pump-assisted",55,2026-05,Pre-Monsoon,49.7,High,0
+2,Tollygunge,South,KMC,22.5039,88.3423,7,60,6,"Colonial-era combined sewer/stormwater, pump-assisted",55,2026-06,Monsoon,84.2,Low,1
+2,Tollygunge,South,KMC,22.5039,88.3423,7,60,6,"Colonial-era combined sewer/stormwater, pump-assisted",55,2026-07,Monsoon,83.1,Moderate,1
+2,Tollygunge,South,KMC,22.5039,88.3423,7,60,6,"Colonial-era combined sewer/stormwater, pump-assisted",55,2026-08,Monsoon,89.3,Moderate,2
+3,Jadavpur,South,KMC,22.4994,88.3714,7,66,6,"Colonial-era combined sewer/stormwater, pump-assisted",55,2025-09,Monsoon (retreating),79.4,Moderate,1
+3,Jadavpur,South,KMC,22.4994,88.3714,7,66,6,"Colonial-era combined sewer/stormwater, pump-assisted",55,2025-10,Post-Monsoon,54.2,Moderate,0
+3,Jadavpur,South,KMC,22.4994,88.3714,7,66,6,"Colonial-era combined sewer/stormwater, pump-assisted",55,2025-11,Post-Monsoon,33.8,High,0
+3,Jadavpur,South,KMC,22.4994,88.3714,7,66,6,"Colonial-era combined sewer/stormwater, pump-assisted",55,2025-12,Winter,31,High,0
+3,Jadavpur,South,KMC,22.4994,88.3714,7,66,6,"Colonial-era combined sewer/stormwater, pump-assisted",55,2026-01,Winter,32.3,High,0
+3,Jadavpur,South,KMC,22.4994,88.3714,7,66,6,"Colonial-era combined sewer/stormwater, pump-assisted",55,2026-02,Winter,34.4,Very High,0
+3,Jadavpur,South,KMC,22.4994,88.3714,7,66,6,"Colonial-era combined sewer/stormwater, pump-assisted",55,2026-03,Pre-Monsoon,36.1,Very High,0
+3,Jadavpur,South,KMC,22.4994,88.3714,7,66,6,"Colonial-era combined sewer/stormwater, pump-assisted",55,2026-04,Pre-Monsoon,37.7,Very High,0
+3,Jadavpur,South,KMC,22.4994,88.3714,7,66,6,"Colonial-era combined sewer/stormwater, pump-assisted",55,2026-05,Pre-Monsoon,50,High,0
+3,Jadavpur,South,KMC,22.4994,88.3714,7,66,6,"Colonial-era combined sewer/stormwater, pump-assisted",55,2026-06,Monsoon,83.4,Low,1
+3,Jadavpur,South,KMC,22.4994,88.3714,7,66,6,"Colonial-era combined sewer/stormwater, pump-assisted",55,2026-07,Monsoon,85.9,Moderate,1
+3,Jadavpur,South,KMC,22.4994,88.3714,7,66,6,"Colonial-era combined sewer/stormwater, pump-assisted",55,2026-08,Monsoon,90.2,Moderate,2
+4,Kasba,South East,KMC,22.517,88.3833,5,60,3,Combined sewer + canal-fed (East Kolkata Wetlands outfall),35,2025-09,Monsoon (retreating),87.2,Moderate,2
+4,Kasba,South East,KMC,22.517,88.3833,5,60,3,Combined sewer + canal-fed (East Kolkata Wetlands outfall),35,2025-10,Post-Monsoon,59.3,Moderate,0
+4,Kasba,South East,KMC,22.517,88.3833,5,60,3,Combined sewer + canal-fed (East Kolkata Wetlands outfall),35,2025-11,Post-Monsoon,40.3,High,0
+4,Kasba,South East,KMC,22.517,88.3833,5,60,3,Combined sewer + canal-fed (East Kolkata Wetlands outfall),35,2025-12,Winter,36.9,High,0
+4,Kasba,South East,KMC,22.517,88.3833,5,60,3,Combined sewer + canal-fed (East Kolkata Wetlands outfall),35,2026-01,Winter,38.4,High,0
+4,Kasba,South East,KMC,22.517,88.3833,5,60,3,Combined sewer + canal-fed (East Kolkata Wetlands outfall),35,2026-02,Winter,40.2,Very High,2
+4,Kasba,South East,KMC,22.517,88.3833,5,60,3,Combined sewer + canal-fed (East Kolkata Wetlands outfall),35,2026-03,Pre-Monsoon,42.4,Very High,0
+4,Kasba,South East,KMC,22.517,88.3833,5,60,3,Combined sewer + canal-fed (East Kolkata Wetlands outfall),35,2026-04,Pre-Monsoon,44.8,Very High,0
+4,Kasba,South East,KMC,22.517,88.3833,5,60,3,Combined sewer + canal-fed (East Kolkata Wetlands outfall),35,2026-05,Pre-Monsoon,61.3,High,0
+4,Kasba,South East,KMC,22.517,88.3833,5,60,3,Combined sewer + canal-fed (East Kolkata Wetlands outfall),35,2026-06,Monsoon,94,Low,3
+4,Kasba,South East,KMC,22.517,88.3833,5,60,3,Combined sewer + canal-fed (East Kolkata Wetlands outfall),35,2026-07,Monsoon,95.1,Moderate,4
+4,Kasba,South East,KMC,22.517,88.3833,5,60,3,Combined sewer + canal-fed (East Kolkata Wetlands outfall),35,2026-08,Monsoon,98.2,Moderate,4
+5,Topsia,East,KMC,22.539,88.39,5,45,3,Combined sewer + canal-fed (East Kolkata Wetlands outfall),33,2025-09,Monsoon (retreating),83.7,Moderate,2
+5,Topsia,East,KMC,22.539,88.39,5,45,3,Combined sewer + canal-fed (East Kolkata Wetlands outfall),33,2025-10,Post-Monsoon,58.2,Moderate,0
+5,Topsia,East,KMC,22.539,88.39,5,45,3,Combined sewer + canal-fed (East Kolkata Wetlands outfall),33,2025-11,Post-Monsoon,40.1,High,0
+5,Topsia,East,KMC,22.539,88.39,5,45,3,Combined sewer + canal-fed (East Kolkata Wetlands outfall),33,2025-12,Winter,36.9,High,0
+5,Topsia,East,KMC,22.539,88.39,5,45,3,Combined sewer + canal-fed (East Kolkata Wetlands outfall),33,2026-01,Winter,38.3,High,0
+5,Topsia,East,KMC,22.539,88.39,5,45,3,Combined sewer + canal-fed (East Kolkata Wetlands outfall),33,2026-02,Winter,40.1,Very High,0
+5,Topsia,East,KMC,22.539,88.39,5,45,3,Combined sewer + canal-fed (East Kolkata Wetlands outfall),33,2026-03,Pre-Monsoon,42.9,Very High,0
+5,Topsia,East,KMC,22.539,88.39,5,45,3,Combined sewer + canal-fed (East Kolkata Wetlands outfall),33,2026-04,Pre-Monsoon,44.8,Very High,0
+5,Topsia,East,KMC,22.539,88.39,5,45,3,Combined sewer + canal-fed (East Kolkata Wetlands outfall),33,2026-05,Pre-Monsoon,58.7,High,1
+5,Topsia,East,KMC,22.539,88.39,5,45,3,Combined sewer + canal-fed (East Kolkata Wetlands outfall),33,2026-06,Monsoon,84.8,Low,2
+5,Topsia,East,KMC,22.539,88.39,5,45,3,Combined sewer + canal-fed (East Kolkata Wetlands outfall),33,2026-07,Monsoon,97.9,Moderate,4
+5,Topsia,East,KMC,22.539,88.39,5,45,3,Combined sewer + canal-fed (East Kolkata Wetlands outfall),33,2026-08,Monsoon,94.3,Moderate,4
+6,Beliaghata,East,KMC,22.558,88.395,6,44,4,"Colonial-era combined sewer, canal-side, pump-assisted",40,2025-09,Monsoon (retreating),80.9,Moderate,2
+6,Beliaghata,East,KMC,22.558,88.395,6,44,4,"Colonial-era combined sewer, canal-side, pump-assisted",40,2025-10,Post-Monsoon,56.5,Moderate,0
+6,Beliaghata,East,KMC,22.558,88.395,6,44,4,"Colonial-era combined sewer, canal-side, pump-assisted",40,2025-11,Post-Monsoon,38.3,High,1
+6,Beliaghata,East,KMC,22.558,88.395,6,44,4,"Colonial-era combined sewer, canal-side, pump-assisted",40,2025-12,Winter,34.9,High,0
+6,Beliaghata,East,KMC,22.558,88.395,6,44,4,"Colonial-era combined sewer, canal-side, pump-assisted",40,2026-01,Winter,36.4,High,0
+6,Beliaghata,East,KMC,22.558,88.395,6,44,4,"Colonial-era combined sewer, canal-side, pump-assisted",40,2026-02,Winter,38.1,Very High,0
+6,Beliaghata,East,KMC,22.558,88.395,6,44,4,"Colonial-era combined sewer, canal-side, pump-assisted",40,2026-03,Pre-Monsoon,40.2,Very High,0
+6,Beliaghata,East,KMC,22.558,88.395,6,44,4,"Colonial-era combined sewer, canal-side, pump-assisted",40,2026-04,Pre-Monsoon,42.4,Very High,0
+6,Beliaghata,East,KMC,22.558,88.395,6,44,4,"Colonial-era combined sewer, canal-side, pump-assisted",40,2026-05,Pre-Monsoon,55.1,High,0
+6,Beliaghata,East,KMC,22.558,88.395,6,44,4,"Colonial-era combined sewer, canal-side, pump-assisted",40,2026-06,Monsoon,89.2,Low,2
+6,Beliaghata,East,KMC,22.558,88.395,6,44,4,"Colonial-era combined sewer, canal-side, pump-assisted",40,2026-07,Monsoon,97,Moderate,3
+6,Beliaghata,East,KMC,22.558,88.395,6,44,4,"Colonial-era combined sewer, canal-side, pump-assisted",40,2026-08,Monsoon,90.4,Moderate,2
+7,Park Circus,Central,KMC,22.547,88.369,7,30,5,"Colonial-era combined sewer/stormwater, pump-assisted",50,2025-09,Monsoon (retreating),81.4,Moderate,2
+7,Park Circus,Central,KMC,22.547,88.369,7,30,5,"Colonial-era combined sewer/stormwater, pump-assisted",50,2025-10,Post-Monsoon,53.2,Moderate,0
+7,Park Circus,Central,KMC,22.547,88.369,7,30,5,"Colonial-era combined sewer/stormwater, pump-assisted",50,2025-11,Post-Monsoon,36.3,High,1
+7,Park Circus,Central,KMC,22.547,88.369,7,30,5,"Colonial-era combined sewer/stormwater, pump-assisted",50,2025-12,Winter,32.8,High,0
+7,Park Circus,Central,KMC,22.547,88.369,7,30,5,"Colonial-era combined sewer/stormwater, pump-assisted",50,2026-01,Winter,34.2,High,0
+7,Park Circus,Central,KMC,22.547,88.369,7,30,5,"Colonial-era combined sewer/stormwater, pump-assisted",50,2026-02,Winter,36.3,Very High,0
+7,Park Circus,Central,KMC,22.547,88.369,7,30,5,"Colonial-era combined sewer/stormwater, pump-assisted",50,2026-03,Pre-Monsoon,37.7,Very High,0
+7,Park Circus,Central,KMC,22.547,88.369,7,30,5,"Colonial-era combined sewer/stormwater, pump-assisted",50,2026-04,Pre-Monsoon,40,Very High,0
+7,Park Circus,Central,KMC,22.547,88.369,7,30,5,"Colonial-era combined sewer/stormwater, pump-assisted",50,2026-05,Pre-Monsoon,51.5,High,0
+7,Park Circus,Central,KMC,22.547,88.369,7,30,5,"Colonial-era combined sewer/stormwater, pump-assisted",50,2026-06,Monsoon,86.9,Low,2
+7,Park Circus,Central,KMC,22.547,88.369,7,30,5,"Colonial-era combined sewer/stormwater, pump-assisted",50,2026-07,Monsoon,94.6,Moderate,2
+7,Park Circus,Central,KMC,22.547,88.369,7,30,5,"Colonial-era combined sewer/stormwater, pump-assisted",50,2026-08,Monsoon,87.6,Moderate,2
+8,BBD Bagh (Esplanade),Central,KMC,22.5697,88.351,8,26,5,"Colonial-era combined sewer/stormwater, pump-assisted",52,2025-09,Monsoon (retreating),86.6,Moderate,2
+8,BBD Bagh (Esplanade),Central,KMC,22.5697,88.351,8,26,5,"Colonial-era combined sewer/stormwater, pump-assisted",52,2025-10,Post-Monsoon,55.9,Moderate,0
+8,BBD Bagh (Esplanade),Central,KMC,22.5697,88.351,8,26,5,"Colonial-era combined sewer/stormwater, pump-assisted",52,2025-11,Post-Monsoon,36,High,1
+8,BBD Bagh (Esplanade),Central,KMC,22.5697,88.351,8,26,5,"Colonial-era combined sewer/stormwater, pump-assisted",52,2025-12,Winter,32.9,High,0
+8,BBD Bagh (Esplanade),Central,KMC,22.5697,88.351,8,26,5,"Colonial-era combined sewer/stormwater, pump-assisted",52,2026-01,Winter,34.4,High,0
+8,BBD Bagh (Esplanade),Central,KMC,22.5697,88.351,8,26,5,"Colonial-era combined sewer/stormwater, pump-assisted",52,2026-02,Winter,36.5,Very High,0
+8,BBD Bagh (Esplanade),Central,KMC,22.5697,88.351,8,26,5,"Colonial-era combined sewer/stormwater, pump-assisted",52,2026-03,Pre-Monsoon,38.1,Very High,0
+8,BBD Bagh (Esplanade),Central,KMC,22.5697,88.351,8,26,5,"Colonial-era combined sewer/stormwater, pump-assisted",52,2026-04,Pre-Monsoon,39.9,Very High,0
+8,BBD Bagh (Esplanade),Central,KMC,22.5697,88.351,8,26,5,"Colonial-era combined sewer/stormwater, pump-assisted",52,2026-05,Pre-Monsoon,56.4,High,0
+8,BBD Bagh (Esplanade),Central,KMC,22.5697,88.351,8,26,5,"Colonial-era combined sewer/stormwater, pump-assisted",52,2026-06,Monsoon,85,Low,1
+8,BBD Bagh (Esplanade),Central,KMC,22.5697,88.351,8,26,5,"Colonial-era combined sewer/stormwater, pump-assisted",52,2026-07,Monsoon,91.9,Moderate,3
+8,BBD Bagh (Esplanade),Central,KMC,22.5697,88.351,8,26,5,"Colonial-era combined sewer/stormwater, pump-assisted",52,2026-08,Monsoon,90.2,Moderate,2
+9,Tallah,North,KMC,22.61,88.375,6,38.5,4,"Colonial-era combined sewer, pump-assisted (major pumping station nearby)",45,2025-09,Monsoon (retreating),82.2,Moderate,1
+9,Tallah,North,KMC,22.61,88.375,6,38.5,4,"Colonial-era combined sewer, pump-assisted (major pumping station nearby)",45,2025-10,Post-Monsoon,54.2,Moderate,0
+9,Tallah,North,KMC,22.61,88.375,6,38.5,4,"Colonial-era combined sewer, pump-assisted (major pumping station nearby)",45,2025-11,Post-Monsoon,38.3,High,1
+9,Tallah,North,KMC,22.61,88.375,6,38.5,4,"Colonial-era combined sewer, pump-assisted (major pumping station nearby)",45,2025-12,Winter,34.9,High,0
+9,Tallah,North,KMC,22.61,88.375,6,38.5,4,"Colonial-era combined sewer, pump-assisted (major pumping station nearby)",45,2026-01,Winter,36.5,High,0
+9,Tallah,North,KMC,22.61,88.375,6,38.5,4,"Colonial-era combined sewer, pump-assisted (major pumping station nearby)",45,2026-02,Winter,38.2,Very High,0
+9,Tallah,North,KMC,22.61,88.375,6,38.5,4,"Colonial-era combined sewer, pump-assisted (major pumping station nearby)",45,2026-03,Pre-Monsoon,40.2,Very High,0
+9,Tallah,North,KMC,22.61,88.375,6,38.5,4,"Colonial-era combined sewer, pump-assisted (major pumping station nearby)",45,2026-04,Pre-Monsoon,42.7,Very High,0
+9,Tallah,North,KMC,22.61,88.375,6,38.5,4,"Colonial-era combined sewer, pump-assisted (major pumping station nearby)",45,2026-05,Pre-Monsoon,53.7,High,0
+9,Tallah,North,KMC,22.61,88.375,6,38.5,4,"Colonial-era combined sewer, pump-assisted (major pumping station nearby)",45,2026-06,Monsoon,81.9,Low,1
+9,Tallah,North,KMC,22.61,88.375,6,38.5,4,"Colonial-era combined sewer, pump-assisted (major pumping station nearby)",45,2026-07,Monsoon,97.2,Moderate,2
+9,Tallah,North,KMC,22.61,88.375,6,38.5,4,"Colonial-era combined sewer, pump-assisted (major pumping station nearby)",45,2026-08,Monsoon,93.3,Moderate,2
+10,Shyambazar,North,KMC,22.5975,88.3717,6,33,5,"Colonial-era combined sewer/stormwater, pump-assisted",50,2025-09,Monsoon (retreating),81.5,Moderate,0
+10,Shyambazar,North,KMC,22.5975,88.3717,6,33,5,"Colonial-era combined sewer/stormwater, pump-assisted",50,2025-10,Post-Monsoon,52.4,Moderate,0
+10,Shyambazar,North,KMC,22.5975,88.3717,6,33,5,"Colonial-era combined sewer/stormwater, pump-assisted",50,2025-11,Post-Monsoon,36.2,High,0
+10,Shyambazar,North,KMC,22.5975,88.3717,6,33,5,"Colonial-era combined sewer/stormwater, pump-assisted",50,2025-12,Winter,32.9,High,0
+10,Shyambazar,North,KMC,22.5975,88.3717,6,33,5,"Colonial-era combined sewer/stormwater, pump-assisted",50,2026-01,Winter,34.3,High,0
+10,Shyambazar,North,KMC,22.5975,88.3717,6,33,5,"Colonial-era combined sewer/stormwater, pump-assisted",50,2026-02,Winter,36.1,Very High,0
+10,Shyambazar,North,KMC,22.5975,88.3717,6,33,5,"Colonial-era combined sewer/stormwater, pump-assisted",50,2026-03,Pre-Monsoon,38,Very High,0
+10,Shyambazar,North,KMC,22.5975,88.3717,6,33,5,"Colonial-era combined sewer/stormwater, pump-assisted",50,2026-04,Pre-Monsoon,39,Very High,0
+10,Shyambazar,North,KMC,22.5975,88.3717,6,33,5,"Colonial-era combined sewer/stormwater, pump-assisted",50,2026-05,Pre-Monsoon,53.7,High,0
+10,Shyambazar,North,KMC,22.5975,88.3717,6,33,5,"Colonial-era combined sewer/stormwater, pump-assisted",50,2026-06,Monsoon,84.9,Low,1
+10,Shyambazar,North,KMC,22.5975,88.3717,6,33,5,"Colonial-era combined sewer/stormwater, pump-assisted",50,2026-07,Monsoon,91.4,Moderate,2
+10,Shyambazar,North,KMC,22.5975,88.3717,6,33,5,"Colonial-era combined sewer/stormwater, pump-assisted",50,2026-08,Monsoon,87.6,Moderate,1
+11,Dum Dum,North,KMC,22.642,88.4197,6,88,6,Mixed: partial piped stormwater + open drains,58,2025-09,Monsoon (retreating),78.6,Moderate,1
+11,Dum Dum,North,KMC,22.642,88.4197,6,88,6,Mixed: partial piped stormwater + open drains,58,2025-10,Post-Monsoon,53.4,Moderate,1
+11,Dum Dum,North,KMC,22.642,88.4197,6,88,6,Mixed: partial piped stormwater + open drains,58,2025-11,Post-Monsoon,34.3,High,1
+11,Dum Dum,North,KMC,22.642,88.4197,6,88,6,Mixed: partial piped stormwater + open drains,58,2025-12,Winter,30.9,High,0
+11,Dum Dum,North,KMC,22.642,88.4197,6,88,6,Mixed: partial piped stormwater + open drains,58,2026-01,Winter,32.1,High,1
+11,Dum Dum,North,KMC,22.642,88.4197,6,88,6,Mixed: partial piped stormwater + open drains,58,2026-02,Winter,34,Very High,0
+11,Dum Dum,North,KMC,22.642,88.4197,6,88,6,Mixed: partial piped stormwater + open drains,58,2026-03,Pre-Monsoon,35.3,Very High,0
+11,Dum Dum,North,KMC,22.642,88.4197,6,88,6,Mixed: partial piped stormwater + open drains,58,2026-04,Pre-Monsoon,37.2,Very High,0
+11,Dum Dum,North,KMC,22.642,88.4197,6,88,6,Mixed: partial piped stormwater + open drains,58,2026-05,Pre-Monsoon,50.5,High,0
+11,Dum Dum,North,KMC,22.642,88.4197,6,88,6,Mixed: partial piped stormwater + open drains,58,2026-06,Monsoon,80.5,Low,1
+11,Dum Dum,North,KMC,22.642,88.4197,6,88,6,Mixed: partial piped stormwater + open drains,58,2026-07,Monsoon,94.7,Moderate,2
+11,Dum Dum,North,KMC,22.642,88.4197,6,88,6,Mixed: partial piped stormwater + open drains,58,2026-08,Monsoon,86.7,Moderate,1
+12,Salt Lake (Sector V),East,Bidhannagar Municipal Corporation,22.585,88.42,9,210,8,Modern separated stormwater drainage,88,2025-09,Monsoon (retreating),72.2,Moderate,0
+12,Salt Lake (Sector V),East,Bidhannagar Municipal Corporation,22.585,88.42,9,210,8,Modern separated stormwater drainage,88,2025-10,Post-Monsoon,47.9,Moderate,0
+12,Salt Lake (Sector V),East,Bidhannagar Municipal Corporation,22.585,88.42,9,210,8,Modern separated stormwater drainage,88,2025-11,Post-Monsoon,30.6,High,0
+12,Salt Lake (Sector V),East,Bidhannagar Municipal Corporation,22.585,88.42,9,210,8,Modern separated stormwater drainage,88,2025-12,Winter,26.8,High,1
+12,Salt Lake (Sector V),East,Bidhannagar Municipal Corporation,22.585,88.42,9,210,8,Modern separated stormwater drainage,88,2026-01,Winter,28.4,High,0
+12,Salt Lake (Sector V),East,Bidhannagar Municipal Corporation,22.585,88.42,9,210,8,Modern separated stormwater drainage,88,2026-02,Winter,30.5,Very High,0
+12,Salt Lake (Sector V),East,Bidhannagar Municipal Corporation,22.585,88.42,9,210,8,Modern separated stormwater drainage,88,2026-03,Pre-Monsoon,31.9,Very High,0
+12,Salt Lake (Sector V),East,Bidhannagar Municipal Corporation,22.585,88.42,9,210,8,Modern separated stormwater drainage,88,2026-04,Pre-Monsoon,34,Very High,0
+12,Salt Lake (Sector V),East,Bidhannagar Municipal Corporation,22.585,88.42,9,210,8,Modern separated stormwater drainage,88,2026-05,Pre-Monsoon,46.9,High,0
+12,Salt Lake (Sector V),East,Bidhannagar Municipal Corporation,22.585,88.42,9,210,8,Modern separated stormwater drainage,88,2026-06,Monsoon,80.8,Low,1
+12,Salt Lake (Sector V),East,Bidhannagar Municipal Corporation,22.585,88.42,9,210,8,Modern separated stormwater drainage,88,2026-07,Monsoon,86.8,Moderate,1
+12,Salt Lake (Sector V),East,Bidhannagar Municipal Corporation,22.585,88.42,9,210,8,Modern separated stormwater drainage,88,2026-08,Monsoon,88.1,Moderate,1
+13,Rajarhat New Town,East,New Town Kolkata Development Authority (NKDA),22.62,88.47,8,260,7,Modern separated stormwater drainage,85,2025-09,Monsoon (retreating),76,Moderate,1
+13,Rajarhat New Town,East,New Town Kolkata Development Authority (NKDA),22.62,88.47,8,260,7,Modern separated stormwater drainage,85,2025-10,Post-Monsoon,49.2,Moderate,0
+13,Rajarhat New Town,East,New Town Kolkata Development Authority (NKDA),22.62,88.47,8,260,7,Modern separated stormwater drainage,85,2025-11,Post-Monsoon,32.3,High,0
+13,Rajarhat New Town,East,New Town Kolkata Development Authority (NKDA),22.62,88.47,8,260,7,Modern separated stormwater drainage,85,2025-12,Winter,28.9,High,0
+13,Rajarhat New Town,East,New Town Kolkata Development Authority (NKDA),22.62,88.47,8,260,7,Modern separated stormwater drainage,85,2026-01,Winter,30,High,0
+13,Rajarhat New Town,East,New Town Kolkata Development Authority (NKDA),22.62,88.47,8,260,7,Modern separated stormwater drainage,85,2026-02,Winter,32,Very High,0
+13,Rajarhat New Town,East,New Town Kolkata Development Authority (NKDA),22.62,88.47,8,260,7,Modern separated stormwater drainage,85,2026-03,Pre-Monsoon,33.6,Very High,0
+13,Rajarhat New Town,East,New Town Kolkata Development Authority (NKDA),22.62,88.47,8,260,7,Modern separated stormwater drainage,85,2026-04,Pre-Monsoon,37.3,Very High,0
+13,Rajarhat New Town,East,New Town Kolkata Development Authority (NKDA),22.62,88.47,8,260,7,Modern separated stormwater drainage,85,2026-05,Pre-Monsoon,48.5,High,0
+13,Rajarhat New Town,East,New Town Kolkata Development Authority (NKDA),22.62,88.47,8,260,7,Modern separated stormwater drainage,85,2026-06,Monsoon,77.9,Low,1
+13,Rajarhat New Town,East,New Town Kolkata Development Authority (NKDA),22.62,88.47,8,260,7,Modern separated stormwater drainage,85,2026-07,Monsoon,89.6,Moderate,1
+13,Rajarhat New Town,East,New Town Kolkata Development Authority (NKDA),22.62,88.47,8,260,7,Modern separated stormwater drainage,85,2026-08,Monsoon,79.9,Moderate,1
+14,Garden Reach,South West,KMC,22.533,88.307,5,70,3,"Colonial-era combined sewer, pump-assisted, riverside outfall",32,2025-09,Monsoon (retreating),86.6,Moderate,3
+14,Garden Reach,South West,KMC,22.533,88.307,5,70,3,"Colonial-era combined sewer, pump-assisted, riverside outfall",32,2025-10,Post-Monsoon,60.2,Moderate,0
+14,Garden Reach,South West,KMC,22.533,88.307,5,70,3,"Colonial-era combined sewer, pump-assisted, riverside outfall",32,2025-11,Post-Monsoon,40.6,High,0
+14,Garden Reach,South West,KMC,22.533,88.307,5,70,3,"Colonial-era combined sewer, pump-assisted, riverside outfall",32,2025-12,Winter,37,High,0
+14,Garden Reach,South West,KMC,22.533,88.307,5,70,3,"Colonial-era combined sewer, pump-assisted, riverside outfall",32,2026-01,Winter,38.6,High,0
+14,Garden Reach,South West,KMC,22.533,88.307,5,70,3,"Colonial-era combined sewer, pump-assisted, riverside outfall",32,2026-02,Winter,40.4,Very High,0
+14,Garden Reach,South West,KMC,22.533,88.307,5,70,3,"Colonial-era combined sewer, pump-assisted, riverside outfall",32,2026-03,Pre-Monsoon,42.3,Very High,0
+14,Garden Reach,South West,KMC,22.533,88.307,5,70,3,"Colonial-era combined sewer, pump-assisted, riverside outfall",32,2026-04,Pre-Monsoon,43.8,Very High,0
+14,Garden Reach,South West,KMC,22.533,88.307,5,70,3,"Colonial-era combined sewer, pump-assisted, riverside outfall",32,2026-05,Pre-Monsoon,57.8,High,0
+14,Garden Reach,South West,KMC,22.533,88.307,5,70,3,"Colonial-era combined sewer, pump-assisted, riverside outfall",32,2026-06,Monsoon,96.1,Low,4
+14,Garden Reach,South West,KMC,22.533,88.307,5,70,3,"Colonial-era combined sewer, pump-assisted, riverside outfall",32,2026-07,Monsoon,93.6,Moderate,3
+14,Garden Reach,South West,KMC,22.533,88.307,5,70,3,"Colonial-era combined sewer, pump-assisted, riverside outfall",32,2026-08,Monsoon,97.7,Moderate,4
+15,Alipore,South,KMC,22.535,88.33,8,110.5,7,"Colonial-era combined sewer/stormwater, well-maintained",65,2025-09,Monsoon (retreating),73.6,Moderate,1
+15,Alipore,South,KMC,22.535,88.33,8,110.5,7,"Colonial-era combined sewer/stormwater, well-maintained",65,2025-10,Post-Monsoon,49.4,Moderate,0
+15,Alipore,South,KMC,22.535,88.33,8,110.5,7,"Colonial-era combined sewer/stormwater, well-maintained",65,2025-11,Post-Monsoon,31.9,High,1
+15,Alipore,South,KMC,22.535,88.33,8,110.5,7,"Colonial-era combined sewer/stormwater, well-maintained",65,2025-12,Winter,28.8,High,0
+15,Alipore,South,KMC,22.535,88.33,8,110.5,7,"Colonial-era combined sewer/stormwater, well-maintained",65,2026-01,Winter,30.2,High,0
+15,Alipore,South,KMC,22.535,88.33,8,110.5,7,"Colonial-era combined sewer/stormwater, well-maintained",65,2026-02,Winter,32,Very High,1
+15,Alipore,South,KMC,22.535,88.33,8,110.5,7,"Colonial-era combined sewer/stormwater, well-maintained",65,2026-03,Pre-Monsoon,33.7,Very High,0
+15,Alipore,South,KMC,22.535,88.33,8,110.5,7,"Colonial-era combined sewer/stormwater, well-maintained",65,2026-04,Pre-Monsoon,36.7,Very High,0
+15,Alipore,South,KMC,22.535,88.33,8,110.5,7,"Colonial-era combined sewer/stormwater, well-maintained",65,2026-05,Pre-Monsoon,51.7,High,0
+15,Alipore,South,KMC,22.535,88.33,8,110.5,7,"Colonial-era combined sewer/stormwater, well-maintained",65,2026-06,Monsoon,84.1,Low,1
+15,Alipore,South,KMC,22.535,88.33,8,110.5,7,"Colonial-era combined sewer/stormwater, well-maintained",65,2026-07,Monsoon,88.1,Moderate,1
+15,Alipore,South,KMC,22.535,88.33,8,110.5,7,"Colonial-era combined sewer/stormwater, well-maintained",65,2026-08,Monsoon,85.8,Moderate,0
+16,Ballygunge,South Central,KMC,22.528,88.366,8,58.5,7,"Colonial-era combined sewer, pump-assisted (major pumping station nearby)",62,2025-09,Monsoon (retreating),76.2,Moderate,1
+16,Ballygunge,South Central,KMC,22.528,88.366,8,58.5,7,"Colonial-era combined sewer, pump-assisted (major pumping station nearby)",62,2025-10,Post-Monsoon,49.5,Moderate,1
+16,Ballygunge,South Central,KMC,22.528,88.366,8,58.5,7,"Colonial-era combined sewer, pump-assisted (major pumping station nearby)",62,2025-11,Post-Monsoon,32.1,High,0
+16,Ballygunge,South Central,KMC,22.528,88.366,8,58.5,7,"Colonial-era combined sewer, pump-assisted (major pumping station nearby)",62,2025-12,Winter,28.9,High,0
+16,Ballygunge,South Central,KMC,22.528,88.366,8,58.5,7,"Colonial-era combined sewer, pump-assisted (major pumping station nearby)",62,2026-01,Winter,30.4,High,0
+16,Ballygunge,South Central,KMC,22.528,88.366,8,58.5,7,"Colonial-era combined sewer, pump-assisted (major pumping station nearby)",62,2026-02,Winter,31.8,Very High,0
+16,Ballygunge,South Central,KMC,22.528,88.366,8,58.5,7,"Colonial-era combined sewer, pump-assisted (major pumping station nearby)",62,2026-03,Pre-Monsoon,33.8,Very High,0
+16,Ballygunge,South Central,KMC,22.528,88.366,8,58.5,7,"Colonial-era combined sewer, pump-assisted (major pumping station nearby)",62,2026-04,Pre-Monsoon,35.8,Very High,0
+16,Ballygunge,South Central,KMC,22.528,88.366,8,58.5,7,"Colonial-era combined sewer, pump-assisted (major pumping station nearby)",62,2026-05,Pre-Monsoon,47.6,High,1
+16,Ballygunge,South Central,KMC,22.528,88.366,8,58.5,7,"Colonial-era combined sewer, pump-assisted (major pumping station nearby)",62,2026-06,Monsoon,76.7,Low,1
+16,Ballygunge,South Central,KMC,22.528,88.366,8,58.5,7,"Colonial-era combined sewer, pump-assisted (major pumping station nearby)",62,2026-07,Monsoon,86.2,Moderate,1
+16,Ballygunge,South Central,KMC,22.528,88.366,8,58.5,7,"Colonial-era combined sewer, pump-assisted (major pumping station nearby)",62,2026-08,Monsoon,89.2,Moderate,1
+17,Maniktala,North Central,KMC,22.585,88.38,6,33,5,"Colonial-era combined sewer/stormwater, pump-assisted",48,2025-09,Monsoon (retreating),81.7,Moderate,1
+17,Maniktala,North Central,KMC,22.585,88.38,6,33,5,"Colonial-era combined sewer/stormwater, pump-assisted",48,2025-10,Post-Monsoon,55.6,Moderate,0
+17,Maniktala,North Central,KMC,22.585,88.38,6,33,5,"Colonial-era combined sewer/stormwater, pump-assisted",48,2025-11,Post-Monsoon,36.3,High,0
+17,Maniktala,North Central,KMC,22.585,88.38,6,33,5,"Colonial-era combined sewer/stormwater, pump-assisted",48,2025-12,Winter,32.8,High,0
+17,Maniktala,North Central,KMC,22.585,88.38,6,33,5,"Colonial-era combined sewer/stormwater, pump-assisted",48,2026-01,Winter,34.4,High,0
+17,Maniktala,North Central,KMC,22.585,88.38,6,33,5,"Colonial-era combined sewer/stormwater, pump-assisted",48,2026-02,Winter,36,Very High,0
+17,Maniktala,North Central,KMC,22.585,88.38,6,33,5,"Colonial-era combined sewer/stormwater, pump-assisted",48,2026-03,Pre-Monsoon,38.1,Very High,0
+17,Maniktala,North Central,KMC,22.585,88.38,6,33,5,"Colonial-era combined sewer/stormwater, pump-assisted",48,2026-04,Pre-Monsoon,40.1,Very High,0
+17,Maniktala,North Central,KMC,22.585,88.38,6,33,5,"Colonial-era combined sewer/stormwater, pump-assisted",48,2026-05,Pre-Monsoon,55.4,High,0
+17,Maniktala,North Central,KMC,22.585,88.38,6,33,5,"Colonial-era combined sewer/stormwater, pump-assisted",48,2026-06,Monsoon,86.1,Low,1
+17,Maniktala,North Central,KMC,22.585,88.38,6,33,5,"Colonial-era combined sewer/stormwater, pump-assisted",48,2026-07,Monsoon,96.7,Moderate,3
+17,Maniktala,North Central,KMC,22.585,88.38,6,33,5,"Colonial-era combined sewer/stormwater, pump-assisted",48,2026-08,Monsoon,90.9,Moderate,2
+18,Entally,Central East,KMC,22.562,88.37,6,27.5,4,"Colonial-era combined sewer/stormwater, pump-assisted",44,2025-09,Monsoon (retreating),84.1,Moderate,2
+18,Entally,Central East,KMC,22.562,88.37,6,27.5,4,"Colonial-era combined sewer/stormwater, pump-assisted",44,2025-10,Post-Monsoon,56.6,Moderate,0
+18,Entally,Central East,KMC,22.562,88.37,6,27.5,4,"Colonial-era combined sewer/stormwater, pump-assisted",44,2025-11,Post-Monsoon,38.3,High,0
+18,Entally,Central East,KMC,22.562,88.37,6,27.5,4,"Colonial-era combined sewer/stormwater, pump-assisted",44,2025-12,Winter,35,High,0
+18,Entally,Central East,KMC,22.562,88.37,6,27.5,4,"Colonial-era combined sewer/stormwater, pump-assisted",44,2026-01,Winter,36.6,High,0
+18,Entally,Central East,KMC,22.562,88.37,6,27.5,4,"Colonial-era combined sewer/stormwater, pump-assisted",44,2026-02,Winter,38.6,Very High,1
+18,Entally,Central East,KMC,22.562,88.37,6,27.5,4,"Colonial-era combined sewer/stormwater, pump-assisted",44,2026-03,Pre-Monsoon,39.9,Very High,0
+18,Entally,Central East,KMC,22.562,88.37,6,27.5,4,"Colonial-era combined sewer/stormwater, pump-assisted",44,2026-04,Pre-Monsoon,42,Very High,0
+18,Entally,Central East,KMC,22.562,88.37,6,27.5,4,"Colonial-era combined sewer/stormwater, pump-assisted",44,2026-05,Pre-Monsoon,56.9,High,0
+18,Entally,Central East,KMC,22.562,88.37,6,27.5,4,"Colonial-era combined sewer/stormwater, pump-assisted",44,2026-06,Monsoon,84.1,Low,2
+18,Entally,Central East,KMC,22.562,88.37,6,27.5,4,"Colonial-era combined sewer/stormwater, pump-assisted",44,2026-07,Monsoon,94.7,Moderate,3
+18,Entally,Central East,KMC,22.562,88.37,6,27.5,4,"Colonial-era combined sewer/stormwater, pump-assisted",44,2026-08,Monsoon,91.3,Moderate,3

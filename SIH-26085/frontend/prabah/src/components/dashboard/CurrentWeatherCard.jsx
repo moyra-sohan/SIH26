@@ -1,27 +1,38 @@
-import { CloudRain, Thermometer, Droplets, Wind, Gauge, Eye } from 'lucide-react';
-import { currentWeather } from '../../data/weatherData';
+import { CloudRain, Thermometer, Droplets, Wind, Gauge, Eye, MapPin } from 'lucide-react';
+import { useFloodData } from '../../context/FloodDataContext';
 
 function CurrentWeatherCard() {
+  const { selectedWard } = useFloodData();
+
+  const temp = selectedWard?.avg_temperature_c || 29.4;
+  const humidity = selectedWard?.avg_humidity_percent || 86;
+  const heatIndex = selectedWard?.heat_index_c || 37.4;
+  const condition = selectedWard?.forecast_rainfall_mm > 280 ? 'Heavy Monsoon Rain' : 'Moderate Rain';
+  const locationLabel = selectedWard ? `${selectedWard.ward_name} (${selectedWard.zone})` : 'Kolkata, West Bengal';
+
   const weatherDetails = [
-    { icon: <Thermometer size={16} />, label: 'Feels like', value: `${currentWeather.feelsLike}°C` },
-    { icon: <Droplets size={16} />, label: 'Humidity', value: `${currentWeather.humidity}%` },
-    { icon: <Wind size={16} />, label: 'Wind', value: currentWeather.wind },
-    { icon: <Gauge size={16} />, label: 'Pressure', value: currentWeather.pressure },
-    { icon: <Eye size={16} />, label: 'Visibility', value: currentWeather.visibility },
+    { icon: <Thermometer size={16} />, label: 'Heat Index', value: `${heatIndex}°C` },
+    { icon: <Droplets size={16} />, label: 'Humidity', value: `${humidity}%` },
+    { icon: <Wind size={16} />, label: 'Monsoon Wind', value: '18 km/h SW' },
+    { icon: <Gauge size={16} />, label: 'Atm. Pressure', value: '1004 hPa' },
+    { icon: <Eye size={16} />, label: 'Visibility', value: '4.5 km' },
   ];
 
   return (
     <div className="current-weather-card" id="current-weather-card">
       <div className="weather-left">
         <div className="weather-main">
-          <span className="weather-main-label">Current Weather</span>
+          <div className="flex items-center gap-1.5 text-xs text-blue-100 font-medium">
+            <MapPin size={13} />
+            <span>{locationLabel}</span>
+          </div>
           <div className="weather-icon-temp">
             <CloudRain size={48} className="weather-icon" />
             <div>
               <div className="weather-temp">
-                {currentWeather.temperature}<sup>°C</sup>
+                {temp}<sup>°C</sup>
               </div>
-              <div className="weather-condition">{currentWeather.condition}</div>
+              <div className="weather-condition">{condition}</div>
             </div>
           </div>
         </div>

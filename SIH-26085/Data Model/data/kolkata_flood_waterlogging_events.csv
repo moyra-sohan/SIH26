@@ -1,0 +1,217 @@
+Ward_ID,Ward_Name,Zone,Administrative_Body,Latitude,Longitude,Elevation_m,Landscape_Type,Drainage_Index_1to10,Road_Density_Index_1to10,Near_Hooghly_River,Month,Season,Historical_Rainfall_mm_Reference,Flood_Waterlogging_Events,Flood_Severity_Level,Estimated_Avg_Waterlogging_Duration_Hours,Primary_Cause
+1,Behala,South West,KMC,22.4989,88.3145,3,Low-lying residential,4,6,Yes,2025-09,Monsoon (retreating),285.3,2,Moderate,7.5,Heavy rainfall + tidal backflow (Hooghly)
+1,Behala,South West,KMC,22.4989,88.3145,3,Low-lying residential,4,6,Yes,2025-10,Post-Monsoon,123.9,0,None,0,None
+1,Behala,South West,KMC,22.4989,88.3145,3,Low-lying residential,4,6,Yes,2025-11,Post-Monsoon,24,0,None,0,None
+1,Behala,South West,KMC,22.4989,88.3145,3,Low-lying residential,4,6,Yes,2025-12,Winter,5,0,None,0,None
+1,Behala,South West,KMC,22.4989,88.3145,3,Low-lying residential,4,6,Yes,2026-01,Winter,14.6,0,None,0,None
+1,Behala,South West,KMC,22.4989,88.3145,3,Low-lying residential,4,6,Yes,2026-02,Winter,24.9,0,None,0,None
+1,Behala,South West,KMC,22.4989,88.3145,3,Low-lying residential,4,6,Yes,2026-03,Pre-Monsoon,33.8,0,None,0,None
+1,Behala,South West,KMC,22.4989,88.3145,3,Low-lying residential,4,6,Yes,2026-04,Pre-Monsoon,43.9,0,None,0,None
+1,Behala,South West,KMC,22.4989,88.3145,3,Low-lying residential,4,6,Yes,2026-05,Pre-Monsoon,130.2,0,None,0,None
+1,Behala,South West,KMC,22.4989,88.3145,3,Low-lying residential,4,6,Yes,2026-06,Monsoon,292.7,2,Moderate,7.5,Heavy rainfall + tidal backflow (Hooghly)
+1,Behala,South West,KMC,22.4989,88.3145,3,Low-lying residential,4,6,Yes,2026-07,Monsoon,353.9,3,Major,7.5,Heavy rainfall + tidal backflow (Hooghly)
+1,Behala,South West,KMC,22.4989,88.3145,3,Low-lying residential,4,6,Yes,2026-08,Monsoon,355.6,3,Major,7.5,Heavy rainfall + tidal backflow (Hooghly)
+2,Tollygunge,South,KMC,22.5039,88.3423,5,Urban residential,6,7,No,2025-09,Monsoon (retreating),261.3,1,Minor,5.5,Heavy rainfall (localized ponding)
+2,Tollygunge,South,KMC,22.5039,88.3423,5,Urban residential,6,7,No,2025-10,Post-Monsoon,131.9,0,None,0,None
+2,Tollygunge,South,KMC,22.5039,88.3423,5,Urban residential,6,7,No,2025-11,Post-Monsoon,24.5,0,None,0,None
+2,Tollygunge,South,KMC,22.5039,88.3423,5,Urban residential,6,7,No,2025-12,Winter,5.2,0,None,0,None
+2,Tollygunge,South,KMC,22.5039,88.3423,5,Urban residential,6,7,No,2026-01,Winter,12.8,0,None,0,None
+2,Tollygunge,South,KMC,22.5039,88.3423,5,Urban residential,6,7,No,2026-02,Winter,23.3,0,None,0,None
+2,Tollygunge,South,KMC,22.5039,88.3423,5,Urban residential,6,7,No,2026-03,Pre-Monsoon,34.2,0,None,0,None
+2,Tollygunge,South,KMC,22.5039,88.3423,5,Urban residential,6,7,No,2026-04,Pre-Monsoon,42,0,None,0,None
+2,Tollygunge,South,KMC,22.5039,88.3423,5,Urban residential,6,7,No,2026-05,Pre-Monsoon,110.7,0,None,0,None
+2,Tollygunge,South,KMC,22.5039,88.3423,5,Urban residential,6,7,No,2026-06,Monsoon,304.2,1,Minor,5.5,Heavy rainfall (localized ponding)
+2,Tollygunge,South,KMC,22.5039,88.3423,5,Urban residential,6,7,No,2026-07,Monsoon,298.2,1,Minor,5.5,Heavy rainfall (localized ponding)
+2,Tollygunge,South,KMC,22.5039,88.3423,5,Urban residential,6,7,No,2026-08,Monsoon,332.9,2,Moderate,5.5,Heavy rainfall (localized ponding)
+3,Jadavpur,South,KMC,22.4994,88.3714,6,Urban/institutional,6,7,No,2025-09,Monsoon (retreating),277.5,1,Minor,5.5,Heavy rainfall (localized ponding)
+3,Jadavpur,South,KMC,22.4994,88.3714,6,Urban/institutional,6,7,No,2025-10,Post-Monsoon,136,0,None,0,None
+3,Jadavpur,South,KMC,22.4994,88.3714,6,Urban/institutional,6,7,No,2025-11,Post-Monsoon,21.4,0,None,0,None
+3,Jadavpur,South,KMC,22.4994,88.3714,6,Urban/institutional,6,7,No,2025-12,Winter,5.4,0,None,0,None
+3,Jadavpur,South,KMC,22.4994,88.3714,6,Urban/institutional,6,7,No,2026-01,Winter,13,0,None,0,None
+3,Jadavpur,South,KMC,22.4994,88.3714,6,Urban/institutional,6,7,No,2026-02,Winter,24.7,0,None,0,None
+3,Jadavpur,South,KMC,22.4994,88.3714,6,Urban/institutional,6,7,No,2026-03,Pre-Monsoon,34,0,None,0,None
+3,Jadavpur,South,KMC,22.4994,88.3714,6,Urban/institutional,6,7,No,2026-04,Pre-Monsoon,43.4,0,None,0,None
+3,Jadavpur,South,KMC,22.4994,88.3714,6,Urban/institutional,6,7,No,2026-05,Pre-Monsoon,112.2,0,None,0,None
+3,Jadavpur,South,KMC,22.4994,88.3714,6,Urban/institutional,6,7,No,2026-06,Monsoon,299.8,1,Minor,5.5,Heavy rainfall (localized ponding)
+3,Jadavpur,South,KMC,22.4994,88.3714,6,Urban/institutional,6,7,No,2026-07,Monsoon,314.2,1,Minor,5.5,Heavy rainfall (localized ponding)
+3,Jadavpur,South,KMC,22.4994,88.3714,6,Urban/institutional,6,7,No,2026-08,Monsoon,338.1,2,Moderate,5.5,Heavy rainfall (localized ponding)
+4,Kasba,South East,KMC,22.517,88.3833,3,"Low-lying, wetland-adjacent",3,5,No,2025-09,Monsoon (retreating),287.5,2,Moderate,8.1,Heavy rainfall + drainage overflow
+4,Kasba,South East,KMC,22.517,88.3833,3,"Low-lying, wetland-adjacent",3,5,No,2025-10,Post-Monsoon,131,0,None,0,None
+4,Kasba,South East,KMC,22.517,88.3833,3,"Low-lying, wetland-adjacent",3,5,No,2025-11,Post-Monsoon,24.1,0,None,0,None
+4,Kasba,South East,KMC,22.517,88.3833,3,"Low-lying, wetland-adjacent",3,5,No,2025-12,Winter,5.3,0,None,0,None
+4,Kasba,South East,KMC,22.517,88.3833,3,"Low-lying, wetland-adjacent",3,5,No,2026-01,Winter,13.7,0,None,0,None
+4,Kasba,South East,KMC,22.517,88.3833,3,"Low-lying, wetland-adjacent",3,5,No,2026-02,Winter,23.3,2,Moderate,8.1,Heavy rainfall + drainage overflow
+4,Kasba,South East,KMC,22.517,88.3833,3,"Low-lying, wetland-adjacent",3,5,No,2026-03,Pre-Monsoon,36.2,0,None,0,None
+4,Kasba,South East,KMC,22.517,88.3833,3,"Low-lying, wetland-adjacent",3,5,No,2026-04,Pre-Monsoon,49.5,0,None,0,None
+4,Kasba,South East,KMC,22.517,88.3833,3,"Low-lying, wetland-adjacent",3,5,No,2026-05,Pre-Monsoon,141.9,0,None,0,None
+4,Kasba,South East,KMC,22.517,88.3833,3,"Low-lying, wetland-adjacent",3,5,No,2026-06,Monsoon,325.9,3,Major,8.1,Heavy rainfall + drainage overflow
+4,Kasba,South East,KMC,22.517,88.3833,3,"Low-lying, wetland-adjacent",3,5,No,2026-07,Monsoon,331.9,4,Major,8.1,Heavy rainfall + drainage overflow
+4,Kasba,South East,KMC,22.517,88.3833,3,"Low-lying, wetland-adjacent",3,5,No,2026-08,Monsoon,349.6,4,Major,8.1,Heavy rainfall + drainage overflow
+5,Topsia,East,KMC,22.539,88.39,2,"Low-lying, wetland-adjacent",3,5,No,2025-09,Monsoon (retreating),267.7,2,Moderate,8.5,Heavy rainfall + drainage overflow
+5,Topsia,East,KMC,22.539,88.39,2,"Low-lying, wetland-adjacent",3,5,No,2025-10,Post-Monsoon,124.9,0,None,0,None
+5,Topsia,East,KMC,22.539,88.39,2,"Low-lying, wetland-adjacent",3,5,No,2025-11,Post-Monsoon,23.2,0,None,0,None
+5,Topsia,East,KMC,22.539,88.39,2,"Low-lying, wetland-adjacent",3,5,No,2025-12,Winter,5.1,0,None,0,None
+5,Topsia,East,KMC,22.539,88.39,2,"Low-lying, wetland-adjacent",3,5,No,2026-01,Winter,12.8,0,None,0,None
+5,Topsia,East,KMC,22.539,88.39,2,"Low-lying, wetland-adjacent",3,5,No,2026-02,Winter,23.2,0,None,0,None
+5,Topsia,East,KMC,22.539,88.39,2,"Low-lying, wetland-adjacent",3,5,No,2026-03,Pre-Monsoon,38.6,0,None,0,None
+5,Topsia,East,KMC,22.539,88.39,2,"Low-lying, wetland-adjacent",3,5,No,2026-04,Pre-Monsoon,49.4,0,None,0,None
+5,Topsia,East,KMC,22.539,88.39,2,"Low-lying, wetland-adjacent",3,5,No,2026-05,Pre-Monsoon,127.3,1,Minor,8.5,Heavy rainfall + drainage overflow
+5,Topsia,East,KMC,22.539,88.39,2,"Low-lying, wetland-adjacent",3,5,No,2026-06,Monsoon,274,2,Moderate,8.5,Heavy rainfall + drainage overflow
+5,Topsia,East,KMC,22.539,88.39,2,"Low-lying, wetland-adjacent",3,5,No,2026-07,Monsoon,347.8,4,Major,8.5,Heavy rainfall + drainage overflow
+5,Topsia,East,KMC,22.539,88.39,2,"Low-lying, wetland-adjacent",3,5,No,2026-08,Monsoon,327.5,4,Major,8.5,Heavy rainfall + drainage overflow
+6,Beliaghata,East,KMC,22.558,88.395,3,"Low-lying, canal-side",4,6,No,2025-09,Monsoon (retreating),263.3,2,Moderate,7.5,Heavy rainfall + drainage overflow
+6,Beliaghata,East,KMC,22.558,88.395,3,"Low-lying, canal-side",4,6,No,2025-10,Post-Monsoon,126.5,0,None,0,None
+6,Beliaghata,East,KMC,22.558,88.395,3,"Low-lying, canal-side",4,6,No,2025-11,Post-Monsoon,24.4,1,Minor,7.5,Heavy rainfall + drainage overflow
+6,Beliaghata,East,KMC,22.558,88.395,3,"Low-lying, canal-side",4,6,No,2025-12,Winter,5.2,0,None,0,None
+6,Beliaghata,East,KMC,22.558,88.395,3,"Low-lying, canal-side",4,6,No,2026-01,Winter,13.5,0,None,0,None
+6,Beliaghata,East,KMC,22.558,88.395,3,"Low-lying, canal-side",4,6,No,2026-02,Winter,22.9,0,None,0,None
+6,Beliaghata,East,KMC,22.558,88.395,3,"Low-lying, canal-side",4,6,No,2026-03,Pre-Monsoon,35,0,None,0,None
+6,Beliaghata,East,KMC,22.558,88.395,3,"Low-lying, canal-side",4,6,No,2026-04,Pre-Monsoon,47,0,None,0,None
+6,Beliaghata,East,KMC,22.558,88.395,3,"Low-lying, canal-side",4,6,No,2026-05,Pre-Monsoon,118.5,0,None,0,None
+6,Beliaghata,East,KMC,22.558,88.395,3,"Low-lying, canal-side",4,6,No,2026-06,Monsoon,310.2,2,Moderate,7.5,Heavy rainfall + drainage overflow
+6,Beliaghata,East,KMC,22.558,88.395,3,"Low-lying, canal-side",4,6,No,2026-07,Monsoon,353.6,3,Major,7.5,Heavy rainfall + drainage overflow
+6,Beliaghata,East,KMC,22.558,88.395,3,"Low-lying, canal-side",4,6,No,2026-08,Monsoon,316.6,2,Moderate,7.5,Heavy rainfall + drainage overflow
+7,Park Circus,Central,KMC,22.547,88.369,5,Dense urban,5,7,No,2025-09,Monsoon (retreating),277.4,2,Moderate,6.1,Heavy rainfall (localized ponding)
+7,Park Circus,Central,KMC,22.547,88.369,5,Dense urban,5,7,No,2025-10,Post-Monsoon,119.1,0,None,0,None
+7,Park Circus,Central,KMC,22.547,88.369,5,Dense urban,5,7,No,2025-11,Post-Monsoon,24,1,Minor,6.1,Heavy rainfall (localized ponding)
+7,Park Circus,Central,KMC,22.547,88.369,5,Dense urban,5,7,No,2025-12,Winter,4.8,0,None,0,None
+7,Park Circus,Central,KMC,22.547,88.369,5,Dense urban,5,7,No,2026-01,Winter,12.3,0,None,0,None
+7,Park Circus,Central,KMC,22.547,88.369,5,Dense urban,5,7,No,2026-02,Winter,24.2,0,None,0,None
+7,Park Circus,Central,KMC,22.547,88.369,5,Dense urban,5,7,No,2026-03,Pre-Monsoon,32.2,0,None,0,None
+7,Park Circus,Central,KMC,22.547,88.369,5,Dense urban,5,7,No,2026-04,Pre-Monsoon,44.7,0,None,0,None
+7,Park Circus,Central,KMC,22.547,88.369,5,Dense urban,5,7,No,2026-05,Pre-Monsoon,109.4,0,None,0,None
+7,Park Circus,Central,KMC,22.547,88.369,5,Dense urban,5,7,No,2026-06,Monsoon,308.1,2,Moderate,6.1,Heavy rainfall (localized ponding)
+7,Park Circus,Central,KMC,22.547,88.369,5,Dense urban,5,7,No,2026-07,Monsoon,351.4,2,Moderate,6.1,Heavy rainfall (localized ponding)
+7,Park Circus,Central,KMC,22.547,88.369,5,Dense urban,5,7,No,2026-08,Monsoon,312.3,2,Moderate,6.1,Heavy rainfall (localized ponding)
+8,BBD Bagh (Esplanade),Central,KMC,22.5697,88.351,4,Historic urban core,5,8,Yes,2025-09,Monsoon (retreating),306.8,2,Moderate,6.5,Heavy rainfall + tidal backflow (Hooghly)
+8,BBD Bagh (Esplanade),Central,KMC,22.5697,88.351,4,Historic urban core,5,8,Yes,2025-10,Post-Monsoon,134,0,None,0,None
+8,BBD Bagh (Esplanade),Central,KMC,22.5697,88.351,4,Historic urban core,5,8,Yes,2025-11,Post-Monsoon,22.6,1,Minor,6.5,Heavy rainfall (localized ponding)
+8,BBD Bagh (Esplanade),Central,KMC,22.5697,88.351,4,Historic urban core,5,8,Yes,2025-12,Winter,5.1,0,None,0,None
+8,BBD Bagh (Esplanade),Central,KMC,22.5697,88.351,4,Historic urban core,5,8,Yes,2026-01,Winter,13.5,0,None,0,None
+8,BBD Bagh (Esplanade),Central,KMC,22.5697,88.351,4,Historic urban core,5,8,Yes,2026-02,Winter,25.3,0,None,0,None
+8,BBD Bagh (Esplanade),Central,KMC,22.5697,88.351,4,Historic urban core,5,8,Yes,2026-03,Pre-Monsoon,34.4,0,None,0,None
+8,BBD Bagh (Esplanade),Central,KMC,22.5697,88.351,4,Historic urban core,5,8,Yes,2026-04,Pre-Monsoon,44.5,0,None,0,None
+8,BBD Bagh (Esplanade),Central,KMC,22.5697,88.351,4,Historic urban core,5,8,Yes,2026-05,Pre-Monsoon,137.3,0,None,0,None
+8,BBD Bagh (Esplanade),Central,KMC,22.5697,88.351,4,Historic urban core,5,8,Yes,2026-06,Monsoon,297.5,1,Minor,6.5,Heavy rainfall + tidal backflow (Hooghly)
+8,BBD Bagh (Esplanade),Central,KMC,22.5697,88.351,4,Historic urban core,5,8,Yes,2026-07,Monsoon,336.4,3,Major,6.5,Heavy rainfall + tidal backflow (Hooghly)
+8,BBD Bagh (Esplanade),Central,KMC,22.5697,88.351,4,Historic urban core,5,8,Yes,2026-08,Monsoon,326.9,2,Moderate,6.5,Heavy rainfall + tidal backflow (Hooghly)
+9,Tallah,North,KMC,22.61,88.375,4,"Riverside, low-lying",4,6,Yes,2025-09,Monsoon (retreating),270.9,1,Minor,7.1,Heavy rainfall + tidal backflow (Hooghly)
+9,Tallah,North,KMC,22.61,88.375,4,"Riverside, low-lying",4,6,Yes,2025-10,Post-Monsoon,113.3,0,None,0,None
+9,Tallah,North,KMC,22.61,88.375,4,"Riverside, low-lying",4,6,Yes,2025-11,Post-Monsoon,24.3,1,Minor,7.1,Heavy rainfall + drainage overflow
+9,Tallah,North,KMC,22.61,88.375,4,"Riverside, low-lying",4,6,Yes,2025-12,Winter,5.2,0,None,0,None
+9,Tallah,North,KMC,22.61,88.375,4,"Riverside, low-lying",4,6,Yes,2026-01,Winter,13.9,0,None,0,None
+9,Tallah,North,KMC,22.61,88.375,4,"Riverside, low-lying",4,6,Yes,2026-02,Winter,23.6,0,None,0,None
+9,Tallah,North,KMC,22.61,88.375,4,"Riverside, low-lying",4,6,Yes,2026-03,Pre-Monsoon,35.1,0,None,0,None
+9,Tallah,North,KMC,22.61,88.375,4,"Riverside, low-lying",4,6,Yes,2026-04,Pre-Monsoon,48.8,0,None,0,None
+9,Tallah,North,KMC,22.61,88.375,4,"Riverside, low-lying",4,6,Yes,2026-05,Pre-Monsoon,110.5,0,None,0,None
+9,Tallah,North,KMC,22.61,88.375,4,"Riverside, low-lying",4,6,Yes,2026-06,Monsoon,268.8,1,Minor,7.1,Heavy rainfall + tidal backflow (Hooghly)
+9,Tallah,North,KMC,22.61,88.375,4,"Riverside, low-lying",4,6,Yes,2026-07,Monsoon,355.2,2,Moderate,7.1,Heavy rainfall + tidal backflow (Hooghly)
+9,Tallah,North,KMC,22.61,88.375,4,"Riverside, low-lying",4,6,Yes,2026-08,Monsoon,332.8,2,Moderate,7.1,Heavy rainfall + tidal backflow (Hooghly)
+10,Shyambazar,North,KMC,22.5975,88.3717,6,Dense urban,5,6,No,2025-09,Monsoon (retreating),278.3,0,None,0,None
+10,Shyambazar,North,KMC,22.5975,88.3717,6,Dense urban,5,6,No,2025-10,Post-Monsoon,114.4,0,None,0,None
+10,Shyambazar,North,KMC,22.5975,88.3717,6,Dense urban,5,6,No,2025-11,Post-Monsoon,23.8,0,None,0,None
+10,Shyambazar,North,KMC,22.5975,88.3717,6,Dense urban,5,6,No,2025-12,Winter,4.8,0,None,0,None
+10,Shyambazar,North,KMC,22.5975,88.3717,6,Dense urban,5,6,No,2026-01,Winter,13,0,None,0,None
+10,Shyambazar,North,KMC,22.5975,88.3717,6,Dense urban,5,6,No,2026-02,Winter,23.1,0,None,0,None
+10,Shyambazar,North,KMC,22.5975,88.3717,6,Dense urban,5,6,No,2026-03,Pre-Monsoon,33.5,0,None,0,None
+10,Shyambazar,North,KMC,22.5975,88.3717,6,Dense urban,5,6,No,2026-04,Pre-Monsoon,39.3,0,None,0,None
+10,Shyambazar,North,KMC,22.5975,88.3717,6,Dense urban,5,6,No,2026-05,Pre-Monsoon,121.6,0,None,0,None
+10,Shyambazar,North,KMC,22.5975,88.3717,6,Dense urban,5,6,No,2026-06,Monsoon,296.9,1,Minor,6.1,Heavy rainfall (localized ponding)
+10,Shyambazar,North,KMC,22.5975,88.3717,6,Dense urban,5,6,No,2026-07,Monsoon,333.4,2,Moderate,6.1,Heavy rainfall (localized ponding)
+10,Shyambazar,North,KMC,22.5975,88.3717,6,Dense urban,5,6,No,2026-08,Monsoon,312.2,1,Minor,6.1,Heavy rainfall (localized ponding)
+11,Dum Dum,North,KMC,22.642,88.4197,7,"Suburban, airport-adjacent",6,6,No,2025-09,Monsoon (retreating),272.8,1,Minor,5.5,Heavy rainfall (localized ponding)
+11,Dum Dum,North,KMC,22.642,88.4197,7,"Suburban, airport-adjacent",6,6,No,2025-10,Post-Monsoon,131.7,1,Minor,5.5,Heavy rainfall (localized ponding)
+11,Dum Dum,North,KMC,22.642,88.4197,7,"Suburban, airport-adjacent",6,6,No,2025-11,Post-Monsoon,24.2,1,Minor,5.5,Heavy rainfall (localized ponding)
+11,Dum Dum,North,KMC,22.642,88.4197,7,"Suburban, airport-adjacent",6,6,No,2025-12,Winter,4.9,0,None,0,None
+11,Dum Dum,North,KMC,22.642,88.4197,7,"Suburban, airport-adjacent",6,6,No,2026-01,Winter,12,1,Minor,5.5,Heavy rainfall (localized ponding)
+11,Dum Dum,North,KMC,22.642,88.4197,7,"Suburban, airport-adjacent",6,6,No,2026-02,Winter,22.6,0,None,0,None
+11,Dum Dum,North,KMC,22.642,88.4197,7,"Suburban, airport-adjacent",6,6,No,2026-03,Pre-Monsoon,29.6,0,None,0,None
+11,Dum Dum,North,KMC,22.642,88.4197,7,"Suburban, airport-adjacent",6,6,No,2026-04,Pre-Monsoon,40.2,0,None,0,None
+11,Dum Dum,North,KMC,22.642,88.4197,7,"Suburban, airport-adjacent",6,6,No,2026-05,Pre-Monsoon,115,0,None,0,None
+11,Dum Dum,North,KMC,22.642,88.4197,7,"Suburban, airport-adjacent",6,6,No,2026-06,Monsoon,283.4,1,Minor,5.5,Heavy rainfall (localized ponding)
+11,Dum Dum,North,KMC,22.642,88.4197,7,"Suburban, airport-adjacent",6,6,No,2026-07,Monsoon,363.2,2,Moderate,5.5,Heavy rainfall (localized ponding)
+11,Dum Dum,North,KMC,22.642,88.4197,7,"Suburban, airport-adjacent",6,6,No,2026-08,Monsoon,318.3,1,Minor,5.5,Heavy rainfall (localized ponding)
+12,Salt Lake (Sector V),East,Bidhannagar Municipal Corporation,22.585,88.42,5,Planned township,8,9,No,2025-09,Monsoon (retreating),259.7,0,None,0,None
+12,Salt Lake (Sector V),East,Bidhannagar Municipal Corporation,22.585,88.42,5,Planned township,8,9,No,2025-10,Post-Monsoon,122.8,0,None,0,None
+12,Salt Lake (Sector V),East,Bidhannagar Municipal Corporation,22.585,88.42,5,Planned township,8,9,No,2025-11,Post-Monsoon,25.8,0,None,0,None
+12,Salt Lake (Sector V),East,Bidhannagar Municipal Corporation,22.585,88.42,5,Planned township,8,9,No,2025-12,Winter,4.8,1,Minor,4.3,Heavy rainfall (localized ponding)
+12,Salt Lake (Sector V),East,Bidhannagar Municipal Corporation,22.585,88.42,5,Planned township,8,9,No,2026-01,Winter,13.6,0,None,0,None
+12,Salt Lake (Sector V),East,Bidhannagar Municipal Corporation,22.585,88.42,5,Planned township,8,9,No,2026-02,Winter,25,0,None,0,None
+12,Salt Lake (Sector V),East,Bidhannagar Municipal Corporation,22.585,88.42,5,Planned township,8,9,No,2026-03,Pre-Monsoon,33.3,0,None,0,None
+12,Salt Lake (Sector V),East,Bidhannagar Municipal Corporation,22.585,88.42,5,Planned township,8,9,No,2026-04,Pre-Monsoon,45.1,0,None,0,None
+12,Salt Lake (Sector V),East,Bidhannagar Municipal Corporation,22.585,88.42,5,Planned township,8,9,No,2026-05,Pre-Monsoon,117.2,0,None,0,None
+12,Salt Lake (Sector V),East,Bidhannagar Municipal Corporation,22.585,88.42,5,Planned township,8,9,No,2026-06,Monsoon,307.8,1,Minor,4.3,Heavy rainfall (localized ponding)
+12,Salt Lake (Sector V),East,Bidhannagar Municipal Corporation,22.585,88.42,5,Planned township,8,9,No,2026-07,Monsoon,341.3,1,Minor,4.3,Heavy rainfall (localized ponding)
+12,Salt Lake (Sector V),East,Bidhannagar Municipal Corporation,22.585,88.42,5,Planned township,8,9,No,2026-08,Monsoon,348.6,1,Minor,4.3,Heavy rainfall (localized ponding)
+13,Rajarhat New Town,East,New Town Kolkata Development Authority (NKDA),22.62,88.47,6,"Newly developed, reclaimed wetland",7,8,No,2025-09,Monsoon (retreating),269.9,1,Minor,4.9,Heavy rainfall (localized ponding)
+13,Rajarhat New Town,East,New Town Kolkata Development Authority (NKDA),22.62,88.47,6,"Newly developed, reclaimed wetland",7,8,No,2025-10,Post-Monsoon,118.8,0,None,0,None
+13,Rajarhat New Town,East,New Town Kolkata Development Authority (NKDA),22.62,88.47,6,"Newly developed, reclaimed wetland",7,8,No,2025-11,Post-Monsoon,23.9,0,None,0,None
+13,Rajarhat New Town,East,New Town Kolkata Development Authority (NKDA),22.62,88.47,6,"Newly developed, reclaimed wetland",7,8,No,2025-12,Winter,5.1,0,None,0,None
+13,Rajarhat New Town,East,New Town Kolkata Development Authority (NKDA),22.62,88.47,6,"Newly developed, reclaimed wetland",7,8,No,2026-01,Winter,11.4,0,None,0,None
+13,Rajarhat New Town,East,New Town Kolkata Development Authority (NKDA),22.62,88.47,6,"Newly developed, reclaimed wetland",7,8,No,2026-02,Winter,22.6,0,None,0,None
+13,Rajarhat New Town,East,New Town Kolkata Development Authority (NKDA),22.62,88.47,6,"Newly developed, reclaimed wetland",7,8,No,2026-03,Pre-Monsoon,31.6,0,None,0,None
+13,Rajarhat New Town,East,New Town Kolkata Development Authority (NKDA),22.62,88.47,6,"Newly developed, reclaimed wetland",7,8,No,2026-04,Pre-Monsoon,52.5,0,None,0,None
+13,Rajarhat New Town,East,New Town Kolkata Development Authority (NKDA),22.62,88.47,6,"Newly developed, reclaimed wetland",7,8,No,2026-05,Pre-Monsoon,115.1,0,None,0,None
+13,Rajarhat New Town,East,New Town Kolkata Development Authority (NKDA),22.62,88.47,6,"Newly developed, reclaimed wetland",7,8,No,2026-06,Monsoon,280.2,1,Minor,4.9,Heavy rainfall (localized ponding)
+13,Rajarhat New Town,East,New Town Kolkata Development Authority (NKDA),22.62,88.47,6,"Newly developed, reclaimed wetland",7,8,No,2026-07,Monsoon,346,1,Minor,4.9,Heavy rainfall (localized ponding)
+13,Rajarhat New Town,East,New Town Kolkata Development Authority (NKDA),22.62,88.47,6,"Newly developed, reclaimed wetland",7,8,No,2026-08,Monsoon,291.7,1,Minor,4.9,Heavy rainfall (localized ponding)
+14,Garden Reach,South West,KMC,22.533,88.307,2,"Riverside, industrial",3,5,Yes,2025-09,Monsoon (retreating),284.1,3,Major,8.5,Heavy rainfall + tidal backflow (Hooghly)
+14,Garden Reach,South West,KMC,22.533,88.307,2,"Riverside, industrial",3,5,Yes,2025-10,Post-Monsoon,135.8,0,None,0,None
+14,Garden Reach,South West,KMC,22.533,88.307,2,"Riverside, industrial",3,5,Yes,2025-11,Post-Monsoon,25.7,0,None,0,None
+14,Garden Reach,South West,KMC,22.533,88.307,2,"Riverside, industrial",3,5,Yes,2025-12,Winter,5.6,0,None,0,None
+14,Garden Reach,South West,KMC,22.533,88.307,2,"Riverside, industrial",3,5,Yes,2026-01,Winter,14.3,0,None,0,None
+14,Garden Reach,South West,KMC,22.533,88.307,2,"Riverside, industrial",3,5,Yes,2026-02,Winter,24.6,0,None,0,None
+14,Garden Reach,South West,KMC,22.533,88.307,2,"Riverside, industrial",3,5,Yes,2026-03,Pre-Monsoon,35.1,0,None,0,None
+14,Garden Reach,South West,KMC,22.533,88.307,2,"Riverside, industrial",3,5,Yes,2026-04,Pre-Monsoon,43.8,0,None,0,None
+14,Garden Reach,South West,KMC,22.533,88.307,2,"Riverside, industrial",3,5,Yes,2026-05,Pre-Monsoon,122.5,0,None,0,None
+14,Garden Reach,South West,KMC,22.533,88.307,2,"Riverside, industrial",3,5,Yes,2026-06,Monsoon,337.4,4,Major,8.5,Heavy rainfall + tidal backflow (Hooghly)
+14,Garden Reach,South West,KMC,22.533,88.307,2,"Riverside, industrial",3,5,Yes,2026-07,Monsoon,323.8,3,Major,8.5,Heavy rainfall + tidal backflow (Hooghly)
+14,Garden Reach,South West,KMC,22.533,88.307,2,"Riverside, industrial",3,5,Yes,2026-08,Monsoon,346.5,4,Major,8.5,Heavy rainfall + tidal backflow (Hooghly)
+15,Alipore,South,KMC,22.535,88.33,8,"Green/institutional, elevated",7,8,No,2025-09,Monsoon (retreating),256.1,1,Minor,4.9,Heavy rainfall (localized ponding)
+15,Alipore,South,KMC,22.535,88.33,8,"Green/institutional, elevated",7,8,No,2025-10,Post-Monsoon,120,0,None,0,None
+15,Alipore,South,KMC,22.535,88.33,8,"Green/institutional, elevated",7,8,No,2025-11,Post-Monsoon,22.1,1,Minor,4.9,Heavy rainfall (localized ponding)
+15,Alipore,South,KMC,22.535,88.33,8,"Green/institutional, elevated",7,8,No,2025-12,Winter,4.6,0,None,0,None
+15,Alipore,South,KMC,22.535,88.33,8,"Green/institutional, elevated",7,8,No,2026-01,Winter,12.6,0,None,0,None
+15,Alipore,South,KMC,22.535,88.33,8,"Green/institutional, elevated",7,8,No,2026-02,Winter,22.4,1,Minor,4.9,Heavy rainfall (localized ponding)
+15,Alipore,South,KMC,22.535,88.33,8,"Green/institutional, elevated",7,8,No,2026-03,Pre-Monsoon,32.1,0,None,0,None
+15,Alipore,South,KMC,22.535,88.33,8,"Green/institutional, elevated",7,8,No,2026-04,Pre-Monsoon,48.7,0,None,0,None
+15,Alipore,South,KMC,22.535,88.33,8,"Green/institutional, elevated",7,8,No,2026-05,Pre-Monsoon,133.1,0,None,0,None
+15,Alipore,South,KMC,22.535,88.33,8,"Green/institutional, elevated",7,8,No,2026-06,Monsoon,315.1,1,Minor,4.9,Heavy rainfall (localized ponding)
+15,Alipore,South,KMC,22.535,88.33,8,"Green/institutional, elevated",7,8,No,2026-07,Monsoon,337.7,1,Minor,4.9,Heavy rainfall (localized ponding)
+15,Alipore,South,KMC,22.535,88.33,8,"Green/institutional, elevated",7,8,No,2026-08,Monsoon,324.4,0,None,0,None
+16,Ballygunge,South Central,KMC,22.528,88.366,6,Affluent residential,7,8,No,2025-09,Monsoon (retreating),270.8,1,Minor,4.9,Heavy rainfall (localized ponding)
+16,Ballygunge,South Central,KMC,22.528,88.366,6,Affluent residential,7,8,No,2025-10,Post-Monsoon,120.5,1,Minor,4.9,Heavy rainfall (localized ponding)
+16,Ballygunge,South Central,KMC,22.528,88.366,6,Affluent residential,7,8,No,2025-11,Post-Monsoon,23.2,0,None,0,None
+16,Ballygunge,South Central,KMC,22.528,88.366,6,Affluent residential,7,8,No,2025-12,Winter,5,0,None,0,None
+16,Ballygunge,South Central,KMC,22.528,88.366,6,Affluent residential,7,8,No,2026-01,Winter,13.6,0,None,0,None
+16,Ballygunge,South Central,KMC,22.528,88.366,6,Affluent residential,7,8,No,2026-02,Winter,21.5,0,None,0,None
+16,Ballygunge,South Central,KMC,22.528,88.366,6,Affluent residential,7,8,No,2026-03,Pre-Monsoon,32.4,0,None,0,None
+16,Ballygunge,South Central,KMC,22.528,88.366,6,Affluent residential,7,8,No,2026-04,Pre-Monsoon,43.9,0,None,0,None
+16,Ballygunge,South Central,KMC,22.528,88.366,6,Affluent residential,7,8,No,2026-05,Pre-Monsoon,110,1,Minor,4.9,Heavy rainfall (localized ponding)
+16,Ballygunge,South Central,KMC,22.528,88.366,6,Affluent residential,7,8,No,2026-06,Monsoon,273.8,1,Minor,4.9,Heavy rainfall (localized ponding)
+16,Ballygunge,South Central,KMC,22.528,88.366,6,Affluent residential,7,8,No,2026-07,Monsoon,327.1,1,Minor,4.9,Heavy rainfall (localized ponding)
+16,Ballygunge,South Central,KMC,22.528,88.366,6,Affluent residential,7,8,No,2026-08,Monsoon,343.7,1,Minor,4.9,Heavy rainfall (localized ponding)
+17,Maniktala,North Central,KMC,22.585,88.38,5,Dense residential,5,6,No,2025-09,Monsoon (retreating),279.4,1,Minor,6.1,Heavy rainfall (localized ponding)
+17,Maniktala,North Central,KMC,22.585,88.38,5,Dense residential,5,6,No,2025-10,Post-Monsoon,132.5,0,None,0,None
+17,Maniktala,North Central,KMC,22.585,88.38,5,Dense residential,5,6,No,2025-11,Post-Monsoon,24.2,0,None,0,None
+17,Maniktala,North Central,KMC,22.585,88.38,5,Dense residential,5,6,No,2025-12,Winter,4.4,0,None,0,None
+17,Maniktala,North Central,KMC,22.585,88.38,5,Dense residential,5,6,No,2026-01,Winter,13.6,0,None,0,None
+17,Maniktala,North Central,KMC,22.585,88.38,5,Dense residential,5,6,No,2026-02,Winter,22.3,0,None,0,None
+17,Maniktala,North Central,KMC,22.585,88.38,5,Dense residential,5,6,No,2026-03,Pre-Monsoon,34.4,0,None,0,None
+17,Maniktala,North Central,KMC,22.585,88.38,5,Dense residential,5,6,No,2026-04,Pre-Monsoon,45.2,0,None,0,None
+17,Maniktala,North Central,KMC,22.585,88.38,5,Dense residential,5,6,No,2026-05,Pre-Monsoon,131.2,0,None,0,None
+17,Maniktala,North Central,KMC,22.585,88.38,5,Dense residential,5,6,No,2026-06,Monsoon,304,1,Minor,6.1,Heavy rainfall (localized ponding)
+17,Maniktala,North Central,KMC,22.585,88.38,5,Dense residential,5,6,No,2026-07,Monsoon,363.6,3,Major,6.1,Heavy rainfall (localized ponding)
+17,Maniktala,North Central,KMC,22.585,88.38,5,Dense residential,5,6,No,2026-08,Monsoon,330.9,2,Moderate,6.1,Heavy rainfall (localized ponding)
+18,Entally,Central East,KMC,22.562,88.37,4,Dense low-lying residential,4,6,No,2025-09,Monsoon (retreating),281.6,2,Moderate,7.1,Heavy rainfall + drainage overflow
+18,Entally,Central East,KMC,22.562,88.37,4,Dense low-lying residential,4,6,No,2025-10,Post-Monsoon,127.1,0,None,0,None
+18,Entally,Central East,KMC,22.562,88.37,4,Dense low-lying residential,4,6,No,2025-11,Post-Monsoon,24,0,None,0,None
+18,Entally,Central East,KMC,22.562,88.37,4,Dense low-lying residential,4,6,No,2025-12,Winter,5.6,0,None,0,None
+18,Entally,Central East,KMC,22.562,88.37,4,Dense low-lying residential,4,6,No,2026-01,Winter,14.5,0,None,0,None
+18,Entally,Central East,KMC,22.562,88.37,4,Dense low-lying residential,4,6,No,2026-02,Winter,25.7,1,Minor,7.1,Heavy rainfall + drainage overflow
+18,Entally,Central East,KMC,22.562,88.37,4,Dense low-lying residential,4,6,No,2026-03,Pre-Monsoon,33.2,0,None,0,None
+18,Entally,Central East,KMC,22.562,88.37,4,Dense low-lying residential,4,6,No,2026-04,Pre-Monsoon,44.8,0,None,0,None
+18,Entally,Central East,KMC,22.562,88.37,4,Dense low-lying residential,4,6,No,2026-05,Pre-Monsoon,128.5,0,None,0,None
+18,Entally,Central East,KMC,22.562,88.37,4,Dense low-lying residential,4,6,No,2026-06,Monsoon,281.2,2,Moderate,7.1,Heavy rainfall + drainage overflow
+18,Entally,Central East,KMC,22.562,88.37,4,Dense low-lying residential,4,6,No,2026-07,Monsoon,341.1,3,Major,7.1,Heavy rainfall + drainage overflow
+18,Entally,Central East,KMC,22.562,88.37,4,Dense low-lying residential,4,6,No,2026-08,Monsoon,322.1,3,Major,7.1,Heavy rainfall + drainage overflow

@@ -1,0 +1,217 @@
+Ward_ID,Ward_Name,Zone,Administrative_Body,Latitude,Longitude,Elevation_m,Landscape_Type,Land_Use_Category,Water_Body_Proximity,Impervious_Surface_Percent,Water_Surface_Percent,Green_Cover_Baseline_Percent,Month,Season,Seasonal_Green_Cover_Percent
+1,Behala,South West,KMC,22.4989,88.3145,3,Low-lying residential,Residential (low-lying),Yes (Hooghly-adjacent),87,3,10,2025-09,Monsoon (retreating),11.5
+1,Behala,South West,KMC,22.4989,88.3145,3,Low-lying residential,Residential (low-lying),Yes (Hooghly-adjacent),87,3,10,2025-10,Post-Monsoon,10.5
+1,Behala,South West,KMC,22.4989,88.3145,3,Low-lying residential,Residential (low-lying),Yes (Hooghly-adjacent),87,3,10,2025-11,Post-Monsoon,9
+1,Behala,South West,KMC,22.4989,88.3145,3,Low-lying residential,Residential (low-lying),Yes (Hooghly-adjacent),87,3,10,2025-12,Winter,7.5
+1,Behala,South West,KMC,22.4989,88.3145,3,Low-lying residential,Residential (low-lying),Yes (Hooghly-adjacent),87,3,10,2026-01,Winter,7
+1,Behala,South West,KMC,22.4989,88.3145,3,Low-lying residential,Residential (low-lying),Yes (Hooghly-adjacent),87,3,10,2026-02,Winter,7.5
+1,Behala,South West,KMC,22.4989,88.3145,3,Low-lying residential,Residential (low-lying),Yes (Hooghly-adjacent),87,3,10,2026-03,Pre-Monsoon,8
+1,Behala,South West,KMC,22.4989,88.3145,3,Low-lying residential,Residential (low-lying),Yes (Hooghly-adjacent),87,3,10,2026-04,Pre-Monsoon,8.5
+1,Behala,South West,KMC,22.4989,88.3145,3,Low-lying residential,Residential (low-lying),Yes (Hooghly-adjacent),87,3,10,2026-05,Pre-Monsoon,9
+1,Behala,South West,KMC,22.4989,88.3145,3,Low-lying residential,Residential (low-lying),Yes (Hooghly-adjacent),87,3,10,2026-06,Monsoon,10.5
+1,Behala,South West,KMC,22.4989,88.3145,3,Low-lying residential,Residential (low-lying),Yes (Hooghly-adjacent),87,3,10,2026-07,Monsoon,12
+1,Behala,South West,KMC,22.4989,88.3145,3,Low-lying residential,Residential (low-lying),Yes (Hooghly-adjacent),87,3,10,2026-08,Monsoon,12.5
+2,Tollygunge,South,KMC,22.5039,88.3423,5,Urban residential,Residential,No,87,1,12,2025-09,Monsoon (retreating),13.8
+2,Tollygunge,South,KMC,22.5039,88.3423,5,Urban residential,Residential,No,87,1,12,2025-10,Post-Monsoon,12.6
+2,Tollygunge,South,KMC,22.5039,88.3423,5,Urban residential,Residential,No,87,1,12,2025-11,Post-Monsoon,10.8
+2,Tollygunge,South,KMC,22.5039,88.3423,5,Urban residential,Residential,No,87,1,12,2025-12,Winter,9
+2,Tollygunge,South,KMC,22.5039,88.3423,5,Urban residential,Residential,No,87,1,12,2026-01,Winter,8.4
+2,Tollygunge,South,KMC,22.5039,88.3423,5,Urban residential,Residential,No,87,1,12,2026-02,Winter,9
+2,Tollygunge,South,KMC,22.5039,88.3423,5,Urban residential,Residential,No,87,1,12,2026-03,Pre-Monsoon,9.6
+2,Tollygunge,South,KMC,22.5039,88.3423,5,Urban residential,Residential,No,87,1,12,2026-04,Pre-Monsoon,10.2
+2,Tollygunge,South,KMC,22.5039,88.3423,5,Urban residential,Residential,No,87,1,12,2026-05,Pre-Monsoon,10.8
+2,Tollygunge,South,KMC,22.5039,88.3423,5,Urban residential,Residential,No,87,1,12,2026-06,Monsoon,12.6
+2,Tollygunge,South,KMC,22.5039,88.3423,5,Urban residential,Residential,No,87,1,12,2026-07,Monsoon,14.4
+2,Tollygunge,South,KMC,22.5039,88.3423,5,Urban residential,Residential,No,87,1,12,2026-08,Monsoon,15
+3,Jadavpur,South,KMC,22.4994,88.3714,6,Urban/institutional,Institutional/Residential,No,84,1,15,2025-09,Monsoon (retreating),17.2
+3,Jadavpur,South,KMC,22.4994,88.3714,6,Urban/institutional,Institutional/Residential,No,84,1,15,2025-10,Post-Monsoon,15.8
+3,Jadavpur,South,KMC,22.4994,88.3714,6,Urban/institutional,Institutional/Residential,No,84,1,15,2025-11,Post-Monsoon,13.5
+3,Jadavpur,South,KMC,22.4994,88.3714,6,Urban/institutional,Institutional/Residential,No,84,1,15,2025-12,Winter,11.2
+3,Jadavpur,South,KMC,22.4994,88.3714,6,Urban/institutional,Institutional/Residential,No,84,1,15,2026-01,Winter,10.5
+3,Jadavpur,South,KMC,22.4994,88.3714,6,Urban/institutional,Institutional/Residential,No,84,1,15,2026-02,Winter,11.2
+3,Jadavpur,South,KMC,22.4994,88.3714,6,Urban/institutional,Institutional/Residential,No,84,1,15,2026-03,Pre-Monsoon,12
+3,Jadavpur,South,KMC,22.4994,88.3714,6,Urban/institutional,Institutional/Residential,No,84,1,15,2026-04,Pre-Monsoon,12.8
+3,Jadavpur,South,KMC,22.4994,88.3714,6,Urban/institutional,Institutional/Residential,No,84,1,15,2026-05,Pre-Monsoon,13.5
+3,Jadavpur,South,KMC,22.4994,88.3714,6,Urban/institutional,Institutional/Residential,No,84,1,15,2026-06,Monsoon,15.8
+3,Jadavpur,South,KMC,22.4994,88.3714,6,Urban/institutional,Institutional/Residential,No,84,1,15,2026-07,Monsoon,18
+3,Jadavpur,South,KMC,22.4994,88.3714,6,Urban/institutional,Institutional/Residential,No,84,1,15,2026-08,Monsoon,18.8
+4,Kasba,South East,KMC,22.517,88.3833,3,"Low-lying, wetland-adjacent",Residential/Wetland-adjacent,Yes (East Kolkata Wetlands),81,5,14,2025-09,Monsoon (retreating),16.1
+4,Kasba,South East,KMC,22.517,88.3833,3,"Low-lying, wetland-adjacent",Residential/Wetland-adjacent,Yes (East Kolkata Wetlands),81,5,14,2025-10,Post-Monsoon,14.7
+4,Kasba,South East,KMC,22.517,88.3833,3,"Low-lying, wetland-adjacent",Residential/Wetland-adjacent,Yes (East Kolkata Wetlands),81,5,14,2025-11,Post-Monsoon,12.6
+4,Kasba,South East,KMC,22.517,88.3833,3,"Low-lying, wetland-adjacent",Residential/Wetland-adjacent,Yes (East Kolkata Wetlands),81,5,14,2025-12,Winter,10.5
+4,Kasba,South East,KMC,22.517,88.3833,3,"Low-lying, wetland-adjacent",Residential/Wetland-adjacent,Yes (East Kolkata Wetlands),81,5,14,2026-01,Winter,9.8
+4,Kasba,South East,KMC,22.517,88.3833,3,"Low-lying, wetland-adjacent",Residential/Wetland-adjacent,Yes (East Kolkata Wetlands),81,5,14,2026-02,Winter,10.5
+4,Kasba,South East,KMC,22.517,88.3833,3,"Low-lying, wetland-adjacent",Residential/Wetland-adjacent,Yes (East Kolkata Wetlands),81,5,14,2026-03,Pre-Monsoon,11.2
+4,Kasba,South East,KMC,22.517,88.3833,3,"Low-lying, wetland-adjacent",Residential/Wetland-adjacent,Yes (East Kolkata Wetlands),81,5,14,2026-04,Pre-Monsoon,11.9
+4,Kasba,South East,KMC,22.517,88.3833,3,"Low-lying, wetland-adjacent",Residential/Wetland-adjacent,Yes (East Kolkata Wetlands),81,5,14,2026-05,Pre-Monsoon,12.6
+4,Kasba,South East,KMC,22.517,88.3833,3,"Low-lying, wetland-adjacent",Residential/Wetland-adjacent,Yes (East Kolkata Wetlands),81,5,14,2026-06,Monsoon,14.7
+4,Kasba,South East,KMC,22.517,88.3833,3,"Low-lying, wetland-adjacent",Residential/Wetland-adjacent,Yes (East Kolkata Wetlands),81,5,14,2026-07,Monsoon,16.8
+4,Kasba,South East,KMC,22.517,88.3833,3,"Low-lying, wetland-adjacent",Residential/Wetland-adjacent,Yes (East Kolkata Wetlands),81,5,14,2026-08,Monsoon,17.5
+5,Topsia,East,KMC,22.539,88.39,2,"Low-lying, wetland-adjacent",Residential/Wetland-adjacent,Yes (East Kolkata Wetlands),82,5,13,2025-09,Monsoon (retreating),14.9
+5,Topsia,East,KMC,22.539,88.39,2,"Low-lying, wetland-adjacent",Residential/Wetland-adjacent,Yes (East Kolkata Wetlands),82,5,13,2025-10,Post-Monsoon,13.7
+5,Topsia,East,KMC,22.539,88.39,2,"Low-lying, wetland-adjacent",Residential/Wetland-adjacent,Yes (East Kolkata Wetlands),82,5,13,2025-11,Post-Monsoon,11.7
+5,Topsia,East,KMC,22.539,88.39,2,"Low-lying, wetland-adjacent",Residential/Wetland-adjacent,Yes (East Kolkata Wetlands),82,5,13,2025-12,Winter,9.8
+5,Topsia,East,KMC,22.539,88.39,2,"Low-lying, wetland-adjacent",Residential/Wetland-adjacent,Yes (East Kolkata Wetlands),82,5,13,2026-01,Winter,9.1
+5,Topsia,East,KMC,22.539,88.39,2,"Low-lying, wetland-adjacent",Residential/Wetland-adjacent,Yes (East Kolkata Wetlands),82,5,13,2026-02,Winter,9.8
+5,Topsia,East,KMC,22.539,88.39,2,"Low-lying, wetland-adjacent",Residential/Wetland-adjacent,Yes (East Kolkata Wetlands),82,5,13,2026-03,Pre-Monsoon,10.4
+5,Topsia,East,KMC,22.539,88.39,2,"Low-lying, wetland-adjacent",Residential/Wetland-adjacent,Yes (East Kolkata Wetlands),82,5,13,2026-04,Pre-Monsoon,11
+5,Topsia,East,KMC,22.539,88.39,2,"Low-lying, wetland-adjacent",Residential/Wetland-adjacent,Yes (East Kolkata Wetlands),82,5,13,2026-05,Pre-Monsoon,11.7
+5,Topsia,East,KMC,22.539,88.39,2,"Low-lying, wetland-adjacent",Residential/Wetland-adjacent,Yes (East Kolkata Wetlands),82,5,13,2026-06,Monsoon,13.7
+5,Topsia,East,KMC,22.539,88.39,2,"Low-lying, wetland-adjacent",Residential/Wetland-adjacent,Yes (East Kolkata Wetlands),82,5,13,2026-07,Monsoon,15.6
+5,Topsia,East,KMC,22.539,88.39,2,"Low-lying, wetland-adjacent",Residential/Wetland-adjacent,Yes (East Kolkata Wetlands),82,5,13,2026-08,Monsoon,16.2
+6,Beliaghata,East,KMC,22.558,88.395,3,"Low-lying, canal-side",Residential/Canal-side,Yes (canal),86,4,10,2025-09,Monsoon (retreating),11.5
+6,Beliaghata,East,KMC,22.558,88.395,3,"Low-lying, canal-side",Residential/Canal-side,Yes (canal),86,4,10,2025-10,Post-Monsoon,10.5
+6,Beliaghata,East,KMC,22.558,88.395,3,"Low-lying, canal-side",Residential/Canal-side,Yes (canal),86,4,10,2025-11,Post-Monsoon,9
+6,Beliaghata,East,KMC,22.558,88.395,3,"Low-lying, canal-side",Residential/Canal-side,Yes (canal),86,4,10,2025-12,Winter,7.5
+6,Beliaghata,East,KMC,22.558,88.395,3,"Low-lying, canal-side",Residential/Canal-side,Yes (canal),86,4,10,2026-01,Winter,7
+6,Beliaghata,East,KMC,22.558,88.395,3,"Low-lying, canal-side",Residential/Canal-side,Yes (canal),86,4,10,2026-02,Winter,7.5
+6,Beliaghata,East,KMC,22.558,88.395,3,"Low-lying, canal-side",Residential/Canal-side,Yes (canal),86,4,10,2026-03,Pre-Monsoon,8
+6,Beliaghata,East,KMC,22.558,88.395,3,"Low-lying, canal-side",Residential/Canal-side,Yes (canal),86,4,10,2026-04,Pre-Monsoon,8.5
+6,Beliaghata,East,KMC,22.558,88.395,3,"Low-lying, canal-side",Residential/Canal-side,Yes (canal),86,4,10,2026-05,Pre-Monsoon,9
+6,Beliaghata,East,KMC,22.558,88.395,3,"Low-lying, canal-side",Residential/Canal-side,Yes (canal),86,4,10,2026-06,Monsoon,10.5
+6,Beliaghata,East,KMC,22.558,88.395,3,"Low-lying, canal-side",Residential/Canal-side,Yes (canal),86,4,10,2026-07,Monsoon,12
+6,Beliaghata,East,KMC,22.558,88.395,3,"Low-lying, canal-side",Residential/Canal-side,Yes (canal),86,4,10,2026-08,Monsoon,12.5
+7,Park Circus,Central,KMC,22.547,88.369,5,Dense urban,Mixed (Residential/Commercial),No,94,0,6,2025-09,Monsoon (retreating),6.9
+7,Park Circus,Central,KMC,22.547,88.369,5,Dense urban,Mixed (Residential/Commercial),No,94,0,6,2025-10,Post-Monsoon,6.3
+7,Park Circus,Central,KMC,22.547,88.369,5,Dense urban,Mixed (Residential/Commercial),No,94,0,6,2025-11,Post-Monsoon,5.4
+7,Park Circus,Central,KMC,22.547,88.369,5,Dense urban,Mixed (Residential/Commercial),No,94,0,6,2025-12,Winter,4.5
+7,Park Circus,Central,KMC,22.547,88.369,5,Dense urban,Mixed (Residential/Commercial),No,94,0,6,2026-01,Winter,4.2
+7,Park Circus,Central,KMC,22.547,88.369,5,Dense urban,Mixed (Residential/Commercial),No,94,0,6,2026-02,Winter,4.5
+7,Park Circus,Central,KMC,22.547,88.369,5,Dense urban,Mixed (Residential/Commercial),No,94,0,6,2026-03,Pre-Monsoon,4.8
+7,Park Circus,Central,KMC,22.547,88.369,5,Dense urban,Mixed (Residential/Commercial),No,94,0,6,2026-04,Pre-Monsoon,5.1
+7,Park Circus,Central,KMC,22.547,88.369,5,Dense urban,Mixed (Residential/Commercial),No,94,0,6,2026-05,Pre-Monsoon,5.4
+7,Park Circus,Central,KMC,22.547,88.369,5,Dense urban,Mixed (Residential/Commercial),No,94,0,6,2026-06,Monsoon,6.3
+7,Park Circus,Central,KMC,22.547,88.369,5,Dense urban,Mixed (Residential/Commercial),No,94,0,6,2026-07,Monsoon,7.2
+7,Park Circus,Central,KMC,22.547,88.369,5,Dense urban,Mixed (Residential/Commercial),No,94,0,6,2026-08,Monsoon,7.5
+8,BBD Bagh (Esplanade),Central,KMC,22.5697,88.351,4,Historic urban core,Commercial/Historic core,Yes (Hooghly-adjacent),93,2,5,2025-09,Monsoon (retreating),5.8
+8,BBD Bagh (Esplanade),Central,KMC,22.5697,88.351,4,Historic urban core,Commercial/Historic core,Yes (Hooghly-adjacent),93,2,5,2025-10,Post-Monsoon,5.2
+8,BBD Bagh (Esplanade),Central,KMC,22.5697,88.351,4,Historic urban core,Commercial/Historic core,Yes (Hooghly-adjacent),93,2,5,2025-11,Post-Monsoon,4.5
+8,BBD Bagh (Esplanade),Central,KMC,22.5697,88.351,4,Historic urban core,Commercial/Historic core,Yes (Hooghly-adjacent),93,2,5,2025-12,Winter,3.8
+8,BBD Bagh (Esplanade),Central,KMC,22.5697,88.351,4,Historic urban core,Commercial/Historic core,Yes (Hooghly-adjacent),93,2,5,2026-01,Winter,3.5
+8,BBD Bagh (Esplanade),Central,KMC,22.5697,88.351,4,Historic urban core,Commercial/Historic core,Yes (Hooghly-adjacent),93,2,5,2026-02,Winter,3.8
+8,BBD Bagh (Esplanade),Central,KMC,22.5697,88.351,4,Historic urban core,Commercial/Historic core,Yes (Hooghly-adjacent),93,2,5,2026-03,Pre-Monsoon,4
+8,BBD Bagh (Esplanade),Central,KMC,22.5697,88.351,4,Historic urban core,Commercial/Historic core,Yes (Hooghly-adjacent),93,2,5,2026-04,Pre-Monsoon,4.2
+8,BBD Bagh (Esplanade),Central,KMC,22.5697,88.351,4,Historic urban core,Commercial/Historic core,Yes (Hooghly-adjacent),93,2,5,2026-05,Pre-Monsoon,4.5
+8,BBD Bagh (Esplanade),Central,KMC,22.5697,88.351,4,Historic urban core,Commercial/Historic core,Yes (Hooghly-adjacent),93,2,5,2026-06,Monsoon,5.2
+8,BBD Bagh (Esplanade),Central,KMC,22.5697,88.351,4,Historic urban core,Commercial/Historic core,Yes (Hooghly-adjacent),93,2,5,2026-07,Monsoon,6
+8,BBD Bagh (Esplanade),Central,KMC,22.5697,88.351,4,Historic urban core,Commercial/Historic core,Yes (Hooghly-adjacent),93,2,5,2026-08,Monsoon,6.2
+9,Tallah,North,KMC,22.61,88.375,4,"Riverside, low-lying",Residential/Riverside,Yes (Hooghly-adjacent),88,3,9,2025-09,Monsoon (retreating),10.3
+9,Tallah,North,KMC,22.61,88.375,4,"Riverside, low-lying",Residential/Riverside,Yes (Hooghly-adjacent),88,3,9,2025-10,Post-Monsoon,9.5
+9,Tallah,North,KMC,22.61,88.375,4,"Riverside, low-lying",Residential/Riverside,Yes (Hooghly-adjacent),88,3,9,2025-11,Post-Monsoon,8.1
+9,Tallah,North,KMC,22.61,88.375,4,"Riverside, low-lying",Residential/Riverside,Yes (Hooghly-adjacent),88,3,9,2025-12,Winter,6.8
+9,Tallah,North,KMC,22.61,88.375,4,"Riverside, low-lying",Residential/Riverside,Yes (Hooghly-adjacent),88,3,9,2026-01,Winter,6.3
+9,Tallah,North,KMC,22.61,88.375,4,"Riverside, low-lying",Residential/Riverside,Yes (Hooghly-adjacent),88,3,9,2026-02,Winter,6.8
+9,Tallah,North,KMC,22.61,88.375,4,"Riverside, low-lying",Residential/Riverside,Yes (Hooghly-adjacent),88,3,9,2026-03,Pre-Monsoon,7.2
+9,Tallah,North,KMC,22.61,88.375,4,"Riverside, low-lying",Residential/Riverside,Yes (Hooghly-adjacent),88,3,9,2026-04,Pre-Monsoon,7.6
+9,Tallah,North,KMC,22.61,88.375,4,"Riverside, low-lying",Residential/Riverside,Yes (Hooghly-adjacent),88,3,9,2026-05,Pre-Monsoon,8.1
+9,Tallah,North,KMC,22.61,88.375,4,"Riverside, low-lying",Residential/Riverside,Yes (Hooghly-adjacent),88,3,9,2026-06,Monsoon,9.5
+9,Tallah,North,KMC,22.61,88.375,4,"Riverside, low-lying",Residential/Riverside,Yes (Hooghly-adjacent),88,3,9,2026-07,Monsoon,10.8
+9,Tallah,North,KMC,22.61,88.375,4,"Riverside, low-lying",Residential/Riverside,Yes (Hooghly-adjacent),88,3,9,2026-08,Monsoon,11.2
+10,Shyambazar,North,KMC,22.5975,88.3717,6,Dense urban,Mixed (Residential/Commercial),No,94,0,6,2025-09,Monsoon (retreating),6.9
+10,Shyambazar,North,KMC,22.5975,88.3717,6,Dense urban,Mixed (Residential/Commercial),No,94,0,6,2025-10,Post-Monsoon,6.3
+10,Shyambazar,North,KMC,22.5975,88.3717,6,Dense urban,Mixed (Residential/Commercial),No,94,0,6,2025-11,Post-Monsoon,5.4
+10,Shyambazar,North,KMC,22.5975,88.3717,6,Dense urban,Mixed (Residential/Commercial),No,94,0,6,2025-12,Winter,4.5
+10,Shyambazar,North,KMC,22.5975,88.3717,6,Dense urban,Mixed (Residential/Commercial),No,94,0,6,2026-01,Winter,4.2
+10,Shyambazar,North,KMC,22.5975,88.3717,6,Dense urban,Mixed (Residential/Commercial),No,94,0,6,2026-02,Winter,4.5
+10,Shyambazar,North,KMC,22.5975,88.3717,6,Dense urban,Mixed (Residential/Commercial),No,94,0,6,2026-03,Pre-Monsoon,4.8
+10,Shyambazar,North,KMC,22.5975,88.3717,6,Dense urban,Mixed (Residential/Commercial),No,94,0,6,2026-04,Pre-Monsoon,5.1
+10,Shyambazar,North,KMC,22.5975,88.3717,6,Dense urban,Mixed (Residential/Commercial),No,94,0,6,2026-05,Pre-Monsoon,5.4
+10,Shyambazar,North,KMC,22.5975,88.3717,6,Dense urban,Mixed (Residential/Commercial),No,94,0,6,2026-06,Monsoon,6.3
+10,Shyambazar,North,KMC,22.5975,88.3717,6,Dense urban,Mixed (Residential/Commercial),No,94,0,6,2026-07,Monsoon,7.2
+10,Shyambazar,North,KMC,22.5975,88.3717,6,Dense urban,Mixed (Residential/Commercial),No,94,0,6,2026-08,Monsoon,7.5
+11,Dum Dum,North,KMC,22.642,88.4197,7,"Suburban, airport-adjacent",Suburban/Mixed,No,84,1,15,2025-09,Monsoon (retreating),17.2
+11,Dum Dum,North,KMC,22.642,88.4197,7,"Suburban, airport-adjacent",Suburban/Mixed,No,84,1,15,2025-10,Post-Monsoon,15.8
+11,Dum Dum,North,KMC,22.642,88.4197,7,"Suburban, airport-adjacent",Suburban/Mixed,No,84,1,15,2025-11,Post-Monsoon,13.5
+11,Dum Dum,North,KMC,22.642,88.4197,7,"Suburban, airport-adjacent",Suburban/Mixed,No,84,1,15,2025-12,Winter,11.2
+11,Dum Dum,North,KMC,22.642,88.4197,7,"Suburban, airport-adjacent",Suburban/Mixed,No,84,1,15,2026-01,Winter,10.5
+11,Dum Dum,North,KMC,22.642,88.4197,7,"Suburban, airport-adjacent",Suburban/Mixed,No,84,1,15,2026-02,Winter,11.2
+11,Dum Dum,North,KMC,22.642,88.4197,7,"Suburban, airport-adjacent",Suburban/Mixed,No,84,1,15,2026-03,Pre-Monsoon,12
+11,Dum Dum,North,KMC,22.642,88.4197,7,"Suburban, airport-adjacent",Suburban/Mixed,No,84,1,15,2026-04,Pre-Monsoon,12.8
+11,Dum Dum,North,KMC,22.642,88.4197,7,"Suburban, airport-adjacent",Suburban/Mixed,No,84,1,15,2026-05,Pre-Monsoon,13.5
+11,Dum Dum,North,KMC,22.642,88.4197,7,"Suburban, airport-adjacent",Suburban/Mixed,No,84,1,15,2026-06,Monsoon,15.8
+11,Dum Dum,North,KMC,22.642,88.4197,7,"Suburban, airport-adjacent",Suburban/Mixed,No,84,1,15,2026-07,Monsoon,18
+11,Dum Dum,North,KMC,22.642,88.4197,7,"Suburban, airport-adjacent",Suburban/Mixed,No,84,1,15,2026-08,Monsoon,18.8
+12,Salt Lake (Sector V),East,Bidhannagar Municipal Corporation,22.585,88.42,5,Planned township,Planned Township/IT-Commercial,No,79,1,20,2025-09,Monsoon (retreating),23
+12,Salt Lake (Sector V),East,Bidhannagar Municipal Corporation,22.585,88.42,5,Planned township,Planned Township/IT-Commercial,No,79,1,20,2025-10,Post-Monsoon,21
+12,Salt Lake (Sector V),East,Bidhannagar Municipal Corporation,22.585,88.42,5,Planned township,Planned Township/IT-Commercial,No,79,1,20,2025-11,Post-Monsoon,18
+12,Salt Lake (Sector V),East,Bidhannagar Municipal Corporation,22.585,88.42,5,Planned township,Planned Township/IT-Commercial,No,79,1,20,2025-12,Winter,15
+12,Salt Lake (Sector V),East,Bidhannagar Municipal Corporation,22.585,88.42,5,Planned township,Planned Township/IT-Commercial,No,79,1,20,2026-01,Winter,14
+12,Salt Lake (Sector V),East,Bidhannagar Municipal Corporation,22.585,88.42,5,Planned township,Planned Township/IT-Commercial,No,79,1,20,2026-02,Winter,15
+12,Salt Lake (Sector V),East,Bidhannagar Municipal Corporation,22.585,88.42,5,Planned township,Planned Township/IT-Commercial,No,79,1,20,2026-03,Pre-Monsoon,16
+12,Salt Lake (Sector V),East,Bidhannagar Municipal Corporation,22.585,88.42,5,Planned township,Planned Township/IT-Commercial,No,79,1,20,2026-04,Pre-Monsoon,17
+12,Salt Lake (Sector V),East,Bidhannagar Municipal Corporation,22.585,88.42,5,Planned township,Planned Township/IT-Commercial,No,79,1,20,2026-05,Pre-Monsoon,18
+12,Salt Lake (Sector V),East,Bidhannagar Municipal Corporation,22.585,88.42,5,Planned township,Planned Township/IT-Commercial,No,79,1,20,2026-06,Monsoon,21
+12,Salt Lake (Sector V),East,Bidhannagar Municipal Corporation,22.585,88.42,5,Planned township,Planned Township/IT-Commercial,No,79,1,20,2026-07,Monsoon,24
+12,Salt Lake (Sector V),East,Bidhannagar Municipal Corporation,22.585,88.42,5,Planned township,Planned Township/IT-Commercial,No,79,1,20,2026-08,Monsoon,25
+13,Rajarhat New Town,East,New Town Kolkata Development Authority (NKDA),22.62,88.47,6,"Newly developed, reclaimed wetland",Planned Township/Reclaimed Wetland,Yes (reclaimed wetland),78,4,18,2025-09,Monsoon (retreating),20.7
+13,Rajarhat New Town,East,New Town Kolkata Development Authority (NKDA),22.62,88.47,6,"Newly developed, reclaimed wetland",Planned Township/Reclaimed Wetland,Yes (reclaimed wetland),78,4,18,2025-10,Post-Monsoon,18.9
+13,Rajarhat New Town,East,New Town Kolkata Development Authority (NKDA),22.62,88.47,6,"Newly developed, reclaimed wetland",Planned Township/Reclaimed Wetland,Yes (reclaimed wetland),78,4,18,2025-11,Post-Monsoon,16.2
+13,Rajarhat New Town,East,New Town Kolkata Development Authority (NKDA),22.62,88.47,6,"Newly developed, reclaimed wetland",Planned Township/Reclaimed Wetland,Yes (reclaimed wetland),78,4,18,2025-12,Winter,13.5
+13,Rajarhat New Town,East,New Town Kolkata Development Authority (NKDA),22.62,88.47,6,"Newly developed, reclaimed wetland",Planned Township/Reclaimed Wetland,Yes (reclaimed wetland),78,4,18,2026-01,Winter,12.6
+13,Rajarhat New Town,East,New Town Kolkata Development Authority (NKDA),22.62,88.47,6,"Newly developed, reclaimed wetland",Planned Township/Reclaimed Wetland,Yes (reclaimed wetland),78,4,18,2026-02,Winter,13.5
+13,Rajarhat New Town,East,New Town Kolkata Development Authority (NKDA),22.62,88.47,6,"Newly developed, reclaimed wetland",Planned Township/Reclaimed Wetland,Yes (reclaimed wetland),78,4,18,2026-03,Pre-Monsoon,14.4
+13,Rajarhat New Town,East,New Town Kolkata Development Authority (NKDA),22.62,88.47,6,"Newly developed, reclaimed wetland",Planned Township/Reclaimed Wetland,Yes (reclaimed wetland),78,4,18,2026-04,Pre-Monsoon,15.3
+13,Rajarhat New Town,East,New Town Kolkata Development Authority (NKDA),22.62,88.47,6,"Newly developed, reclaimed wetland",Planned Township/Reclaimed Wetland,Yes (reclaimed wetland),78,4,18,2026-05,Pre-Monsoon,16.2
+13,Rajarhat New Town,East,New Town Kolkata Development Authority (NKDA),22.62,88.47,6,"Newly developed, reclaimed wetland",Planned Township/Reclaimed Wetland,Yes (reclaimed wetland),78,4,18,2026-06,Monsoon,18.9
+13,Rajarhat New Town,East,New Town Kolkata Development Authority (NKDA),22.62,88.47,6,"Newly developed, reclaimed wetland",Planned Township/Reclaimed Wetland,Yes (reclaimed wetland),78,4,18,2026-07,Monsoon,21.6
+13,Rajarhat New Town,East,New Town Kolkata Development Authority (NKDA),22.62,88.47,6,"Newly developed, reclaimed wetland",Planned Township/Reclaimed Wetland,Yes (reclaimed wetland),78,4,18,2026-08,Monsoon,22.5
+14,Garden Reach,South West,KMC,22.533,88.307,2,"Riverside, industrial",Industrial/Riverside,Yes (Hooghly-adjacent),90,3,7,2025-09,Monsoon (retreating),8
+14,Garden Reach,South West,KMC,22.533,88.307,2,"Riverside, industrial",Industrial/Riverside,Yes (Hooghly-adjacent),90,3,7,2025-10,Post-Monsoon,7.4
+14,Garden Reach,South West,KMC,22.533,88.307,2,"Riverside, industrial",Industrial/Riverside,Yes (Hooghly-adjacent),90,3,7,2025-11,Post-Monsoon,6.3
+14,Garden Reach,South West,KMC,22.533,88.307,2,"Riverside, industrial",Industrial/Riverside,Yes (Hooghly-adjacent),90,3,7,2025-12,Winter,5.2
+14,Garden Reach,South West,KMC,22.533,88.307,2,"Riverside, industrial",Industrial/Riverside,Yes (Hooghly-adjacent),90,3,7,2026-01,Winter,4.9
+14,Garden Reach,South West,KMC,22.533,88.307,2,"Riverside, industrial",Industrial/Riverside,Yes (Hooghly-adjacent),90,3,7,2026-02,Winter,5.2
+14,Garden Reach,South West,KMC,22.533,88.307,2,"Riverside, industrial",Industrial/Riverside,Yes (Hooghly-adjacent),90,3,7,2026-03,Pre-Monsoon,5.6
+14,Garden Reach,South West,KMC,22.533,88.307,2,"Riverside, industrial",Industrial/Riverside,Yes (Hooghly-adjacent),90,3,7,2026-04,Pre-Monsoon,6
+14,Garden Reach,South West,KMC,22.533,88.307,2,"Riverside, industrial",Industrial/Riverside,Yes (Hooghly-adjacent),90,3,7,2026-05,Pre-Monsoon,6.3
+14,Garden Reach,South West,KMC,22.533,88.307,2,"Riverside, industrial",Industrial/Riverside,Yes (Hooghly-adjacent),90,3,7,2026-06,Monsoon,7.4
+14,Garden Reach,South West,KMC,22.533,88.307,2,"Riverside, industrial",Industrial/Riverside,Yes (Hooghly-adjacent),90,3,7,2026-07,Monsoon,8.4
+14,Garden Reach,South West,KMC,22.533,88.307,2,"Riverside, industrial",Industrial/Riverside,Yes (Hooghly-adjacent),90,3,7,2026-08,Monsoon,8.8
+15,Alipore,South,KMC,22.535,88.33,8,"Green/institutional, elevated",Institutional/Green,No,64,1,35,2025-09,Monsoon (retreating),40.2
+15,Alipore,South,KMC,22.535,88.33,8,"Green/institutional, elevated",Institutional/Green,No,64,1,35,2025-10,Post-Monsoon,36.8
+15,Alipore,South,KMC,22.535,88.33,8,"Green/institutional, elevated",Institutional/Green,No,64,1,35,2025-11,Post-Monsoon,31.5
+15,Alipore,South,KMC,22.535,88.33,8,"Green/institutional, elevated",Institutional/Green,No,64,1,35,2025-12,Winter,26.2
+15,Alipore,South,KMC,22.535,88.33,8,"Green/institutional, elevated",Institutional/Green,No,64,1,35,2026-01,Winter,24.5
+15,Alipore,South,KMC,22.535,88.33,8,"Green/institutional, elevated",Institutional/Green,No,64,1,35,2026-02,Winter,26.2
+15,Alipore,South,KMC,22.535,88.33,8,"Green/institutional, elevated",Institutional/Green,No,64,1,35,2026-03,Pre-Monsoon,28
+15,Alipore,South,KMC,22.535,88.33,8,"Green/institutional, elevated",Institutional/Green,No,64,1,35,2026-04,Pre-Monsoon,29.8
+15,Alipore,South,KMC,22.535,88.33,8,"Green/institutional, elevated",Institutional/Green,No,64,1,35,2026-05,Pre-Monsoon,31.5
+15,Alipore,South,KMC,22.535,88.33,8,"Green/institutional, elevated",Institutional/Green,No,64,1,35,2026-06,Monsoon,36.8
+15,Alipore,South,KMC,22.535,88.33,8,"Green/institutional, elevated",Institutional/Green,No,64,1,35,2026-07,Monsoon,42
+15,Alipore,South,KMC,22.535,88.33,8,"Green/institutional, elevated",Institutional/Green,No,64,1,35,2026-08,Monsoon,43.8
+16,Ballygunge,South Central,KMC,22.528,88.366,6,Affluent residential,Residential (Affluent),No,81,1,18,2025-09,Monsoon (retreating),20.7
+16,Ballygunge,South Central,KMC,22.528,88.366,6,Affluent residential,Residential (Affluent),No,81,1,18,2025-10,Post-Monsoon,18.9
+16,Ballygunge,South Central,KMC,22.528,88.366,6,Affluent residential,Residential (Affluent),No,81,1,18,2025-11,Post-Monsoon,16.2
+16,Ballygunge,South Central,KMC,22.528,88.366,6,Affluent residential,Residential (Affluent),No,81,1,18,2025-12,Winter,13.5
+16,Ballygunge,South Central,KMC,22.528,88.366,6,Affluent residential,Residential (Affluent),No,81,1,18,2026-01,Winter,12.6
+16,Ballygunge,South Central,KMC,22.528,88.366,6,Affluent residential,Residential (Affluent),No,81,1,18,2026-02,Winter,13.5
+16,Ballygunge,South Central,KMC,22.528,88.366,6,Affluent residential,Residential (Affluent),No,81,1,18,2026-03,Pre-Monsoon,14.4
+16,Ballygunge,South Central,KMC,22.528,88.366,6,Affluent residential,Residential (Affluent),No,81,1,18,2026-04,Pre-Monsoon,15.3
+16,Ballygunge,South Central,KMC,22.528,88.366,6,Affluent residential,Residential (Affluent),No,81,1,18,2026-05,Pre-Monsoon,16.2
+16,Ballygunge,South Central,KMC,22.528,88.366,6,Affluent residential,Residential (Affluent),No,81,1,18,2026-06,Monsoon,18.9
+16,Ballygunge,South Central,KMC,22.528,88.366,6,Affluent residential,Residential (Affluent),No,81,1,18,2026-07,Monsoon,21.6
+16,Ballygunge,South Central,KMC,22.528,88.366,6,Affluent residential,Residential (Affluent),No,81,1,18,2026-08,Monsoon,22.5
+17,Maniktala,North Central,KMC,22.585,88.38,5,Dense residential,Residential (Dense),No,92,0,8,2025-09,Monsoon (retreating),9.2
+17,Maniktala,North Central,KMC,22.585,88.38,5,Dense residential,Residential (Dense),No,92,0,8,2025-10,Post-Monsoon,8.4
+17,Maniktala,North Central,KMC,22.585,88.38,5,Dense residential,Residential (Dense),No,92,0,8,2025-11,Post-Monsoon,7.2
+17,Maniktala,North Central,KMC,22.585,88.38,5,Dense residential,Residential (Dense),No,92,0,8,2025-12,Winter,6
+17,Maniktala,North Central,KMC,22.585,88.38,5,Dense residential,Residential (Dense),No,92,0,8,2026-01,Winter,5.6
+17,Maniktala,North Central,KMC,22.585,88.38,5,Dense residential,Residential (Dense),No,92,0,8,2026-02,Winter,6
+17,Maniktala,North Central,KMC,22.585,88.38,5,Dense residential,Residential (Dense),No,92,0,8,2026-03,Pre-Monsoon,6.4
+17,Maniktala,North Central,KMC,22.585,88.38,5,Dense residential,Residential (Dense),No,92,0,8,2026-04,Pre-Monsoon,6.8
+17,Maniktala,North Central,KMC,22.585,88.38,5,Dense residential,Residential (Dense),No,92,0,8,2026-05,Pre-Monsoon,7.2
+17,Maniktala,North Central,KMC,22.585,88.38,5,Dense residential,Residential (Dense),No,92,0,8,2026-06,Monsoon,8.4
+17,Maniktala,North Central,KMC,22.585,88.38,5,Dense residential,Residential (Dense),No,92,0,8,2026-07,Monsoon,9.6
+17,Maniktala,North Central,KMC,22.585,88.38,5,Dense residential,Residential (Dense),No,92,0,8,2026-08,Monsoon,10
+18,Entally,Central East,KMC,22.562,88.37,4,Dense low-lying residential,"Residential (Dense, low-lying)",No,93,0,7,2025-09,Monsoon (retreating),8
+18,Entally,Central East,KMC,22.562,88.37,4,Dense low-lying residential,"Residential (Dense, low-lying)",No,93,0,7,2025-10,Post-Monsoon,7.4
+18,Entally,Central East,KMC,22.562,88.37,4,Dense low-lying residential,"Residential (Dense, low-lying)",No,93,0,7,2025-11,Post-Monsoon,6.3
+18,Entally,Central East,KMC,22.562,88.37,4,Dense low-lying residential,"Residential (Dense, low-lying)",No,93,0,7,2025-12,Winter,5.2
+18,Entally,Central East,KMC,22.562,88.37,4,Dense low-lying residential,"Residential (Dense, low-lying)",No,93,0,7,2026-01,Winter,4.9
+18,Entally,Central East,KMC,22.562,88.37,4,Dense low-lying residential,"Residential (Dense, low-lying)",No,93,0,7,2026-02,Winter,5.2
+18,Entally,Central East,KMC,22.562,88.37,4,Dense low-lying residential,"Residential (Dense, low-lying)",No,93,0,7,2026-03,Pre-Monsoon,5.6
+18,Entally,Central East,KMC,22.562,88.37,4,Dense low-lying residential,"Residential (Dense, low-lying)",No,93,0,7,2026-04,Pre-Monsoon,6
+18,Entally,Central East,KMC,22.562,88.37,4,Dense low-lying residential,"Residential (Dense, low-lying)",No,93,0,7,2026-05,Pre-Monsoon,6.3
+18,Entally,Central East,KMC,22.562,88.37,4,Dense low-lying residential,"Residential (Dense, low-lying)",No,93,0,7,2026-06,Monsoon,7.4
+18,Entally,Central East,KMC,22.562,88.37,4,Dense low-lying residential,"Residential (Dense, low-lying)",No,93,0,7,2026-07,Monsoon,8.4
+18,Entally,Central East,KMC,22.562,88.37,4,Dense low-lying residential,"Residential (Dense, low-lying)",No,93,0,7,2026-08,Monsoon,8.8

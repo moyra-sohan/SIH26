@@ -1,7 +1,18 @@
-import { ShieldCheck, Umbrella } from 'lucide-react';
-import { advisoryData } from '../../data/alertsData';
+import { ShieldCheck, Umbrella, CheckCircle2 } from 'lucide-react';
+import { useFloodData } from '../../context/FloodDataContext';
 
 function AdvisoryCard() {
+  const { advisories, selectedWard } = useFloodData();
+
+  const currentAdvisories = advisories && advisories.length > 0
+    ? advisories
+    : [
+        'Avoid low-lying routes in Behala, Kasba, Topsia & Garden Reach during high tide.',
+        'High tide in Hooghly river may slow lock-gate drainage discharge.',
+        'Park vehicles in elevated zones and keep emergency contact numbers handy.',
+        'Municipal pumping units deployed across Behala, Kasba, Topsia, and Garden Reach.',
+      ];
+
   return (
     <div className="advisory-card" id="advisory-card">
       <div className="advisory-content">
@@ -9,12 +20,20 @@ function AdvisoryCard() {
           <div className="advisory-header-icon">
             <ShieldCheck size={20} />
           </div>
-          <h3>Advisory</h3>
+          <div>
+            <h3>Nowcasting Public Advisory</h3>
+            <p className="text-xs text-green-700 opacity-90">
+              {selectedWard ? `Safety recommendations for ${selectedWard.ward_name}` : 'City-wide flood safety guidelines'}
+            </p>
+          </div>
         </div>
 
         <ul className="advisory-list">
-          {advisoryData.map((item, index) => (
-            <li key={index}>{item}</li>
+          {currentAdvisories.map((item, index) => (
+            <li key={index} className="flex items-start gap-2">
+              <CheckCircle2 size={15} className="advisory-check flex-shrink-0 mt-0.5" />
+              <span>{item}</span>
+            </li>
           ))}
         </ul>
       </div>
