@@ -1,9 +1,11 @@
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Droplets, LayoutDashboard, Map, BarChart3, Settings, LogOut } from 'lucide-react';
+import { useAuth } from '../context/AuthContext.jsx';
 
 function Sidebar({ isOpen, onClose }) {
   const navigate = useNavigate();
   const location = useLocation();
+  const { logout } = useAuth();
 
   const navItems = [
     { icon: <LayoutDashboard size={20} />, label: 'Dashboard', path: '/dashboard' },
@@ -15,10 +17,9 @@ function Sidebar({ isOpen, onClose }) {
     onClose();
   };
 
-  const handleLogout = () => {
-    localStorage.removeItem('auth_token');
-    localStorage.removeItem('auth_user');
-    navigate('/');
+  const handleLogout = async () => {
+    onClose();
+    await logout();
   };
 
   return (
