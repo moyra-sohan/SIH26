@@ -1,5 +1,5 @@
 import { useNavigate, useLocation } from 'react-router-dom';
-import { Droplets, LayoutDashboard, Map, BarChart3, Settings, LogOut } from 'lucide-react';
+import { Droplets, LayoutDashboard, Map, LogOut } from 'lucide-react';
 import { useAuth } from '../context/AuthContext.jsx';
 
 function Sidebar({ isOpen, onClose }) {
