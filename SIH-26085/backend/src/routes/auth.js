@@ -1,7 +1,56 @@
 import bcrypt from 'bcryptjs';
 import prisma from '../lib/prisma.js';
 
+const isProduction = process.env.NODE_ENV === 'production';
+
+// Standard cookie options for auth token
+const authCookieOptions = {
+  path: '/',
+  httpOnly: true,
+  secure: isProduction,
+  sameSite: 'lax',
+  maxAge: 7 * 24 * 60 * 60, // 7 days in seconds
+  signed: true,
+};
+
 export default async function authRoutes(fastify, options) {
+  // Helper to extract authenticated user from session, cookie, or bearer header
+  const getAuthenticatedUser = async (request) => {
+    // 1. Check session
+    if (request.session && request.session.user) {
+      return request.session.user;
+    }
+
+    // 2. Check signed cookie 'token'
+    let token = null;
+    if (request.cookies && request.cookies.token) {
+      const unsignResult = request.unsignCookie(request.cookies.token);
+      if (unsignResult.valid) {
+        token = unsignResult.value;
+      }
+    }
+
+    // 3. Fallback to Authorization Header
+    if (!token && request.headers.authorization) {
+      const parts = request.headers.authorization.split(' ');
+      if (parts.length === 2 && parts[0].toLowerCase() === 'bearer') {
+        token = parts[1];
+      }
+    }
+
+    if (token) {
+      try {
+        const decoded = fastify.jwt.verify(token);
+        return decoded;
+      } catch (err) {
+        // Token invalid or expired
+        return null;
+      }
+    }
+
+    return null;
+  };
+
   // Register Route: POST /api/auth/register
   fastify.post('/register', async (request, reply) => {
     try {
@@ -83,20 +132,28 @@ export default async function authRoutes(fastify, options) {
       });
 
       // Generate JWT
-      const token = fastify.jwt.sign(
-        {
-          id: newUser.id,
-          username: newUser.username,
-          email: newUser.email,
-        },
-        { expiresIn: '7d' }
-      );
+      const tokenPayload = {
+        id: newUser.id,
+        username: newUser.username,
+        email: newUser.email,
+      };
+
+      const token = fastify.jwt.sign(tokenPayload, { expiresIn: '7d' });
+
+      // Save user to session
+      if (request.session) {
+        request.session.user = tokenPayload;
+      }
+
+      // Set secure HTTP-only cookie
+      reply.setCookie('token', token, authCookieOptions);
 
       return reply.code(201).send({
         success: true,
         message: 'Account created successfully',
         token,
         user: newUser,
+        sessionActive: true,
       });
     } catch (error) {
       fastify.log.error(error);
@@ -148,25 +205,35 @@ export default async function authRoutes(fastify, options) {
       }
 
       // Generate JWT
-      const token = fastify.jwt.sign(
-        {
-          id: user.id,
-          username: user.username,
-          email: user.email,
-        },
-        { expiresIn: '7d' }
-      );
+      const tokenPayload = {
+        id: user.id,
+        username: user.username,
+        email: user.email,
+      };
+
+      const token = fastify.jwt.sign(tokenPayload, { expiresIn: '7d' });
+
+      // Save user to session
+      if (request.session) {
+        request.session.user = tokenPayload;
+      }
+
+      // Set secure HTTP-only cookie
+      reply.setCookie('token', token, authCookieOptions);
+
+      const userResponse = {
+        id: user.id,
+        username: user.username,
+        email: user.email,
+        createdAt: user.createdAt,
+      };
 
       return reply.code(200).send({
         success: true,
         message: 'Login successful',
         token,
-        user: {
-          id: user.id,
-          username: user.username,
-          email: user.email,
-          createdAt: user.createdAt,
-        },
+        user: userResponse,
+        sessionActive: true,
       });
     } catch (error) {
       fastify.log.error(error);
@@ -178,14 +245,50 @@ export default async function authRoutes(fastify, options) {
     }
   });
 
-  // Me Route: GET /api/auth/me (Protected)
+  // Get Session Route: GET /api/auth/session
+  fastify.get('/session', async (request, reply) => {
+    try {
+      const user = await getAuthenticatedUser(request);
+
+      if (!user) {
+        return reply.code(200).send({
+          authenticated: false,
+          user: null,
+        });
+      }
+
+      return reply.code(200).send({
+        authenticated: true,
+        sessionId: request.session ? request.session.sessionId : undefined,
+        user: {
+          id: user.id,
+          username: user.username,
+          email: user.email,
+        },
+      });
+    } catch (error) {
+      fastify.log.error(error);
+      return reply.code(500).send({
+        authenticated: false,
+        message: 'Error verifying session',
+      });
+    }
+  });
+
+  // Me Route: GET /api/auth/me (Protected via session, cookie, or Bearer header)
   fastify.get('/me', async (request, reply) => {
     try {
-      await request.jwtVerify();
-      const userId = request.user.id;
+      const authUser = await getAuthenticatedUser(request);
+
+      if (!authUser || !authUser.id) {
+        return reply.code(401).send({
+          success: false,
+          message: 'Unauthorized or invalid session/token',
+        });
+      }
 
       const user = await prisma.user.findUnique({
-        where: { id: userId },
+        where: { id: authUser.id },
         select: {
           id: true,
           username: true,
@@ -207,18 +310,49 @@ export default async function authRoutes(fastify, options) {
         user,
       });
     } catch (error) {
+      fastify.log.error(error);
       return reply.code(401).send({
         success: false,
-        message: 'Unauthorized or invalid token',
+        message: 'Unauthorized or invalid session/token',
       });
     }
   });
 
   // Logout Route: POST /api/auth/logout
   fastify.post('/logout', async (request, reply) => {
-    return reply.send({
-      success: true,
-      message: 'Logged out successfully',
-    });
+    try {
+      // Clear session if present
+      if (request.session) {
+        await request.session.destroy();
+      }
+
+      // Clear token cookie
+      reply.clearCookie('token', {
+        path: '/',
+        httpOnly: true,
+        secure: isProduction,
+        sameSite: 'lax',
+      });
+
+      // Clear session cookie
+      reply.clearCookie('sessionId', {
+        path: '/',
+        httpOnly: true,
+        secure: isProduction,
+        sameSite: 'lax',
+      });
+
+      return reply.send({
+        success: true,
+        message: 'Logged out successfully',
+      });
+    } catch (error) {
+      fastify.log.error(error);
+      return reply.code(500).send({
+        success: false,
+        message: 'Error during logout',
+      });
+    }
   });
 }
+

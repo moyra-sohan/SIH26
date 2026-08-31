@@ -2,8 +2,14 @@ import 'dotenv/config';
 import Fastify from 'fastify';
 import cors from '@fastify/cors';
 import jwt from '@fastify/jwt';
+import cookie from '@fastify/cookie';
+import session from '@fastify/session';
 import prisma from './lib/prisma.js';
 import authRoutes from './routes/auth.js';
+
+const isProduction = process.env.NODE_ENV === 'production';
+const cookieSecret = process.env.COOKIE_SECRET || 'sih_flood_cookie_secret_key_minimum_32_characters_long_2026!';
+const sessionSecret = process.env.SESSION_SECRET || 'sih_flood_session_secret_key_minimum_32_characters_long_2026!';
 
 const fastify = Fastify({
   logger: {
@@ -18,11 +24,31 @@ const fastify = Fastify({
   },
 });
 
-// Enable CORS for frontend Vite client
+// Enable CORS for frontend Vite client with credentials
 await fastify.register(cors, {
-  origin: true, // Allow frontend during development
+  origin: true, // Allow frontend during development (reflects request origin for credentials support)
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+});
+
+// Register Cookie Plugin
+await fastify.register(cookie, {
+  secret: cookieSecret,
+  parseOptions: {},
+});
+
+// Register Session Plugin
+await fastify.register(session, {
+  secret: sessionSecret,
+  cookieName: 'sessionId',
+  cookie: {
+    path: '/',
+    httpOnly: true,
+    secure: isProduction,
+    sameSite: 'lax',
+    maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
+  },
+  saveUninitialized: false,
 });
 
 // Register JWT Plugin
