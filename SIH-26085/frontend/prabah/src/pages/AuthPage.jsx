@@ -1,10 +1,12 @@
-import { useState, useMemo } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState, useMemo, useEffect } from 'react';
+import { useNavigate, Navigate } from 'react-router-dom';
 import { CloudRain, User, Mail, Lock, Eye, EyeOff, Activity, BrainCircuit, Bell, AlertCircle, CheckCircle, Loader2 } from 'lucide-react';
+import { useAuth } from '../context/AuthContext.jsx';
 import '../styles/auth.css';
 
 function AuthPage() {
   const navigate = useNavigate();
+  const { login, register, isAuthenticated } = useAuth();
   const [activeTab, setActiveTab] = useState('signin');
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
@@ -44,6 +46,10 @@ function AuthPage() {
       delay: `${Math.random() * 3}s`,
     }));
   }, []);
+
+  if (isAuthenticated) {
+    return <Navigate to="/dashboard" replace />;
+  }
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -86,46 +92,17 @@ function AuthPage() {
     setLoading(true);
 
     try {
-      const endpoint = isSignIn ? '/api/auth/login' : '/api/auth/register';
-      const payload = isSignIn
-        ? {
-            email: formData.email.trim(),
-            username: formData.email.trim(),
-            password: formData.password,
-          }
-        : {
-            username: formData.username.trim(),
-            email: formData.email.trim(),
-            password: formData.password,
-          };
-
-      const response = await fetch(`http://localhost:5000${endpoint}`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(payload),
-      });
-
-      const data = await response.json();
-
-      if (!response.ok || !data.success) {
-        throw new Error(data.message || 'Authentication failed. Please check your credentials.');
+      if (isSignIn) {
+        await login(formData.email, formData.password);
+        setSuccessMsg('Login successful! Redirecting...');
+      } else {
+        await register(formData.username, formData.email, formData.password);
+        setSuccessMsg('Account created successfully! Redirecting...');
       }
-
-      // Store JWT token and user info
-      if (data.token) {
-        localStorage.setItem('auth_token', data.token);
-      }
-      if (data.user) {
-        localStorage.setItem('auth_user', JSON.stringify(data.user));
-      }
-
-      setSuccessMsg(isSignIn ? 'Login successful! Redirecting...' : 'Account created successfully! Redirecting...');
 
       setTimeout(() => {
-        navigate('/dashboard');
-      }, 700);
+        navigate('/dashboard', { replace: true });
+      }, 500);
     } catch (err) {
       setErrorMsg(err.message || 'Unable to connect to the authentication service.');
     } finally {

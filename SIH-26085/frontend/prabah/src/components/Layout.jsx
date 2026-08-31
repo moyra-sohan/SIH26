@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import { MapPin, User, ChevronDown, Menu } from 'lucide-react';
+import { useAuth } from '../context/AuthContext.jsx';
 import Sidebar from './Sidebar.jsx';
 import '../styles/layout.css';
 
@@ -19,15 +20,7 @@ const PAGE_META = {
 function Layout() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const location = useLocation();
-
-  const [currentUser] = useState(() => {
-    try {
-      const stored = localStorage.getItem('auth_user');
-      return stored ? JSON.parse(stored) : null;
-    } catch {
-      return null;
-    }
-  });
+  const { user } = useAuth();
 
   const toggleSidebar = () => setSidebarOpen((prev) => !prev);
   const closeSidebar = () => setSidebarOpen(false);
@@ -85,7 +78,7 @@ function Layout() {
                 <User size={16} />
               </div>
               <span style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--dark-text)', maxWidth: '100px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-                {currentUser?.username || 'Account'}
+                {user?.username || 'Account'}
               </span>
               <ChevronDown size={14} />
             </button>
