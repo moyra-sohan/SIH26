@@ -1,0 +1,254 @@
+import {
+  DecoderOptions,
+  JwtHeader,
+  KeyFetcher,
+  SignerCallback,
+  SignerOptions,
+  VerifierCallback,
+  VerifierOptions
+} from 'fast-jwt'
+import {
+  FastifyPluginCallback,
+  FastifyRequest
+} from 'fastify'
+
+declare module 'fastify' {
+  interface FastifyInstance {
+    jwt: fastifyJwt.JwtDecorator
+  }
+
+  interface FastifyReply {
+    jwtSign: fastifyJwt.JwtSignFunction
+  }
+
+  interface FastifyRequest {
+    jwtVerify: fastifyJwt.JwtVerifyFunction
+    jwtDecode: fastifyJwt.JwtDecodeFunction
+    user: fastifyJwt.UserType
+  }
+}
+
+type FastifyJwt = FastifyPluginCallback<fastifyJwt.FastifyJWTOptions>
+
+declare namespace fastifyJwt {
+
+  export interface JwtSignFunction {
+    (payload: SignPayloadType, options?: FastifyJwtSignOptions): Promise<string>
+    (payload: SignPayloadType, callback: SignerCallback): void
+    (payload: SignPayloadType, options: FastifyJwtSignOptions, callback: SignerCallback): void
+    (payload: SignPayloadType, options?: Partial<SignOptions>): Promise<string>
+    (payload: SignPayloadType, options: Partial<SignOptions>, callback: SignerCallback): void
+  }
+
+  export interface JwtVerifyFunction {
+    <Decoded extends VerifyPayloadType>(options?: FastifyJwtVerifyOptions): Promise<Decoded>
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    <Decoded extends VerifyPayloadType>(callback: VerifierCallback): void
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    <Decoded extends VerifyPayloadType>(options: FastifyJwtVerifyOptions, callback: VerifierCallback): void
+    <Decoded extends VerifyPayloadType>(options?: Partial<VerifyOptions>): Promise<Decoded>
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    <Decoded extends VerifyPayloadType>(options: Partial<VerifyOptions>, callback: VerifierCallback): void
+  }
+
+  export interface JwtDecodeFunction {
+    <Decoded extends DecodePayloadType>(options?: FastifyJwtDecodeOptions): Promise<Decoded>
+    <Decoded extends DecodePayloadType>(callback: DecodeCallback<Decoded>): void
+    <Decoded extends DecodePayloadType>(options: FastifyJwtDecodeOptions, callback: DecodeCallback<Decoded>): void
+  }
+
+  export type FastifyJwtNamespace<C extends {
+    namespace?: string;
+    jwtDecode?: string;
+    jwtVerify?: string;
+    jwtSign?: string;
+  }> =
+  Record<C extends { jwtDecode: string }
+    ? C['jwtDecode']
+    : C extends { namespace: string }
+      ? `${C['namespace']}JwtDecode`
+      : never,
+  JwtDecodeFunction>
+  &
+  Record<C extends { jwtSign: string }
+    ? C['jwtSign']
+    : C extends { namespace: string }
+      ? `${C['namespace']}JwtSign`
+      : never,
+  JwtSignFunction>
+  &
+  Record<C extends { jwtVerify: string }
+    ? C['jwtVerify']
+    : C extends { namespace: string }
+      ? `${C['namespace']}JwtVerify`
+      : never,
+  JwtVerifyFunction>
+
+  /**
+   * for declaration merging
+   * @example
+   * ```
+   * declare module '@fastify/jwt' {
+   *   interface FastifyJWT {
+   *     payload: { name: string; email: string }
+   *   }
+   * }
+   * ```
+   * @example
+   * ```
+   * // With `formatUser`.
+   * declare module '@fastify/jwt' {
+   *   interface FastifyJWT {
+   *     payload: { Name: string; e_mail: string }
+   *     user: { name: string; email: string }
+   *   }
+   * }
+   * ```
+   * @example
+   * ```
+   * // With the `namespace` registration option, `fastify.jwt` is a
+   * // namespace -> JWT map at runtime. Declare the registered
+   * // namespaces to type it accordingly.
+   * declare module '@fastify/jwt' {
+   *   interface FastifyJWT {
+   *     namespaces: 'auth' | 'admin'
+   *   }
+   * }
+   * ```
+   */
+  export interface FastifyJWT {
+    // payload: ...
+    // user: ...
+    // namespaces: ...
+  }
+
+  /**
+   * Type of the `fastify.jwt` decorator.
+   *
+   * Defaults to {@link JWT}. When namespaces are declared via the
+   * {@link FastifyJWT} declaration-merging interface, it becomes a
+   * namespace -> {@link JWT} map, matching the runtime shape produced
+   * by registering the plugin with the `namespace` option.
+   */
+  export type JwtDecorator = FastifyJWT extends { namespaces: infer Namespaces }
+    ? [Namespaces] extends [string]
+        ? Record<Namespaces, JWT>
+        : JWT
+    : JWT
+
+  export type SignPayloadType = FastifyJWT extends { payload: infer T }
+    ? T extends string | object | Buffer
+      ? T
+      : string | object | Buffer
+    : string | object | Buffer
+
+  export type UserType = FastifyJWT extends { user: infer T }
+    ? T
+    : SignPayloadType
+
+  export type TokenOrHeader = JwtHeader | { header: JwtHeader; payload: any }
+
+  export type Secret = string | Buffer | KeyFetcher | { key: Secret; passphrase: string }
+    | ((request: FastifyRequest, tokenOrHeader: TokenOrHeader, cb: (e: Error | null, secret: string | Buffer | undefined) => void) => void)
+    | ((request: FastifyRequest, tokenOrHeader: TokenOrHeader) => Promise<string | Buffer>)
+
+  export type VerifyPayloadType = object | string
+  export type DecodePayloadType = object | string
+
+  export interface DecodeCallback<Decoded extends DecodePayloadType> {
+    (err: Error, decoded: Decoded): void
+  }
+
+  export interface SignOptions extends Omit<SignerOptions, 'expiresIn' | 'notBefore'> {
+    expiresIn: number | string;
+    notBefore: number | string;
+    key?: string | Buffer
+  }
+
+  export interface VerifyOptions extends Omit<VerifierOptions, 'maxAge'> {
+    maxAge: number | string;
+    onlyCookie: boolean;
+    key?: string | Buffer
+  }
+
+  export interface FastifyJWTOptions {
+    secret: Secret | { public: Secret; private?: Secret }
+    decode?: Partial<DecoderOptions>
+    sign?: Partial<SignOptions>
+    verify?: Partial<VerifyOptions> & {
+      extractToken?: (request: FastifyRequest) => string | void
+    }
+    cookie?: {
+      cookieName: string
+      signed: boolean
+    }
+    messages?: {
+      badRequestErrorMessage?: string
+      badCookieRequestErrorMessage?: string
+      noAuthorizationInHeaderMessage?: string
+      noAuthorizationInCookieMessage?: string
+      authorizationTokenExpiredMessage?: string
+      authorizationTokenInvalid?: ((err: Error) => string) | string
+      authorizationTokenUntrusted?: string
+      authorizationTokenUnsigned?: string
+    }
+    trusted?: (
+      request: FastifyRequest,
+      decodedToken: { [k: string]: any }
+    ) => boolean | Promise<boolean> | SignPayloadType | Promise<SignPayloadType>
+    formatUser?: (payload: SignPayloadType) => UserType
+    jwtDecode?: string
+    namespace?: string
+    jwtVerify?: string
+    jwtSign?: string
+    decoratorName?: string
+  }
+
+  export interface JWT {
+    options: {
+      decode: Partial<DecoderOptions>
+      sign: Partial<SignOptions>
+      verify: Partial<VerifyOptions>
+    }
+    cookie?: {
+      cookieName: string,
+      signed: boolean
+    }
+
+    sign(payload: SignPayloadType, options?: Partial<SignOptions>): string
+    sign(payload: SignPayloadType, callback: SignerCallback): void
+    sign(payload: SignPayloadType, options: Partial<SignOptions>, callback: SignerCallback): void
+
+    verify<Decoded extends VerifyPayloadType>(token: string, options?: Partial<VerifyOptions>): Decoded
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    verify<Decoded extends VerifyPayloadType>(token: string, callback: VerifierCallback): void
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    verify<Decoded extends VerifyPayloadType>(token: string, options: Partial<VerifyOptions>, callback: VerifierCallback): void
+
+    decode<Decoded extends DecodePayloadType>(token: string, options?: Partial<DecoderOptions>): null | Decoded
+
+    lookupToken(request: FastifyRequest, options?: FastifyJWTOptions['verify']): string
+  }
+
+  export type { JwtHeader }
+
+  export interface FastifyJwtSignOptions {
+    sign?: Partial<SignOptions>
+  }
+
+  export interface FastifyJwtVerifyOptions {
+    decode: Partial<DecoderOptions>
+    verify: Partial<VerifyOptions>
+  }
+
+  export interface FastifyJwtDecodeOptions {
+    decode: Partial<DecoderOptions>
+    verify: Partial<VerifyOptions>
+  }
+
+  export const fastifyJwt: FastifyJwt
+  export { fastifyJwt as default }
+}
+
+declare function fastifyJwt (...params: Parameters<FastifyJwt>): ReturnType<FastifyJwt>
+export = fastifyJwt
