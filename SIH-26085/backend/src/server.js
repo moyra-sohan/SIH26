@@ -4,6 +4,7 @@ import cors from '@fastify/cors';
 import jwt from '@fastify/jwt';
 import prisma from './lib/prisma.js';
 import authRoutes from './routes/auth.js';
+import mlRoutes from './routes/ml.js';
 
 const fastify = Fastify({
   logger: {
@@ -61,6 +62,9 @@ fastify.get('/api/health', async (request, reply) => {
 
 // Register Auth Routes under /api/auth
 await fastify.register(authRoutes, { prefix: '/api/auth' });
+
+// Register ML Routes under /api/ml
+await fastify.register(mlRoutes, { prefix: '/api/ml' });
 
 // Graceful shutdown
 const gracefulShutdown = async (signal) => {
