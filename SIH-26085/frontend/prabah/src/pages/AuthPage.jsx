@@ -26,7 +26,7 @@ import '../styles/auth.css';
 function AuthPage() {
   const navigate = useNavigate();
   const { login, register, isAuthenticated } = useAuth();
-  const [activeTab, setActiveTab] = useState('signup');
+  const [activeTab, setActiveTab] = useState('signin');
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [formData, setFormData] = useState({
