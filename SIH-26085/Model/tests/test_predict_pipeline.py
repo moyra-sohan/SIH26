@@ -10,23 +10,36 @@ if not hasattr(_ct, "_RemainderColsList"):
         def __init__(self, *args, **kwargs): pass
     _ct._RemainderColsList = _RemainderColsList
 
-prep = joblib.load("d:/SIH_2026/github/SIH26/SIH-26085/Model/preprocessor.pkl")
-model = joblib.load("d:/SIH_2026/github/SIH26/SIH-26085/Model/best_flood_model.pkl")
-features = joblib.load("d:/SIH_2026/github/SIH26/SIH-26085/Model/feature_columns.pkl")
+import os
 
-# Patch any SimpleImputer instances in prep to support newer sklearn if needed
-for name, trans in prep.named_transformers_.items():
+ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+ARTIFACTS_DIR = os.path.join(ROOT_DIR, "artifacts")
+prep = joblib.load(os.path.join(ARTIFACTS_DIR, "preprocessor.pkl"))
+model = joblib.load(os.path.join(ARTIFACTS_DIR, "best_flood_model.pkl"))
+features = joblib.load(os.path.join(ARTIFACTS_DIR, "feature_columns.pkl"))
+
+# Patch any SimpleImputer instances in prep and model to support newer sklearn if needed
+for name, trans in getattr(prep, 'named_transformers_', {}).items():
     if hasattr(trans, 'named_steps'):
         for sname, step in trans.named_steps.items():
             if isinstance(step, SimpleImputer):
                 if not hasattr(step, '_fill_dtype') and hasattr(step, '_fit_dtype'):
                     step._fill_dtype = step._fit_dtype
-                    print(f"Patched {name}.{sname} with _fill_dtype = {step._fit_dtype}")
                 elif not hasattr(step, '_fill_dtype'):
                     step._fill_dtype = np.float64
-                    print(f"Patched {name}.{sname} with default float64 _fill_dtype")
 
-with open("d:/SIH_2026/github/SIH26/SIH-26085/Model/feature_meta.json", "r") as f:
+for step_name, step_obj in getattr(model, 'steps', []):
+    if hasattr(step_obj, 'named_transformers_'):
+        for tname, trans in step_obj.named_transformers_.items():
+            if hasattr(trans, 'named_steps'):
+                for sname, sstep in trans.named_steps.items():
+                    if isinstance(sstep, SimpleImputer):
+                        if not hasattr(sstep, '_fill_dtype') and hasattr(sstep, '_fit_dtype'):
+                            sstep._fill_dtype = sstep._fit_dtype
+                        elif not hasattr(sstep, '_fill_dtype'):
+                            sstep._fill_dtype = np.float64
+
+with open(os.path.join(ARTIFACTS_DIR, "feature_meta.json"), "r") as f:
     meta = json.load(f)
 
 sample = {}
@@ -106,8 +119,9 @@ for col in features:
 
 df = pd.DataFrame([sample])[features]
 X_trans = prep.transform(df)
-pred = model.predict(X_trans)
-prob = model.predict_proba(X_trans)
+print(f"Preprocessed shape: {X_trans.shape}")
+pred = model.predict(df)
+prob = model.predict_proba(df)
 
 print("SUCCESS!")
 print(f"Prediction: {pred[0]}")

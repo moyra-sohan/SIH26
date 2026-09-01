@@ -10,8 +10,12 @@ if not hasattr(_ct, "_RemainderColsList"):
         def __init__(self, *args, **kwargs): pass
     _ct._RemainderColsList = _RemainderColsList
 
-model = joblib.load("d:/SIH_2026/github/SIH26/SIH-26085/Model/best_flood_model.pkl")
-features = joblib.load("d:/SIH_2026/github/SIH26/SIH-26085/Model/feature_columns.pkl")
+import os
+
+ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+ARTIFACTS_DIR = os.path.join(ROOT_DIR, "artifacts")
+model = joblib.load(os.path.join(ARTIFACTS_DIR, "best_flood_model.pkl"))
+features = joblib.load(os.path.join(ARTIFACTS_DIR, "feature_columns.pkl"))
 
 # Patch imputer attributes for forward compatibility
 for step_name, step_obj in model.steps:
@@ -25,7 +29,7 @@ for step_name, step_obj in model.steps:
                         elif not hasattr(sstep, '_fill_dtype'):
                             sstep._fill_dtype = np.float64
 
-with open("d:/SIH_2026/github/SIH26/SIH-26085/Model/feature_meta.json", "r") as f:
+with open(os.path.join(ARTIFACTS_DIR, "feature_meta.json"), "r") as f:
     meta = json.load(f)
 
 def build_default_record():

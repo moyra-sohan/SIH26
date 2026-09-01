@@ -1,5 +1,6 @@
 import { useNavigate, useLocation } from 'react-router-dom';
-import { Droplets, LayoutDashboard, Map, LogOut } from 'lucide-react';
+import { LayoutDashboard, Map, Phone, LogOut } from 'lucide-react';
+import PrabahLogo from './PrabahLogo.jsx';
 import { useAuth } from '../context/AuthContext.jsx';
 
 function Sidebar({ isOpen, onClose }) {
@@ -10,6 +11,7 @@ function Sidebar({ isOpen, onClose }) {
   const navItems = [
     { icon: <LayoutDashboard size={20} />, label: 'Dashboard', path: '/dashboard' },
     { icon: <Map size={20} />, label: 'Map', path: '/map' },
+    { icon: <Phone size={20} />, label: 'Emergency Support', path: '/emergency' },
   ];
 
   const handleNavigate = (path) => {
@@ -35,10 +37,10 @@ function Sidebar({ isOpen, onClose }) {
         {/* Brand */}
         <div className="sidebar-brand">
           <div className="sidebar-brand-icon">
-            <Droplets size={22} />
+            <PrabahLogo size={28} />
           </div>
           <div className="sidebar-brand-text">
-            <h2>Urban Flood</h2>
+            <h2>PRABAH</h2>
             <p>Nowcasting System</p>
           </div>
         </div>
@@ -50,7 +52,7 @@ function Sidebar({ isOpen, onClose }) {
               key={item.label}
               className={`sidebar-nav-item ${location.pathname === item.path ? 'active' : ''}`}
               onClick={() => handleNavigate(item.path)}
-              id={`nav-${item.label.toLowerCase()}`}
+              id={`nav-${item.label.toLowerCase().replace(/\s+/g, '-')}`}
             >
               {item.icon}
               {item.label}

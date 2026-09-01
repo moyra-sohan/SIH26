@@ -2,14 +2,11 @@ import { useState, useEffect } from 'react';
 import {
   X,
   Cpu,
-  Droplets,
-  CloudRain,
   Activity,
   AlertTriangle,
   CheckCircle2,
   Sliders,
   ChevronRight,
-  TrendingUp,
   MapPin,
   Waves
 } from 'lucide-react';
