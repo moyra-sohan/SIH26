@@ -1,4 +1,4 @@
-import { AlertTriangle, Sparkles, Activity } from 'lucide-react';
+import { AlertTriangle, Sparkles } from 'lucide-react';
 
 function FloodRiskCard({ prediction, onOpenSimulator }) {
   const riskLevel = prediction?.risk_level || 'High';

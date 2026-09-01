@@ -12,16 +12,21 @@ if not hasattr(_ct, "_RemainderColsList"):
             pass
     _ct._RemainderColsList = _RemainderColsList
 
+import os
+
+ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+ARTIFACTS_DIR = os.path.join(ROOT_DIR, "artifacts")
+
 print("Loading feature_columns.pkl...")
-features = joblib.load("d:/SIH_2026/github/SIH26/SIH-26085/Model/feature_columns.pkl")
+features = joblib.load(os.path.join(ARTIFACTS_DIR, "feature_columns.pkl"))
 print(f"Features ({len(features)}):", features)
 
 print("\nLoading preprocessor.pkl...")
-prep = joblib.load("d:/SIH_2026/github/SIH26/SIH-26085/Model/preprocessor.pkl")
+prep = joblib.load(os.path.join(ARTIFACTS_DIR, "preprocessor.pkl"))
 print("Preprocessor successfully loaded:", type(prep))
 
 print("\nLoading best_flood_model.pkl...")
-model = joblib.load("d:/SIH_2026/github/SIH26/SIH-26085/Model/best_flood_model.pkl")
+model = joblib.load(os.path.join(ARTIFACTS_DIR, "best_flood_model.pkl"))
 print("Model successfully loaded:", type(model))
 
 # Let's inspect transformers and features

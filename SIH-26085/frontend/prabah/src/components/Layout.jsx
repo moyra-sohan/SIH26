@@ -3,6 +3,7 @@ import { Outlet, useLocation } from 'react-router-dom';
 import { MapPin, User, ChevronDown, Menu, Mail, LogOut, X } from 'lucide-react';
 import { useAuth } from '../context/AuthContext.jsx';
 import Sidebar from './Sidebar.jsx';
+import NotificationCenter from './NotificationCenter.jsx';
 import '../styles/layout.css';
 
 // Page metadata for header titles
@@ -14,6 +15,10 @@ const PAGE_META = {
   '/map': {
     title: 'Flood Risk Map',
     subtitle: 'Interactive 2D map of Kolkata — urban flood monitoring & prediction.',
+  },
+  '/emergency': {
+    title: 'Emergency Support',
+    subtitle: '24/7 Hotlines & Safety Information for Disaster Response.',
   },
 };
 
@@ -28,7 +33,7 @@ function Layout() {
   const closeSidebar = () => setSidebarOpen(false);
 
   const meta = PAGE_META[location.pathname] || {
-    title: 'Urban Flood',
+    title: 'PRABAH',
     subtitle: 'Nowcasting System',
   };
 
@@ -80,6 +85,9 @@ function Layout() {
               <div className="status-dot" />
             </div>
 
+            {/* Notification Center */}
+            <NotificationCenter />
+
             {/* Profile trigger & Dropdown */}
             <div className="profile-dropdown-container" ref={profileRef} style={{ position: 'relative' }}>
               <button
@@ -109,7 +117,6 @@ function Layout() {
                   border: '1px solid #E2E8F0',
                   padding: '20px',
                   zIndex: 200,
-                  animation: 'fadeIn 0.2s ease',
                 }}>
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '14px' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
@@ -117,7 +124,7 @@ function Layout() {
                         width: '40px',
                         height: '40px',
                         borderRadius: '50%',
-                        background: 'linear-gradient(135deg, #3B82F6, #1D4ED8)',
+                        background: 'linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%)',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
@@ -146,7 +153,7 @@ function Layout() {
                   </div>
 
                   <div style={{ borderTop: '1px solid #F1F5F9', paddingTop: '12px', marginBottom: '14px' }}>
-                    <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#2563EB', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '5px' }}>
+                    <div style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--primary)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '5px' }}>
                       <MapPin size={13} /> Registered Address
                     </div>
                     <div style={{ fontSize: '0.82rem', color: '#334155', lineHeight: '1.5', background: '#F8FAFC', padding: '10px 12px', borderRadius: '8px', border: '1px solid #E2E8F0' }}>

@@ -5,6 +5,7 @@ import AuthPage from './pages/AuthPage.jsx';
 import Layout from './components/Layout.jsx';
 import DashboardPage from './pages/DashboardPage.jsx';
 import MapPage from './pages/map.jsx';
+import EmergencySupport from './pages/EmergencySupport.jsx';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route element={<Layout />}>
             <Route path="/dashboard" element={<DashboardPage />} />
             <Route path="/map" element={<MapPage />} />
+            <Route path="/emergency" element={<EmergencySupport />} />
           </Route>
         </Route>
 

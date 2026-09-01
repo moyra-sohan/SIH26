@@ -7,9 +7,12 @@ if not hasattr(_ct, "_RemainderColsList"):
         def __init__(self, *args, **kwargs): pass
     _ct._RemainderColsList = _RemainderColsList
 
-prep = joblib.load("d:/SIH_2026/github/SIH26/SIH-26085/Model/preprocessor.pkl")
-model = joblib.load("d:/SIH_2026/github/SIH26/SIH-26085/Model/best_flood_model.pkl")
-features = joblib.load("d:/SIH_2026/github/SIH26/SIH-26085/Model/feature_columns.pkl")
+import os
+
+BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "artifacts"))
+prep = joblib.load(os.path.join(BASE_DIR, "preprocessor.pkl"))
+model = joblib.load(os.path.join(BASE_DIR, "best_flood_model.pkl"))
+features = joblib.load(os.path.join(BASE_DIR, "feature_columns.pkl"))
 
 print("--- Preprocessor Transformers ---")
 num_cols = []
@@ -42,7 +45,7 @@ summary = {
     "categories": {k: [str(x) for x in v] for k, v in cat_categories.items()}
 }
 
-with open("d:/SIH_2026/github/SIH26/SIH-26085/Model/feature_meta.json", "w") as f:
+with open(os.path.join(BASE_DIR, "feature_meta.json"), "w") as f:
     json.dump(summary, f, indent=2)
 
 print("Saved feature_meta.json successfully!")
