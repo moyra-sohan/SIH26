@@ -1,7 +1,11 @@
-import { ShieldCheck, Umbrella } from 'lucide-react';
+import { ShieldCheck } from 'lucide-react';
 import { advisoryData } from '../../data/alertsData';
 
-function AdvisoryCard() {
+function AdvisoryCard({ prediction }) {
+  const dynamicAdvisories = prediction?.advisories && prediction.advisories.length > 0
+    ? prediction.advisories
+    : advisoryData;
+
   return (
     <div className="advisory-card" id="advisory-card">
       <div className="advisory-content">
@@ -9,11 +13,11 @@ function AdvisoryCard() {
           <div className="advisory-header-icon">
             <ShieldCheck size={20} />
           </div>
-          <h3>Advisory</h3>
+          <h3>Safety Advisory</h3>
         </div>
 
         <ul className="advisory-list">
-          {advisoryData.map((item, index) => (
+          {dynamicAdvisories.map((item, index) => (
             <li key={index}>{item}</li>
           ))}
         </ul>
