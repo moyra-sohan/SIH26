@@ -6,6 +6,7 @@ import cookie from '@fastify/cookie';
 import session from '@fastify/session';
 import prisma from './lib/prisma.js';
 import authRoutes from './routes/auth.js';
+import mlRoutes from './routes/ml.js';
 
 const isProduction = process.env.NODE_ENV === 'production';
 const cookieSecret = process.env.COOKIE_SECRET || 'sih_flood_cookie_secret_key_minimum_32_characters_long_2026!';
@@ -87,6 +88,9 @@ fastify.get('/api/health', async (request, reply) => {
 
 // Register Auth Routes under /api/auth
 await fastify.register(authRoutes, { prefix: '/api/auth' });
+
+// Register ML Routes under /api/ml
+await fastify.register(mlRoutes, { prefix: '/api/ml' });
 
 // Graceful shutdown
 const gracefulShutdown = async (signal) => {
