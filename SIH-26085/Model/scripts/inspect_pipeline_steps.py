@@ -8,7 +8,10 @@ if not hasattr(_ct, "_RemainderColsList"):
         def __init__(self, *args, **kwargs): pass
     _ct._RemainderColsList = _RemainderColsList
 
-model = joblib.load("d:/SIH_2026/github/SIH26/SIH-26085/Model/best_flood_model.pkl")
+import os
+
+BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "artifacts"))
+model = joblib.load(os.path.join(BASE_DIR, "best_flood_model.pkl"))
 print("Model steps:", model.steps)
 for step_name, step_obj in model.steps:
     print(f"\nStep: {step_name}, Type: {type(step_obj)}")

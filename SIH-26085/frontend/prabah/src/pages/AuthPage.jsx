@@ -1,20 +1,85 @@
-import { useState, useMemo } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { CloudRain, User, Mail, Lock, Eye, EyeOff, Activity, BrainCircuit, Bell, AlertCircle, CheckCircle, Loader2 } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Navigate } from 'react-router-dom';
+import {
+  User,
+  Mail,
+  Lock,
+  Eye,
+  EyeOff,
+  Activity,
+  BrainCircuit,
+  Bell,
+  AlertCircle,
+  CheckCircle,
+  Loader2,
+  Home,
+  MapPin,
+  Building,
+  Navigation,
+  Globe,
+  Check,
+  Sun,
+  Cloud,
+  Wind,
+} from 'lucide-react';
+import PrabahLogo from '../components/PrabahLogo.jsx';
+import LiveWeatherAnimation from '../components/LiveWeatherAnimation.jsx';
+import CloudSkyBackground from '../components/CloudSkyBackground.jsx';
+import { useAuth } from '../context/AuthContext.jsx';
 import '../styles/auth.css';
 
 function AuthPage() {
-  const navigate = useNavigate();
+  const { login, register, isAuthenticated } = useAuth();
   const [activeTab, setActiveTab] = useState('signin');
   const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [weatherData, setWeatherData] = useState(null);
   const [formData, setFormData] = useState({
-    username: '',
+    name: '',
     email: '',
     password: '',
+    confirmPassword: '',
+    houseNo: '',
+    street: '',
+    area: '',
+    city: '',
+    district: '',
+    state: '',
+    pinCode: '',
+    country: 'India',
   });
   const [errorMsg, setErrorMsg] = useState('');
   const [successMsg, setSuccessMsg] = useState('');
   const [loading, setLoading] = useState(false);
+
+  // Fetch live weather data for Kolkata for atmospheric background & badge
+  useEffect(() => {
+    const fetchWeather = async () => {
+      try {
+        const latitude = 22.5726; // Kolkata coordinates
+        const longitude = 88.3639;
+        const response = await fetch(
+          `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=weather_code,temperature,relative_humidity,wind_speed&timezone=auto`
+        );
+        if (response.ok) {
+          const data = await response.json();
+          const current = data.current;
+          setWeatherData({
+            temperature: current.temperature,
+            humidity: current.relative_humidity,
+            windSpeed: current.wind_speed,
+            weatherCode: current.weather_code,
+          });
+        }
+      } catch (error) {
+        console.warn('Weather fetch notice:', error);
+      }
+    };
+
+    fetchWeather();
+    const interval = setInterval(fetchWeather, 600000);
+    return () => clearInterval(interval);
+  }, []);
 
   const features = [
     {
@@ -34,22 +99,18 @@ function AuthPage() {
     },
   ];
 
-  // Generate rain drops
-  const raindrops = useMemo(() => {
-    return Array.from({ length: 60 }, (_, i) => ({
-      id: i,
-      left: `${Math.random() * 100}%`,
-      height: `${Math.random() * 25 + 10}px`,
-      duration: `${Math.random() * 1.5 + 0.8}s`,
-      delay: `${Math.random() * 3}s`,
-    }));
-  }, []);
+  if (isAuthenticated) {
+    return <Navigate to="/dashboard" replace />;
+  }
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
     if (errorMsg) setErrorMsg('');
   };
+
+  const passwordsMatch = formData.password && formData.confirmPassword && formData.password === formData.confirmPassword;
+  const passwordsMismatch = formData.confirmPassword && formData.password !== formData.confirmPassword;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -69,8 +130,8 @@ function AuthPage() {
         return;
       }
     } else {
-      if (!formData.username.trim() || formData.username.trim().length < 3) {
-        setErrorMsg('Username must be at least 3 characters');
+      if (!formData.name.trim() || formData.name.trim().length < 2) {
+        setErrorMsg('Please enter your full name (minimum 2 characters)');
         return;
       }
       if (!formData.email.trim()) {
@@ -78,7 +139,35 @@ function AuthPage() {
         return;
       }
       if (formData.password.length < 6) {
-        setErrorMsg('Password must be at least 6 characters');
+        setErrorMsg('Password must be at least 6 characters long');
+        return;
+      }
+      if (formData.password !== formData.confirmPassword) {
+        setErrorMsg('Passwords do not match. Please ensure both password fields match.');
+        return;
+      }
+      if (!formData.street.trim()) {
+        setErrorMsg('Please enter your street / road name');
+        return;
+      }
+      if (!formData.area.trim()) {
+        setErrorMsg('Please enter your area / locality');
+        return;
+      }
+      if (!formData.city.trim()) {
+        setErrorMsg('Please enter your city');
+        return;
+      }
+      if (!formData.district.trim()) {
+        setErrorMsg('Please enter your district');
+        return;
+      }
+      if (!formData.state.trim()) {
+        setErrorMsg('Please enter your state');
+        return;
+      }
+      if (!formData.pinCode.trim()) {
+        setErrorMsg('Please enter your PIN code');
         return;
       }
     }
@@ -86,48 +175,29 @@ function AuthPage() {
     setLoading(true);
 
     try {
-      const endpoint = isSignIn ? '/api/auth/login' : '/api/auth/register';
-      const payload = isSignIn
-        ? {
-            email: formData.email.trim(),
-            username: formData.email.trim(),
-            password: formData.password,
-          }
-        : {
-            username: formData.username.trim(),
-            email: formData.email.trim(),
-            password: formData.password,
-          };
+      if (isSignIn) {
+        await login(formData.email, formData.password);
+      } else {
+        const registrationPayload = {
+          name: formData.name.trim(),
+          username: formData.email.split('@')[0],
+          email: formData.email.trim(),
+          password: formData.password,
+          houseNo: formData.houseNo.trim(),
+          street: formData.street.trim(),
+          area: formData.area.trim(),
+          city: formData.city.trim(),
+          district: formData.district.trim(),
+          state: formData.state.trim(),
+          pinCode: formData.pinCode.trim(),
+          country: formData.country.trim() || 'India',
+        };
 
-      const response = await fetch(`http://localhost:5000${endpoint}`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(payload),
-      });
-
-      const data = await response.json();
-
-      if (!response.ok || !data.success) {
-        throw new Error(data.message || 'Authentication failed. Please check your credentials.');
+        await register(registrationPayload);
+        setSuccessMsg('Registration successful! Redirecting...');
       }
-
-      // Store JWT token and user info
-      if (data.token) {
-        localStorage.setItem('auth_token', data.token);
-      }
-      if (data.user) {
-        localStorage.setItem('auth_user', JSON.stringify(data.user));
-      }
-
-      setSuccessMsg(isSignIn ? 'Login successful! Redirecting...' : 'Account created successfully! Redirecting...');
-
-      setTimeout(() => {
-        navigate('/dashboard');
-      }, 700);
     } catch (err) {
-      setErrorMsg(err.message || 'Unable to connect to the authentication service.');
+      setErrorMsg(err.message || 'An error occurred during authentication.');
     } finally {
       setLoading(false);
     }
@@ -137,87 +207,45 @@ function AuthPage() {
     setActiveTab(tab);
     setErrorMsg('');
     setSuccessMsg('');
-    setFormData({ username: '', email: '', password: '' });
   };
 
   return (
     <div className="auth-page">
-      {/* Background */}
-      <div className="auth-background">
-        <div className="auth-bg-gradient" />
+      {/* Cloud Sky Background with 3D effect */}
+      <CloudSkyBackground weatherCode={weatherData?.weatherCode || 0} />
 
-        {/* City skyline SVG */}
-        <svg className="auth-bg-skyline" viewBox="0 0 1440 400" preserveAspectRatio="xMidYMax slice" fill="none" xmlns="http://www.w3.org/2000/svg">
-          {/* Water / reflection */}
-          <rect x="0" y="320" width="1440" height="80" fill="rgba(180, 210, 230, 0.25)" />
+      {/* Live Weather Animation - Rain & Thunderstorm */}
+      <LiveWeatherAnimation isActive={true} />
 
-          {/* Bridge */}
-          <path d="M0 300 Q200 260 400 300" stroke="rgba(150, 170, 190, 0.35)" strokeWidth="3" fill="none" />
-          <line x1="100" y1="300" x2="100" y2="275" stroke="rgba(150, 170, 190, 0.3)" strokeWidth="2" />
-          <line x1="200" y1="300" x2="200" y2="262" stroke="rgba(150, 170, 190, 0.3)" strokeWidth="2" />
-          <line x1="300" y1="300" x2="300" y2="265" stroke="rgba(150, 170, 190, 0.3)" strokeWidth="2" />
-
-          {/* Buildings - left cluster */}
-          <rect x="50" y="180" width="50" height="140" rx="3" fill="rgba(150, 170, 190, 0.3)" />
-          <rect x="110" y="140" width="40" height="180" rx="3" fill="rgba(140, 160, 180, 0.35)" />
-          <rect x="160" y="200" width="45" height="120" rx="3" fill="rgba(150, 170, 190, 0.25)" />
-          <rect x="215" y="160" width="35" height="160" rx="3" fill="rgba(160, 180, 200, 0.3)" />
-
-          {/* Buildings - center */}
-          <rect x="500" y="120" width="55" height="200" rx="3" fill="rgba(140, 160, 180, 0.3)" />
-          <rect x="565" y="160" width="40" height="160" rx="3" fill="rgba(150, 170, 190, 0.35)" />
-          <rect x="615" y="100" width="60" height="220" rx="3" fill="rgba(140, 160, 180, 0.25)" />
-          <rect x="685" y="150" width="45" height="170" rx="3" fill="rgba(160, 180, 200, 0.3)" />
-          <rect x="740" y="190" width="35" height="130" rx="3" fill="rgba(150, 170, 190, 0.28)" />
-
-          {/* Buildings - right cluster */}
-          <rect x="1050" y="130" width="50" height="190" rx="3" fill="rgba(140, 160, 180, 0.35)" />
-          <rect x="1110" y="170" width="40" height="150" rx="3" fill="rgba(150, 170, 190, 0.3)" />
-          <rect x="1160" y="110" width="55" height="210" rx="3" fill="rgba(140, 160, 180, 0.25)" />
-          <rect x="1225" y="160" width="45" height="160" rx="3" fill="rgba(160, 180, 200, 0.3)" />
-          <rect x="1280" y="200" width="50" height="120" rx="3" fill="rgba(150, 170, 190, 0.28)" />
-          <rect x="1340" y="140" width="40" height="180" rx="3" fill="rgba(140, 160, 180, 0.32)" />
-
-          {/* Trees */}
-          <circle cx="430" cy="290" r="18" fill="rgba(100, 160, 120, 0.25)" />
-          <rect x="428" y="306" width="4" height="14" fill="rgba(100, 140, 100, 0.2)" />
-          <circle cx="470" cy="285" r="15" fill="rgba(100, 160, 120, 0.2)" />
-          <circle cx="900" cy="288" r="20" fill="rgba(100, 160, 120, 0.25)" />
-          <rect x="898" y="306" width="4" height="14" fill="rgba(100, 140, 100, 0.2)" />
-          <circle cx="950" cy="292" r="14" fill="rgba(100, 160, 120, 0.2)" />
-
-          {/* Ground line */}
-          <line x1="0" y1="320" x2="1440" y2="320" stroke="rgba(150, 170, 190, 0.2)" strokeWidth="1" />
-        </svg>
-
-        {/* Rain drops */}
-        <div className="rain-container">
-          {raindrops.map((drop) => (
-            <div
-              key={drop.id}
-              className="raindrop"
-              style={{
-                left: drop.left,
-                height: drop.height,
-                animationDuration: drop.duration,
-                animationDelay: drop.delay,
-              }}
-            />
-          ))}
+      {/* Weather info overlay in top-right */}
+      {weatherData && (
+        <div className="weather-info-overlay">
+          <div className="weather-item">
+            <Sun size={16} />
+            <span>{Math.round(weatherData.temperature)}°C</span>
+          </div>
+          <div className="weather-item">
+            <Cloud size={16} />
+            <span>{weatherData.humidity}%</span>
+          </div>
+          <div className="weather-item">
+            <Wind size={16} />
+            <span>{Math.round(weatherData.windSpeed)} km/h</span>
+          </div>
         </div>
-      </div>
+      )}
 
       {/* Branding */}
       <div className="auth-branding">
         <div className="auth-branding-icon">
-          <CloudRain size={44} strokeWidth={1.8} />
+          <PrabahLogo size={52} />
         </div>
-        <h1>Urban Flood</h1>
-        <p>Nowcasting System</p>
+        <h1>PRABAH</h1>
+        <p>Urban Flood Nowcasting System</p>
       </div>
 
       {/* Auth Card */}
-      <div className="auth-card">
+      <div className={`auth-card ${activeTab === 'signup' ? 'auth-card-wide' : ''}`}>
         {/* Tabs */}
         <div className="auth-tabs">
           <button
@@ -238,71 +266,73 @@ function AuthPage() {
           </button>
         </div>
 
+        {/* Error / Success Notifications */}
+        {errorMsg && (
+          <div className="auth-msg auth-error" id="auth-error-msg">
+            <AlertCircle size={18} />
+            <span>{errorMsg}</span>
+          </div>
+        )}
+        {successMsg && (
+          <div className="auth-msg auth-success" id="auth-success-msg">
+            <CheckCircle size={18} />
+            <span>{successMsg}</span>
+          </div>
+        )}
+
         {/* Form */}
         <form className="auth-form" onSubmit={handleSubmit}>
-          {errorMsg && (
-            <div className="auth-alert auth-alert-error" role="alert">
-              <AlertCircle size={16} />
-              <span>{errorMsg}</span>
-            </div>
-          )}
-
-          {successMsg && (
-            <div className="auth-alert auth-alert-success" role="status">
-              <CheckCircle size={16} />
-              <span>{successMsg}</span>
-            </div>
-          )}
-
+          {/* Sign Up Fields */}
           {activeTab === 'signup' && (
             <div className="form-group">
-              <label htmlFor="username">User Name</label>
+              <label htmlFor="name">Full Name *</label>
               <div className="input-wrapper">
                 <User size={18} className="input-icon" />
                 <input
                   type="text"
-                  id="username"
-                  name="username"
-                  placeholder="Enter your user name"
-                  value={formData.username}
+                  id="name"
+                  name="name"
+                  placeholder="Enter your full name"
+                  value={formData.name}
                   onChange={handleInputChange}
-                  autoComplete="username"
-                  required
+                  autoComplete="name"
                 />
               </div>
             </div>
           )}
 
+          {/* Email / Username */}
           <div className="form-group">
-            <label htmlFor="email">{activeTab === 'signin' ? 'Email or Username' : 'Email'}</label>
+            <label htmlFor="email">
+              {activeTab === 'signin' ? 'Email or Username *' : 'Email Address *'}
+            </label>
             <div className="input-wrapper">
               <Mail size={18} className="input-icon" />
               <input
                 type={activeTab === 'signin' ? 'text' : 'email'}
                 id="email"
                 name="email"
-                placeholder={activeTab === 'signin' ? 'Enter your email or username' : 'Enter your email'}
+                placeholder={activeTab === 'signin' ? 'user@example.com or username' : 'name@example.com'}
                 value={formData.email}
                 onChange={handleInputChange}
-                autoComplete={activeTab === 'signin' ? 'username' : 'email'}
-                required
+                autoComplete="email"
               />
             </div>
           </div>
 
+          {/* Password */}
           <div className="form-group">
-            <label htmlFor="password">Password</label>
+            <label htmlFor="password">Password *</label>
             <div className="input-wrapper">
               <Lock size={18} className="input-icon" />
               <input
                 type={showPassword ? 'text' : 'password'}
                 id="password"
                 name="password"
-                placeholder="Enter your password"
+                placeholder={activeTab === 'signin' ? '••••••••' : 'Min. 6 characters'}
                 value={formData.password}
                 onChange={handleInputChange}
                 autoComplete={activeTab === 'signin' ? 'current-password' : 'new-password'}
-                required
               />
               <button
                 type="button"
@@ -315,6 +345,175 @@ function AuthPage() {
               </button>
             </div>
           </div>
+
+          {/* Confirm Password (Sign Up only) */}
+          {activeTab === 'signup' && (
+            <div className="form-group">
+              <label htmlFor="confirmPassword">Confirm Password *</label>
+              <div className="input-wrapper">
+                <Lock size={18} className="input-icon" />
+                <input
+                  type={showConfirmPassword ? 'text' : 'password'}
+                  id="confirmPassword"
+                  name="confirmPassword"
+                  placeholder="Repeat your password"
+                  value={formData.confirmPassword}
+                  onChange={handleInputChange}
+                  autoComplete="new-password"
+                />
+                <button
+                  type="button"
+                  className="toggle-password"
+                  onClick={() => setShowConfirmPassword((prev) => !prev)}
+                  aria-label={showConfirmPassword ? 'Hide password' : 'Show password'}
+                >
+                  {showConfirmPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                </button>
+              </div>
+              {passwordsMatch && (
+                <div className="password-match-status match">
+                  <Check size={14} /> Passwords match
+                </div>
+              )}
+              {passwordsMismatch && (
+                <div className="password-match-status mismatch">
+                  <AlertCircle size={14} /> Passwords do not match
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* Complete Address Details for Sign Up */}
+          {activeTab === 'signup' && (
+            <>
+              <div className="address-section-header">
+                <MapPin size={16} />
+                <span>Residential / Alert Address</span>
+              </div>
+
+              <div className="form-row-2">
+                <div className="form-group">
+                  <label htmlFor="houseNo">House / Flat / Bldg No.</label>
+                  <div className="input-wrapper">
+                    <Home size={16} className="input-icon" />
+                    <input
+                      type="text"
+                      id="houseNo"
+                      name="houseNo"
+                      placeholder="e.g. Flat 4B, Tower 2"
+                      value={formData.houseNo}
+                      onChange={handleInputChange}
+                    />
+                  </div>
+                </div>
+                <div className="form-group">
+                  <label htmlFor="street">Street / Road Name *</label>
+                  <div className="input-wrapper">
+                    <Navigation size={16} className="input-icon" />
+                    <input
+                      type="text"
+                      id="street"
+                      name="street"
+                      placeholder="e.g. Diamond Harbour Rd"
+                      value={formData.street}
+                      onChange={handleInputChange}
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="form-row-2">
+                <div className="form-group">
+                  <label htmlFor="area">Area / Locality / Ward *</label>
+                  <div className="input-wrapper">
+                    <MapPin size={16} className="input-icon" />
+                    <input
+                      type="text"
+                      id="area"
+                      name="area"
+                      placeholder="e.g. Behala / Ward 120"
+                      value={formData.area}
+                      onChange={handleInputChange}
+                    />
+                  </div>
+                </div>
+                <div className="form-group">
+                  <label htmlFor="city">City / Municipal Corp *</label>
+                  <div className="input-wrapper">
+                    <Building size={16} className="input-icon" />
+                    <input
+                      type="text"
+                      id="city"
+                      name="city"
+                      placeholder="e.g. Kolkata"
+                      value={formData.city}
+                      onChange={handleInputChange}
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="form-row-3">
+                <div className="form-group">
+                  <label htmlFor="district">District *</label>
+                  <div className="input-wrapper">
+                    <Building size={16} className="input-icon" />
+                    <input
+                      type="text"
+                      id="district"
+                      name="district"
+                      placeholder="Kolkata / South 24 Parganas"
+                      value={formData.district}
+                      onChange={handleInputChange}
+                    />
+                  </div>
+                </div>
+                <div className="form-group">
+                  <label htmlFor="state">State *</label>
+                  <div className="input-wrapper">
+                    <Building size={16} className="input-icon" />
+                    <input
+                      type="text"
+                      id="state"
+                      name="state"
+                      placeholder="West Bengal"
+                      value={formData.state}
+                      onChange={handleInputChange}
+                    />
+                  </div>
+                </div>
+                <div className="form-group">
+                  <label htmlFor="pinCode">PIN Code *</label>
+                  <div className="input-wrapper">
+                    <MapPin size={16} className="input-icon" />
+                    <input
+                      type="text"
+                      id="pinCode"
+                      name="pinCode"
+                      placeholder="700034"
+                      value={formData.pinCode}
+                      onChange={handleInputChange}
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="country">Country</label>
+                <div className="input-wrapper">
+                  <Globe size={16} className="input-icon" />
+                  <input
+                    type="text"
+                    id="country"
+                    name="country"
+                    placeholder="India"
+                    value={formData.country}
+                    onChange={handleInputChange}
+                  />
+                </div>
+              </div>
+            </>
+          )}
 
           {activeTab === 'signin' && (
             <div className="forgot-password">
@@ -331,12 +530,12 @@ function AuthPage() {
             disabled={loading}
           >
             {loading ? (
-              <span style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', justifyContent: 'center' }}>
-                <Loader2 size={18} className="spin" style={{ animation: 'spin 1s linear infinite' }} />
-                {activeTab === 'signin' ? 'Signing In...' : 'Creating Account...'}
-              </span>
+              <>
+                <Loader2 size={18} className="animate-spin" />
+                <span>{activeTab === 'signin' ? 'Signing In...' : 'Registering Account...'}</span>
+              </>
             ) : (
-              activeTab === 'signin' ? 'Sign In' : 'Sign Up'
+              <span>{activeTab === 'signin' ? 'Sign In to Dashboard' : 'Complete Registration'}</span>
             )}
           </button>
 

@@ -2,8 +2,6 @@ import { useState, useEffect } from 'react';
 import {
   X,
   Cpu,
-  Droplets,
-  CloudRain,
   Activity,
   AlertTriangle,
   CheckCircle2,

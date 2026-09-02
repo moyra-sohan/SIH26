@@ -110,6 +110,7 @@ export default async function mlRoutes(fastify, options) {
     }
   });
 
+<<<<<<< HEAD
   // ---------------------------------------------------------------
   // Real-Time Weather Endpoints
   // WEATHER_API_KEY lives in Python (Model/.env) only.
@@ -179,6 +180,118 @@ export default async function mlRoutes(fastify, options) {
         ward_id,
         hint: 'Ensure uvicorn app:app is running on port 8000',
       });
+=======
+  // Get urban_flood_nowcasting_db Database Tables & Schemas
+  fastify.get('/db/tables', async (request, reply) => {
+    try {
+      const response = await fetch(`${ML_SERVICE_URL}/api/db/tables`);
+      const data = await response.json();
+      return data;
+    } catch (err) {
+      fastify.log.error(`ML get db tables failed: ${err.message}`);
+      return reply.code(500).send({ error: 'Failed to fetch database tables', details: err.message });
+    }
+  });
+
+  // Query Specific urban_flood_nowcasting_db Table Records
+  fastify.get('/db/table/:tableName', async (request, reply) => {
+    try {
+      const { tableName } = request.params;
+      const queryParams = new URLSearchParams(request.query || {});
+      const response = await fetch(`${ML_SERVICE_URL}/api/db/table/${tableName}?${queryParams.toString()}`);
+      const data = await response.json();
+      if (!response.ok) {
+        return reply.code(response.status).send(data);
+      }
+      return data;
+    } catch (err) {
+      fastify.log.error(`ML query table failed: ${err.message}`);
+      return reply.code(500).send({ error: 'Failed to query table', details: err.message });
+    }
+  });
+
+  // Get Full urban_flood_nowcasting_db Database Dump
+  fastify.get('/db/all', async (request, reply) => {
+    try {
+      const response = await fetch(`${ML_SERVICE_URL}/api/db/all`);
+      const data = await response.json();
+      return data;
+    } catch (err) {
+      fastify.log.error(`ML get all db failed: ${err.message}`);
+      return reply.code(500).send({ error: 'Failed to fetch database payload', details: err.message });
+    }
+  });
+
+  // Get Road Network & Waterlogging Statuses
+  fastify.get('/db/roads', async (request, reply) => {
+    try {
+      const queryParams = new URLSearchParams(request.query || {});
+      const response = await fetch(`${ML_SERVICE_URL}/api/db/roads?${queryParams.toString()}`);
+      const data = await response.json();
+      return data;
+    } catch (err) {
+      fastify.log.error(`ML get roads failed: ${err.message}`);
+      return reply.code(500).send({ error: 'Failed to fetch roads network', details: err.message });
+    }
+  });
+
+  // Get Drainage Network & Pumping Station Statuses
+  fastify.get('/db/drains', async (request, reply) => {
+    try {
+      const queryParams = new URLSearchParams(request.query || {});
+      const response = await fetch(`${ML_SERVICE_URL}/api/db/drains?${queryParams.toString()}`);
+      const data = await response.json();
+      return data;
+    } catch (err) {
+      fastify.log.error(`ML get drains failed: ${err.message}`);
+      return reply.code(500).send({ error: 'Failed to fetch drainage network', details: err.message });
+    }
+  });
+
+  // Get Ward-Wise Zone Classifications
+  fastify.get('/db/zones', async (request, reply) => {
+    try {
+      const response = await fetch(`${ML_SERVICE_URL}/api/db/zones`);
+      const data = await response.json();
+      return data;
+    } catch (err) {
+      fastify.log.error(`ML get zones failed: ${err.message}`);
+      return reply.code(500).send({ error: 'Failed to fetch zones metadata', details: err.message });
+    }
+  });
+
+  // Get 3-Hour Nowcasting Timeline Progression
+  fastify.get('/db/3h-situation', async (request, reply) => {
+    try {
+      const queryParams = new URLSearchParams(request.query || {});
+      const response = await fetch(`${ML_SERVICE_URL}/api/db/3h-situation?${queryParams.toString()}`);
+      const data = await response.json();
+      return data;
+    } catch (err) {
+      fastify.log.error(`ML get 3h situation failed: ${err.message}`);
+      return reply.code(500).send({ error: 'Failed to fetch 3H situation timeline', details: err.message });
+    }
+  });
+
+  // Predict Flood Risk on Location / GPS Coordinates
+  fastify.post('/db/predict-location', async (request, reply) => {
+    try {
+      const response = await fetch(`${ML_SERVICE_URL}/api/db/predict-location`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(request.body || {}),
+      });
+
+      const data = await response.json();
+      if (!response.ok) {
+        return reply.code(response.status).send(data);
+      }
+      return data;
+    } catch (err) {
+      fastify.log.error(`ML location prediction failed: ${err.message}`);
+      return reply.code(500).send({ error: 'Failed to execute location prediction', details: err.message });
+>>>>>>> main
     }
   });
 }
+

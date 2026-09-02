@@ -1,9 +1,0 @@
-Python: d:\SIH_2026\github\SIH26\SIH-26085\Model\.env\Scripts\python.exe
-1. Reading feature_columns.pkl...
-Columns (60):
-['ward_id', 'zone', 'administrative_body', 'latitude', 'longitude', 'elevation_m', 'landscape_type', 'drainage_index_1to10', 'road_density_index_1to10', 'near_hooghly_river', 'historical_rainfall_mm_reference', 'flood_waterlogging_events', 'estimated_avg_waterlogging_duration_hours', 'boundary_type', 'within_kmc_limits', 'distance_from_city_center_km', 'approx_ward_area_sqkm', 'approx_boundary_perimeter_km', 'estimated_waterlogged_area_percent', 'elevation_category', 'relative_elevation_vs_sample_mean_m', 'flood_vulnerability_class_by_elevation', 'groundwater_table_depth_m', 'waterlogging_risk_from_shallow_table', 'land_use_category', 'water_body_proximity', 'impervious_surface_percent', 'water_surface_percent', 'green_cover_baseline_percent', 'seasonal_green_cover_percent', 'approx_road_network_length_km', 'drainage_system_type', 'storm_drain_coverage_percent', 'drain_load_utilization_percent', 'silt_accumulation_level', 'reported_road_waterlogging_incidents', 'historical_rainfall_mm', 'citywide_normal_rainfall_mm', 'deviation_from_normal_percent', 'rainfall_category', 'estimated_rainy_days', 'forecast_rainfall_mm', 'forecast_vs_historical_error_percent', 'forecast_rainfall_category', 'forecast_issue_lead_time_days', 'avg_humidity_percent', 'citywide_normal_humidity_percent', 'humidity_category', 'avg_temperature_c_reference', 'heat_index_c', 'avg_temperature_c', 'estimated_max_temperature_c', 'estimated_min_temperature_c', 'citywide_normal_temperature_c', 'deviation_from_normal_c', 'temperature_category', 'month_idx', 'is_monsoon', 'rainfall_intensity', 'drain_efficiency_index']
-
-2. Reading preprocessor.pkl...
-Preprocessor error: STACK_GLOBAL requires str
-3. Reading best_flood_model.pkl...
-Model error: STACK_GLOBAL requires str

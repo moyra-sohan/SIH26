@@ -89,6 +89,7 @@ export const api = {
     return fetchWithFallback('/features');
   },
 
+<<<<<<< HEAD
   /**
    * Get real-time weather for a specific ward.
    * Calls: Frontend → Node.js /api/ml/weather/:ward_id → Python → OpenWeatherMap
@@ -112,7 +113,55 @@ export const api = {
    */
   async getWeatherPrediction(wardId) {
     return fetchWithFallback(`/weather-predict/${encodeURIComponent(wardId)}`);
+=======
+  // Get all 9 Database tables & metadata schemas
+  async getDbTables() {
+    return fetchWithFallback('/db/tables');
+  },
+
+  // Query specific Database Table
+  async queryDbTable(tableName, params = {}) {
+    const query = new URLSearchParams(params).toString();
+    return fetchWithFallback(`/db/table/${tableName}?${query}`);
+  },
+
+  // Full Database Dump
+  async getAllDbData() {
+    return fetchWithFallback('/db/all');
+  },
+
+  // Get Road Network and Status
+  async getRoads(params = {}) {
+    const query = new URLSearchParams(params).toString();
+    return fetchWithFallback(`/db/roads?${query}`);
+  },
+
+  // Get Drainage Network and Status
+  async getDrainage(params = {}) {
+    const query = new URLSearchParams(params).toString();
+    return fetchWithFallback(`/db/drains?${query}`);
+  },
+
+  // Get Ward-Wise Zones
+  async getZones() {
+    return fetchWithFallback('/db/zones');
+  },
+
+  // Get 3-Hour Nowcasting Timeline Progression
+  async get3hSituation(timeStep = '') {
+    const query = timeStep ? `?time_step=${timeStep}` : '';
+    return fetchWithFallback(`/db/3h-situation${query}`);
+  },
+
+  // Predict Flood Risk on Location / GPS Coordinates
+  async predictLocation(params) {
+    return fetchWithFallback('/db/predict-location', {
+      method: 'POST',
+      body: JSON.stringify(params),
+    });
+>>>>>>> main
   },
 };
 
 export default api;
+
