@@ -8,11 +8,13 @@ import {
   Sliders,
   ChevronRight,
   MapPin,
-  Waves
+  Waves,
+  RefreshCw,
+  Zap
 } from 'lucide-react';
 import api from '../../services/api';
 
-function LiveMLPredictorModal({ isOpen, onClose, onApplyPrediction, currentWard }) {
+function LiveMLPredictorModal({ isOpen, onClose, onApplyPrediction, currentWard, onWardChange }) {
   const [wards, setWards] = useState([]);
   const [selectedWardId, setSelectedWardId] = useState('behala-ward-120');
   const [rainfall, setRainfall] = useState(85);
@@ -23,6 +25,10 @@ function LiveMLPredictorModal({ isOpen, onClose, onApplyPrediction, currentWard 
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState(null);
   const [error, setError] = useState(null);
+  const [liveWeather, setLiveWeather] = useState(null);
+  const [liveWeatherLoading, setLiveWeatherLoading] = useState(false);
+  const [liveWeatherError, setLiveWeatherError] = useState(null);
+  const [liveDataApplied, setLiveDataApplied] = useState(false);
 
   // Load wards catalog on mount
   useEffect(() => {
@@ -44,6 +50,40 @@ function LiveMLPredictorModal({ isOpen, onClose, onApplyPrediction, currentWard 
     }
     loadWards();
   }, [currentWard]);
+
+  // Fetch live weather and auto-fill sliders
+  const handleLoadLiveWeather = async () => {
+    setLiveWeatherLoading(true);
+    setLiveWeatherError(null);
+    setLiveDataApplied(false);
+    try {
+      const weatherRes = await api.getWeather(selectedWardId);
+      if (weatherRes?.success && weatherRes?.weather) {
+        const w = weatherRes.weather;
+        setLiveWeather(w);
+        // Auto-fill sliders with real weather values
+        const rain24h = Math.round(w.rainfall_24h_estimate_mm || 0);
+        const forecastMm = Math.round(w.forecast_rainfall_mm || rain24h * 1.1);
+        setRainfall(Math.min(200, rain24h));
+        setForecastRain(Math.min(250, forecastMm));
+        setHumidity(Math.round(w.humidity || 80));
+        // Detect monsoon from current month
+        const month = new Date().getMonth() + 1;
+        setIsMonsoon([6, 7, 8, 9, 10].includes(month) ? 1 : 0);
+        setLiveDataApplied(true);
+      } else {
+        throw new Error(weatherRes?.message || 'Unexpected response from weather API');
+      }
+    } catch (err) {
+      setLiveWeatherError(
+        err.message.includes('WEATHER_API_KEY')
+          ? 'WEATHER_API_KEY not configured. Add it to backend/.env'
+          : err.message || 'Weather data unavailable'
+      );
+    } finally {
+      setLiveWeatherLoading(false);
+    }
+  };
 
   // Trigger real-time ML prediction
   const handleRunPrediction = async () => {
@@ -113,7 +153,11 @@ function LiveMLPredictorModal({ isOpen, onClose, onApplyPrediction, currentWard 
               <select
                 id="ward-select"
                 value={selectedWardId}
-                onChange={(e) => setSelectedWardId(e.target.value)}
+                onChange={(e) => {
+                  setSelectedWardId(e.target.value);
+                  setLiveWeather(null);
+                  setLiveDataApplied(false);
+                }}
                 className="ml-select"
               >
                 {wards.map((w) => (
@@ -122,6 +166,61 @@ function LiveMLPredictorModal({ isOpen, onClose, onApplyPrediction, currentWard 
                   </option>
                 ))}
               </select>
+            </div>
+
+            {/* Live Weather Auto-Fill */}
+            <div style={{ marginBottom: '12px' }}>
+              <button
+                id="load-live-weather-btn"
+                type="button"
+                onClick={handleLoadLiveWeather}
+                disabled={liveWeatherLoading}
+                style={{
+                  width: '100%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: '8px',
+                  padding: '9px 14px',
+                  background: liveDataApplied
+                    ? 'rgba(34,197,94,0.15)'
+                    : 'rgba(96,165,250,0.12)',
+                  border: `1px solid ${liveDataApplied ? 'rgba(34,197,94,0.4)' : 'rgba(96,165,250,0.3)'}`,
+                  borderRadius: '8px',
+                  color: liveDataApplied ? '#4ade80' : '#60a5fa',
+                  fontSize: '0.82rem',
+                  fontWeight: 600,
+                  cursor: liveWeatherLoading ? 'not-allowed' : 'pointer',
+                  transition: 'all 0.2s',
+                }}
+              >
+                {liveWeatherLoading ? (
+                  <RefreshCw size={14} style={{ animation: 'spin 1s linear infinite' }} />
+                ) : liveDataApplied ? (
+                  <Zap size={14} />
+                ) : (
+                  <CloudRain size={14} />
+                )}
+                <span>
+                  {liveWeatherLoading
+                    ? 'Fetching live weather…'
+                    : liveDataApplied
+                    ? '✓ Live Weather Applied'
+                    : 'Use Real-Time Weather'}
+                </span>
+              </button>
+              {liveWeatherError && (
+                <p style={{ fontSize: '0.72rem', color: '#f87171', marginTop: '4px', margin: '4px 0 0' }}>
+                  ⚠️ {liveWeatherError}
+                </p>
+              )}
+              {liveDataApplied && liveWeather && (
+                <p style={{ fontSize: '0.71rem', color: '#4ade80', marginTop: '4px', margin: '4px 0 0' }}>
+                  {liveWeather.temperature}°C · {liveWeather.humidity}%RH ·
+                  {' '}{liveWeather.weather_description} ·
+                  {' '}Source: OpenWeatherMap
+                </p>
+              )}
             </div>
 
             {/* Ward baseline badge */}

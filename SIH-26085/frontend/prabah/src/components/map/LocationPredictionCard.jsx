@@ -11,7 +11,8 @@ export default function LocationPredictionCard({
   onClose
 }) {
   // Chart view mode switcher (Dropdown selection)
-  const [chartMode, setChartMode] = useState('road-mm'); // 'road-mm' | 'forecast-cm'
+  const [chartMode, setChartMode] = useState('eq-spectrum'); // 'eq-spectrum' | 'road-mm' | 'forecast-cm'
+  const [hoveredEqChannel, setHoveredEqChannel] = useState(null);
 
   // Accordion state for interactive collapsible sections
   const [isChartCollapsed, setIsChartCollapsed] = useState(false);
@@ -122,6 +123,22 @@ export default function LocationPredictionCard({
   const activePumps = matchedDrain?.active_pumps || 7;
   const siltLevel = (matchedDrain?.silt_accumulation_level || 'Moderate').toLowerCase();
 
+  // Equalizer 12-segment definition thresholds (in mm)
+  const eqSegmentsConfig = [
+    { id: 12, minMm: 470, color: '#ef4444', glow: 'rgba(239, 68, 68, 0.9)' },
+    { id: 11, minMm: 420, color: '#ef4444', glow: 'rgba(239, 68, 68, 0.8)' },
+    { id: 10, minMm: 370, color: '#f97316', glow: 'rgba(249, 115, 22, 0.85)' },
+    { id: 9, minMm: 320, color: '#f97316', glow: 'rgba(249, 115, 22, 0.8)' },
+    { id: 8, minMm: 280, color: '#f97316', glow: 'rgba(249, 115, 22, 0.75)' },
+    { id: 7, minMm: 240, color: '#f59e0b', glow: 'rgba(245, 158, 11, 0.85)' },
+    { id: 6, minMm: 200, color: '#f59e0b', glow: 'rgba(245, 158, 11, 0.75)' },
+    { id: 5, minMm: 160, color: '#eab308', glow: 'rgba(234, 179, 8, 0.75)' },
+    { id: 4, minMm: 120, color: '#10b981', glow: 'rgba(16, 185, 129, 0.8)' },
+    { id: 3, minMm: 80, color: '#10b981', glow: 'rgba(16, 185, 129, 0.75)' },
+    { id: 2, minMm: 40, color: '#10b981', glow: 'rgba(16, 185, 129, 0.7)' },
+    { id: 1, minMm: 0, color: '#10b981', glow: 'rgba(16, 185, 129, 0.65)' }
+  ];
+
   return (
     <div className="location-prediction-card glass-panel">
       {/* 1. Header with Location Name & Coordinates */}
@@ -191,43 +208,44 @@ export default function LocationPredictionCard({
             </div>
           </div>
 
-          {/* 3. UNIFIED NOWCAST VISUAL CHART WITH INTERACTIVE DROPDOWN SELECTOR */}
-          <div className="feature-detail-section unified-chart-section">
+          {/* 3. DYNAMIC MUSIC EQUALIZER & AUDIO WAVEFORM VISUALIZER SECTION */}
+          <div className="feature-detail-section unified-chart-section eq-chart-theme">
             <div className="feature-section-header">
               <div className="header-left">
                 <span
-                  className="feature-status-dot"
-                  style={{ backgroundColor: chartMode === 'road-mm' ? roadWaterSeverityColor : '#2563eb' }}
+                  className="feature-status-dot eq-live-pulse-dot"
+                  style={{ backgroundColor: chartMode === 'forecast-cm' ? '#38bdf8' : roadWaterSeverityColor }}
                 />
-                {/* Interactive Chart Mode Dropdown */}
+                {/* Interactive Visualizer Mode Switcher */}
                 <div className="chart-mode-dropdown-wrapper">
                   <select
-                    className="chart-mode-select"
+                    className="chart-mode-select eq-select"
                     value={chartMode}
                     onChange={(e) => setChartMode(e.target.value)}
                     title="Switch visual chart view"
                   >
-                    <option value="road-mm">🛣️ Road Water Level (mm)</option>
-                    <option value="forecast-cm">📈 3-Hour Depth Curve (cm)</option>
+                    <option value="eq-spectrum">🎛️ Equalizer Spectrum (Live VU Meter)</option>
+                    <option value="road-mm">📊 Neon Multi-Bar Scale (mm)</option>
+                    <option value="forecast-cm">🌊 Oscilloscope Soundwave (Audio Curve)</option>
                   </select>
                 </div>
               </div>
 
               <div className="header-right clickable" onClick={() => setIsChartCollapsed(!isChartCollapsed)}>
-                {chartMode === 'road-mm' ? (
+                {chartMode === 'forecast-cm' ? (
+                  <span className="depth-peak-pill eq-neon-pill" style={{ color: '#38bdf8' }}>
+                    Peak: {peakDepthCm} cm
+                  </span>
+                ) : (
                   <span
-                    className="road-mm-badge"
+                    className="road-mm-badge eq-neon-pill"
                     style={{
-                      backgroundColor: `${roadWaterSeverityColor}18`,
+                      backgroundColor: `${roadWaterSeverityColor}20`,
                       color: roadWaterSeverityColor,
                       borderColor: `${roadWaterSeverityColor}50`
                     }}
                   >
                     {currentRoadDepthMm} mm
-                  </span>
-                ) : (
-                  <span className="depth-peak-pill" style={{ color: riskColor }}>
-                    Peak: {peakDepthCm} cm
                   </span>
                 )}
                 <span className={`accordion-chevron ${isChartCollapsed ? 'collapsed' : ''}`}>▼</span>
@@ -236,41 +254,196 @@ export default function LocationPredictionCard({
 
             {!isChartCollapsed && (
               <div className="unified-chart-body">
-                {/* A. ROAD WATER LEVEL PROFILE (mm scale) */}
-                {chartMode === 'road-mm' && (
-                  <div className="road-mm-view-container">
-                    {/* Physical Ground Clearance Status Row */}
-                    <div className="road-clearance-status-row">
-                      <div className="clearance-item">
-                        <span className="clearance-lbl">Current Level:</span>
-                        <strong className="clearance-val" style={{ color: roadWaterSeverityColor }}>{currentRoadDepthMm} mm</strong>
+                {/* Studio Live Telemetry Row */}
+                <div className="road-clearance-status-row eq-telemetry-row">
+                  <div className="clearance-item">
+                    <span className="clearance-lbl">Live Level:</span>
+                    <strong className="clearance-val eq-live-val" style={{ color: roadWaterSeverityColor }}>
+                      {currentRoadDepthMm} mm
+                    </strong>
+                  </div>
+                  <div className="clearance-item">
+                    <span className="clearance-lbl">3H Peak Level:</span>
+                    <strong className="clearance-val" style={{ color: peakRoadDepthMm >= 450 ? '#ef4444' : '#f97316' }}>
+                      {peakRoadDepthMm} mm
+                    </strong>
+                  </div>
+                  <div className="clearance-item">
+                    <span className="clearance-lbl">Hazard Limit:</span>
+                    <strong className="clearance-val threshold-val">250 mm</strong>
+                  </div>
+                </div>
+
+                {/* VIEW 1: DYNAMIC MUSIC EQUALIZER SPECTRUM (LIVE VU METER BARS) */}
+                {chartMode === 'eq-spectrum' && (
+                  <div className="eq-visualizer-main-container">
+                    {/* Equalizer Chassis with VU Scale and LED Columns */}
+                    <div className="eq-chassis-stage">
+                      {/* Left VU Meter Scale Labels */}
+                      <div className="eq-vu-scale-labels">
+                        <div className="vu-tick-item tick-critical" title="Road Submerged (Closure)">
+                          <span className="vu-led-dot red-dot" />
+                          <span className="vu-txt">450+</span>
+                        </div>
+                        <div className="vu-tick-item tick-hazard" title="Exhaust Hazard Threshold">
+                          <span className="vu-led-dot amber-dot" />
+                          <span className="vu-txt">250</span>
+                        </div>
+                        <div className="vu-tick-item tick-curb" title="Curb Level Overflow">
+                          <span className="vu-led-dot yellow-dot" />
+                          <span className="vu-txt">150</span>
+                        </div>
+                        <div className="vu-tick-item tick-safe" title="Base / Safe Clearance">
+                          <span className="vu-led-dot green-dot" />
+                          <span className="vu-txt">0 mm</span>
+                        </div>
                       </div>
-                      <div className="clearance-item">
-                        <span className="clearance-lbl">3H Peak Level:</span>
-                        <strong className="clearance-val" style={{ color: getBarColor(peakRoadDepthMm) }}>{peakRoadDepthMm} mm</strong>
-                      </div>
-                      <div className="clearance-item">
-                        <span className="clearance-lbl">Exhaust Hazard:</span>
-                        <strong className="clearance-val threshold-val">250 mm</strong>
+
+                      {/* 4-Channel Equalizer Stack Columns */}
+                      <div className="eq-channels-grid">
+                        {roadTrendDataMm.map((channel, colIdx) => {
+                          const channelDepthMm = channel.waterLevelMm;
+                          const activeSegmentsCount = eqSegmentsConfig.filter(s => channelDepthMm >= s.minMm).length;
+                          const isHovered = hoveredEqChannel === colIdx;
+
+                          return (
+                            <div
+                              key={channel.time}
+                              className={`eq-channel-column ${isHovered ? 'channel-hovered' : ''}`}
+                              onMouseEnter={() => setHoveredEqChannel(colIdx)}
+                              onMouseLeave={() => setHoveredEqChannel(null)}
+                              style={{ animationDelay: `${colIdx * 0.12}s` }}
+                            >
+                              {/* Digital Value Readout Top Cap */}
+                              <div className="eq-col-top-readout">
+                                <span
+                                  className="eq-top-mm-tag"
+                                  style={{
+                                    color: channelDepthMm >= 450 ? '#ef4444' : channelDepthMm >= 250 ? '#f97316' : channelDepthMm >= 150 ? '#eab308' : '#10b981'
+                                  }}
+                                >
+                                  {channelDepthMm}
+                                </span>
+                              </div>
+
+                              {/* Floating Peak Hold Cap LED */}
+                              <div
+                                className="eq-peak-hold-cap"
+                                style={{
+                                  backgroundColor: channelDepthMm >= 450 ? '#ef4444' : channelDepthMm >= 250 ? '#f97316' : channelDepthMm >= 150 ? '#f59e0b' : '#10b981',
+                                  boxShadow: `0 0 10px ${channelDepthMm >= 450 ? '#ef4444' : channelDepthMm >= 250 ? '#f97316' : '#10b981'}`
+                                }}
+                              />
+
+                              {/* 12 LED Segment Blocks */}
+                              <div className="eq-led-stack">
+                                {eqSegmentsConfig.map((seg) => {
+                                  const isLit = channelDepthMm >= seg.minMm;
+                                  return (
+                                    <div
+                                      key={seg.id}
+                                      className={`eq-led-segment ${isLit ? 'led-lit' : 'led-dark'}`}
+                                      style={{
+                                        backgroundColor: isLit ? seg.color : 'rgba(255, 255, 255, 0.04)',
+                                        boxShadow: isLit ? `0 0 8px ${seg.glow}, 0 0 1px #fff` : 'none',
+                                        borderColor: isLit ? `${seg.color}90` : 'rgba(255, 255, 255, 0.06)'
+                                      }}
+                                    />
+                                  );
+                                })}
+                              </div>
+
+                              {/* Channel Bottom Time Label */}
+                              <div className="eq-channel-footer">
+                                <strong className="eq-channel-time">{channel.time}</strong>
+                                <span className="eq-channel-sub">{channel.label.split(' ')[0]}</span>
+                              </div>
+
+                              {/* Hover Floating Equalizer Tooltip */}
+                              {isHovered && (
+                                <div className="eq-channel-popover">
+                                  <div className="popover-time-row">
+                                    <span>{channel.time} • {channel.label}</span>
+                                    <strong style={{ color: channelDepthMm >= 450 ? '#ef4444' : channelDepthMm >= 250 ? '#f97316' : '#10b981' }}>
+                                      {channelDepthMm} mm
+                                    </strong>
+                                  </div>
+                                  <div className="popover-status-badge" style={{
+                                    backgroundColor: channelDepthMm >= 450 ? '#ef4444' : channelDepthMm >= 250 ? '#f97316' : channelDepthMm >= 150 ? '#eab308' : '#10b981'
+                                  }}>
+                                    {channelDepthMm >= 450 ? '🚫 Road Submerged' : channelDepthMm >= 250 ? '⚠️ Exhaust Hazard' : channelDepthMm >= 150 ? '⚡ Curb Overflow' : '✅ Clear Passable'}
+                                  </div>
+                                </div>
+                              )}
+                            </div>
+                          );
+                        })}
                       </div>
                     </div>
 
-                    {/* Recharts Bar Chart in mm scale */}
-                    <div className="road-mm-barchart-container">
-                      <ResponsiveContainer width="100%" height={92}>
-                        <BarChart data={roadTrendDataMm} margin={{ top: 8, right: 10, left: -22, bottom: 0 }}>
-                          <XAxis dataKey="time" stroke="#475569" tick={{ fontSize: 10, fill: '#94a3b8', fontWeight: 600 }} axisLine={false} tickLine={false} />
-                          <YAxis
-                            stroke="#475569"
-                            tick={{ fontSize: 9, fill: '#64748b' }}
-                            axisLine={false}
+                    {/* Equalizer Frequency Scanline Atmosphere */}
+                    <div className="eq-ambient-soundwave-indicator">
+                      <span className="eq-wave-bar bar-1" />
+                      <span className="eq-wave-bar bar-2" />
+                      <span className="eq-wave-bar bar-3" />
+                      <span className="eq-wave-bar bar-4" />
+                      <span className="eq-wave-bar bar-5" />
+                      <span className="eq-wave-bar bar-6" />
+                      <span className="eq-wave-text">Studio VU Equalizer • Real-time Inundation Spectrum</span>
+                    </div>
+
+                    {/* Threshold Reference Indicator in mm */}
+                    <div className="road-mm-threshold-legend eq-legend">
+                      <div className="th-item"><span className="th-dot" style={{ background: '#10b981', boxShadow: '0 0 6px #10b981' }} /> 0–150 mm (Safe)</div>
+                      <div className="th-item"><span className="th-dot" style={{ background: '#eab308', boxShadow: '0 0 6px #eab308' }} /> 150–250 mm (Curb)</div>
+                      <div className="th-item"><span className="th-dot" style={{ background: '#f97316', boxShadow: '0 0 6px #f97316' }} /> 250–450 mm (Exhaust)</div>
+                      <div className="th-item"><span className="th-dot" style={{ background: '#ef4444', boxShadow: '0 0 6px #ef4444' }} /> &gt;450 mm (Closure)</div>
+                    </div>
+                  </div>
+                )}
+
+                {/* VIEW 2: NEON MULTI-BAR SCALE (mm) WITH HIGH CONTRAST */}
+                {chartMode === 'road-mm' && (
+                  <div className="road-mm-view-container">
+                    <div className="road-mm-barchart-container eq-barchart-wrap">
+                      <ResponsiveContainer width="100%" height={105}>
+                        <BarChart data={roadTrendDataMm} margin={{ top: 12, right: 12, left: -20, bottom: 0 }}>
+                          <defs>
+                            <linearGradient id="neonGreenBar" x1="0" y1="0" x2="0" y2="1">
+                              <stop offset="0%" stopColor="#34d399" stopOpacity={0.95} />
+                              <stop offset="100%" stopColor="#059669" stopOpacity={0.65} />
+                            </linearGradient>
+                            <linearGradient id="neonYellowBar" x1="0" y1="0" x2="0" y2="1">
+                              <stop offset="0%" stopColor="#fde047" stopOpacity={0.95} />
+                              <stop offset="100%" stopColor="#d97706" stopOpacity={0.65} />
+                            </linearGradient>
+                            <linearGradient id="neonOrangeBar" x1="0" y1="0" x2="0" y2="1">
+                              <stop offset="0%" stopColor="#fb923c" stopOpacity={0.95} />
+                              <stop offset="100%" stopColor="#ea580c" stopOpacity={0.65} />
+                            </linearGradient>
+                            <linearGradient id="neonRedBar" x1="0" y1="0" x2="0" y2="1">
+                              <stop offset="0%" stopColor="#f87171" stopOpacity={0.95} />
+                              <stop offset="100%" stopColor="#dc2626" stopOpacity={0.65} />
+                            </linearGradient>
+                          </defs>
+                          <XAxis
+                            dataKey="time"
+                            stroke="#cbd5e1"
+                            tick={{ fontSize: 11, fill: '#f8fafc', fontWeight: 700 }}
+                            axisLine={{ stroke: 'rgba(255, 255, 255, 0.2)' }}
                             tickLine={false}
-                            unit=" mm"
-                            domain={[0, Math.max(600, peakRoadDepthMm + 80)]}
                           />
-                          <ReferenceLine y={150} stroke="#059669" strokeDasharray="4 3" strokeWidth={1} strokeOpacity={0.5} />
-                          <ReferenceLine y={250} stroke="#d97706" strokeDasharray="4 3" strokeWidth={1} strokeOpacity={0.5} />
-                          <ReferenceLine y={450} stroke="#dc2626" strokeDasharray="4 3" strokeWidth={1} strokeOpacity={0.5} />
+                          <YAxis
+                            stroke="#cbd5e1"
+                            tick={{ fontSize: 9, fill: '#cbd5e1', fontWeight: 600 }}
+                            axisLine={{ stroke: 'rgba(255, 255, 255, 0.15)' }}
+                            tickLine={false}
+                            unit="mm"
+                            domain={[0, Math.max(600, peakRoadDepthMm + 60)]}
+                          />
+                          <ReferenceLine y={150} stroke="#10b981" strokeDasharray="4 2" strokeWidth={1.2} />
+                          <ReferenceLine y={250} stroke="#f59e0b" strokeDasharray="4 2" strokeWidth={1.5} />
+                          <ReferenceLine y={450} stroke="#ef4444" strokeDasharray="4 2" strokeWidth={1.8} />
                           
                           <Tooltip
                             content={({ active, payload }) => {
@@ -278,18 +451,20 @@ export default function LocationPredictionCard({
                                 const data = payload[0].payload;
                                 const color = getBarColor(data.waterLevelMm);
                                 return (
-                                  <div className="road-mm-tooltip">
+                                  <div className="road-mm-tooltip eq-neon-tooltip">
                                     <div className="tooltip-hdr">
                                       <span>{data.time} — {data.label}</span>
                                     </div>
                                     <div className="tooltip-val-row">
                                       <span>Water Level:</span>
-                                      <strong style={{ color }}>
+                                      <strong style={{ color: data.waterLevelMm >= 450 ? '#ef4444' : data.waterLevelMm >= 250 ? '#f97316' : '#10b981' }}>
                                         {data.waterLevelMm} mm ({(data.waterLevelMm / 10).toFixed(1)} cm)
                                       </strong>
                                     </div>
-                                    <div className="tooltip-status-tag" style={{ backgroundColor: color }}>
-                                      {data.waterLevelMm >= 450 ? '🚫 Submerged' : data.waterLevelMm >= 250 ? '⚠️ High Risk' : data.waterLevelMm >= 150 ? '⚡ Caution' : '✅ Passable'}
+                                    <div className="tooltip-status-tag" style={{
+                                      backgroundColor: data.waterLevelMm >= 450 ? '#ef4444' : data.waterLevelMm >= 250 ? '#f97316' : data.waterLevelMm >= 150 ? '#f59e0b' : '#10b981'
+                                    }}>
+                                      {data.waterLevelMm >= 450 ? '🚫 Road Submerged (Closed)' : data.waterLevelMm >= 250 ? '⚠️ Exhaust Hazard (High Risk)' : data.waterLevelMm >= 150 ? '⚡ Curb Overflow (Caution)' : '✅ Clear Passable'}
                                     </div>
                                   </div>
                                 );
@@ -297,46 +472,62 @@ export default function LocationPredictionCard({
                               return null;
                             }}
                           />
-                          <Bar dataKey="waterLevelMm" radius={[5, 5, 0, 0]} barSize={28}>
-                            {roadTrendDataMm.map((entry, index) => (
-                              <Cell key={`cell-${index}`} fill={getBarColor(entry.waterLevelMm)} fillOpacity={0.85} />
-                            ))}
+                          <Bar dataKey="waterLevelMm" radius={[6, 6, 0, 0]}>
+                            {roadTrendDataMm.map((entry, index) => {
+                              const gradId = entry.waterLevelMm >= 450 ? 'url(#neonRedBar)' :
+                                entry.waterLevelMm >= 250 ? 'url(#neonOrangeBar)' :
+                                entry.waterLevelMm >= 150 ? 'url(#neonYellowBar)' : 'url(#neonGreenBar)';
+                              return <Cell key={`cell-${index}`} fill={gradId} />;
+                            })}
                           </Bar>
                         </BarChart>
                       </ResponsiveContainer>
                     </div>
 
-                    {/* Threshold Reference Legend */}
-                    <div className="road-mm-threshold-legend">
-                      <div className="th-item"><span className="th-dot" style={{ background: '#059669' }} /> 0–150 mm (Safe)</div>
-                      <div className="th-item"><span className="th-dot" style={{ background: '#d97706' }} /> 150–250 mm (Curb)</div>
-                      <div className="th-item"><span className="th-dot" style={{ background: '#ea580c' }} /> 250–450 mm (Exhaust)</div>
-                      <div className="th-item"><span className="th-dot" style={{ background: '#dc2626' }} /> &gt;450 mm (Closure)</div>
+                    <div className="road-mm-threshold-legend eq-legend">
+                      <div className="th-item"><span className="th-dot" style={{ background: '#10b981', boxShadow: '0 0 6px #10b981' }} /> 0–150 mm (Safe)</div>
+                      <div className="th-item"><span className="th-dot" style={{ background: '#eab308', boxShadow: '0 0 6px #eab308' }} /> 150–250 mm (Curb)</div>
+                      <div className="th-item"><span className="th-dot" style={{ background: '#f97316', boxShadow: '0 0 6px #f97316' }} /> 250–450 mm (Exhaust)</div>
+                      <div className="th-item"><span className="th-dot" style={{ background: '#ef4444', boxShadow: '0 0 6px #ef4444' }} /> &gt;450 mm (Closure)</div>
                     </div>
                   </div>
                 )}
 
-                {/* B. 3-HOUR WATER DEPTH NOWCAST CURVE (cm scale) */}
+                {/* VIEW 3: OSCILLOSCOPE SOUNDWAVE CURVE (cm scale) */}
                 {chartMode === 'forecast-cm' && (
-                  <div className="forecast-cm-view-container">
+                  <div className="forecast-cm-view-container eq-oscilloscope-wrap">
                     <div className="forecast-chart-container">
-                      <ResponsiveContainer width="100%" height={85}>
-                        <AreaChart data={trendDataCm} margin={{ top: 8, right: 8, left: -26, bottom: 0 }}>
+                      <ResponsiveContainer width="100%" height={95}>
+                        <AreaChart data={trendDataCm} margin={{ top: 10, right: 10, left: -24, bottom: 0 }}>
                           <defs>
-                            <linearGradient id="depthGradientUnified" x1="0" y1="0" x2="0" y2="1">
-                              <stop offset="5%" stopColor="#2563eb" stopOpacity={0.35} />
-                              <stop offset="95%" stopColor="#2563eb" stopOpacity={0.02} />
+                            <linearGradient id="eqOscilloscopeGradient" x1="0" y1="0" x2="0" y2="1">
+                              <stop offset="5%" stopColor="#38bdf8" stopOpacity={0.65} />
+                              <stop offset="50%" stopColor="#818cf8" stopOpacity={0.35} />
+                              <stop offset="95%" stopColor="#06b6d4" stopOpacity={0.02} />
                             </linearGradient>
                           </defs>
-                          <XAxis dataKey="time" stroke="#475569" tick={{ fontSize: 10, fill: '#94a3b8', fontWeight: 600 }} axisLine={false} tickLine={false} />
-                          <YAxis stroke="#475569" tick={{ fontSize: 9, fill: '#64748b' }} axisLine={false} tickLine={false} domain={[0, 'dataMax + 10']} />
+                          <XAxis
+                            dataKey="time"
+                            stroke="#cbd5e1"
+                            tick={{ fontSize: 10, fill: '#f8fafc', fontWeight: 700 }}
+                            axisLine={{ stroke: 'rgba(255, 255, 255, 0.2)' }}
+                            tickLine={false}
+                          />
+                          <YAxis
+                            stroke="#cbd5e1"
+                            tick={{ fontSize: 9, fill: '#cbd5e1', fontWeight: 600 }}
+                            axisLine={{ stroke: 'rgba(255, 255, 255, 0.15)' }}
+                            tickLine={false}
+                            domain={[0, 'dataMax + 10']}
+                            unit="cm"
+                          />
                           <Tooltip
                             content={({ active, payload }) => {
                               if (active && payload && payload.length) {
                                 return (
-                                  <div className="chart-custom-tooltip">
+                                  <div className="chart-custom-tooltip eq-neon-tooltip">
                                     <span className="tooltip-time">{payload[0].payload.time}</span>
-                                    <strong className="tooltip-depth" style={{ color: '#2563eb' }}>
+                                    <strong className="tooltip-depth" style={{ color: '#38bdf8' }}>
                                       {payload[0].value} cm ({Math.round(payload[0].value * 10)} mm)
                                     </strong>
                                   </div>
@@ -348,15 +539,22 @@ export default function LocationPredictionCard({
                           <Area
                             type="monotone"
                             dataKey="depth"
-                            stroke="#2563eb"
-                            strokeWidth={2.5}
+                            stroke="#38bdf8"
+                            strokeWidth={3}
                             fillOpacity={1}
-                            fill="url(#depthGradientUnified)"
-                            dot={{ r: 3, fill: '#2563eb', strokeWidth: 2, stroke: '#ffffff' }}
-                            activeDot={{ r: 5, fill: '#ffffff', stroke: '#2563eb', strokeWidth: 2.5 }}
+                            fill="url(#eqOscilloscopeGradient)"
+                            dot={{ r: 3.5, fill: '#38bdf8', strokeWidth: 1.5, stroke: '#ffffff' }}
+                            activeDot={{ r: 5.5, fill: '#ffffff', stroke: '#38bdf8', strokeWidth: 2.5 }}
                           />
                         </AreaChart>
                       </ResponsiveContainer>
+                    </div>
+
+                    <div className="eq-ambient-soundwave-indicator">
+                      <span className="eq-wave-bar bar-1" />
+                      <span className="eq-wave-bar bar-3" />
+                      <span className="eq-wave-bar bar-5" />
+                      <span className="eq-wave-text">Harmonic Depth Curve • Peak Surge: {peakDepthCm} cm</span>
                     </div>
                   </div>
                 )}
