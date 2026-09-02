@@ -1,1558 +1,760 @@
 /* ==========================================================================
-   Urban Flood Nowcasting - Advanced Dark Map Page Styling
-   Design Aesthetics: Dark-Navy Shell, Glassmorphism, Micro-animations,
-   CARTO Dark Matter theme harmony
+   PRABAH Urban Flood Risk Monitor — High-Fidelity Light Map Theme
+   Matching Reference UI: Clean Light Aesthetics, Chromatic Flood Heatmaps,
+   Top Filter Pills, Telemetry Cards & Forecast Bar Charts
    ========================================================================== */
 
-.map-page-wrapper {
-  position: relative;
-  width: 100%;
-  height: calc(100vh - 73px); /* Layout header offset */
-  overflow: hidden;
-  font-family: var(--font-main, 'Inter', -apple-system, BlinkMacSystemFont, sans-serif);
-  background-color: #090d16;
-}
-
-.map-fullscreen-container {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-}
-
-/* Dark Glass Panel Shared Styling */
-.glass-panel {
-  background: rgba(15, 23, 42, 0.88);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45), 0 4px 12px rgba(0, 0, 0, 0.25);
-  border-radius: 14px;
-  color: #f8fafc;
-}
-
-/* ==========================================================================
-   1. Google Maps-style Floating Controls (Filter Box & Search Bar)
-   ========================================================================== */
-
-/* Top-Left Search / Location Selector Bar */
-.map-search-anchor {
-  position: absolute;
-  top: 16px;
-  left: 16px;
-  z-index: 10;
-  pointer-events: auto;
+/* --- 1. Root Layout Container --- */
+.flood-monitor-app-layout {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  width: min(390px, calc(100vw - 120px));
+  height: calc(100vh - 73px); /* Layout header offset */
+  width: 100%;
+  background-color: #F8FAFC;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #0F172A;
+  overflow: hidden;
 }
 
-.map-search-box {
+/* --- 2. Top Navigation & Layer Pills Bar --- */
+.top-filter-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #E2E8F0;
+  gap: 16px;
+  z-index: 20;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+/* Search Box (Top Left) */
+.top-search-wrapper {
+  position: relative;
+  width: 320px;
+  max-width: 100%;
+}
+
+.top-search-input-box {
   display: flex;
   align-items: center;
   gap: 10px;
-  background: rgba(15, 23, 42, 0.92);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  padding: 8px 14px;
+  background-color: #FFFFFF;
+  border: 1px solid #E2E8F0;
   border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  padding: 8px 14px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  transition: all 0.2s ease;
 }
 
-.search-pin-icon {
-  font-size: 16px;
+.top-search-input-box:focus-within {
+  border-color: #2563EB;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.search-icon {
+  color: #64748B;
   flex-shrink: 0;
 }
 
-.map-search-box select {
-  flex: 1;
+.top-search-input-box input {
   border: none;
   background: transparent;
-  font-size: 13px;
-  font-weight: 600;
-  color: #f8fafc;
   outline: none;
-  padding: 4px 0;
-  cursor: pointer;
+  font-size: 13.5px;
+  color: #0F172A;
+  width: 100%;
+  font-weight: 500;
 }
 
-.map-search-box select option {
-  background: #0f172a;
-  color: #f8fafc;
+.top-search-input-box input::placeholder {
+  color: #94A3B8;
 }
 
-.locate-me-btn {
-  background: linear-gradient(135deg, rgba(37, 99, 235, 0.25), rgba(29, 78, 216, 0.35));
-  color: #60a5fa;
-  border: 1px solid rgba(96, 165, 250, 0.3);
-  padding: 6px 12px;
-  border-radius: 8px;
-  font-size: 11px;
-  font-weight: 700;
-  cursor: pointer;
-  white-space: nowrap;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  transition: all 0.2s ease;
-}
-
-.locate-me-btn:hover {
-  background: rgba(37, 99, 235, 0.45);
-  color: #ffffff;
-  box-shadow: 0 0 12px rgba(37, 99, 235, 0.4);
-}
-
-/* Top-Right Layers Control */
-.map-filter-box-anchor {
+/* Search Autocomplete Dropdown */
+.search-autocomplete-dropdown {
   position: absolute;
-  top: 16px;
-  right: 16px;
-  z-index: 10;
-  pointer-events: auto;
-}
-
-.map-layers-control {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-}
-
-.layers-toggle-btn {
-  background: rgba(15, 23, 42, 0.92);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 12px;
-  height: 42px;
-  padding: 0 16px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
-  cursor: pointer;
-  transition: all 0.2s ease;
-  color: #f8fafc;
-  font-size: 13px;
-  font-weight: 700;
-}
-
-.layers-toggle-btn:hover {
-  background: rgba(30, 41, 59, 0.95);
-  border-color: rgba(96, 165, 250, 0.4);
-  transform: translateY(-1px);
-}
-
-.layers-toggle-btn .icon {
-  font-size: 18px;
-}
-
-.layers-menu {
-  position: absolute;
-  top: 50px;
+  top: calc(100% + 6px);
+  left: 0;
   right: 0;
-  width: 260px;
-  background: rgba(15, 23, 42, 0.95);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-radius: 14px;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.55);
-  padding: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  animation: fade-in 0.2s ease-out;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+  z-index: 100;
+  max-height: 280px;
+  overflow-y: auto;
+  padding: 6px;
 }
 
-@keyframes fade-in {
-  from { opacity: 0; transform: translateY(-8px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.layers-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 12px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding-bottom: 8px;
-}
-
-.layers-header h4 {
-  margin: 0;
-  font-size: 13px;
-  font-weight: 800;
-  color: #f8fafc;
-}
-
-.close-btn {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  font-size: 12px;
-  color: #94a3b8;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.15s ease;
-}
-
-.close-btn:hover {
-  background: rgba(255, 255, 255, 0.15);
-  color: #ffffff;
-}
-
-.layers-list {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.layer-checkbox-item {
+.search-dropdown-item {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 12px;
-  font-weight: 600;
-  color: #cbd5e1;
-  cursor: pointer;
-  padding: 6px 8px;
+  padding: 8px 12px;
   border-radius: 8px;
+  cursor: pointer;
   transition: background 0.15s ease;
 }
 
-.layer-checkbox-item:hover {
-  background: rgba(255, 255, 255, 0.06);
-  color: #ffffff;
+.search-dropdown-item:hover {
+  background-color: #F1F5F9;
 }
 
-.layer-checkbox-item input[type="checkbox"] {
-  width: 15px;
-  height: 15px;
+.item-pin {
+  font-size: 15px;
+}
+
+.item-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.item-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #0F172A;
+}
+
+.item-sub {
+  font-size: 11px;
+  color: #64748B;
+}
+
+/* Layer Pills (Top Center/Right) */
+.top-layer-pills-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.layer-pill-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 10px;
+  padding: 7px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
   cursor: pointer;
-  accent-color: #2563eb;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
 }
 
-/* Layer Border Color Indicators */
-.layer-color-indicator {
-  width: 14px;
-  height: 14px;
-  border-radius: 4px;
-  flex-shrink: 0;
-  border: 2px solid;
+.layer-pill-btn:hover {
+  background-color: #F8FAFC;
+  border-color: #CBD5E1;
+  color: #0F172A;
 }
 
-.border-zone {
-  border-color: #ef4444;
-  background: rgba(239, 68, 68, 0.25);
+.layer-pill-btn.active {
+  background-color: #EFF6FF;
+  border-color: #3B82F6;
+  color: #1D4ED8;
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.15);
 }
 
-.border-drainage {
-  border-color: #06b6d4;
-  background: rgba(6, 182, 212, 0.25);
-}
-
-.border-roads {
-  border-color: #f97316;
-  background: rgba(249, 115, 22, 0.25);
-}
-
-.border-landscape {
-  border-color: #10b981;
-  background: rgba(16, 185, 129, 0.25);
-}
-
-.border-water {
-  border-color: #3b82f6;
-  background: rgba(59, 130, 246, 0.25);
-}
-
-.border-rainfall {
-  border-color: #8b5cf6;
-  background: rgba(139, 92, 246, 0.25);
-}
-
-.layer-icon {
-  font-size: 14px;
-}
-
-.layer-text {
+/* --- 3. Main Workspace Grid --- */
+.flood-monitor-main-content {
+  display: flex;
   flex: 1;
+  padding: 16px 20px;
+  gap: 18px;
+  overflow: hidden;
+  position: relative;
 }
 
-/* ==========================================================================
-   2. Location Prediction & Details Card (Dark Theme)
-   ========================================================================== */
-.location-prediction-card {
+/* --- 4. Map Viewport Canvas --- */
+.map-canvas-wrapper {
+  flex: 1;
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.06);
+  background-color: #E2E8F0;
+}
+
+.maplibre-fullscreen-canvas {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+}
+
+/* Map Floating Zoom Controls (Top Left) */
+.map-zoom-controls-floating {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  display: flex;
+  flex-direction: column;
+  background: #FFFFFF;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  border: 1px solid #E2E8F0;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.map-zoom-controls-floating button {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  color: #334155;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.map-zoom-controls-floating button:hover {
+  background-color: #F1F5F9;
+  color: #0F172A;
+}
+
+.control-divider {
+  height: 1px;
+  background-color: #E2E8F0;
+  width: 100%;
+}
+
+/* Active Layer Floating Badge Indicator */
+.active-layer-indicator-badge {
   position: absolute;
   top: 16px;
   right: 16px;
-  width: 370px;
-  max-height: calc(100vh - 105px);
-  z-index: 15;
-  padding: 18px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  pointer-events: auto;
-  overflow-y: auto;
-  background: rgba(15, 23, 42, 0.92);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  box-shadow: 0 16px 44px rgba(0, 0, 0, 0.55);
-  border-radius: 16px;
-  animation: slide-in-right 0.25s ease-out;
-}
-
-.location-prediction-card::-webkit-scrollbar {
-  width: 4px;
-}
-
-.location-prediction-card::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 10px;
-}
-
-@keyframes slide-in-right {
-  from { opacity: 0; transform: translateX(24px); }
-  to { opacity: 1; transform: translateX(0); }
-}
-
-.location-card-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  padding-bottom: 10px;
-}
-
-.location-title {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.location-title h4 {
-  margin: 0;
-  font-size: 15px;
-  font-weight: 800;
-  color: #000000;
-}
-
-.loc-coords {
-  margin: 2px 0 0;
-  font-size: 11px;
-  color: #475569;
-  font-weight: 600;
-}
-
-.card-close-btn {
-  background: rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  font-size: 12px;
-  color: #000000;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.15s ease;
-  font-weight: 700;
-}
-
-.card-close-btn:hover {
-  background: rgba(0, 0, 0, 0.18);
-  color: #000000;
-}
-
-.card-loading-body {
-  padding: 24px 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  text-align: center;
-  color: #94a3b8;
-  font-size: 12px;
-}
-
-.spinner-icon {
-  font-size: 24px;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  100% { transform: rotate(360deg); }
-}
-
-.risk-metric-banner {
-  border: 1.5px solid;
-  border-radius: 12px;
-  padding: 12px 14px;
-  background: rgba(30, 41, 59, 0.65);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-}
-
-.risk-gauge-block {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-}
-
-.risk-badge-col {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  flex: 1;
-}
-
-.risk-badge-large {
-  font-size: 11px;
-  font-weight: 800;
-  color: #ffffff;
-  padding: 4px 10px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid #E2E8F0;
   border-radius: 20px;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  align-self: flex-start;
-}
-
-/* 1. Radial Donut Gauge */
-.radial-gauge-container {
-  position: relative;
-  width: 68px;
-  height: 68px;
+  padding: 6px 14px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-
-.radial-gauge-container:hover {
-  transform: scale(1.06);
-}
-
-.radial-gauge-svg {
-  transform: rotate(-90deg);
-}
-
-.radial-track {
-  fill: transparent;
-  stroke: rgba(255, 255, 255, 0.1);
-}
-
-.radial-arc {
-  fill: transparent;
-  transition: stroke-dashoffset 0.8s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.4s ease;
-}
-
-.radial-gauge-text {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #334155;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  z-index: 10;
   pointer-events: none;
 }
 
-.radial-num {
-  font-size: 18px;
+.indicator-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #2563EB;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+.active-layer-indicator-badge strong {
+  color: #0F172A;
+}
+
+/* Road Passability MapLibre Popup Styling */
+.maplibregl-popup.road-passability-popup .maplibregl-popup-content {
+  background: #FFFFFF;
+  border-radius: 12px;
+  padding: 12px 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  border: 1px solid #E2E8F0;
+  max-width: 260px;
+}
+
+.maplibregl-popup.road-passability-popup .maplibregl-popup-close-button {
+  font-size: 14px;
+  color: #94A3B8;
+  padding: 4px 8px;
+}
+
+/* Basemap Switcher Pill (Bottom Right: Map | Satellite) */
+.map-satellite-switcher-pill {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  background: #FFFFFF;
+  border-radius: 24px;
+  padding: 4px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+  border: 1px solid #E2E8F0;
+  z-index: 10;
+  gap: 2px;
+}
+
+.switcher-tab {
+  border: none;
+  background: transparent;
+  padding: 6px 18px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.switcher-tab.active {
+  background: #0F3A8A; /* Deep navy blue from reference */
+  color: #FFFFFF;
+  box-shadow: 0 2px 8px rgba(15, 58, 138, 0.3);
+}
+
+.switcher-tab:hover:not(.active) {
+  background-color: #F1F5F9;
+  color: #0F172A;
+}
+
+/* Custom Pin Marker on Map (Blue with white dot) */
+.custom-map-pin-marker {
+  cursor: pointer;
+}
+
+.pin-outer {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #2563EB;
+  border: 3px solid #FFFFFF;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: markerPulse 2s infinite;
+}
+
+.pin-inner {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #FFFFFF;
+}
+
+@keyframes markerPulse {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.5); }
+  70% { transform: scale(1.06); box-shadow: 0 0 0 10px rgba(37, 99, 235, 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 99, 235, 0); }
+}
+
+/* Warning Triangle Marker (Red with exclamation mark) */
+.custom-warning-triangle-marker {
+  cursor: pointer;
+}
+
+.warning-triangle {
+  width: 28px;
+  height: 28px;
+  background: #DC2626;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 2px;
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.5);
+  animation: warningBounce 2.5s infinite;
+}
+
+.warning-triangle span {
+  color: #FFFFFF;
+  font-size: 13px;
   font-weight: 900;
   line-height: 1;
 }
 
-.radial-pct {
-  font-size: 11px;
-  font-weight: 700;
-  color: #94a3b8;
-  margin-left: 1px;
+@keyframes warningBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
 }
 
-.status-quote {
-  margin: 4px 0 0;
-  font-size: 11px;
-  font-style: italic;
-  color: #cbd5e1;
-  line-height: 1.35;
-}
-
-/* 2. Dynamic Music Equalizer & Audio Waveform Visualizer */
-.unified-chart-section {
-  background: rgba(30, 41, 59, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 14px;
-  padding: 12px;
+/* --- 5. Right Telemetry Sidebar ("only map and charts") --- */
+.telemetry-sidebar-aside {
+  width: 380px;
+  max-width: 400px;
+  flex-shrink: 0;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  transition: all 0.3s ease;
+  height: 100%;
+  overflow-y: auto;
+  gap: 14px;
 }
 
-.eq-chart-theme {
-  background: linear-gradient(160deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 41, 59, 0.75) 100%);
-  border: 1px solid rgba(56, 189, 248, 0.28);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45), 0 0 20px rgba(56, 189, 248, 0.08);
+.flood-telemetry-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
 }
 
-.eq-live-pulse-dot {
-  animation: eqDotPulse 1.6s infinite ease-in-out;
+/* 5.1 Location Header Card */
+.telemetry-header-card {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 14px;
+  padding: 16px 18px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
 }
 
-@keyframes eqDotPulse {
-  0%, 100% {
-    transform: scale(1);
-    box-shadow: 0 0 6px currentColor;
-  }
-  50% {
-    transform: scale(1.3);
-    box-shadow: 0 0 12px currentColor, 0 0 4px #ffffff;
-  }
+.telemetry-location-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
-.chart-mode-dropdown-wrapper {
-  position: relative;
+.location-name-row {
   display: flex;
   align-items: center;
+  gap: 6px;
 }
 
-.chart-mode-select {
-  background: rgba(15, 23, 42, 0.85);
-  color: #f8fafc;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
-  font-size: 11px;
+.telemetry-pin-icon {
+  color: #0F172A;
+  flex-shrink: 0;
+}
+
+.location-name-row h3 {
+  font-size: 15.5px;
   font-weight: 700;
-  padding: 5px 10px;
-  outline: none;
+  color: #0F172A;
+  margin: 0;
+}
+
+.telemetry-coords {
+  font-size: 12px;
+  color: #64748B;
+  font-weight: 500;
+  margin: 0;
+  padding-left: 24px;
+}
+
+.telemetry-star-btn {
+  background: transparent;
+  border: none;
   cursor: pointer;
-  transition: all 0.2s ease;
+  padding: 4px;
+  border-radius: 6px;
+  transition: transform 0.15s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.eq-select {
-  background: rgba(15, 23, 42, 0.9);
-  border-color: rgba(56, 189, 248, 0.4);
-  color: #f0f9ff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+.telemetry-star-btn:hover {
+  transform: scale(1.15);
 }
 
-.chart-mode-select:hover,
-.eq-select:hover {
-  background: rgba(30, 41, 59, 0.95);
-  border-color: #38bdf8;
-  box-shadow: 0 0 10px rgba(56, 189, 248, 0.25);
+/* 5.2 Critical Risk Banner Card (Solid Vivid Red) */
+.telemetry-risk-card {
+  border-radius: 14px;
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #FFFFFF;
+  box-shadow: 0 8px 24px rgba(220, 38, 38, 0.28);
 }
 
-.chart-mode-select option {
-  background: #0f172a;
-  color: #f8fafc;
-  font-weight: 600;
-  padding: 6px;
-}
-
-.unified-chart-body {
-  margin-top: 2px;
+.risk-card-left {
   display: flex;
   flex-direction: column;
+  gap: 4px;
+}
+
+.risk-tag-title {
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.risk-tag-sub {
+  font-size: 12.5px;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.risk-score-circle-wrapper {
+  flex-shrink: 0;
+}
+
+.risk-score-circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 255, 255, 0.85);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.risk-score-num {
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.risk-score-label {
+  font-size: 7.5px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  margin-top: 2px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* 5.3 Shared Telemetry Section Cards */
+.telemetry-section-card {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 14px;
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.section-card-title {
+  display: flex;
+  align-items: center;
   gap: 8px;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #0F172A;
 }
 
-.road-mm-badge,
-.eq-neon-pill {
-  font-size: 10.5px;
-  font-weight: 800;
-  padding: 3px 9px;
-  border-radius: 10px;
-  border: 1px solid;
-  letter-spacing: 0.03em;
-  font-family: monospace;
+.section-title-icon.water-blue {
+  color: #0284C7;
 }
 
-.depth-peak-pill {
-  font-size: 10.5px;
-  font-weight: 800;
-  background: rgba(15, 23, 42, 0.7);
-  padding: 3px 9px;
-  border-radius: 10px;
-  border: 1px solid rgba(56, 189, 248, 0.3);
-  font-family: monospace;
+.section-title-icon.text-slate {
+  color: #64748B;
 }
 
-.road-clearance-status-row {
+/* 5.4 Live Water Level 3-Column Stats Grid */
+.water-level-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 6px;
-  background: rgba(15, 23, 42, 0.75);
-  padding: 7px 10px;
-  border-radius: 9px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.eq-telemetry-row {
-  background: rgba(10, 15, 30, 0.85);
-  border-color: rgba(56, 189, 248, 0.2);
-  box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.4);
-}
-
-.clearance-item {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.clearance-lbl {
-  font-size: 9px;
-  font-weight: 700;
-  color: #cbd5e1;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
-
-.clearance-val {
-  font-size: 12.5px;
-  font-weight: 800;
-  color: #f8fafc;
-  font-family: monospace;
-}
-
-.eq-live-val {
-  text-shadow: 0 0 8px currentColor;
-}
-
-.threshold-val {
-  color: #f59e0b;
-  text-shadow: 0 0 6px rgba(245, 158, 11, 0.4);
-}
-
-/* ==========================================================================
-   DYNAMIC MUSIC EQUALIZER SPECTRUM (VU METER) STYLES
-   ========================================================================== */
-.eq-visualizer-main-container {
-  display: flex;
-  flex-direction: column;
   gap: 8px;
-  background: rgba(10, 15, 28, 0.75);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 10px;
-  padding: 10px;
-  position: relative;
-  overflow: visible;
 }
 
-.eq-chassis-stage {
+.water-stat-box {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.water-stat-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: #64748B;
+  letter-spacing: 0.4px;
+}
+
+.water-stat-val {
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.water-stat-val.text-blue {
+  color: #2563EB;
+}
+
+.water-stat-val.text-red {
+  color: #DC2626;
+}
+
+.water-stat-val.text-amber {
+  color: #D97706;
+}
+
+/* 5.5 Water Level Forecast Bar Chart (High Fidelity) */
+.forecast-chart-container {
   display: flex;
   align-items: stretch;
-  gap: 8px;
-  background: rgba(5, 10, 20, 0.6);
-  background-image: repeating-linear-gradient(
-    0deg,
-    rgba(255, 255, 255, 0.02) 0px,
-    rgba(255, 255, 255, 0.02) 1px,
-    transparent 1px,
-    transparent 7px
-  );
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 8px;
-  padding: 8px 6px 6px 6px;
-  position: relative;
+  height: 145px;
+  gap: 10px;
+  padding-top: 10px;
 }
 
-.eq-vu-scale-labels {
+.chart-y-axis {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 22px 0 24px 2px;
-  width: 48px;
-  flex-shrink: 0;
+  font-size: 10px;
+  color: #94A3B8;
+  font-weight: 500;
+  width: 24px;
+  text-align: right;
+  padding-bottom: 22px; /* Offset for X labels */
 }
 
-.vu-tick-item {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  cursor: help;
-}
-
-.vu-led-dot {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
-.vu-led-dot.red-dot {
-  background: #ef4444;
-  box-shadow: 0 0 6px #ef4444;
-}
-
-.vu-led-dot.amber-dot {
-  background: #f97316;
-  box-shadow: 0 0 6px #f97316;
-}
-
-.vu-led-dot.yellow-dot {
-  background: #eab308;
-  box-shadow: 0 0 6px #eab308;
-}
-
-.vu-led-dot.green-dot {
-  background: #10b981;
-  box-shadow: 0 0 6px #10b981;
-}
-
-.vu-txt {
-  font-size: 8.5px;
-  font-weight: 700;
-  color: #cbd5e1;
-  font-family: monospace;
-  letter-spacing: -0.02em;
-}
-
-.eq-channels-grid {
+.chart-plot-area {
   flex: 1;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 8px;
+  position: relative;
+  display: flex;
   align-items: flex-end;
 }
 
-.eq-channel-column {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  cursor: pointer;
-  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
-  animation: eqColFadeIn 0.5s ease backwards;
-}
-
-@keyframes eqColFadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.eq-channel-column:hover,
-.eq-channel-column.channel-hovered {
-  transform: translateY(-3px) scale(1.02);
-}
-
-.eq-col-top-readout {
-  height: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 2px;
-}
-
-.eq-top-mm-tag {
-  font-size: 10px;
-  font-weight: 800;
-  font-family: monospace;
-  text-shadow: 0 0 6px currentColor;
-  letter-spacing: -0.02em;
-}
-
-.eq-peak-hold-cap {
-  width: 90%;
-  height: 2.5px;
-  border-radius: 2px;
-  margin-bottom: 3px;
-  animation: eqPeakBounce 2s infinite ease-in-out;
-}
-
-@keyframes eqPeakBounce {
-  0%, 100% {
-    transform: translateY(0);
-    opacity: 0.9;
-  }
-  50% {
-    transform: translateY(-2px);
-    opacity: 1;
-  }
-}
-
-.eq-led-stack {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  background: rgba(0, 0, 0, 0.4);
-  padding: 3px 4px;
-  border-radius: 5px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.eq-led-segment {
-  height: 4.5px;
-  width: 100%;
-  border-radius: 1.5px;
-  border: 0.5px solid transparent;
-  transition: all 0.25s ease;
-}
-
-.eq-channel-footer {
-  margin-top: 5px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1px;
-}
-
-.eq-channel-time {
-  font-size: 10.5px;
-  font-weight: 800;
-  color: #f8fafc;
-  font-family: monospace;
-}
-
-.eq-channel-sub {
-  font-size: 8px;
-  font-weight: 600;
-  color: #94a3b8;
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
-}
-
-/* Floating popover tooltip on equalizer hover */
-.eq-channel-popover {
+.chart-grid-line {
   position: absolute;
-  bottom: calc(100% + 6px);
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(15, 23, 42, 0.95);
-  border: 1px solid rgba(56, 189, 248, 0.4);
-  border-radius: 8px;
-  padding: 6px 10px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6), 0 0 15px rgba(56, 189, 248, 0.2);
-  z-index: 50;
-  white-space: nowrap;
+  left: 0;
+  right: 0;
+  border-bottom: 1px dashed #E2E8F0;
   pointer-events: none;
-  animation: eqPopoverPop 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-@keyframes eqPopoverPop {
-  from {
-    opacity: 0;
-    transform: translate(-50%, 6px) scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: translate(-50%, 0) scale(1);
-  }
-}
-
-.popover-time-row {
+.chart-bars-row {
   display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 10.5px;
-  font-weight: 700;
-  color: #f8fafc;
-}
-
-.popover-status-badge {
-  font-size: 9px;
-  font-weight: 800;
-  color: #ffffff;
-  padding: 2px 6px;
-  border-radius: 4px;
-  margin-top: 3px;
-  text-align: center;
-}
-
-/* Ambient Music Waveform / Scanline Indicator */
-.eq-ambient-soundwave-indicator {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  background: rgba(15, 23, 42, 0.5);
-  padding: 4px 8px;
-  border-radius: 6px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.eq-wave-bar {
-  width: 2.5px;
-  height: 10px;
-  background: #38bdf8;
-  border-radius: 2px;
-  animation: soundwaveWave 1.2s infinite ease-in-out;
-}
-
-.eq-wave-bar.bar-1 { animation-delay: 0.1s; height: 8px; }
-.eq-wave-bar.bar-2 { animation-delay: 0.3s; height: 12px; }
-.eq-wave-bar.bar-3 { animation-delay: 0.5s; height: 15px; }
-.eq-wave-bar.bar-4 { animation-delay: 0.2s; height: 10px; }
-.eq-wave-bar.bar-5 { animation-delay: 0.4s; height: 14px; }
-.eq-wave-bar.bar-6 { animation-delay: 0.6s; height: 7px; }
-
-@keyframes soundwaveWave {
-  0%, 100% {
-    transform: scaleY(0.4);
-    opacity: 0.6;
-  }
-  50% {
-    transform: scaleY(1.2);
-    opacity: 1;
-    box-shadow: 0 0 6px #38bdf8;
-  }
-}
-
-.eq-wave-text {
-  font-size: 8.5px;
-  font-weight: 700;
-  color: #cbd5e1;
-  letter-spacing: 0.03em;
-  margin-left: 2px;
-}
-
-/* ==========================================================================
-   HIGH CONTRAST RECHARTS & OSCILLOSCOPE STYLES
-   ========================================================================== */
-.eq-barchart-wrap,
-.eq-oscilloscope-wrap {
-  background: rgba(10, 15, 28, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 10px;
-  padding: 8px 6px 4px 6px;
-}
-
-.road-mm-barchart-container {
-  width: 100%;
-  height: 105px;
-  margin-top: 2px;
-}
-
-.forecast-chart-container {
-  width: 100%;
-  height: 95px;
-  margin-top: 2px;
-}
-
-.road-mm-tooltip,
-.chart-custom-tooltip {
-  background: rgba(15, 23, 42, 0.95);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
-  padding: 7px 11px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  font-size: 11px;
-}
-
-.eq-neon-tooltip {
-  border-color: rgba(56, 189, 248, 0.5);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6), 0 0 12px rgba(56, 189, 248, 0.25);
-}
-
-.tooltip-hdr {
-  font-size: 10.5px;
-  font-weight: 700;
-  color: #cbd5e1;
-}
-
-.tooltip-val-row {
-  display: flex;
+  align-items: flex-end;
   justify-content: space-between;
-  gap: 10px;
-  color: #f8fafc;
-}
-
-.tooltip-status-tag {
-  font-size: 9px;
-  font-weight: 800;
-  color: #ffffff;
-  padding: 2px 6px;
-  border-radius: 4px;
-  margin-top: 2px;
-  text-align: center;
-}
-
-.road-mm-threshold-legend {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4px;
-  margin-top: 4px;
-  padding-top: 6px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.eq-legend {
-  background: rgba(15, 23, 42, 0.4);
-  padding: 6px 8px;
-  border-radius: 6px;
-  border-top: none;
-}
-
-.th-item {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 9.5px;
-  font-weight: 700;
-  color: #cbd5e1;
-}
-
-.th-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
-.feature-status-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  flex-shrink: 0;
-  box-shadow: 0 0 6px currentColor;
-}
-
-.tooltip-time {
-  color: #cbd5e1;
-  font-weight: 600;
-}
-
-.tooltip-depth {
-  font-weight: 800;
-}
-
-/* 3. Quick Metrics Grid */
-.loc-metrics-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 6px;
-}
-
-.loc-metric-item {
-  background: rgba(30, 41, 59, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 10px;
-  padding: 8px 10px;
-  display: flex;
-  flex-direction: column;
-}
-
-.metric-lbl {
-  font-size: 10px;
-  color: #94a3b8;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-}
-
-.metric-num {
-  font-size: 14px;
-  font-weight: 800;
-  color: #f8fafc;
-  margin-top: 2px;
-}
-
-/* 4. Interactive Collapsible Feature Accordions */
-.location-features-accordions {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin-top: 4px;
-}
-
-.feature-detail-section {
-  background: rgba(30, 41, 59, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
-  padding: 10px 12px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  transition: all 0.2s ease;
-}
-
-.feature-section-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-  padding-bottom: 4px;
-}
-
-.feature-section-header.clickable {
-  cursor: pointer;
-  user-select: none;
-}
-
-.feature-section-header.clickable:hover h5 {
-  color: #60a5fa;
-}
-
-.header-left {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.header-right {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.accordion-chevron {
-  font-size: 9px;
-  color: #94a3b8;
-  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  display: inline-block;
-}
-
-.accordion-chevron.collapsed {
-  transform: rotate(-90deg);
-}
-
-.feature-indicator {
-  width: 10px;
-  height: 10px;
-  border-radius: 3px;
-  border: 2px solid;
-  flex-shrink: 0;
-}
-
-.feature-icon {
-  font-size: 13px;
-}
-
-.feature-section-header h5 {
-  margin: 0;
-  font-size: 12px;
-  font-weight: 800;
-  color: #f8fafc;
-  transition: color 0.15s ease;
-}
-
-.feature-section-content {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-  padding-top: 6px;
-}
-
-.detail-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 11px;
-  color: #94a3b8;
-}
-
-.detail-row strong {
-  color: #f1f5f9;
-  text-align: right;
-}
-
-/* 5. Progress Bar Component for Drain Load */
-.progress-feature-block {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.drain-progress-track {
   width: 100%;
-  height: 8px;
-  background: rgba(15, 23, 42, 0.7);
-  border-radius: 10px;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  cursor: pointer;
+  height: calc(100% - 22px);
+  position: relative;
+  z-index: 2;
 }
 
-.drain-progress-fill {
-  height: 100%;
-  border-radius: 10px;
-  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s ease;
-}
-
-/* 6. Pumping Capacity Segmented Dots Row */
-.pump-segments-block {
+.forecast-bar-col {
   display: flex;
   flex-direction: column;
-  gap: 4px;
-}
-
-.pump-dots-row {
-  display: flex;
   align-items: center;
-  gap: 5px;
-  padding: 4px 0;
-}
-
-.pump-dot {
+  justify-content: flex-end;
   flex: 1;
-  height: 7px;
-  border-radius: 4px;
-  transition: all 0.2s ease;
+  height: 100%;
+  position: relative;
 }
 
-.pump-dot.active-dot {
-  background-color: #06b6d4;
-  box-shadow: 0 0 6px rgba(6, 182, 212, 0.6);
-}
-
-.pump-dot.inactive-dot {
-  background-color: rgba(255, 255, 255, 0.12);
-}
-
-/* 7. Silt Accumulation 3-Step Level Meter */
-.silt-meter-block {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.silt-level-steps {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 6px;
-  margin-top: 2px;
-}
-
-.silt-step {
-  text-align: center;
+.bar-top-value {
   font-size: 10px;
   font-weight: 700;
-  padding: 4px 6px;
-  border-radius: 6px;
-  background: rgba(15, 23, 42, 0.5);
-  color: #64748b;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  transition: all 0.2s ease;
-}
-
-.silt-step.active-low {
-  background: rgba(34, 197, 94, 0.2);
-  color: #4ade80;
-  border-color: #22c55e;
-  box-shadow: 0 0 8px rgba(34, 197, 94, 0.3);
-}
-
-.silt-step.active-moderate {
-  background: rgba(234, 179, 8, 0.2);
-  color: #facc15;
-  border-color: #eab308;
-  box-shadow: 0 0 8px rgba(234, 179, 8, 0.3);
-}
-
-.silt-step.active-high {
-  background: rgba(239, 68, 68, 0.2);
-  color: #f87171;
-  border-color: #ef4444;
-  box-shadow: 0 0 8px rgba(239, 68, 68, 0.3);
-}
-
-.road-status-tag {
-  font-size: 10px;
-  font-weight: 800;
-  color: #ffffff;
-  padding: 2px 8px;
-  border-radius: 4px;
-}
-
-.road-advisory-text {
-  margin: 4px 0 0;
-  font-size: 10px;
-  background: rgba(15, 23, 42, 0.6);
-  padding: 6px 8px;
-  border-radius: 6px;
-  border-left: 3px solid #f97316;
-  color: #cbd5e1;
-  line-height: 1.35;
-}
-
-.drivers-section {
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding-top: 8px;
-}
-
-.drivers-section h5 {
-  margin: 0 0 4px;
-  font-size: 11px;
-  font-weight: 700;
-  color: #f8fafc;
-}
-
-.drivers-list {
-  margin: 0;
-  padding-left: 16px;
-  font-size: 11px;
-  color: #94a3b8;
-  line-height: 1.4;
-}
-
-/* ==========================================================================
-   3. Map Legends Overlay (Dark Theme)
-   ========================================================================== */
-.map-legends-container {
-  position: absolute;
-  bottom: 24px;
-  left: 16px;
-  padding: 12px 18px;
-  display: flex;
-  gap: 18px;
-  z-index: 10;
-  pointer-events: auto;
-  background: rgba(15, 23, 42, 0.90);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 14px;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
-  color: #f8fafc;
-  max-width: calc(100vw - 32px);
-}
-
-.legend-column h5 {
-  margin: 0 0 8px;
-  font-size: 11px;
-  font-weight: 800;
-  color: #94a3b8;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
-
-.legend-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 11px;
-  font-weight: 600;
-  color: #e2e8f0;
+  color: #0F172A;
   margin-bottom: 4px;
 }
 
-.legend-dot {
-  width: 10px;
-  height: 10px;
+.forecast-bar-fill {
+  width: 22px;
+  border-radius: 4px 4px 0 0;
+  transition: height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bar-x-label {
+  position: absolute;
+  bottom: -20px;
+  font-size: 10px;
+  font-weight: 600;
+  color: #64748B;
+  white-space: nowrap;
+}
+
+/* 5.6 Risk Guidelines Legend Table */
+.guidelines-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.guideline-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11.5px;
+}
+
+.guideline-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.guide-dot {
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   flex-shrink: 0;
 }
 
-.risk-low { background: #22c55e; }
-.risk-medium { background: #eab308; }
-.risk-high { background: #f97316; }
-.risk-critical { background: #ef4444; }
+.dot-red { background-color: #DC2626; }
+.dot-orange { background-color: #F97316; }
+.dot-amber { background-color: #F59E0B; }
+.dot-green { background-color: #10B981; }
 
-.road-clear { background: #22c55e; }
-.road-minor { background: #eab308; }
-.road-severe { background: #f97316; }
-.road-submerged { background: #ef4444; }
+.guide-category {
+  font-weight: 600;
+  color: #334155;
+}
 
-.legend-symbol {
+.guide-action {
+  font-weight: 500;
+  color: #64748B;
+  text-align: right;
+}
+
+/* --- 6. Bottom Status Footer --- */
+.flood-monitor-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 24px;
+  background: #FFFFFF;
+  border-top: 1px solid #E2E8F0;
+  font-size: 11.5px;
+  color: #64748B;
+  z-index: 20;
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-brand {
+  font-weight: 800;
+  color: #0F172A;
+  letter-spacing: 0.5px;
+}
+
+.footer-sep {
+  color: #CBD5E1;
+}
+
+.footer-sources {
+  color: #64748B;
+}
+
+.footer-right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.footer-shield {
   font-size: 13px;
 }
 
-.legend-divider {
-  width: 1px;
-  background: rgba(255, 255, 255, 0.1);
-}
-
-/* Monitored Ward Markers (Our Dataset Only) */
-.dataset-ward-marker {
-  cursor: pointer;
-  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-.dataset-ward-marker:hover {
-  transform: scale(1.18);
-}
-
-.marker-pin-circle {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  border: 2px solid #2563eb;
-  background: #ffffff;
-  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.25);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.ward-tag {
-  font-size: 11px;
-  font-weight: 800;
-}
-
-.active-ward .marker-pin-circle {
-  transform: scale(1.1);
-  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.35), 0 6px 16px rgba(0, 0, 0, 0.3);
-}
-
-.legend-line-dotted-red {
-  width: 18px;
-  height: 0px;
-  border-top: 2.5px dashed #ef4444;
-  margin-right: 4px;
-}
-
-/* ==========================================================================
-   4. Custom Map Markers & Badges (MapLibre Nodes)
-   ========================================================================== */
-
-/* Registered User Location Marker */
-.registered-user-location-marker {
-  position: relative;
-  cursor: pointer;
-  z-index: 25;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  animation: drop-bounce 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-.user-home-pin-pill {
-  background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
-  color: #ffffff;
-  padding: 6px 12px;
-  border-radius: 20px;
-  border: 2px solid #60a5fa;
-  box-shadow: 0 6px 20px rgba(30, 58, 138, 0.45), 0 0 12px rgba(96, 165, 250, 0.5);
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.02em;
-  white-space: nowrap;
-  transition: transform 0.2s ease;
-}
-
-.user-home-pin-pill:hover {
-  transform: scale(1.08);
-}
-
-.user-home-icon {
-  font-size: 14px;
-}
-
-.user-pin-pulse {
-  position: absolute;
-  bottom: -6px;
-  width: 14px;
-  height: 6px;
-  border-radius: 50%;
-  background: rgba(96, 165, 250, 0.6);
-  animation: home-pulse 1.8s infinite ease-out;
-}
-
-@keyframes home-pulse {
-  0% { transform: scale(0.8); opacity: 0.8; }
-  100% { transform: scale(2.4); opacity: 0; }
-}
-
-.custom-loc-pin {
-  font-size: 28px;
-  cursor: pointer;
-  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.6));
-  animation: drop-bounce 0.4s ease-out;
-}
-
-@keyframes drop-bounce {
-  0% { transform: translateY(-20px); opacity: 0; }
-  60% { transform: translateY(4px); opacity: 1; }
-  100% { transform: translateY(0); }
-}
-
-/* Road node marker on Dark Map */
-.road-node-marker {
-  cursor: pointer;
-}
-
-.road-icon-badge {
-  background: rgba(15, 23, 42, 0.92);
-  padding: 4px 10px;
-  border-radius: 20px;
-  border: 1.5px solid;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
-  color: #f8fafc;
-  font-size: 11px;
-  font-weight: 700;
-  backdrop-filter: blur(8px);
-}
-
-.road-symbol {
-  font-size: 12px;
-}
-
-.road-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-}
-
-/* Drain node marker on Dark Map */
-.drain-node-marker {
-  cursor: pointer;
-}
-
-.drain-icon-badge {
-  background: rgba(15, 23, 42, 0.92);
-  padding: 4px 10px;
-  border-radius: 20px;
-  border: 1.5px solid #06b6d4;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  box-shadow: 0 4px 16px rgba(6, 182, 212, 0.4);
-  color: #f8fafc;
-  font-size: 11px;
-  font-weight: 700;
-  backdrop-filter: blur(8px);
-}
-
-.drain-symbol {
-  font-size: 12px;
-}
-
-.drain-load-pill {
-  font-size: 10px;
-  font-weight: 800;
-  color: #38bdf8;
-}
-
-/* Responsive adjustments */
-@media (max-width: 900px) {
-  .map-search-anchor {
-    width: 240px;
+/* --- 7. Responsive Breakpoints --- */
+@media (max-width: 1024px) {
+  .flood-monitor-main-content {
+    flex-direction: column;
+    overflow-y: auto;
   }
-  .map-legends-container {
-    display: none;
+  .map-canvas-wrapper {
+    min-height: 480px;
   }
-  .location-prediction-card {
-    width: min(340px, calc(100vw - 32px));
+  .telemetry-sidebar-aside {
+    width: 100%;
+    max-width: 100%;
   }
 }

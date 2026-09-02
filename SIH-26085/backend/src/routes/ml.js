@@ -110,7 +110,6 @@ export default async function mlRoutes(fastify, options) {
     }
   });
 
-<<<<<<< HEAD
   // ---------------------------------------------------------------
   // Real-Time Weather Endpoints
   // WEATHER_API_KEY lives in Python (Model/.env) only.
@@ -180,7 +179,9 @@ export default async function mlRoutes(fastify, options) {
         ward_id,
         hint: 'Ensure uvicorn app:app is running on port 8000',
       });
-=======
+    }
+  });
+
   // Get urban_flood_nowcasting_db Database Tables & Schemas
   fastify.get('/db/tables', async (request, reply) => {
     try {
@@ -290,8 +291,6 @@ export default async function mlRoutes(fastify, options) {
     } catch (err) {
       fastify.log.error(`ML location prediction failed: ${err.message}`);
       return reply.code(500).send({ error: 'Failed to execute location prediction', details: err.message });
->>>>>>> main
     }
   });
 }
-

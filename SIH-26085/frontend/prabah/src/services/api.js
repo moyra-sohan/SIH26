@@ -89,7 +89,6 @@ export const api = {
     return fetchWithFallback('/features');
   },
 
-<<<<<<< HEAD
   /**
    * Get real-time weather for a specific ward.
    * Calls: Frontend → Node.js /api/ml/weather/:ward_id → Python → OpenWeatherMap
@@ -113,7 +112,8 @@ export const api = {
    */
   async getWeatherPrediction(wardId) {
     return fetchWithFallback(`/weather-predict/${encodeURIComponent(wardId)}`);
-=======
+  },
+
   // Get all 9 Database tables & metadata schemas
   async getDbTables() {
     return fetchWithFallback('/db/tables');
@@ -159,7 +159,6 @@ export const api = {
       method: 'POST',
       body: JSON.stringify(params),
     });
->>>>>>> main
   },
 };
 

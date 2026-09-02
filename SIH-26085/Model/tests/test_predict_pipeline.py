@@ -132,11 +132,8 @@ for step_name, step_obj in getattr(model, "steps", []):
                             print(f"Patched {tname}.{sname} with default float64 _fill_dtype")
 
 df = pd.DataFrame([sample])[features]
-<<<<<<< HEAD:SIH-26085/Model/test_predict_pipeline.py
-=======
 X_trans = prep.transform(df)
 print(f"Preprocessed shape: {X_trans.shape}")
->>>>>>> main:SIH-26085/Model/tests/test_predict_pipeline.py
 pred = model.predict(df)
 prob = model.predict_proba(df)
 
