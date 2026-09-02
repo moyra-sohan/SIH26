@@ -36,10 +36,26 @@ export default function LocationPredictionCard({
   const loc = locationResult?.queried_location;
 
   const probPercent = pred ? Math.min(100, Math.max(0, Math.round(pred.flood_probability * 100))) : 78;
-  const riskColor = pred?.risk_color || 
-    (pred?.risk_level === 'Critical' ? '#ef4444' :
-     pred?.risk_level === 'High' ? '#f97316' :
-     pred?.risk_level === 'Moderate' ? '#eab308' : '#22c55e');
+
+  // Refined risk color palette — more professional and accessible
+  const getRiskColor = (level) => {
+    switch (level) {
+      case 'Critical': return '#dc2626';
+      case 'High': return '#ea580c';
+      case 'Moderate': return '#d97706';
+      default: return '#059669';
+    }
+  };
+  const getRiskBg = (level) => {
+    switch (level) {
+      case 'Critical': return 'linear-gradient(135deg, #dc2626 0%, #b91c1c 100%)';
+      case 'High': return 'linear-gradient(135deg, #ea580c 0%, #c2410c 100%)';
+      case 'Moderate': return 'linear-gradient(135deg, #d97706 0%, #b45309 100%)';
+      default: return 'linear-gradient(135deg, #059669 0%, #047857 100%)';
+    }
+  };
+
+  const riskColor = pred?.risk_color || getRiskColor(pred?.risk_level);
   const riskLevel = pred?.risk_level || 'High';
 
   // Calculate Radial Gauge Arc dimensions (r = 24, Circumference = 2 * PI * 24 ≈ 150.8)
@@ -49,53 +65,59 @@ export default function LocationPredictionCard({
 
   // Base depth calculations
   const baseWaterDepthCm = pred?.estimated_waterlogging_depth_cm || matchedRoad?.water_depth_cm || 28.0;
-  const currentRoadDepthMm = Math.round(baseWaterDepthCm * 10); // e.g. 37.5cm -> 375mm
+  const currentRoadDepthMm = Math.round(baseWaterDepthCm * 10);
 
   // 1. Nowcast 0–3hr Water Depth Progression Trend Data (in cm)
   const trendDataCm = [
-    { time: 'T+0h', depth: Number((baseWaterDepthCm * 0.70).toFixed(1)) },
-    { time: 'T+1h', depth: Number((baseWaterDepthCm * 1.30).toFixed(1)) },
-    { time: 'T+2h', depth: Number((baseWaterDepthCm * 1.50).toFixed(1)) },
-    { time: 'T+3h', depth: Number((baseWaterDepthCm * 0.85).toFixed(1)) },
+    { time: 'Now', depth: Number((baseWaterDepthCm * 0.70).toFixed(1)) },
+    { time: '+1h', depth: Number((baseWaterDepthCm * 1.30).toFixed(1)) },
+    { time: '+2h', depth: Number((baseWaterDepthCm * 1.50).toFixed(1)) },
+    { time: '+3h', depth: Number((baseWaterDepthCm * 0.85).toFixed(1)) },
   ];
   const peakDepthCm = Math.max(...trendDataCm.map(d => d.depth));
 
-  // 2. ROAD WATER LEVEL IN MILLIMETERS (mm Scale)
+  // 2. ROAD WATER LEVEL IN MILLIMETERS (mm Scale) – refined status labels
   const roadTrendDataMm = [
     {
-      time: 'T+0h',
+      time: 'Now',
       waterLevelMm: Math.round(baseWaterDepthCm * 7.0),
-      label: 'Initial Splash',
+      label: 'Current',
       status: Math.round(baseWaterDepthCm * 7.0) > 400 ? 'Severe' : Math.round(baseWaterDepthCm * 7.0) > 200 ? 'Caution' : 'Passable'
     },
     {
-      time: 'T+1h',
+      time: '+1h',
       waterLevelMm: Math.round(baseWaterDepthCm * 13.0),
-      label: 'Surge Build',
+      label: 'Rising',
       status: Math.round(baseWaterDepthCm * 13.0) > 400 ? 'Critical' : Math.round(baseWaterDepthCm * 13.0) > 250 ? 'Severe' : 'Caution'
     },
     {
-      time: 'T+2h',
+      time: '+2h',
       waterLevelMm: Math.round(baseWaterDepthCm * 15.0),
-      label: 'Peak Inundation',
+      label: 'Peak',
       status: Math.round(baseWaterDepthCm * 15.0) > 450 ? 'Submerged' : Math.round(baseWaterDepthCm * 15.0) > 250 ? 'Severe' : 'Caution'
     },
     {
-      time: 'T+3h',
+      time: '+3h',
       waterLevelMm: Math.round(baseWaterDepthCm * 8.5),
-      label: 'Recession',
+      label: 'Receding',
       status: Math.round(baseWaterDepthCm * 8.5) > 350 ? 'Severe' : Math.round(baseWaterDepthCm * 8.5) > 150 ? 'Caution' : 'Passable'
     }
   ];
   const peakRoadDepthMm = Math.max(...roadTrendDataMm.map(d => d.waterLevelMm));
 
-  const roadWaterSeverityColor = currentRoadDepthMm >= 450 ? '#ef4444' :
-    currentRoadDepthMm >= 250 ? '#f97316' :
-    currentRoadDepthMm >= 120 ? '#eab308' : '#22c55e';
+  // Refined severity color mapping for chart bars
+  const getBarColor = (mm) => {
+    if (mm >= 450) return '#dc2626';
+    if (mm >= 250) return '#ea580c';
+    if (mm >= 150) return '#d97706';
+    return '#059669';
+  };
+
+  const roadWaterSeverityColor = getBarColor(currentRoadDepthMm);
 
   // Drainage calculations
   const drainLoad = matchedDrain?.drain_load_utilization_percent !== undefined ? matchedDrain.drain_load_utilization_percent : 74;
-  const drainLoadColor = drainLoad > 75 ? '#ef4444' : drainLoad >= 50 ? '#eab308' : '#22c55e';
+  const drainLoadColor = drainLoad > 75 ? '#dc2626' : drainLoad >= 50 ? '#d97706' : '#059669';
   const totalPumps = matchedDrain?.total_pumps || 8;
   const activePumps = matchedDrain?.active_pumps || 7;
   const siltLevel = (matchedDrain?.silt_accumulation_level || 'Moderate').toLowerCase();
@@ -127,10 +149,10 @@ export default function LocationPredictionCard({
       ) : (
         <div className="location-card-body">
           {/* 2. Main Risk Highlight with Animated Radial Gauge */}
-          <div className="risk-metric-banner" style={{ borderColor: `${riskColor}50` }}>
+          <div className="risk-metric-banner" style={{ borderColor: `${riskColor}30` }}>
             <div className="risk-gauge-block">
               <div className="risk-badge-col">
-                <span className="risk-badge-large" style={{ backgroundColor: riskColor }}>
+                <span className="risk-badge-large" style={{ background: getRiskBg(riskLevel) }}>
                   {riskLevel} Flood Risk
                 </span>
                 <p className="status-quote">"{pred?.status_text || 'Active spatial nowcast'}"</p>
@@ -139,7 +161,7 @@ export default function LocationPredictionCard({
               {/* Radial Donut Gauge */}
               <div
                 className="radial-gauge-container"
-                title={`Risk Score: ${probPercent}% (Thresholds: Low <30%, Moderate 30-50%, High 50-75%, Critical >75%)`}
+                title={`Risk Score: ${probPercent}% (Low <30%, Moderate 30-50%, High 50-75%, Critical >75%)`}
               >
                 <svg className="radial-gauge-svg" width="68" height="68" viewBox="0 0 68 68">
                   <circle
@@ -147,14 +169,14 @@ export default function LocationPredictionCard({
                     cy="34"
                     r={radius}
                     className="radial-track"
-                    strokeWidth="6"
+                    strokeWidth="5"
                   />
                   <circle
                     cx="34"
                     cy="34"
                     r={radius}
                     className="radial-arc"
-                    strokeWidth="6"
+                    strokeWidth="5"
                     stroke={riskColor}
                     strokeDasharray={circumference}
                     strokeDashoffset={strokeDashoffset}
@@ -175,7 +197,7 @@ export default function LocationPredictionCard({
               <div className="header-left">
                 <span
                   className="feature-status-dot"
-                  style={{ backgroundColor: chartMode === 'road-mm' ? roadWaterSeverityColor : '#3b82f6' }}
+                  style={{ backgroundColor: chartMode === 'road-mm' ? roadWaterSeverityColor : '#2563eb' }}
                 />
                 {/* Interactive Chart Mode Dropdown */}
                 <div className="chart-mode-dropdown-wrapper">
@@ -185,8 +207,8 @@ export default function LocationPredictionCard({
                     onChange={(e) => setChartMode(e.target.value)}
                     title="Switch visual chart view"
                   >
-                    <option value="road-mm">🛣️ Road Water Level (mm scale)</option>
-                    <option value="forecast-cm">📈 3-Hour Depth Curve (cm scale)</option>
+                    <option value="road-mm">🛣️ Road Water Level (mm)</option>
+                    <option value="forecast-cm">📈 3-Hour Depth Curve (cm)</option>
                   </select>
                 </div>
               </div>
@@ -196,9 +218,9 @@ export default function LocationPredictionCard({
                   <span
                     className="road-mm-badge"
                     style={{
-                      backgroundColor: `${roadWaterSeverityColor}25`,
+                      backgroundColor: `${roadWaterSeverityColor}18`,
                       color: roadWaterSeverityColor,
-                      borderColor: roadWaterSeverityColor
+                      borderColor: `${roadWaterSeverityColor}50`
                     }}
                   >
                     {currentRoadDepthMm} mm
@@ -225,7 +247,7 @@ export default function LocationPredictionCard({
                       </div>
                       <div className="clearance-item">
                         <span className="clearance-lbl">3H Peak Level:</span>
-                        <strong className="clearance-val" style={{ color: peakRoadDepthMm > 400 ? '#ef4444' : '#f97316' }}>{peakRoadDepthMm} mm</strong>
+                        <strong className="clearance-val" style={{ color: getBarColor(peakRoadDepthMm) }}>{peakRoadDepthMm} mm</strong>
                       </div>
                       <div className="clearance-item">
                         <span className="clearance-lbl">Exhaust Hazard:</span>
@@ -237,38 +259,37 @@ export default function LocationPredictionCard({
                     <div className="road-mm-barchart-container">
                       <ResponsiveContainer width="100%" height={92}>
                         <BarChart data={roadTrendDataMm} margin={{ top: 8, right: 10, left: -22, bottom: 0 }}>
-                          <XAxis dataKey="time" stroke="#64748b" tick={{ fontSize: 9, fill: '#94a3b8' }} axisLine={false} tickLine={false} />
+                          <XAxis dataKey="time" stroke="#475569" tick={{ fontSize: 10, fill: '#94a3b8', fontWeight: 600 }} axisLine={false} tickLine={false} />
                           <YAxis
-                            stroke="#64748b"
-                            tick={{ fontSize: 8, fill: '#94a3b8' }}
+                            stroke="#475569"
+                            tick={{ fontSize: 9, fill: '#64748b' }}
                             axisLine={false}
                             tickLine={false}
                             unit=" mm"
                             domain={[0, Math.max(600, peakRoadDepthMm + 80)]}
                           />
-                          <ReferenceLine y={150} stroke="#22c55e" strokeDasharray="3 2" strokeWidth={1} />
-                          <ReferenceLine y={250} stroke="#eab308" strokeDasharray="3 2" strokeWidth={1.2} />
-                          <ReferenceLine y={450} stroke="#ef4444" strokeDasharray="3 2" strokeWidth={1.5} />
+                          <ReferenceLine y={150} stroke="#059669" strokeDasharray="4 3" strokeWidth={1} strokeOpacity={0.5} />
+                          <ReferenceLine y={250} stroke="#d97706" strokeDasharray="4 3" strokeWidth={1} strokeOpacity={0.5} />
+                          <ReferenceLine y={450} stroke="#dc2626" strokeDasharray="4 3" strokeWidth={1} strokeOpacity={0.5} />
                           
                           <Tooltip
                             content={({ active, payload }) => {
                               if (active && payload && payload.length) {
                                 const data = payload[0].payload;
+                                const color = getBarColor(data.waterLevelMm);
                                 return (
                                   <div className="road-mm-tooltip">
                                     <div className="tooltip-hdr">
-                                      <span>{data.time} ({data.label})</span>
+                                      <span>{data.time} — {data.label}</span>
                                     </div>
                                     <div className="tooltip-val-row">
                                       <span>Water Level:</span>
-                                      <strong style={{ color: data.waterLevelMm >= 450 ? '#ef4444' : data.waterLevelMm >= 250 ? '#f97316' : '#22c55e' }}>
+                                      <strong style={{ color }}>
                                         {data.waterLevelMm} mm ({(data.waterLevelMm / 10).toFixed(1)} cm)
                                       </strong>
                                     </div>
-                                    <div className="tooltip-status-tag" style={{
-                                      backgroundColor: data.waterLevelMm >= 450 ? '#ef4444' : data.waterLevelMm >= 250 ? '#f97316' : data.waterLevelMm >= 150 ? '#eab308' : '#22c55e'
-                                    }}>
-                                      {data.waterLevelMm >= 450 ? '🚫 Road Submerged (Closed)' : data.waterLevelMm >= 250 ? '⚠️ Exhaust Hazard (High Risk)' : data.waterLevelMm >= 150 ? '⚡ Curb Overflow (Caution)' : '✅ Clear Passable'}
+                                    <div className="tooltip-status-tag" style={{ backgroundColor: color }}>
+                                      {data.waterLevelMm >= 450 ? '🚫 Submerged' : data.waterLevelMm >= 250 ? '⚠️ High Risk' : data.waterLevelMm >= 150 ? '⚡ Caution' : '✅ Passable'}
                                     </div>
                                   </div>
                                 );
@@ -276,24 +297,21 @@ export default function LocationPredictionCard({
                               return null;
                             }}
                           />
-                          <Bar dataKey="waterLevelMm" radius={[4, 4, 0, 0]}>
-                            {roadTrendDataMm.map((entry, index) => {
-                              const barColor = entry.waterLevelMm >= 450 ? '#ef4444' :
-                                entry.waterLevelMm >= 250 ? '#f97316' :
-                                entry.waterLevelMm >= 150 ? '#eab308' : '#22c55e';
-                              return <Cell key={`cell-${index}`} fill={barColor} />;
-                            })}
+                          <Bar dataKey="waterLevelMm" radius={[5, 5, 0, 0]} barSize={28}>
+                            {roadTrendDataMm.map((entry, index) => (
+                              <Cell key={`cell-${index}`} fill={getBarColor(entry.waterLevelMm)} fillOpacity={0.85} />
+                            ))}
                           </Bar>
                         </BarChart>
                       </ResponsiveContainer>
                     </div>
 
-                    {/* Threshold Reference Indicator in mm */}
+                    {/* Threshold Reference Legend */}
                     <div className="road-mm-threshold-legend">
-                      <div className="th-item"><span className="th-dot" style={{ background: '#22c55e' }} /> 0–150 mm (Safe)</div>
-                      <div className="th-item"><span className="th-dot" style={{ background: '#eab308' }} /> 150–250 mm (Curb)</div>
-                      <div className="th-item"><span className="th-dot" style={{ background: '#f97316' }} /> 250–450 mm (Exhaust)</div>
-                      <div className="th-item"><span className="th-dot" style={{ background: '#ef4444' }} /> &gt;450 mm (Closure)</div>
+                      <div className="th-item"><span className="th-dot" style={{ background: '#059669' }} /> 0–150 mm (Safe)</div>
+                      <div className="th-item"><span className="th-dot" style={{ background: '#d97706' }} /> 150–250 mm (Curb)</div>
+                      <div className="th-item"><span className="th-dot" style={{ background: '#ea580c' }} /> 250–450 mm (Exhaust)</div>
+                      <div className="th-item"><span className="th-dot" style={{ background: '#dc2626' }} /> &gt;450 mm (Closure)</div>
                     </div>
                   </div>
                 )}
@@ -306,19 +324,19 @@ export default function LocationPredictionCard({
                         <AreaChart data={trendDataCm} margin={{ top: 8, right: 8, left: -26, bottom: 0 }}>
                           <defs>
                             <linearGradient id="depthGradientUnified" x1="0" y1="0" x2="0" y2="1">
-                              <stop offset="5%" stopColor={riskColor} stopOpacity={0.45} />
-                              <stop offset="95%" stopColor={riskColor} stopOpacity={0.02} />
+                              <stop offset="5%" stopColor="#2563eb" stopOpacity={0.35} />
+                              <stop offset="95%" stopColor="#2563eb" stopOpacity={0.02} />
                             </linearGradient>
                           </defs>
-                          <XAxis dataKey="time" stroke="#64748b" tick={{ fontSize: 9, fill: '#94a3b8' }} axisLine={false} tickLine={false} />
-                          <YAxis stroke="#64748b" tick={{ fontSize: 8, fill: '#64748b' }} axisLine={false} tickLine={false} domain={[0, 'dataMax + 10']} />
+                          <XAxis dataKey="time" stroke="#475569" tick={{ fontSize: 10, fill: '#94a3b8', fontWeight: 600 }} axisLine={false} tickLine={false} />
+                          <YAxis stroke="#475569" tick={{ fontSize: 9, fill: '#64748b' }} axisLine={false} tickLine={false} domain={[0, 'dataMax + 10']} />
                           <Tooltip
                             content={({ active, payload }) => {
                               if (active && payload && payload.length) {
                                 return (
                                   <div className="chart-custom-tooltip">
                                     <span className="tooltip-time">{payload[0].payload.time}</span>
-                                    <strong className="tooltip-depth" style={{ color: riskColor }}>
+                                    <strong className="tooltip-depth" style={{ color: '#2563eb' }}>
                                       {payload[0].value} cm ({Math.round(payload[0].value * 10)} mm)
                                     </strong>
                                   </div>
@@ -330,12 +348,12 @@ export default function LocationPredictionCard({
                           <Area
                             type="monotone"
                             dataKey="depth"
-                            stroke={riskColor}
+                            stroke="#2563eb"
                             strokeWidth={2.5}
                             fillOpacity={1}
                             fill="url(#depthGradientUnified)"
-                            dot={{ r: 3, fill: riskColor, strokeWidth: 1, stroke: '#ffffff' }}
-                            activeDot={{ r: 4.5, fill: '#ffffff', stroke: riskColor, strokeWidth: 2 }}
+                            dot={{ r: 3, fill: '#2563eb', strokeWidth: 2, stroke: '#ffffff' }}
+                            activeDot={{ r: 5, fill: '#ffffff', stroke: '#2563eb', strokeWidth: 2.5 }}
                           />
                         </AreaChart>
                       </ResponsiveContainer>
@@ -371,7 +389,7 @@ export default function LocationPredictionCard({
 
             <div className="loc-metric-item">
               <span className="metric-lbl">Rainfall Surge</span>
-              <strong className="metric-num" style={{ color: '#38bdf8' }}>
+              <strong className="metric-num" style={{ color: '#2563eb' }}>
                 {matchedForecast?.forecast_rainfall_mm || 82} mm
               </strong>
             </div>
@@ -386,7 +404,7 @@ export default function LocationPredictionCard({
                 onClick={() => toggleSection('drainage')}
               >
                 <div className="header-left">
-                  <span className="feature-status-dot" style={{ backgroundColor: '#06b6d4' }} />
+                  <span className="feature-status-dot" style={{ backgroundColor: '#0891b2' }} />
                   <span className="feature-icon">🚰</span>
                   <h5>Drainage &amp; Pumping Hub</h5>
                 </div>
@@ -433,7 +451,7 @@ export default function LocationPredictionCard({
                           <span
                             key={idx}
                             className={`pump-dot ${isActive ? 'active-dot' : 'inactive-dot'}`}
-                            title={isActive ? `Pump ${idx + 1}: Operational` : `Pump ${idx + 1}: Standby / Inactive`}
+                            title={isActive ? `Pump ${idx + 1}: Operational` : `Pump ${idx + 1}: Standby`}
                           />
                         );
                       })}
@@ -508,7 +526,7 @@ export default function LocationPredictionCard({
                 onClick={() => toggleSection('zone')}
               >
                 <div className="header-left">
-                  <span className="feature-status-dot" style={{ backgroundColor: '#8b5cf6' }} />
+                  <span className="feature-status-dot" style={{ backgroundColor: '#7c3aed' }} />
                   <span className="feature-icon">🗺️</span>
                   <h5>Zone Area Profile</h5>
                 </div>
@@ -539,7 +557,7 @@ export default function LocationPredictionCard({
                 onClick={() => toggleSection('landscape')}
               >
                 <div className="header-left">
-                  <span className="feature-status-dot" style={{ backgroundColor: '#10b981' }} />
+                  <span className="feature-status-dot" style={{ backgroundColor: '#059669' }} />
                   <span className="feature-icon">🌳</span>
                   <h5>Landscape &amp; Surface Characteristics</h5>
                 </div>
@@ -562,7 +580,7 @@ export default function LocationPredictionCard({
                   </div>
                   <div className="detail-row">
                     <span>Green Cover Baseline:</span>
-                    <strong style={{ color: '#10b981' }}>{matchedLandscape?.green_cover_baseline_percent || 12}%</strong>
+                    <strong style={{ color: '#059669' }}>{matchedLandscape?.green_cover_baseline_percent || 12}%</strong>
                   </div>
                 </div>
               )}

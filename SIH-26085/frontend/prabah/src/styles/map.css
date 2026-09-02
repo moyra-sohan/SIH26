@@ -10,7 +10,7 @@
   height: calc(100vh - 73px); /* Layout header offset */
   overflow: hidden;
   font-family: var(--font-main, 'Inter', -apple-system, BlinkMacSystemFont, sans-serif);
-  background-color: #090d16;
+  background-color: #0c1220;
 }
 
 .map-fullscreen-container {
@@ -23,13 +23,13 @@
 
 /* Dark Glass Panel Shared Styling */
 .glass-panel {
-  background: rgba(15, 23, 42, 0.88);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45), 0 4px 12px rgba(0, 0, 0, 0.25);
+  background: rgba(13, 20, 36, 0.92);
+  backdrop-filter: blur(20px) saturate(1.2);
+  -webkit-backdrop-filter: blur(20px) saturate(1.2);
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35), 0 2px 8px rgba(0, 0, 0, 0.2);
   border-radius: 14px;
-  color: #f8fafc;
+  color: #f1f5f9;
 }
 
 /* ==========================================================================
@@ -394,12 +394,12 @@
 }
 
 .risk-metric-banner {
-  border: 1.5px solid;
-  border-radius: 12px;
-  padding: 12px 14px;
-  background: rgba(30, 41, 59, 0.65);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  border: 1px solid;
+  border-radius: 14px;
+  padding: 14px 16px;
+  background: rgba(30, 41, 59, 0.45);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
 }
 
 .risk-gauge-block {
@@ -490,14 +490,14 @@
 
 /* 2. Unified Nowcast Chart with Dropdown Selector */
 .unified-chart-section {
-  background: rgba(30, 41, 59, 0.65);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 12px;
-  padding: 12px;
+  background: rgba(30, 41, 59, 0.4);
+  border: 1px solid rgba(148, 163, 184, 0.1);
+  border-radius: 14px;
+  padding: 14px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3);
+  gap: 10px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
 }
 
 .chart-mode-dropdown-wrapper {
@@ -555,11 +555,11 @@
 .road-clearance-status-row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 6px;
-  background: rgba(15, 23, 42, 0.65);
-  padding: 6px 8px;
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  gap: 8px;
+  background: rgba(15, 23, 42, 0.5);
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(148, 163, 184, 0.08);
 }
 
 .clearance-item {
@@ -583,7 +583,7 @@
 }
 
 .threshold-val {
-  color: #eab308;
+  color: #d97706;
 }
 
 .road-mm-barchart-container {
@@ -695,12 +695,17 @@
 }
 
 .loc-metric-item {
-  background: rgba(30, 41, 59, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 10px;
-  padding: 8px 10px;
+  background: rgba(30, 41, 59, 0.4);
+  border: 1px solid rgba(148, 163, 184, 0.08);
+  border-radius: 12px;
+  padding: 10px 12px;
   display: flex;
   flex-direction: column;
+  transition: background 0.2s ease;
+}
+
+.loc-metric-item:hover {
+  background: rgba(30, 41, 59, 0.55);
 }
 
 .metric-lbl {
@@ -727,14 +732,18 @@
 }
 
 .feature-detail-section {
-  background: rgba(30, 41, 59, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
-  padding: 10px 12px;
+  background: rgba(30, 41, 59, 0.35);
+  border: 1px solid rgba(148, 163, 184, 0.08);
+  border-radius: 14px;
+  padding: 12px 14px;
   display: flex;
   flex-direction: column;
   gap: 8px;
   transition: all 0.2s ease;
+}
+
+.feature-detail-section:hover {
+  background: rgba(30, 41, 59, 0.45);
 }
 
 .feature-section-header {
@@ -964,18 +973,18 @@
   position: absolute;
   bottom: 24px;
   left: 16px;
-  padding: 12px 18px;
+  padding: 10px 16px;
   display: flex;
-  gap: 18px;
+  gap: 16px;
   z-index: 10;
   pointer-events: auto;
-  background: rgba(15, 23, 42, 0.90);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 14px;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
-  color: #f8fafc;
+  background: rgba(13, 20, 36, 0.88);
+  backdrop-filter: blur(20px) saturate(1.2);
+  -webkit-backdrop-filter: blur(20px) saturate(1.2);
+  border: 1px solid rgba(148, 163, 184, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  color: #f1f5f9;
   max-width: calc(100vw - 32px);
 }
 
@@ -1005,15 +1014,15 @@
   flex-shrink: 0;
 }
 
-.risk-low { background: #22c55e; }
-.risk-medium { background: #eab308; }
+.risk-low { background: #10b981; }
+.risk-medium { background: #f59e0b; }
 .risk-high { background: #f97316; }
-.risk-critical { background: #ef4444; }
+.risk-critical { background: #dc2626; }
 
-.road-clear { background: #22c55e; }
-.road-minor { background: #eab308; }
-.road-severe { background: #f97316; }
-.road-submerged { background: #ef4444; }
+.road-clear { background: #059669; }
+.road-minor { background: #d97706; }
+.road-severe { background: #ea580c; }
+.road-submerged { background: #dc2626; }
 
 .legend-symbol {
   font-size: 13px;
@@ -1057,10 +1066,11 @@
 }
 
 .legend-line-dotted-red {
-  width: 18px;
+  width: 20px;
   height: 0px;
-  border-top: 2.5px dashed #ef4444;
+  border-top: 2.5px solid #2563eb;
   margin-right: 4px;
+  border-radius: 2px;
 }
 
 /* ==========================================================================

@@ -152,10 +152,9 @@ export default function MapPage() {
                 type: 'line',
                 source: 'city-boundary-source',
                 paint: {
-                    'line-color': '#ef4444', // Saturated red
-                    'line-width': 3,
-                    'line-dasharray': [4, 3], // Dotted red
-                    'line-opacity': 0.95
+                    'line-color': '#2563eb',
+                    'line-width': 2.5,
+                    'line-opacity': 0.8
                 }
             });
         }
@@ -167,8 +166,23 @@ export default function MapPage() {
                 type: 'fill',
                 source: 'city-boundary-source',
                 paint: {
-                    'fill-color': '#ef4444',
-                    'fill-opacity': 0.02
+                    'fill-color': '#3b82f6',
+                    'fill-opacity': 0.04
+                }
+            });
+        }
+
+        // Outer glow effect for the boundary
+        if (!map.getLayer('city-boundary-glow')) {
+            map.addLayer({
+                id: 'city-boundary-glow',
+                type: 'line',
+                source: 'city-boundary-source',
+                paint: {
+                    'line-color': '#60a5fa',
+                    'line-width': 6,
+                    'line-opacity': 0.12,
+                    'line-blur': 4
                 }
             });
         }
@@ -236,13 +250,13 @@ export default function MapPage() {
                     'line-color': [
                         'match',
                         ['get', 'status'],
-                        'Clear / Passable', '#22c55e',
-                        'Minor Waterlogging', '#eab308',
-                        'Severe Waterlogging', '#f97316',
-                        'Submerged', '#ef4444',
-                        '#eab308'
+                        'Clear / Passable', '#059669',
+                        'Minor Waterlogging', '#d97706',
+                        'Severe Waterlogging', '#ea580c',
+                        'Submerged', '#dc2626',
+                        '#d97706'
                     ],
-                    'line-width': 4.5
+                    'line-width': 4
                 }
             });
         }
@@ -557,8 +571,8 @@ export default function MapPage() {
                 <div className="legend-column">
                     <h5>🏛️ Municipal Limits</h5>
                     <div className="legend-item">
-                        <span className="legend-line-dotted-red" />
-                        <span>KMC Boundary (Dotted Red)</span>
+                    <span className="legend-line-dotted-red" />
+                        <span>KMC Boundary</span>
                     </div>
                 </div>
 
@@ -576,9 +590,9 @@ export default function MapPage() {
 
                 <div className="legend-column">
                     <h5>🛣️ Road Passability</h5>
-                    <div className="legend-item"><span className="legend-dot" style={{ background: '#22c55e' }} /> Clear / Passable</div>
-                    <div className="legend-item"><span className="legend-dot" style={{ background: '#eab308' }} /> Minor Waterlogging</div>
-                    <div className="legend-item"><span className="legend-dot" style={{ background: '#ef4444' }} /> Severe / Closed</div>
+                    <div className="legend-item"><span className="legend-dot" style={{ background: '#059669' }} /> Clear / Passable</div>
+                    <div className="legend-item"><span className="legend-dot" style={{ background: '#d97706' }} /> Minor Waterlogging</div>
+                    <div className="legend-item"><span className="legend-dot" style={{ background: '#dc2626' }} /> Severe / Closed</div>
                 </div>
             </div>
         </div>
