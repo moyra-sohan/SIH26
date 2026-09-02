@@ -1,0 +1,6 @@
+{
+  "python.defaultInterpreterPath": "${workspaceFolder}/SIH-26085/Model/.env/Scripts/python.exe",
+  "python.analysis.extraPaths": [
+    "${workspaceFolder}/SIH-26085/Model"
+  ]
+}

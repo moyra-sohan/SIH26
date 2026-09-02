@@ -104,10 +104,23 @@ for col in features:
     if col not in sample:
         sample[col] = 0
 
+# Patch any SimpleImputer instances in model to support newer sklearn if needed
+for step_name, step_obj in getattr(model, "steps", []):
+    if hasattr(step_obj, "named_transformers_"):
+        for tname, trans in step_obj.named_transformers_.items():
+            if hasattr(trans, "named_steps"):
+                for sname, sstep in trans.named_steps.items():
+                    if isinstance(sstep, SimpleImputer):
+                        if not hasattr(sstep, "_fill_dtype") and hasattr(sstep, "_fit_dtype"):
+                            sstep._fill_dtype = sstep._fit_dtype
+                            print(f"Patched {tname}.{sname} with _fill_dtype = {sstep._fit_dtype}")
+                        elif not hasattr(sstep, "_fill_dtype"):
+                            sstep._fill_dtype = np.float64
+                            print(f"Patched {tname}.{sname} with default float64 _fill_dtype")
+
 df = pd.DataFrame([sample])[features]
-X_trans = prep.transform(df)
-pred = model.predict(X_trans)
-prob = model.predict_proba(X_trans)
+pred = model.predict(df)
+prob = model.predict_proba(df)
 
 print("SUCCESS!")
 print(f"Prediction: {pred[0]}")

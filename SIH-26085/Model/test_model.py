@@ -30,38 +30,55 @@ print("Model classes:", getattr(model, "classes_", None))
 if hasattr(model, "predict_proba"):
     print("Model has predict_proba: True")
 
-# Let's create a test row with default/dummy values matching the feature list
-print("\n--- Testing Pipeline / Prediction ---")
-sample_data = {col: [0] for col in features}
-# Assign some realistic defaults for categorical features
-for col in features:
-    if "category" in col or "type" in col or "body" in col or "zone" in col or "drainage" in col:
-        sample_data[col] = ["urban"] if "landscape" in col or "land_use" in col else ["Zone A"]
-    elif "latitude" in col:
-        sample_data[col] = [22.5726]
-    elif "longitude" in col:
-        sample_data[col] = [88.3639]
-    elif "elevation" in col:
-        sample_data[col] = [9.0]
-    elif "rainfall" in col:
-        sample_data[col] = [82.0]
-    elif "humidity" in col:
-        sample_data[col] = [82.0]
-    elif "temperature" in col:
-        sample_data[col] = [28.0]
+import json
+with open("d:/SIH_2026/github/SIH26/SIH-26085/Model/feature_meta.json", "r") as f:
+    meta = json.load(f)
 
-df_sample = pd.DataFrame(sample_data)
+# Patch SimpleImputer instances in model
+for step_name, step_obj in getattr(model, "steps", []):
+    if hasattr(step_obj, "named_transformers_"):
+        for tname, trans in step_obj.named_transformers_.items():
+            if hasattr(trans, "named_steps"):
+                for sname, sstep in trans.named_steps.items():
+                    if hasattr(sstep, "_fill_dtype") is False and hasattr(sstep, "_fit_dtype"):
+                        sstep._fill_dtype = sstep._fit_dtype
+                    elif hasattr(sstep, "_fill_dtype") is False:
+                        sstep._fill_dtype = np.float64
+
+# Let's create a test row matching feature_meta schema
+print("\n--- Testing Pipeline / Prediction ---")
+sample_data = {}
+for col in features:
+    if col in meta.get("categorical_features", []):
+        cats = meta.get("categories", {}).get(col, [])
+        sample_data[col] = [cats[0] if cats else "Unknown"]
+    else:
+        sample_data[col] = [0.0]
+
+# Assign some realistic defaults
+sample_data.update({
+    "ward_id": [63],
+    "latitude": [22.5526],
+    "longitude": [88.3639],
+    "elevation_m": [9.0],
+    "historical_rainfall_mm": [82.0],
+    "forecast_rainfall_mm": [85.0],
+    "avg_humidity_percent": [82.0],
+    "avg_temperature_c": [28.0],
+    "month_idx": [9],
+    "is_monsoon": [1],
+})
+
+df_sample = pd.DataFrame(sample_data)[features]
 print("Sample DataFrame shape:", df_sample.shape)
 
 try:
-    transformed = prep.transform(df_sample)
-    print("Preprocessed shape:", transformed.shape)
-    pred = model.predict(transformed)
+    pred = model.predict(df_sample)
     print("Prediction:", pred)
     if hasattr(model, "predict_proba"):
-        prob = model.predict_proba(transformed)
+        prob = model.predict_proba(df_sample)
         print("Prediction Probabilities:", prob)
 except Exception as e:
-    print("Transform / predict exception:", type(e), e)
+    print("Prediction exception:", type(e), e)
     import traceback
     traceback.print_exc()
