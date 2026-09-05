@@ -214,62 +214,7 @@ To run the entire PRABAH platform locally, open **3 separate terminal windows** 
 │  TERMINAL 1: ML Model  │  │  TERMINAL 2: Backend   │  │  TERMINAL 3: Frontend  │
 │  FastAPI (Port 8000)   │  │  Fastify (Port 5000)   │  │  Vite (Port 5173)      │
 └────────────────────────┘  └────────────────────────┘  └────────────────────────┘
-```
 
-### 🔹 Terminal 1: Launch Python FastAPI ML Microservice (Port 8000)
-
-```powershell
-# 1. Navigate to the Model directory
-cd d:\BCA_5_SEM\SIH\SIH-26085\Model
-
-# 2. Activate Python Virtual Environment (Windows PowerShell)
-.\.env\Scripts\Activate.ps1
-# On Linux/macOS: source .env/bin/activate
-
-# 3. Install dependencies (if first time)
-pip install -r requirements.txt
-
-# 4. Start the ML Service
-python main.py
-```
-> 🟢 **ML API Running at:** `http://localhost:8000`  
-> 📖 **Interactive Swagger UI:** `http://localhost:8000/docs`  
-> 🩺 **Health Check:** `http://localhost:8000/health`
-
----
-
-### 🔹 Terminal 2: Launch Node.js Fastify Backend Gateway (Port 5000)
-
-```powershell
-# 1. Navigate to the backend directory
-cd d:\BCA_5_SEM\SIH\SIH-26085\backend
-
-# 2. Install Node dependencies (if first time)
-npm install
-
-# 3. Synchronize Prisma Schema with Neon PostgreSQL
-npx prisma generate
-
-# 4. Start the Backend Gateway
-npm run dev
-# or: node src/server.js
-```
-> 🟢 **Backend Gateway Running at:** `http://localhost:5000`  
-> 🩺 **Database Health Check:** `http://localhost:5000/api/health`
-
----
-
-### 🔹 Terminal 3: Launch React + Vite Frontend (Port 5173)
-
-```powershell
-# 1. Navigate to the frontend directory
-cd d:\BCA_5_SEM\SIH\SIH-26085\frontend\prabah
-
-# 2. Install Frontend dependencies (if first time)
-npm install
-
-# 3. Start the Vite Dev Server
-npm run dev
 ```
 > 🟢 **Web Application is live at:** `http://localhost:5173`
 
@@ -306,11 +251,11 @@ cd d:\BCA_5_SEM\SIH\SIH-26085
 
 Each major module in the repository includes its own standalone, in-depth documentation guide:
 
-- **[Frontend Architecture & UI Documentation](file:///d:/BCA_5_SEM/SIH/SIH-26085/frontend/README.md)**  
+- **[Frontend Architecture & UI Documentation]**  
   Covers React component breakdown, MapLibre GL layers, Recharts visualizations, state management, CSS variables, and responsive layouts.
-- **[Backend Gateway & Database Documentation](file:///d:/BCA_5_SEM/SIH/SIH-26085/backend/README.md)**  
+- **[Backend Gateway & Database Documentation]**  
   Covers Fastify plugins, Neon PostgreSQL connection strings, Prisma ORM schema, JWT and Session cookie authentication, and reverse proxy routes.
-- **[Machine Learning Microservice Documentation](file:///d:/BCA_5_SEM/SIH/SIH-26085/Model/README.md)**  
+- **[Machine Learning Microservice Documentation]**  
   Covers the 60-feature vector specification, Scikit-Learn model artifacts, real-time OpenWeatherMap telemetry pipeline, risk scoring algorithms, and the 9-table spatial database.
 
 ---
