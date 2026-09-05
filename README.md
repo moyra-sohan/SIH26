@@ -315,38 +315,6 @@ Each major module in the repository includes its own standalone, in-depth docume
 
 ---
 
-## ⚙️ Environment Variables Matrix
-
-### 1. Backend Gateway (`backend/.env`)
-```env
-# Neon PostgreSQL Connection URL
-DATABASE_URL="postgresql://neondb_owner:***@ep-dawn-heart-a5liig8g-pooler.us-east-2.aws.neon.tech/neondb?sslmode=require"
-
-# Server Port
-PORT=5000
-
-# Security Secrets (Must be at least 32 characters long in production)
-JWT_SECRET="sih_urban_flood_secret_key_2026_jwt_token"
-SESSION_SECRET="sih_flood_session_secret_key_minimum_32_characters_long_2026!"
-COOKIE_SECRET="sih_flood_cookie_secret_key_minimum_32_characters_long_2026!"
-
-# Upstream Python ML Microservice URL
-ML_SERVICE_URL="http://127.0.0.1:8000"
-```
-
-### 2. ML Microservice (`Model/.env`)
-```env
-# Server Port & Host
-PORT=8000
-HOST="0.0.0.0"
-
-# OpenWeatherMap API Key for live weather ingestion
-WEATHER_API_KEY="your_openweathermap_api_key_here"
-WEATHER_REFRESH_INTERVAL_MINUTES=10
-```
-
----
-
 ## 📡 API Endpoints Directory
 
 ### Authentication & Gateway (`http://localhost:5000`)
