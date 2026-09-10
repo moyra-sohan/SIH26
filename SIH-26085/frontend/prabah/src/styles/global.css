@@ -1,28 +1,61 @@
 /* ============================================
-   Global Styles — Urban Flood Nowcasting System
+   Global Styles — PRABAH Flood Nowcasting System
    ============================================ */
 
+/* Import animations library */
+@import url('./animations.css');
+
 :root {
+  /* Premium PRABAH Color Palette */
+  --primary: #0F766E;
+  --primary-hover: #065F46;
+  --primary-light: #CCFBF1;
+  --primary-lighter: #F0FDFA;
+  
   --primary-blue: #2563EB;
   --primary-blue-hover: #1D4ED8;
   --primary-blue-light: #EFF6FF;
+
+  --secondary: #7C3AED;
+  --secondary-hover: #6D28D9;
+  --secondary-light: #EDE9FE;
+  
+  --accent: #DC2626;
+  --accent-hover: #B91C1C;
+  --accent-light: #FEE2E2;
+  
+  --success: #059669;
+  --success-light: #D1FAE5;
+  --warning: #EA580C;
+  --warning-light: #FFEDD5;
+  --danger: #DC2626;
+  --danger-bg: #FEF2F2;
+  
+  /* Text & Background */
   --dark-text: #0F172A;
   --secondary-text: #64748B;
+  --tertiary-text: #94A3B8;
   --page-bg: #F8FAFC;
   --card-bg: #FFFFFF;
   --border-color: #E2E8F0;
-  --success: #16A34A;
-  --warning: #F59E0B;
-  --danger: #DC2626;
-  --danger-bg: #FEF2F2;
+  --border-subtle: #F1F5F9;
+  
+  /* Radius */
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 16px;
   --radius-xl: 20px;
+  
+  /* Shadows */
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.06);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.08);
-  --transition: all 0.2s ease;
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 50px rgba(0, 0, 0, 0.12);
+  
+  /* Transitions */
+  --transition-fast: all 0.15s ease;
+  --transition: all 0.25s ease;
+  --transition-slow: all 0.3s ease;
 }
 
 *,
@@ -47,13 +80,14 @@ body {
 }
 
 a {
-  color: var(--primary-blue);
+  color: var(--primary);
   text-decoration: none;
   transition: var(--transition);
+  position: relative;
 }
 
 a:hover {
-  color: var(--primary-blue-hover);
+  color: var(--primary-hover);
 }
 
 button {
@@ -62,12 +96,14 @@ button {
   border: none;
   outline: none;
   transition: var(--transition);
+  -webkit-font-smoothing: antialiased;
 }
 
 input {
   font-family: inherit;
   outline: none;
   transition: var(--transition);
+  -webkit-font-smoothing: antialiased;
 }
 
 img {
@@ -91,4 +127,49 @@ img {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #94A3B8;
+}
+
+/* ============================================
+   PRABAH Logo Styles
+   ============================================ */
+
+.prabah-logo {
+  filter: drop-shadow(0 4px 12px rgba(15, 118, 110, 0.2));
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.auth-branding-icon .prabah-logo {
+  animation: logoPulse 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes logoPulse {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 4px 12px rgba(15, 118, 110, 0.2));
+  }
+  50% {
+    transform: scale(1.05);
+    filter: drop-shadow(0 8px 20px rgba(6, 182, 212, 0.35));
+  }
+}
+
+.auth-branding-icon:hover .prabah-logo {
+  filter: drop-shadow(0 10px 24px rgba(6, 182, 212, 0.4));
+  transform: scale(1.08);
+  animation: none;
+}
+
+.sidebar-brand-icon .prabah-logo {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sidebar-brand-icon:hover .prabah-logo {
+  transform: scale(1.12);
+  filter: drop-shadow(0 6px 18px rgba(6, 182, 212, 0.35));
+}
+
+/* Canvas animation layer */
+.weather-animation-canvas {
+  mix-blend-mode: screen;
+  opacity: 0.6;
 }

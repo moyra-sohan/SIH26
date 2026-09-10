@@ -1,0 +1,427 @@
+/* ============================================
+   Emergency Support Page Styles
+   ============================================ */
+
+.emergency-support-page {
+  min-height: calc(100vh - 73px);
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  padding: 40px 20px;
+}
+
+/* Header Section */
+.emergency-header-section {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.95) 0%, rgba(220, 38, 38, 0.95) 100%);
+  color: white;
+  padding: 50px 40px;
+  border-radius: var(--radius-xl);
+  margin-bottom: 40px;
+  box-shadow: 0 10px 40px rgba(239, 68, 68, 0.2);
+  text-align: center;
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.emergency-header-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.emergency-icon-large {
+  font-size: 56px;
+  margin-bottom: 16px;
+  animation: pulse-large 2s ease-in-out infinite;
+}
+
+@keyframes pulse-large {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.05); }
+}
+
+.emergency-header-section h1 {
+  font-size: 2.2rem;
+  font-weight: 900;
+  margin: 0 0 10px;
+  letter-spacing: -0.5px;
+}
+
+.emergency-header-section p {
+  font-size: 1.05rem;
+  opacity: 0.95;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Container */
+.emergency-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Emergency Section */
+.emergency-section {
+  background: white;
+  padding: 36px 32px;
+  border-radius: var(--radius-lg);
+  margin-bottom: 32px;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+  animation: slideUp 0.6s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.emergency-section:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.emergency-section:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.emergency-section:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+.emergency-section h2 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--dark-text);
+  margin: 0 0 8px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.emergency-section h2 svg {
+  color: #ef4444;
+}
+
+.section-subtitle {
+  color: var(--secondary-text);
+  font-size: 0.95rem;
+  margin: 0 0 28px;
+}
+
+/* Grid for Emergency Numbers */
+.emergency-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+/* Emergency Cards */
+.emergency-card {
+  padding: 24px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.emergency-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+}
+
+.emergency-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+}
+
+.emergency-red {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.04) 0%, rgba(254, 242, 242, 0.5) 100%);
+  border-left: 4px solid #ef4444;
+}
+
+.emergency-red::before {
+  background: #ef4444;
+}
+
+.emergency-orange {
+  background: linear-gradient(135deg, rgba(249, 115, 22, 0.04) 0%, rgba(255, 247, 237, 0.5) 100%);
+  border-left: 4px solid #f97316;
+}
+
+.emergency-orange::before {
+  background: #f97316;
+}
+
+.emergency-blue {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.04) 0%, rgba(239, 246, 255, 0.5) 100%);
+  border-left: 4px solid #3b82f6;
+}
+
+.emergency-blue::before {
+  background: #3b82f6;
+}
+
+.emergency-purple {
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.04) 0%, rgba(250, 245, 255, 0.5) 100%);
+  border-left: 4px solid #a855f7;
+}
+
+.emergency-purple::before {
+  background: #a855f7;
+}
+
+.card-icon {
+  font-size: 32px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.card-content {
+  flex: 1;
+}
+
+.card-content h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--dark-text);
+  margin: 0 0 6px;
+}
+
+.card-description {
+  font-size: 0.85rem;
+  color: var(--secondary-text);
+  margin: 0 0 12px;
+  line-height: 1.4;
+}
+
+.card-number {
+  display: flex;
+  align-items: center;
+}
+
+.card-number a {
+  display: inline-block;
+  font-size: 1.25rem;
+  font-weight: 800;
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  letter-spacing: 0.5px;
+}
+
+.emergency-red .card-number a {
+  background: rgba(239, 68, 68, 0.12);
+  color: #dc2626;
+}
+
+.emergency-red .card-number a:hover {
+  background: #ef4444;
+  color: white;
+}
+
+.emergency-orange .card-number a {
+  background: rgba(249, 115, 22, 0.12);
+  color: #ea580c;
+}
+
+.emergency-orange .card-number a:hover {
+  background: #f97316;
+  color: white;
+}
+
+.emergency-blue .card-number a {
+  background: rgba(59, 130, 246, 0.12);
+  color: #2563eb;
+}
+
+.emergency-blue .card-number a:hover {
+  background: #3b82f6;
+  color: white;
+}
+
+.emergency-purple .card-number a {
+  background: rgba(168, 85, 247, 0.12);
+  color: #9333ea;
+}
+
+.emergency-purple .card-number a:hover {
+  background: #a855f7;
+  color: white;
+}
+
+/* Alert Banner */
+.alert-banner {
+  background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+  border: 2px solid #ef4444;
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: #991b1b;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.1);
+}
+
+.alert-banner svg {
+  color: #ef4444;
+  flex-shrink: 0;
+  animation: pulse-alert 2s ease-in-out infinite;
+}
+
+@keyframes pulse-alert {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.alert-banner strong {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.alert-banner p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.alert-banner span {
+  font-weight: 800;
+  color: #dc2626;
+  font-size: 1.1rem;
+}
+
+/* Safety Tips Grid */
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.tip-card {
+  background: #f8fafc;
+  border: 1px solid var(--border-color);
+  padding: 24px;
+  border-radius: var(--radius-md);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.tip-card:hover {
+  background: white;
+  border-color: #3b82f6;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.1);
+}
+
+.tip-icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+}
+
+.tip-card h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--dark-text);
+  margin: 0 0 8px;
+}
+
+.tip-card p {
+  font-size: 0.85rem;
+  color: var(--secondary-text);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Info Box */
+.info-box {
+  background: #f8fafc;
+  border-left: 4px solid #0f766e;
+  padding: 24px;
+  border-radius: var(--radius-md);
+  margin-bottom: 20px;
+}
+
+.info-box:last-child {
+  margin-bottom: 0;
+}
+
+.info-box h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--dark-text);
+  margin: 0 0 16px;
+}
+
+.info-box ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.info-box li {
+  color: var(--secondary-text);
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.info-box li:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .emergency-header-section {
+    padding: 40px 20px;
+  }
+
+  .emergency-header-section h1 {
+    font-size: 1.8rem;
+  }
+
+  .emergency-section {
+    padding: 24px 20px;
+  }
+
+  .emergency-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tips-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .alert-banner {
+    flex-direction: column;
+    text-align: center;
+  }
+}
