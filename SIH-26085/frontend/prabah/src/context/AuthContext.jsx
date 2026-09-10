@@ -93,12 +93,18 @@ export function AuthProvider({ children }) {
   };
 
   // Register handler
-  const register = async (username, email, password) => {
-    const payload = {
-      username: username.trim(),
-      email: email.trim(),
-      password,
-    };
+  const register = async (registrationData, optionalEmail, optionalPassword) => {
+    let payload = {};
+    if (typeof registrationData === 'object' && registrationData !== null) {
+      payload = { ...registrationData };
+    } else {
+      payload = {
+        name: registrationData,
+        username: registrationData,
+        email: optionalEmail,
+        password: optionalPassword,
+      };
+    }
 
     const res = await fetch(`${API_BASE_URL}/api/auth/register`, {
       method: 'POST',
