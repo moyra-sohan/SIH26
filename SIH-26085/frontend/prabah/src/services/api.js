@@ -3,7 +3,7 @@
  * Connects Frontend with Node.js/Fastify Backend (:5000) and Python FastAPI ML Backend (:8000)
  *
  * SECURITY: The WEATHER_API_KEY is NEVER present here.
- * Weather calls go: Frontend → Node.js Backend → Python ML → OpenWeatherMap
+ * Weather calls go: Frontend → Node.js Backend → Python ML → OpenWeatherMap / Open-Meteo
  */
 
 const BACKEND_API_BASE = 'http://localhost:5000/api/ml';
@@ -89,15 +89,9 @@ export const api = {
     return fetchWithFallback('/features');
   },
 
-<<<<<<< HEAD
   /**
    * Get real-time weather for a specific ward.
-   * Calls: Frontend → Node.js /api/ml/weather/:ward_id → Python → OpenWeatherMap
-   * API key is NEVER in the frontend.
-   *
-   * @param {string} wardId - Ward slug (e.g., "behala-ward-120")
-   * @returns {Promise<Object>} Weather data: temperature, humidity, rainfall, etc.
-   * @throws {Error} With user-friendly message on any failure
+   * Calls: Frontend → Node.js /api/ml/weather/:ward_id → Python → OpenWeatherMap / Open-Meteo
    */
   async getWeather(wardId) {
     return fetchWithFallback(`/weather/${encodeURIComponent(wardId)}`);
@@ -106,14 +100,11 @@ export const api = {
   /**
    * Full pipeline: Ward → Real-Time Weather → ML Model → Flood Prediction
    * Returns combined weather + prediction in a single call.
-   *
-   * @param {string} wardId - Ward slug (e.g., "behala-ward-120")
-   * @returns {Promise<Object>} { weather, prediction, model_info, timestamp }
-   * @throws {Error} With user-friendly message on any failure
    */
   async getWeatherPrediction(wardId) {
     return fetchWithFallback(`/weather-predict/${encodeURIComponent(wardId)}`);
-=======
+  },
+
   // Get all 9 Database tables & metadata schemas
   async getDbTables() {
     return fetchWithFallback('/db/tables');
@@ -159,9 +150,7 @@ export const api = {
       method: 'POST',
       body: JSON.stringify(params),
     });
->>>>>>> main
   },
 };
 
 export default api;
-

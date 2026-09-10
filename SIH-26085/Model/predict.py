@@ -44,10 +44,13 @@ if not hasattr(_ct, "_RemainderColsList"):
 # Paths
 # ---------------------------------------------------------------------------
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-MODEL_PATH       = os.path.join(BASE_DIR, "best_flood_model.pkl")
-PREPROCESSOR_PATH = os.path.join(BASE_DIR, "preprocessor.pkl")
-FEATURES_PATH    = os.path.join(BASE_DIR, "feature_columns.pkl")
-META_PATH        = os.path.join(BASE_DIR, "feature_meta.json")
+ARTIFACTS_DIR = os.path.join(BASE_DIR, "artifacts") if os.path.exists(os.path.join(BASE_DIR, "artifacts")) else BASE_DIR
+
+MODEL_PATH       = os.path.join(ARTIFACTS_DIR, "best_flood_model.pkl")
+PREPROCESSOR_PATH = os.path.join(ARTIFACTS_DIR, "preprocessor.pkl")
+FEATURES_PATH    = os.path.join(ARTIFACTS_DIR, "feature_columns.pkl")
+META_PATH        = os.path.join(ARTIFACTS_DIR, "feature_meta.json")
+
 
 # ---------------------------------------------------------------------------
 # Risk Thresholds — single source of truth

@@ -4,16 +4,18 @@ import numpy as np
 import sklearn.compose._column_transformer as _ct
 from sklearn.impute import SimpleImputer
 import json
+import os
 
 if not hasattr(_ct, "_RemainderColsList"):
     class _RemainderColsList:
         def __init__(self, *args, **kwargs): pass
     _ct._RemainderColsList = _RemainderColsList
 
-import os
-
 ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 ARTIFACTS_DIR = os.path.join(ROOT_DIR, "artifacts")
+if not os.path.exists(ARTIFACTS_DIR):
+    ARTIFACTS_DIR = ROOT_DIR
+
 prep = joblib.load(os.path.join(ARTIFACTS_DIR, "preprocessor.pkl"))
 model = joblib.load(os.path.join(ARTIFACTS_DIR, "best_flood_model.pkl"))
 features = joblib.load(os.path.join(ARTIFACTS_DIR, "feature_columns.pkl"))
@@ -43,11 +45,11 @@ with open(os.path.join(ARTIFACTS_DIR, "feature_meta.json"), "r") as f:
     meta = json.load(f)
 
 sample = {}
-for col in meta["numeric_features"]:
+for col in meta.get("numeric_features", []):
     sample[col] = 0.0
 
-for col in meta["categorical_features"]:
-    cats = meta["categories"].get(col, [])
+for col in meta.get("categorical_features", []):
+    cats = meta.get("categories", {}).get(col, [])
     sample[col] = cats[0] if cats else "Unknown"
 
 # Realistic values
@@ -117,26 +119,9 @@ for col in features:
     if col not in sample:
         sample[col] = 0
 
-# Patch any SimpleImputer instances in model to support newer sklearn if needed
-for step_name, step_obj in getattr(model, "steps", []):
-    if hasattr(step_obj, "named_transformers_"):
-        for tname, trans in step_obj.named_transformers_.items():
-            if hasattr(trans, "named_steps"):
-                for sname, sstep in trans.named_steps.items():
-                    if isinstance(sstep, SimpleImputer):
-                        if not hasattr(sstep, "_fill_dtype") and hasattr(sstep, "_fit_dtype"):
-                            sstep._fill_dtype = sstep._fit_dtype
-                            print(f"Patched {tname}.{sname} with _fill_dtype = {sstep._fit_dtype}")
-                        elif not hasattr(sstep, "_fill_dtype"):
-                            sstep._fill_dtype = np.float64
-                            print(f"Patched {tname}.{sname} with default float64 _fill_dtype")
-
 df = pd.DataFrame([sample])[features]
-<<<<<<< HEAD:SIH-26085/Model/test_predict_pipeline.py
-=======
 X_trans = prep.transform(df)
 print(f"Preprocessed shape: {X_trans.shape}")
->>>>>>> main:SIH-26085/Model/tests/test_predict_pipeline.py
 pred = model.predict(df)
 prob = model.predict_proba(df)
 
