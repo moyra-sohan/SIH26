@@ -20,13 +20,13 @@ import '../styles/dashboard.css';
 const REFRESH_INTERVAL_MS = WEATHER_REFRESH_INTERVAL_MS; // 10 minutes
 
 function DashboardPage() {
-  const [prediction, setPrediction]       = useState(null);
-  const [weatherData, setWeatherData]     = useState(null);
-  const [activeWard, setActiveWard]       = useState(null);
+  const [prediction, setPrediction] = useState(null);
+  const [weatherData, setWeatherData] = useState(null);
+  const [activeWard, setActiveWard] = useState(null);
   const [isSimulatorOpen, setIsSimulatorOpen] = useState(false);
-  const [isLoading, setIsLoading]         = useState(true);
-  const [weatherError, setWeatherError]   = useState(null);
-  const [lastUpdated, setLastUpdated]     = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [weatherError, setWeatherError] = useState(null);
+  const [lastUpdated, setLastUpdated] = useState(null);
 
   // Keep a ref so the interval callback always has the current ward
   const activeWardRef = useRef(null);
@@ -51,21 +51,21 @@ function DashboardPage() {
         // Map the response to the shape expected by existing components
         const predictionForComponents = {
           success: true,
-          flood_probability:  res.prediction?.flood_probability,
-          safe_probability:   res.prediction?.safe_probability,
-          risk_level:         res.prediction?.risk_level,
-          risk_color:         res.prediction?.risk_color,
-          status_text:        res.prediction?.status_text,
+          flood_probability: res.prediction?.flood_probability,
+          safe_probability: res.prediction?.safe_probability,
+          risk_level: res.prediction?.risk_level,
+          risk_color: res.prediction?.risk_color,
+          status_text: res.prediction?.status_text,
           estimated_waterlogging_depth_cm: res.prediction?.estimated_waterlogging_depth_cm,
-          estimated_duration_hours:        res.prediction?.estimated_duration_hours,
-          advisories:         res.prediction?.advisories,
-          key_risk_drivers:   res.prediction?.key_risk_drivers,
+          estimated_duration_hours: res.prediction?.estimated_duration_hours,
+          advisories: res.prediction?.advisories,
+          key_risk_drivers: res.prediction?.key_risk_drivers,
           inputs_summary: {
-            rainfall_mm:            res.weather?.rainfall_24h_estimate_mm,
-            humidity_percent:       res.weather?.humidity,
-            temperature_c:          res.weather?.temperature,
-            elevation_m:            res.elevation_m,
-            drainage_load_percent:  80,  // ward baseline
+            rainfall_mm: res.weather?.rainfall_24h_estimate_mm,
+            humidity_percent: res.weather?.humidity,
+            temperature_c: res.weather?.temperature,
+            elevation_m: res.elevation_m,
+            drainage_load_percent: 80,  // ward baseline
           },
         };
         setPrediction(predictionForComponents);
@@ -147,10 +147,10 @@ function DashboardPage() {
   // Format "Last updated" timestamp
   const lastUpdatedText = lastUpdated
     ? `Last updated: ${lastUpdated.toLocaleTimeString('en-IN', {
-        hour: '2-digit',
-        minute: '2-digit',
-        hour12: true,
-      })}`
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: true,
+    })}`
     : null;
 
   return (
