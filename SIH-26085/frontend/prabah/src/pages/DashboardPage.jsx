@@ -1,9 +1,4 @@
-<<<<<<< HEAD
 import { useState, useEffect, useCallback, useRef } from 'react';
-=======
-import { useState, useEffect } from 'react';
-import useInView from '../hooks/useInView.js';
->>>>>>> main
 import CurrentWeatherCard from '../components/dashboard/CurrentWeatherCard.jsx';
 import FloodRiskCard from '../components/dashboard/FloodRiskCard.jsx';
 import StatsRow from '../components/dashboard/StatsRow.jsx';
@@ -13,6 +8,7 @@ import LandEnvironmentCard from '../components/dashboard/LandEnvironmentCard.jsx
 import RecentAlerts from '../components/dashboard/RecentAlerts.jsx';
 import AdvisoryCard from '../components/dashboard/AdvisoryCard.jsx';
 import LiveMLPredictorModal from '../components/dashboard/LiveMLPredictorModal.jsx';
+import useInView from '../hooks/useInView.js';
 import api, { WEATHER_REFRESH_INTERVAL_MS } from '../services/api';
 import '../styles/dashboard.css';
 
@@ -27,6 +23,9 @@ function DashboardPage() {
   const [isLoading, setIsLoading] = useState(true);
   const [weatherError, setWeatherError] = useState(null);
   const [lastUpdated, setLastUpdated] = useState(null);
+
+  const [middleRef, middleInView] = useInView({ threshold: 0.1, triggerOnce: true });
+  const [bottomRef, bottomInView] = useInView({ threshold: 0.1, triggerOnce: true });
 
   // Keep a ref so the interval callback always has the current ward
   const activeWardRef = useRef(null);

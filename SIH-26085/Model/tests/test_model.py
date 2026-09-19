@@ -36,7 +36,7 @@ if hasattr(model, "predict_proba"):
     print("Model has predict_proba: True")
 
 import json
-with open("d:/SIH_2026/github/SIH26/SIH-26085/Model/feature_meta.json", "r") as f:
+with open(os.path.join(ARTIFACTS_DIR, "feature_meta.json"), "r") as f:
     meta = json.load(f)
 
 # Patch SimpleImputer instances in model

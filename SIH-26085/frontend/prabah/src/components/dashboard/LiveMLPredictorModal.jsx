@@ -10,7 +10,8 @@ import {
   MapPin,
   Waves,
   RefreshCw,
-  Zap
+  Zap,
+  CloudRain
 } from 'lucide-react';
 import api from '../../services/api';
 
