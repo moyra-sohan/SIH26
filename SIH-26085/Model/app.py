@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import os
 import sys
 import json
@@ -488,15 +487,6 @@ def batch_predict(payload: BatchPredictionInput):
         "results": results,
         "timestamp": datetime.now().isoformat()
     }
-=======
-"""
-Urban Flood Nowcasting ML API - Root Entry Point (Backward Compatible).
-Exposes `app` for `uvicorn app:app` and direct script execution via `python app.py`.
-"""
-import uvicorn
-from app.main import app
-from app.core.config import settings
->>>>>>> main
 
 # ---------------------------------------------------------
 # Real-Time Weather Endpoints
