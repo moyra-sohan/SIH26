@@ -217,16 +217,6 @@ export default function MapPage() {
                 source: 'water-level-layer-source',
                 filter: ['==', '$type', 'LineString'],
                 paint: {
-                    'line-color': [
-                        'match',
-                        ['get', 'status'],
-                        'Clear / Passable', '#059669',
-                        'Minor Waterlogging', '#d97706',
-                        'Severe Waterlogging', '#ea580c',
-                        'Submerged', '#dc2626',
-                        '#d97706'
-                    ],
-                    'line-width': 4
                     'line-color': ['get', 'color'],
                     'line-width': 6,
                     'line-opacity': 0.95
