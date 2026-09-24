@@ -37,7 +37,7 @@ function Sidebar({ isOpen, onClose }) {
         {/* Brand */}
         <div className="sidebar-brand">
           <div className="sidebar-brand-icon">
-            <PrabahLogo size={28} />
+            <PrabahLogo size={32} />
           </div>
           <div className="sidebar-brand-text">
             <h2>PRABAH</h2>

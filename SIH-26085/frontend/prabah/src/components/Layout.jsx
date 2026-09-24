@@ -13,8 +13,8 @@ const PAGE_META = {
     subtitle: 'Real-time overview of weather, flood risk and environment.',
   },
   '/map': {
-    title: 'Flood Risk Map',
-    subtitle: 'Interactive 2D map of Kolkata — urban flood monitoring & prediction.',
+    title: 'Urban Flood & Rainfall Map',
+    subtitle: 'Interactive map of Kolkata — flood risk, real-time rainfall & live telemetry.',
   },
   '/emergency': {
     title: 'Emergency Support',

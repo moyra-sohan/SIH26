@@ -134,28 +134,28 @@ img {
    ============================================ */
 
 .prabah-logo {
-  filter: drop-shadow(0 4px 12px rgba(15, 118, 110, 0.2));
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  object-fit: contain;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: block;
 }
 
-.auth-branding-icon .prabah-logo {
-  animation: logoPulse 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+.auth-branding-badge .prabah-logo {
+  animation: logoPulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
 @keyframes logoPulse {
   0%, 100% {
     transform: scale(1);
-    filter: drop-shadow(0 4px 12px rgba(15, 118, 110, 0.2));
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.12));
   }
   50% {
     transform: scale(1.05);
-    filter: drop-shadow(0 8px 20px rgba(6, 182, 212, 0.35));
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.22));
   }
 }
 
-.auth-branding-icon:hover .prabah-logo {
-  filter: drop-shadow(0 10px 24px rgba(6, 182, 212, 0.4));
-  transform: scale(1.08);
+.auth-branding-badge:hover .prabah-logo {
+  transform: scale(1.08) rotate(3deg);
   animation: none;
 }
 
@@ -164,8 +164,7 @@ img {
 }
 
 .sidebar-brand-icon:hover .prabah-logo {
-  transform: scale(1.12);
-  filter: drop-shadow(0 6px 18px rgba(6, 182, 212, 0.35));
+  transform: scale(1.1) rotate(-3deg);
 }
 
 /* Canvas animation layer */

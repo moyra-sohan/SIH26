@@ -7,6 +7,7 @@ export default function FloodTelemetryPanel({
   activeWardName = "Behala (Ward 120)",
   coordinates = { lat: 22.4900, lng: 88.3100 },
   loading = false,
+  isInsideKMC = true,
   onClose
 }) {
   const [isBookmarked, setIsBookmarked] = useState(false);
@@ -52,6 +53,24 @@ export default function FloodTelemetryPanel({
           <p className="telemetry-coords">
             {coordinates.lat.toFixed(4)}°N, {coordinates.lng.toFixed(4)}°E
           </p>
+          {isInsideKMC !== undefined && (
+            <div style={{ marginTop: '6px' }}>
+              <span style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '5px',
+                fontSize: '11px',
+                fontWeight: 600,
+                padding: '2px 8px',
+                borderRadius: '12px',
+                background: isInsideKMC ? 'rgba(37, 99, 235, 0.08)' : 'rgba(245, 158, 11, 0.12)',
+                color: isInsideKMC ? '#2563eb' : '#d97706',
+                border: `1px solid ${isInsideKMC ? '#bfdbfe' : '#fde68a'}`
+              }}>
+                {isInsideKMC ? '🏛️ Official KMC Territory' : '⚠️ Greater Kolkata Peripheral'}
+              </span>
+            </div>
+          )}
         </div>
         <button
           className={`telemetry-star-btn ${isBookmarked ? 'bookmarked' : ''}`}
