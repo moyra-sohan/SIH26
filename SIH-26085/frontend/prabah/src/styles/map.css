@@ -115,6 +115,8 @@
   font-size: 13px;
   font-weight: 600;
   color: #0F172A;
+  display: flex;
+  align-items: center;
 }
 
 .item-sub {
@@ -122,26 +124,169 @@
   color: #64748B;
 }
 
+.search-ward-badge {
+  font-size: 10px;
+  font-weight: 700;
+  background: #EFF6FF;
+  color: #1D4ED8;
+  border: 1px solid #BFDBFE;
+  padding: 2px 6px;
+  border-radius: 6px;
+  margin-left: 6px;
+}
+
+/* Top Ward Number Quick Selector */
+.top-ward-selector-wrapper {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.top-ward-select-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #FFFFFF;
+  border: 1px solid #CBD5E1;
+  border-radius: 12px;
+  padding: 8px 14px;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.top-ward-select-box:hover {
+  border-color: #2563EB;
+  background-color: #F8FAFC;
+}
+
+.ward-select-icon {
+  font-size: 14px;
+}
+
+.ward-select-label {
+  font-size: 13px;
+  color: #334155;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.ward-select-label strong {
+  color: #1D4ED8;
+  font-weight: 700;
+}
+
+.ward-chevron {
+  color: #64748B;
+  transition: transform 0.2s ease;
+}
+
+.ward-chevron.open {
+  transform: rotate(180deg);
+}
+
+.ward-picker-dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  width: 290px;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 14px;
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.16);
+  z-index: 110;
+  padding: 8px;
+  max-height: 340px;
+  overflow-y: auto;
+}
+
+.ward-picker-header {
+  font-size: 11px;
+  font-weight: 700;
+  color: #64748B;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 6px 8px 8px;
+  border-bottom: 1px solid #F1F5F9;
+  margin-bottom: 6px;
+}
+
+.ward-picker-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ward-picker-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.15s ease;
+  font-family: inherit;
+}
+
+.ward-picker-btn:hover {
+  background: #F1F5F9;
+}
+
+.ward-picker-btn.active {
+  background: #EFF6FF;
+  border-color: #BFDBFE;
+}
+
+.picker-num {
+  font-size: 12px;
+  font-weight: 700;
+  color: #1D4ED8;
+  min-width: 64px;
+}
+
+.picker-name {
+  font-size: 12px;
+  color: #334155;
+  font-weight: 500;
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0 8px;
+}
+
+.picker-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
 /* Layer Pills (Top Center/Right) */
 .top-layer-pills-row {
   display: flex;
   align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
+  gap: 8px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
 }
 
 .layer-pill-btn {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   background-color: #FFFFFF;
   border: 1px solid #E2E8F0;
   border-radius: 10px;
-  padding: 7px 16px;
-  font-size: 13px;
+  padding: 7px 12px;
+  font-size: 12.5px;
   font-weight: 600;
   color: #334155;
   cursor: pointer;
+  white-space: nowrap;
   transition: all 0.2s ease;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
 }
@@ -273,6 +418,67 @@
   font-size: 14px;
   color: #94A3B8;
   padding: 4px 8px;
+}
+
+/* Kolkata Municipal Corporation Boundary Popup */
+.maplibregl-popup.kolkata-boundary-popup .maplibregl-popup-content {
+  background: #FFFFFF;
+  border-radius: 14px;
+  padding: 12px 14px;
+  box-shadow: 0 12px 36px rgba(15, 23, 42, 0.18), 0 0 0 1px rgba(37, 99, 235, 0.15);
+  border: 1px solid #BFDBFE;
+  min-width: 260px;
+  max-width: 320px;
+}
+
+.maplibregl-popup.kolkata-boundary-popup .maplibregl-popup-close-button {
+  font-size: 16px;
+  color: #94A3B8;
+  padding: 6px 10px;
+}
+
+.boundary-status-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #2563EB;
+  background: #EFF6FF;
+  padding: 2px 8px;
+  border-radius: 10px;
+  border: 1px solid #DBEAFE;
+}
+
+.ward-status-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #D97706;
+  background: #FFFBEB;
+  padding: 2px 8px;
+  border-radius: 10px;
+  border: 1px solid #FDE68A;
+}
+
+.layer-pill-btn.boundary-pill-btn {
+  border-color: #BFDBFE;
+  color: #1E40AF;
+  background: #F8FAFC;
+}
+
+.layer-pill-btn.boundary-pill-btn.active {
+  background: #2563EB;
+  color: #FFFFFF;
+  border-color: #2563EB;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
+}
+
+.layer-pill-btn.boundary-pill-btn:hover:not(.active) {
+  background: #EFF6FF;
+  border-color: #93C5FD;
 }
 
 /* Basemap Switcher Pill (Bottom Right: Map | Satellite) */
@@ -758,3 +964,968 @@
     max-width: 100%;
   }
 }
+
+/* --- 8. Heatmap Condition Switcher & Multi-Metric Selector --- */
+.top-heatmap-condition-wrapper {
+  position: relative;
+  user-select: none;
+}
+
+.top-condition-select-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #FFFFFF;
+  border: 1.5px solid #E2E8F0;
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 12.5px;
+  color: #334155;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.top-condition-select-box:hover {
+  border-color: #F97316;
+  background: #FFF7ED;
+  box-shadow: 0 2px 6px rgba(249, 115, 22, 0.15);
+}
+
+.condition-icon {
+  font-size: 14px;
+}
+
+.condition-label strong {
+  color: #EA580C;
+  font-weight: 700;
+}
+
+.condition-chevron {
+  color: #94A3B8;
+  transition: transform 0.2s ease;
+}
+
+.condition-chevron.open {
+  transform: rotate(180deg);
+  color: #EA580C;
+}
+
+.condition-picker-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  width: 290px;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.15);
+  z-index: 1000;
+  padding: 8px;
+  animation: dropdownFadeIn 0.18s ease-out;
+}
+
+.condition-picker-header {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: #94A3B8;
+  padding: 6px 10px 8px;
+  border-bottom: 1px solid #F1F5F9;
+  margin-bottom: 6px;
+}
+
+.condition-picker-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.condition-picker-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.15s ease;
+}
+
+.condition-picker-item:hover {
+  background: #F8FAFC;
+}
+
+.condition-picker-item.active {
+  background: #FFF7ED;
+  border: 1px solid #FFEDD5;
+}
+
+.cond-item-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.cond-item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cond-item-title {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #0F172A;
+}
+
+.condition-picker-item.active .cond-item-title {
+  color: #EA580C;
+  font-weight: 700;
+}
+
+.cond-item-unit {
+  font-size: 11px;
+  color: #64748B;
+}
+
+/* --- 9. Smooth Gaussian Heatmap Gradient Mini Legend Bar --- */
+.heatmap-gradient-mini-bar {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 8px;
+  padding: 2px 8px;
+  background: rgba(241, 245, 249, 0.85);
+  border-radius: 12px;
+  border: 1px solid #E2E8F0;
+}
+
+.grad-label {
+  font-size: 9.5px;
+  font-weight: 700;
+  color: #64748B;
+  text-transform: uppercase;
+}
+
+.grad-track {
+  width: 60px;
+  height: 6px;
+  border-radius: 3px;
+  background: linear-gradient(to right, #22C55E 0%, #EAB308 35%, #F97316 65%, #EF4444 85%, #991B1B 100%);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* --- 10. Heatmap Sensor Point Popup Styling --- */
+.heatmap-sensor-popup .maplibregl-popup-content {
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(8px);
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.18);
+  padding: 10px 12px;
+}
+
+/* --- 11. Doppler Radar Simulation Timeline Player (Docked when Rainfall is Active) --- */
+.radar-timeline-player-card {
+  position: absolute;
+  bottom: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 780px;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  border: 1.5px solid #BAE6FD;
+  border-radius: 16px;
+  padding: 10px 16px;
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.16);
+  z-index: 25;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  animation: fadeInPlayer 0.25s ease-out;
+}
+
+@keyframes fadeInPlayer {
+  from { opacity: 0; transform: translate(-50%, 15px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+.radar-player-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.player-title-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.player-tag {
+  font-size: 9.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: #0284C7;
+}
+
+.player-time-heading {
+  margin: 0;
+  font-size: 13.5px;
+  font-weight: 800;
+  color: #0F172A;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.time-sub {
+  font-size: 11.5px;
+  font-weight: 500;
+  color: #64748B;
+}
+
+.storm-desc-pill {
+  font-size: 11px;
+  font-weight: 600;
+  color: #475569;
+  background: #F1F5F9;
+  padding: 3px 10px;
+  border-radius: 20px;
+  border: 1px solid #E2E8F0;
+  white-space: nowrap;
+  max-width: 440px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.radar-controls-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.playback-play-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #0284C7;
+  color: #FFFFFF;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.35);
+  flex-shrink: 0;
+}
+
+.playback-play-btn:hover {
+  background: #0369A1;
+  transform: scale(1.05);
+}
+
+.playback-play-btn.playing {
+  background: #DC2626;
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.35);
+}
+
+.timeline-steps-track {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  background: #F1F5F9;
+  border-radius: 24px;
+  padding: 3px;
+  gap: 3px;
+}
+
+.timeline-step-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 5px 3px;
+  border-radius: 20px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 600;
+  color: #64748B;
+  transition: all 0.15s ease;
+}
+
+.timeline-step-btn .step-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #CBD5E1;
+  transition: all 0.2s ease;
+}
+
+.timeline-step-btn:hover {
+  color: #0F172A;
+}
+
+.timeline-step-btn.active {
+  background: #FFFFFF;
+  color: #0284C7;
+  font-weight: 700;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.timeline-step-btn.active .step-dot {
+  background: #0284C7;
+  transform: scale(1.3);
+}
+
+.playback-reset-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 10px;
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.playback-reset-btn:hover {
+  background: #E0F2FE;
+  color: #0284C7;
+  border-color: #BAE6FD;
+}
+
+.radar-gradient-legend {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-top: 3px;
+  border-top: 1px solid #F1F5F9;
+}
+
+.legend-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: #64748B;
+  text-transform: uppercase;
+}
+
+.legend-gradient-bar {
+  flex: 1;
+  height: 5px;
+  border-radius: 3px;
+  background: linear-gradient(to right, #06B6D4 0%, #22C55E 25%, #EAB308 50%, #F97316 75%, #EF4444 90%, #8B5CF6 100%);
+}
+
+.legend-labels-row {
+  display: flex;
+  justify-content: space-between;
+  width: 55%;
+  font-size: 9px;
+  font-weight: 600;
+  color: #64748B;
+}
+
+/* --- 12. Rainfall Telemetry Sidebar Panel --- */
+.sidebar-tab-switcher {
+  display: flex;
+  background: #F1F5F9;
+  padding: 4px;
+  border-radius: 10px;
+  gap: 4px;
+  margin-bottom: 4px;
+}
+
+.sidebar-tab-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 7px 10px;
+  border: none;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 600;
+  color: #64748B;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.sidebar-tab-btn.active {
+  background: #FFFFFF;
+  color: #0284C7;
+  font-weight: 700;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.rainfall-sidebar-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.rainfall-mini-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.mini-kpi-card {
+  display: flex;
+  flex-direction: column;
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+
+.mini-kpi-lbl {
+  font-size: 10px;
+  font-weight: 600;
+  color: #64748B;
+  text-transform: uppercase;
+}
+
+.mini-kpi-val {
+  font-size: 13.5px;
+  font-weight: 800;
+  color: #0F172A;
+}
+
+.mini-kpi-val.text-red { color: #DC2626; }
+.mini-kpi-val.text-amber { color: #D97706; }
+
+.station-search-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  padding: 6px 10px;
+}
+
+.station-search-box input {
+  border: none;
+  background: transparent;
+  font-size: 12px;
+  color: #0F172A;
+  outline: none;
+  width: 100%;
+}
+
+.station-filter-pills {
+  display: flex;
+  gap: 5px;
+  overflow-x: auto;
+  padding-bottom: 2px;
+}
+
+.pill-btn {
+  padding: 3px 9px;
+  font-size: 10.5px;
+  font-weight: 600;
+  color: #64748B;
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+}
+
+.pill-btn:hover { background: #F1F5F9; }
+
+.pill-btn.active {
+  background: #0284C7;
+  color: #FFFFFF !important;
+  border-color: #0284C7;
+}
+
+.pill-btn.text-red { color: #DC2626; }
+.pill-btn.text-orange { color: #EA580C; }
+.pill-btn.text-green { color: #059669; }
+
+.selected-station-hero-card {
+  background: #F0F9FF;
+  border: 1.5px solid #BAE6FD;
+  border-radius: 12px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.station-hero-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.station-ward-tag {
+  font-size: 9.5px;
+  font-weight: 700;
+  color: #0284C7;
+  text-transform: uppercase;
+}
+
+.station-name-lg {
+  margin: 1px 0 0;
+  font-size: 13.5px;
+  font-weight: 800;
+  color: #0F172A;
+}
+
+.status-badge-lg {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 10px;
+  text-transform: uppercase;
+}
+
+.status-badge-lg.red { background: #FEE2E2; color: #DC2626; }
+.status-badge-lg.orange { background: #FFEDD5; color: #EA580C; }
+.status-badge-lg.yellow { background: #FEF9C3; color: #CA8A04; }
+
+.station-hero-rate {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.big-rate-val {
+  font-size: 22px;
+  font-weight: 900;
+  color: #0284C7;
+  line-height: 1;
+}
+
+.big-rate-unit {
+  font-size: 11px;
+  font-weight: 600;
+  color: #64748B;
+  margin-left: 5px;
+}
+
+.trend-badge {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  background: #FFFFFF;
+  border: 1px solid #BAE6FD;
+  padding: 2px 7px;
+  border-radius: 6px;
+  font-size: 10.5px;
+  font-weight: 700;
+  color: #0284C7;
+}
+
+.station-metrics-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  padding-top: 6px;
+  border-top: 1px solid #E0F2FE;
+}
+
+.metric-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.m-label {
+  font-size: 9.5px;
+  color: #64748B;
+  font-weight: 600;
+}
+
+.m-val {
+  font-size: 11.5px;
+  color: #0F172A;
+  font-weight: 700;
+}
+
+.stations-scroll-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  max-height: 280px;
+  overflow-y: auto;
+  padding-right: 2px;
+}
+
+.station-list-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px;
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.station-list-card:hover {
+  background: #F1F5F9;
+  border-color: #CBD5E1;
+}
+
+.station-list-card.active {
+  background: #F0F9FF;
+  border-color: #38BDF8;
+}
+
+.station-card-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.pulse-rate-indicator {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.station-card-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.st-name-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.st-name {
+  font-size: 12px;
+  font-weight: 700;
+  color: #0F172A;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.st-ward {
+  font-size: 9.5px;
+  font-weight: 600;
+  color: #64748B;
+  background: #E2E8F0;
+  padding: 1px 4px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.st-sub-row {
+  font-size: 10.5px;
+  color: #64748B;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.station-card-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  flex-shrink: 0;
+}
+
+.st-rate-val {
+  font-size: 14px;
+  font-weight: 800;
+  color: #0284C7;
+  line-height: 1;
+}
+
+.st-rate-unit {
+  font-size: 9.5px;
+  color: #64748B;
+  font-weight: 600;
+}
+
+/* --- Thematic Docked Player Themes & Gradients --- */
+.text-cyan {
+  color: #0284C7 !important;
+}
+
+.text-orange {
+  color: #EA580C !important;
+}
+
+.text-amber {
+  color: #D97706 !important;
+}
+
+.text-green {
+  color: #16A34A !important;
+}
+
+.text-blue {
+  color: #2563EB !important;
+}
+
+.tidal-pill {
+  background: #E0F2FE !important;
+  color: #0369A1 !important;
+  border-color: #BAE6FD !important;
+}
+
+.roads-pill {
+  background: #FEF2F2 !important;
+  color: #B91C1C !important;
+  border-color: #FECACA !important;
+}
+
+.tidal-gradient-bar {
+  background: linear-gradient(90deg, #38BDF8 0%, #0284C7 35%, #F59E0B 65%, #DC2626 100%) !important;
+}
+
+.roads-gradient-bar {
+  background: linear-gradient(90deg, #22C55E 0%, #EAB308 30%, #F97316 65%, #DC2626 100%) !important;
+}
+
+.heatmap-density-gradient-bar {
+  background: linear-gradient(90deg, #22C55E 0%, #EAB308 25%, #F97316 55%, #EF4444 80%, #7F1D1D 100%) !important;
+}
+
+.heatmap-quick-condition-pills {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.cond-quick-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: #F8FAFC;
+  border: 1px solid #CBD5E1;
+  padding: 3px 9px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #334155;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.cond-quick-btn:hover {
+  background: #FFF7ED;
+  border-color: #FB923C;
+}
+
+.cond-quick-btn.active {
+  background: #EA580C;
+  border-color: #C2410C;
+  color: #FFFFFF;
+}
+
+.all-command-quick-metrics {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.all-command-quick-metrics .metric-chip {
+  background: #F1F5F9;
+  border: 1px solid #E2E8F0;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #1E293B;
+}
+
+/* Water & Roads Hero Themes */
+.water-hero-theme {
+  background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%) !important;
+  border-color: #BAE6FD !important;
+}
+
+.roads-hero-theme {
+  background: linear-gradient(135deg, #FEF2F2 0%, #FFF7ED 100%) !important;
+  border-color: #FECACA !important;
+}
+
+.road-advisory-note {
+  margin-top: 8px;
+  padding: 6px 8px;
+  background: #FFFFFF;
+  border: 1px solid #FED7AA;
+  border-radius: 6px;
+  font-size: 10.5px;
+  color: #9A3412;
+  line-height: 1.4;
+}
+
+/* Multi-Hazard Overview Banner */
+.multi-hazard-overview-banner {
+  background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%);
+  border: 1.5px solid #BFDBFE;
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+
+.multi-hazard-overview-banner .banner-title-row {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 3px;
+}
+
+.multi-hazard-overview-banner h4 {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 800;
+  color: #1E3A8A;
+}
+
+.multi-hazard-overview-banner p {
+  margin: 0;
+  font-size: 11px;
+  color: #3B82F6;
+  line-height: 1.4;
+}
+
+.multi-hazard-domain-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.multi-hazard-domain-card {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 9px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.multi-hazard-domain-card:hover {
+  border-color: #38BDF8;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+.domain-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.domain-title-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.domain-icon {
+  font-size: 18px;
+}
+
+.domain-name {
+  margin: 0;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #0F172A;
+}
+
+.domain-count {
+  font-size: 10px;
+  color: #64748B;
+  font-weight: 500;
+}
+
+.domain-alert-badge {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 6px;
+  text-transform: uppercase;
+}
+
+.domain-alert-badge.red {
+  background: #FEE2E2;
+  color: #DC2626;
+}
+
+.domain-alert-badge.orange {
+  background: #FFEDD5;
+  color: #EA580C;
+}
+
+.domain-alert-badge.amber {
+  background: #FEF9C3;
+  color: #B45309;
+}
+
+.domain-metric-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.domain-metric-val {
+  font-size: 16px;
+  font-weight: 800;
+  color: #0F172A;
+}
+
+.domain-subtext {
+  font-size: 11px;
+  color: #64748B;
+}
+
+.domain-inspect-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background: #F8FAFC;
+  border: 1px solid #CBD5E1;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #0284C7;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  margin-top: 2px;
+}
+
+.domain-inspect-btn:hover {
+  background: #0284C7;
+  border-color: #0369A1;
+  color: #FFFFFF;
+}
+
+

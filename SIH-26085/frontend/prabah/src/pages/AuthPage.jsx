@@ -238,7 +238,9 @@ function AuthPage() {
       {/* Branding */}
       <div className="auth-branding">
         <div className="auth-branding-icon">
-          <PrabahLogo size={52} />
+          <div className="auth-branding-badge">
+            <PrabahLogo size={48} />
+          </div>
         </div>
         <h1>PRABAH</h1>
         <p>Urban Flood Nowcasting System</p>
