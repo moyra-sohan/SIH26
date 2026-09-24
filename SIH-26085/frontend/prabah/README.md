@@ -21,6 +21,8 @@ The **PRABAH Frontend** is a modern, high-performance, real-time urban flood mon
 7. [Design System & CSS Styling](#-design-system--css-styling)
 8. [Prerequisites & Installation](#-prerequisites--installation)
 9. [Available Scripts](#-available-scripts)
+10. [Client Security & Configuration](#-client-security--configuration)
+11. [Subsystem Quick Links](#-subsystem-quick-links)
 
 ---
 
@@ -279,3 +281,19 @@ The web application will be accessible at: `http://localhost:5173/`
 | `npm run build` | Compiles and optimizes assets into `dist/` for production deployment |
 | `npm run preview` | Locally serves the production `dist/` build for verification |
 | `npm run lint` | Runs Oxlint / ESLint static code analysis checks |
+
+---
+
+## 🔒 Client Security & Configuration
+
+- **Zero Client Credentials:** The frontend application does not require and does not store any sensitive database URLs, JWT signing secrets, or third-party weather API keys.
+- **Backend Proxy Architecture:** All external telemetry and authenticated queries are routed through the Node.js Fastify API gateway (`http://localhost:5000`) or direct local ML microservice (`http://localhost:8000`).
+- **Session Protection:** Authentication state is protected via signed, HTTP-only secure cookies and bearer tokens stored strictly in memory/session state.
+
+---
+
+## 📄 Subsystem Quick Links
+
+- ⚙️ **[Backend API Gateway](../../backend/README.md)**
+- 🧠 **[Machine Learning Microservice](../../Model/README.md)**
+- 🏠 **[Master System Documentation](../../../README.md)**

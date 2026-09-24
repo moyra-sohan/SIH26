@@ -187,23 +187,29 @@ To simplify frontend integration, prevent CORS issues, and provide structured fa
 
 ## ⚙️ Environment Configuration (.env)
 
-Create a `.env` file in the `backend/` directory:
+Create a `.env` file in the `backend/` directory (you can copy `.env.example` as a starting template):
+
+```bash
+cp .env.example .env
+```
 
 ```env
-# Neon PostgreSQL Connection String (Pooler or Direct URL with SSL)
-DATABASE_URL="postgresql://neondb_owner:***@ep-dawn-heart-a5liig8g-pooler.us-east-2.aws.neon.tech/neondb?sslmode=require"
+# Neon PostgreSQL Connection String (Replace with your database credentials)
+DATABASE_URL="postgresql://<username>:<password>@<your-neon-host>.neon.tech/neondb?sslmode=require"
 
 # Server Port
 PORT=5000
 
-# Security Secrets (Minimum 32 characters long for production)
-JWT_SECRET="sih_urban_flood_secret_key_2026_jwt_token"
-SESSION_SECRET="sih_flood_session_secret_key_minimum_32_characters_long_2026!"
-COOKIE_SECRET="sih_flood_cookie_secret_key_minimum_32_characters_long_2026!"
+# Security Secrets (Use secure random strings; minimum 32 characters for production)
+JWT_SECRET="your_secure_jwt_secret_key_here"
+SESSION_SECRET="your_secure_session_secret_at_least_32_chars_here"
+COOKIE_SECRET="your_secure_cookie_secret_at_least_32_chars_here"
 
 # Upstream Python ML Microservice URL
 ML_SERVICE_URL="http://127.0.0.1:8000"
 ```
+
+> ⚠️ **Security Notice:** Never commit actual database credentials, passwords, or cryptographic secrets to source control. Always use `.env.example` for documenting variable schemas and keep actual secrets in your local `.env` or deployment secrets vault.
 
 ---
 

@@ -22,6 +22,8 @@ The **PRABAH Machine Learning Microservice** is a high-resolution urban flood no
 8. [Directory Structure](#-directory-structure)
 9. [Prerequisites & Quick Start](#-prerequisites--quick-start)
 10. [Automated Testing Suite](#-automated-testing-suite)
+11. [Environment Configuration (.env)](#-environment-configuration-env)
+12. [Subsystem Quick Links](#-subsystem-quick-links)
 
 ---
 
@@ -244,3 +246,31 @@ python tests/test_api_endpoints.py
 python tests/test_predict_pipeline.py
 python tests/test_end_to_end.py
 ```
+
+---
+
+## ⚙️ Environment Configuration (.env)
+
+The ML microservice can be configured using environment variables or a local `.env` file inside `Model/`:
+
+```env
+# Server Port & Host
+PORT=8000
+HOST="0.0.0.0"
+
+# OpenWeatherMap API Key (Optional — live feeds use internal fallback heuristics if omitted)
+WEATHER_API_KEY="your_openweathermap_api_key_here"
+
+# Atmospheric Telemetry Refresh Interval (Minutes)
+WEATHER_REFRESH_INTERVAL_MINUTES=10
+```
+
+> ⚠️ **Security Notice:** Do NOT commit your actual OpenWeatherMap API key or any private credentials to source control. The system is designed to run seamlessly with built-in GIS spatial baselines even without a live API key.
+
+---
+
+## 📄 Subsystem Quick Links
+
+- 🎨 **[Frontend Web Application](../frontend/README.md)**
+- ⚙️ **[Backend API Gateway](../backend/README.md)**
+- 🏠 **[Master System Documentation](../../README.md)**

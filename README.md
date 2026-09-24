@@ -251,12 +251,38 @@ cd d:\BCA_5_SEM\SIH\SIH-26085
 
 Each major module in the repository includes its own standalone, in-depth documentation guide:
 
-- **[Frontend Architecture & UI Documentation]**  
+- **[Frontend Architecture & UI Documentation](SIH-26085/frontend/README.md)**  
   Covers React component breakdown, MapLibre GL layers, Recharts visualizations, state management, CSS variables, and responsive layouts.
-- **[Backend Gateway & Database Documentation]**  
+- **[Backend Gateway & Database Documentation](SIH-26085/backend/README.md)**  
   Covers Fastify plugins, Neon PostgreSQL connection strings, Prisma ORM schema, JWT and Session cookie authentication, and reverse proxy routes.
-- **[Machine Learning Microservice Documentation]**  
+- **[Machine Learning Microservice Documentation](SIH-26085/Model/README.md)**  
   Covers the 60-feature vector specification, Scikit-Learn model artifacts, real-time OpenWeatherMap telemetry pipeline, risk scoring algorithms, and the 9-table spatial database.
+
+---
+
+## 🛠️ Environment Variables Matrix
+
+The system uses environment variables for service configuration. Never commit real credentials, database passwords, or private keys to source control. Use `.env.example` templates to set up local environments.
+
+### 1. Backend Gateway (`SIH-26085/backend/.env`)
+| Variable | Description | Example / Default |
+|---|---|---|
+| `DATABASE_URL` | Neon PostgreSQL connection URI with SSL | `postgresql://<user>:<password>@<host>.neon.tech/neondb?sslmode=require` |
+| `PORT` | Node.js Fastify server listening port | `5000` |
+| `JWT_SECRET` | Secret key used for signing JWT tokens | `your_secure_jwt_secret_key_here` |
+| `SESSION_SECRET` | Secret key used for session encryption (min 32 chars) | `your_secure_session_secret_at_least_32_chars` |
+| `COOKIE_SECRET` | Secret key used for signed cookies (min 32 chars) | `your_secure_cookie_secret_at_least_32_chars` |
+| `ML_SERVICE_URL` | Upstream Python FastAPI ML service base URL | `http://127.0.0.1:8000` |
+
+### 2. Machine Learning Microservice (`SIH-26085/Model/.env`)
+| Variable | Description | Example / Default |
+|---|---|---|
+| `PORT` | Python FastAPI / Uvicorn server port | `8000` |
+| `HOST` | Bind address for ML service | `0.0.0.0` |
+| `WEATHER_API_KEY` | OpenWeatherMap API key (optional for live feeds) | `your_openweathermap_api_key_here` |
+| `WEATHER_REFRESH_INTERVAL_MINUTES` | Frequency of atmospheric feed refreshes | `10` |
+
+> ⚠️ **Security Policy:** All passwords, API keys, database connection strings, and cryptographic secrets are strictly excluded from git tracking. Template configurations use safe placeholder values.
 
 ---
 

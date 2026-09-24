@@ -218,11 +218,12 @@ SIH-26085/
 
 ### Backend (`backend/.env`):
 ```env
-DATABASE_URL="postgresql://neondb_owner:***@ep-dawn-heart-a5liig8g-pooler.us-east-2.aws.neon.tech/neondb?sslmode=require"
+# Neon PostgreSQL Connection String (Replace with your database credentials)
+DATABASE_URL="postgresql://<username>:<password>@<your-neon-host>.neon.tech/neondb?sslmode=require"
 PORT=5000
-JWT_SECRET="sih_urban_flood_secret_key_2026_jwt_token"
-SESSION_SECRET="sih_flood_session_secret_key_minimum_32_characters_long_2026!"
-COOKIE_SECRET="sih_flood_cookie_secret_key_minimum_32_characters_long_2026!"
+JWT_SECRET="your_secure_jwt_secret_key_here"
+SESSION_SECRET="your_secure_session_secret_at_least_32_chars_here"
+COOKIE_SECRET="your_secure_cookie_secret_at_least_32_chars_here"
 ML_SERVICE_URL="http://127.0.0.1:8000"
 ```
 
@@ -233,6 +234,8 @@ HOST="0.0.0.0"
 WEATHER_API_KEY="your_openweathermap_api_key_here"
 WEATHER_REFRESH_INTERVAL_MINUTES=10
 ```
+
+> ⚠️ **Security Notice:** Never commit `.env` files or actual credentials to version control. Use `.env.example` templates and keep production secrets secure.
 
 ---
 
@@ -251,6 +254,6 @@ npm run build
 
 ## 📄 Subsystem Documentation Quick Links
 
-- 🎨 **[Frontend README](file:///d:/BCA_5_SEM/SIH/SIH-26085/frontend/README.md)**
-- ⚙️ **[Backend Gateway README](file:///d:/BCA_5_SEM/SIH/SIH-26085/backend/README.md)**
-- 🧠 **[Machine Learning Model README](file:///d:/BCA_5_SEM/SIH/SIH-26085/Model/README.md)**
+- 🎨 **[Frontend README](frontend/README.md)**
+- ⚙️ **[Backend Gateway README](backend/README.md)**
+- 🧠 **[Machine Learning Model README](Model/README.md)**
